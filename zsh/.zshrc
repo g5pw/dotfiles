@@ -89,8 +89,14 @@ precmd(){
     lastreturn=$? ; history | $HOME/.gash/gash -i -C $COLUMNS -l $lastreturn
 }
 
-#SCM-Breeze load
+# SCM-Breeze load
 [ -s "/Users/g5pw/.scm_breeze/scm_breeze.sh" ] && source "/Users/g5pw/.scm_breeze/scm_breeze.sh"
 
-#load highlighting
-[ -d /Users/g5pw/.zsh/zsh-syntax-highlighting/ ] && source /Users/g5pw/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#load more completions
+fpath=($ZDOTDIR/zsh-completions $fpath)
+
+# load ZAW
+[ -d $ZDOTDIR/zaw/ ] && source $ZDOTDIR/zaw/zaw.zsh
+
+# load highlighting
+[ -d $ZDOTDIR/zsh-syntax-highlighting/ ] && source $ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
