@@ -1,0 +1,3 @@
+function acronym() {
+    retawq --dump=http://www.acronymfinder.com/$1.html | sed -e '/*/!d' -e 's/*/✪ /g' | column -s '|' -t;
+}

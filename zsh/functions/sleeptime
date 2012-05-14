@@ -1,0 +1,7 @@
+function sleeptime() {
+    echo $1
+    for i in {3..10}; do
+    	sleep=`expr $i '*' 90`
+    	date -j -v+${sleep}M
+done
+}

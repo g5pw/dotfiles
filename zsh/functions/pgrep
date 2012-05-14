@@ -1,0 +1,4 @@
+pgrep () {
+    /opt/local/bin/pgrep $@
+    return $?
+}
