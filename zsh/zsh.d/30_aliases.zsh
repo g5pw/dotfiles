@@ -3,7 +3,8 @@ alias c='clear'
 alias calc='noglob calc'
 alias cdiff='colordiff'
 alias cp='nocorrect cp -i'
-alias dirss='dirs -v'
+alias ds='dirs'
+alias dss='dirs -v'
 alias du1='du -hs *(/)' ## du with depth 1
 alias find='noglob find'
 alias grep='grep --colour'
@@ -43,7 +44,8 @@ alias -g W='|wc -l'
 alias -s tex=vim
 
 # Emacs.app aliases
-alias memacs="/Applications/MacPorts/Emacs.app/MacOS/Emacs"
+alias memacs='/Applications/MacPorts/Emacs.app/Contents/MacOS/Emacs'
+alias memacsclient='/Applications/MacPorts/Emacs.app/Contents/MacOS/bin/emacsclient'
 
 #Fix annoying typo alias
 alias prot="port"
