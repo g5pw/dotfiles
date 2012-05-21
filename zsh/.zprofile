@@ -20,11 +20,11 @@ case $TERM in
     mrxvt|rxvt|rxvt-unicode|(dt|k|a|E)term|screen|xterm*)
     ## display user@host and full dir in *term title
     precmd () {
-	print -Pn "\033]0;%n@%m%#  %~ %l  %w :: %T\a" ## or use this
+	print -Pn "\033]0;%n@%m%#  %~ %l  %w :: %T\a"
     }
     ## display user@host and name of current process in *term title
     preexec () {
-	print -Pn "\033]0;%n@%m%#  <$1>  %~ %l  %w :: %T\a" ## or use this
+	print -Pn "\033]0;%n@%m%#  <$1>  %~ %l  %w :: %T\a"
     }
     ;;
 esac
