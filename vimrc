@@ -3,7 +3,7 @@ set nocompatible
 set runtimepath+=~/.vim/vim-addons/vim-addon-manager
 call vam#ActivateAddons([
 	    \'snipmate-snippets',
-	    \'ctrlp', 'LustyExplorer', 'The_NERD_tree',
+	    \'ctrlp', 'LustyExplorer', 'The_NERD_tree', 'ack',
 	    \'EasyMotion', 'camelcasemotion',
 	    \'repeat',
 	    \'TaskList',
@@ -21,7 +21,7 @@ call vam#ActivateAddons([
 	    \'changesPlugin',
 	    \'sparkup',
 	    \'wmgraphviz',
-	    \'Mustang2', 'Railscasts_Theme_GUI256color',
+	    \'Mustang2', 'wombat256',
 	    \'LustyJuggler'
 	    \], {'auto_install' : 0})
 
@@ -84,8 +84,6 @@ set completeopt=longest,preview
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
-
-set grepprg=ack\ --color
 
 " NeoComplCache options
 let g:neocomplcache_enable_at_startup = 1
@@ -224,7 +222,7 @@ if has("gui_running")
 endif
 
 if &t_Co >= 256 || has("gui_running")
-    colorscheme railscasts
+    colorscheme wombat256mod
 endif
 
 if &t_Co > 2 || has("gui_running")
