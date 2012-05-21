@@ -2,7 +2,7 @@
 autoload -U $ZDOTDIR/functions/*(:t)
 
 # Include files from zsh.d directory
-for file in $ZDOTDIR/zsh.d/*; do
+for file in $ZDOTDIR/zsh.d/*.zsh^*.disabled; do
     source $file
 done
 
@@ -83,11 +83,6 @@ bindkey "^[s" insert-sudo
 
 # Useful commands
 function rand() { exec $RANDOM % $1; }
-
-# enable GASH!
-precmd(){
-    lastreturn=$? ; history | $HOME/.gash/gash -i -C $COLUMNS -l $lastreturn
-}
 
 # SCM-Breeze load
 [ -s "/Users/g5pw/.scm_breeze/scm_breeze.sh" ] && source "/Users/g5pw/.scm_breeze/scm_breeze.sh"
