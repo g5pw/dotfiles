@@ -21,6 +21,7 @@ alias pi='portindex'
 alias port='noglob port'
 alias rm='nocorrect rm -i'
 alias serverhere='python -m SimpleHTTPServer'
+alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 alias t='tree'
 alias u='uptime'
 alias z='$EDITOR ~/.zshrc;src'
