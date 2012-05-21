@@ -1,11 +1,3 @@
-# Autoload my functions
-autoload -U $ZDOTDIR/functions/*(:t)
-
-# Include files from zsh.d directory
-for file in $ZDOTDIR/zsh.d/*.zsh^*.disabled; do
-    source $file
-done
-
 ## The maximum number of events stored in the internal history list.
 export HISTSIZE=10000
 
@@ -15,8 +7,12 @@ export SAVEHIST=9500
 #load Mapfile
 zmodload zsh/mapfile
 
-## Add Regexp replacing
+# Add Regexp replacing
 zmodload zsh/regex
+
+# Load colors
+autoload -U colors
+colors
 
 ## Add PCRE support
 zmodload zsh/pcre
@@ -24,6 +20,14 @@ zmodload zsh/pcre
 ## smart urls
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
+
+# Autoload my functions
+autoload -U $ZDOTDIR/functions/*(:t)
+
+# Include files from zsh.d directory
+for file in $ZDOTDIR/zsh.d/*.zsh^*.disabled; do
+    source $file
+done
 
 ## This allows incremental completion of a word.
 ## After starting this command, a list of completion
@@ -95,3 +99,5 @@ fpath=($ZDOTDIR/zsh-completions $fpath)
 
 # load highlighting
 [ -d $ZDOTDIR/zsh-syntax-highlighting/ ] && source $ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+cowsay -f "$(ls /opt/local/share/cowsay/cows/ | unsort 2>/dev/null | head -1)" "$(fortune -s)"

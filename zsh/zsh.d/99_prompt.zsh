@@ -1,6 +1,3 @@
-autoload -U colors
-colors
-
 ## set prompts ####
 export PS1=$'%F{cyan}%n%f@%F{red}%m%f:%F{blue}%~%f:%F{yellow}%*%f%# '
 export PROMPT2="%F{red}%_%F{green} ➣ %f"
