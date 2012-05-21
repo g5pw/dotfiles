@@ -1,7 +1,7 @@
 # Sort completion list by name
 zstyle ':completion:*' file-sort name
 
-zstyle ':completion:*' completer _expand _complete _approximate _correct _prefix _ignored
+zstyle ':completion:*' completer _expand _complete _approximate _correct _prefix _history _ignored
 
 ## case-insensitive,partial-word and then substring completion
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
@@ -39,11 +39,6 @@ zstyle ':completion:*:messages' format $'%{\e[0;31m%}%d%{\e[0m%}'
 zstyle ':completion:*:warnings' format $'%{\e[0;31m%}No matches for: %d%{\e[0m%}'
 zstyle ':completion:*:corrections' format $'%{\e[0;31m%}%d (errors: %e)%{\e[0m%}'
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-
-# Include hosts configuration, if present:
-if [[ -f $ZSHOME/hosts.zsh ]]; then
-    source $ZSHOME/hosts.zsh
-fi
 	    
 zstyle ':completion:*:my-accounts' users-hosts $my_accounts
 
