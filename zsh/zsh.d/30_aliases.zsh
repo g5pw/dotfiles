@@ -15,17 +15,28 @@ alias l='ls'
 alias ll.='ls -al'
 alias ll='ls -l'
 alias ls='ls -G'
+alias less=$PAGER
+alias zless=$PAGER
 alias man='nocorrect man'
+alias memacs='/Applications/MacPorts/Emacs.app/Contents/MacOS/Emacs'
+alias memacsclient='/Applications/MacPorts/Emacs.app/Contents/MacOS/bin/emacsclient'
 alias mkdir='nocorrect mkdir'
 alias mv='nocorrect mv -i'
+alias msp430-cgdb='cgdb -d msp430-gdb'
 alias pi='portindex'
 alias port='noglob port'
+alias prot="port" #Fix annoying typo alias
 alias rm='nocorrect rm -i'
 alias serverhere='python -m SimpleHTTPServer'
+alias sport="noglob sudo port"
 alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 alias t='tree'
 alias u='uptime'
-alias z='$EDITOR ~/.zshrc;src'
+alias z='$EDITOR $ZDOTDIR/.zshrc;src'
+# The many forms of zmv.
+alias zmv="zmv -wM"
+alias zcp="zmv -wC"
+alias zln="zmv -wL"
 
 ## global aliases, this is not good but it's useful
 alias -g G='|grep'
@@ -42,11 +53,4 @@ alias -g W='|wc -l'
 
 # Suffix aliases
 alias -s tex=vim
-
-# Emacs.app aliases
-alias memacs='/Applications/MacPorts/Emacs.app/Contents/MacOS/Emacs'
-alias memacsclient='/Applications/MacPorts/Emacs.app/Contents/MacOS/bin/emacsclient'
-
-#Fix annoying typo alias
-alias prot="port"
-alias sport="sudo port"
+alias -s zsh=vim
