@@ -14,7 +14,7 @@ call vam#ActivateAddons([
 	    \'SudoEdit',
 	    \'FSwitch',
 	    \'tComment',
-	    \'cern_root',
+	    \'cern_root', 'Markdown',
 	    \'delimitMate',
 	    \'svn:http://svn.macports.org/repository/macports/contrib/mpvim/',
 	    \'checksyntax',
