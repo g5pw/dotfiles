@@ -2,7 +2,7 @@ set nocompatible
 "Include my plugins
 set runtimepath+=~/.vim/vim-addons/vim-addon-manager
 call vam#ActivateAddons([
-	    \'snipmate-snippets',
+	    \'snipmate-snippets', 'ZenCoding',
 	    \'ctrlp', 'LustyExplorer', 'The_NERD_tree', 'ack',
 	    \'EasyMotion', 'camelcasemotion',
 	    \'repeat',
@@ -84,6 +84,9 @@ set completeopt=longest,preview
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
+
+" Enable Doxygen auto-load
+let g:load_doxygen_syntax=1
 
 " NeoComplCache options
 let g:neocomplcache_enable_at_startup = 1
