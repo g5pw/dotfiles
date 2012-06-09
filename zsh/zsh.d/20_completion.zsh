@@ -1,7 +1,8 @@
+# Completion options
+zstyle ':completion:*' completer _complete _approximate _correct _prefix _expand _history _ignored
+
 # Sort completion list by name
 zstyle ':completion:*' file-sort name
-
-zstyle ':completion:*' completer _expand _complete _approximate _correct _prefix _history _ignored
 
 ## case-insensitive,partial-word and then substring completion
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
@@ -32,6 +33,9 @@ zstyle ':completion:*:*:*:*:processes' force-list always
 # pasting with tabs doesn't perform completion
 zstyle ':completion:*' insert-tab pending
 
+# Search only 50 items in history
+zstyle ':completion:*:history-words' range 5:10
+
 ## formatting and messages
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*:descriptions' format $'%{\e[0;31m%}%d%{\e[0m%}'
@@ -49,3 +53,6 @@ complete-with-dots() {
 }
 zle -N complete-with-dots
 bindkey "^I" complete-with-dots
+
+# Complete word and try to complete again
+bindkey -M menuselect '^o' accept-and-infer-next-history
