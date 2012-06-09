@@ -11,8 +11,7 @@ zmodload zsh/mapfile
 zmodload zsh/regex
 
 # Load colors
-autoload -U colors
-colors
+autoload -U colors && colors
 
 ## Add PCRE support
 zmodload zsh/pcre
@@ -23,6 +22,9 @@ zle -N self-insert url-quote-magic
 
 # Autoload my functions
 autoload -U $ZDOTDIR/functions/*(:t)
+
+# Load 256 colors!
+autoload spectrum && spectrum
 
 # Include files from zsh.d directory
 for file in $ZDOTDIR/zsh.d/*.zsh^*.disabled; do
