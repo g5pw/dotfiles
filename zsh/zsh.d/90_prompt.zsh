@@ -1,5 +1,6 @@
 ## set prompts ####
-export PS1="$FG[032]%n$FG[178]@$FG[196]%m$FG[178]:$FG[075]%~$FG[178]:$FG[228]%*$FG[178]%#$FX[reset] "
+zstyle  ':prompt:rtab' fish yes
+export PS1=$'$FG[032]%n$FG[178]@$FG[196]%m$FG[178]:$FG[075]$(rtab)$FG[178]:$FG[228]%*$FG[178]%#$FX[reset] '
 export PROMPT2="$FG[131]%_$FG[121] ➣ $FX[reset]"
 
 export RPROMPT="%(?..[ $FX[bold]%?$FX[no-bold] ])"
