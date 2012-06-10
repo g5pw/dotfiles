@@ -33,6 +33,9 @@ zstyle ':completion:*:*:*:*:processes' force-list always
 # pasting with tabs doesn't perform completion
 zstyle ':completion:*' insert-tab pending
 
+# cd will never select the parent directory (e.g.: cd ../<TAB>):
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
+
 # Search only 50 items in history
 zstyle ':completion:*:history-words' range 5:10
 
