@@ -68,6 +68,8 @@ zle -N predict-on
 zle -N predict-off
 bindkey "^X^Z" predict-on ## C-x C-z
 bindkey "^Z" predict-off ## C-z
+zstyle ':predict' verbose true
+zstyle ':predict' toggle true
 
 # Undo completion
 bindkey "\eu" undo
