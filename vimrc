@@ -118,6 +118,11 @@ let yankring_history_dir = "$HOME/.vim/yankring"
 let g:yankring_clipboard_monitor = 0
 let g:yankring_manual_clipboard_check = 0
 
+" Set Syntastic style
+let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+
+let g:Powerline_symbols = 'fancy'
+
 "Useful mappings
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
