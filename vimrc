@@ -17,7 +17,7 @@ call vam#ActivateAddons([
 	    \'cern_root', 'Markdown',
 	    \'delimitMate',
 	    \'svn:http://svn.macports.org/repository/macports/contrib/mpvim/',
-	    \'checksyntax',
+	    \'Syntastic', 'PowerLine',
 	    \'changesPlugin',
 	    \'sparkup',
 	    \'wmgraphviz',
@@ -54,7 +54,7 @@ set history=1000        " remember more commands and search history
 set undolevels=1000     " use many muchos levels of undo
 set title               " change the terminal's title
 set laststatus=2	" Always show statusline
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+
 set scrolloff=3		" Always keep 3 lines above/below cursor
 
 set undofile		" Save undo tree in file
@@ -242,3 +242,5 @@ map <left> <nop>
 map <right> <nop>
 
 let snips_author = "Aljaž Srebrnič"
+
+set guifont=Menlo\ for\ Powerline:h12
