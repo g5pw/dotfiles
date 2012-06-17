@@ -7,7 +7,7 @@ call vam#ActivateAddons([
 	    \'EasyMotion', 'camelcasemotion',
 	    \'repeat',
 	    \'TaskList',
-	    \'OmniCppComplete', 'taglist', 'AutoComplPop',
+	    \'OmniCppComplete', 'TagBar', 'AutoComplPop',
 	    \'YankRing', 'matchit.zip', 'Gundo',
 	    \'surround',
 	    \'vcscommand', 'fugitive', 'extradite',
@@ -95,9 +95,9 @@ let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_min_syntax_length = 3
 
 "TagList options and maps
-let Tlist_Use_Right_Window = 1
-let Tlist_File_Fold_Auto_Close = 1
-let Tlist_GainFocus_On_ToggleOpen = 1
+let tagbar_autoclose = 1
+let tagbar_autofocus = 1
+let g:tagbar_singleclick = 1
 
 "Settings for NERDTree
 let NERDTreeIgnore=['\.o$', '\~$', '$']
