@@ -4,8 +4,7 @@ set runtimepath+=~/.vim/vim-addons/vim-addon-manager
 call vam#ActivateAddons([
 	    \'snipmate-snippets', 'ZenCoding',
 	    \'ctrlp', 'LustyExplorer', 'The_NERD_tree', 'ack',
-	    \'EasyMotion', 'camelcasemotion',
-	    \'repeat',
+	    \'EasyMotion', 'camelcasemotion', 'unimpaired', 'repeat',
 	    \'TaskList',
 	    \'OmniCppComplete', 'TagBar', 'AutoComplPop',
 	    \'YankRing', 'matchit.zip', 'Gundo',
@@ -51,7 +50,7 @@ set ruler
 set backspace=indent,eol,start
 
 set history=1000        " remember more commands and search history
-set undolevels=1000     " use many muchos levels of undo
+set undolevels=1000     " use many levels of undo
 set title               " change the terminal's title
 set laststatus=2	" Always show statusline
 
@@ -88,12 +87,6 @@ set listchars=tab:▸\ ,eol:¬
 " Enable Doxygen auto-load
 let g:load_doxygen_syntax=1
 
-" NeoComplCache options
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_min_syntax_length = 3
-
 "TagList options and maps
 let tagbar_autoclose = 1
 let tagbar_autofocus = 1
@@ -129,14 +122,15 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nmap <Leader>, :NERDTreeToggle<cr>
-nmap <Leader>/ :NERDTreeToggle<cr>:TlistToggle<cr>
-nmap <Leader>. :TlistToggle<cr>
+nmap <Leader>/ :NERDTreeToggle<cr>:TagbarToggle<CR>
+nmap <Leader>. :TagbarToggle<CR>
 nmap <silent> <leader>/ :nohlsearch<CR>
 " Parse file with astyle
 nmap <silent> <Leader>as :%!astyle<CR>
 " NERDTree Bookmarks
 nmap <Leader>bm :NERDTreeFromBookmark 
 " Parse dir with ctags
+nmap <silent><leader>c :ToggleChangeView<CR>
 nmap <silent> <Leader>ct :! ctags -R --c++-kinds=+p --fields=+iaS --extra=+q<cr>
 " FuF
 nnoremap <silent> <leader>ff     :FufFile<CR>
@@ -212,7 +206,7 @@ nnoremap <silent> <leader>ys :YRSearch
 filetype plugin indent on
 "Filetype-dependant stuff
 autocmd filetype python set expandtab
-au FileType c let b:delimitMate_matchpairs = "(:),{:},[:],/*:*/"
+au FileType c,c++ let b:delimitMate_matchpairs = "(:),{:},[:],/*:*/"
 
 " boxes integration
 nmap <silent> <leader>bf !!boxes -a l -d tjc -s 75<CR>
@@ -227,10 +221,11 @@ nmap <silent> <Leader>t :CtrlP<CR>
 " Visual stuff
 if has("gui_running")
     set ttyfast
+    colorscheme wombat256mod
 endif
 
-if &t_Co >= 256 || has("gui_running")
-    colorscheme wombat256mod
+if &t_Co >= 256
+    colorscheme Mustang
 endif
 
 if &t_Co > 2 || has("gui_running")
