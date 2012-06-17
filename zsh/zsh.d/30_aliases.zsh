@@ -32,6 +32,7 @@ alias sport="noglob sudo port"
 alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 alias t='tree'
 alias u='uptime'
+alias vd="vifm"
 alias z='$EDITOR $ZDOTDIR/.zshrc;src'
 # The many forms of zmv.
 alias zmv="zmv -wM"
