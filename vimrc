@@ -38,30 +38,23 @@ set shiftwidth=4
 set shiftround		" use multiple of shiftwidth when indenting with '<' and '>'"
 set ignorecase		" ignore case when searching
 set smartcase   	" ignore case if search pattern is all lowercase,
-			"    case-sensitive otherwise
+			" case-sensitive otherwise
 set smarttab    	" insert tabs on the start of a line according to
-			"    shiftwidth, not tabstop
 set hlsearch    	" highlight search terms
 set incsearch   	" show search matches as you type"
-
 set tildeop		" Use tilde as an operator
-
 set ruler
 set backspace=indent,eol,start
-
 set history=1000        " remember more commands and search history
 set undolevels=1000     " use many levels of undo
 set title               " change the terminal's title
 set laststatus=2	" Always show statusline
-
 set scrolloff=3		" Always keep 3 lines above/below cursor
-
 set undofile		" Save undo tree in file
 set undodir=~/.vim/undo//     " undo files
 "set visualbell          " don't beep
 "set noerrorbells	 " don't beep
 
-" Retain custim icons & stuff
 set backupcopy=yes
 
 set wildmenu
