@@ -49,6 +49,27 @@ zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p
 	    
 zstyle ':completion:*:my-accounts' users-hosts $my_accounts
 
+# only java files for javac
+zstyle ':completion:*:javac:*' files '*.java'
+
+# no binary files for vi or textmate
+zstyle ':completion:*:vi:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
+zstyle ':completion:*:mate:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
+zstyle ':completion:*:vim:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
+zstyle ':completion:*:gvim:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
+# no binary files for less
+zstyle ':completion:*:less:*' ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
+zstyle ':completion:*:zless:*' ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
+# tar files
+zstyle ':completion:*:tar:*' files '*.tar|*.tgz|*.tz|*.tar.Z|*.tar.bz2|*.tZ|*.tar.gz'
+# latex to the fullest
+# for printing
+zstyle ':completion:*:xdvi:*' files '*.dvi'
+zstyle ':completion:*:dvips:*' files '*.dvi'
+# Group relatex matches:
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:-command-:*:(commands|builtins|reserved-words-aliases)' group-name commands
+
 complete-with-dots() {
     echo -n "\e[31m...\e[0m"
     zle complete-word
