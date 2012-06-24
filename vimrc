@@ -125,6 +125,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 " Toggle folds with space bar
 nmap <Space> za
+nmap <Leader><tab> :TScratch<cr>
 nmap <Leader>, :NERDTreeToggle<cr>
 nmap <Leader>. :TagbarToggle<CR>
 nmap <silent> <leader>/ :nohlsearch<CR>
@@ -133,7 +134,8 @@ nmap <silent> <Leader>as :%!astyle<CR>
 " NERDTree Bookmarks
 nmap <Leader>bm :NERDTreeFromBookmark 
 " Parse dir with ctags
-nmap <silent><leader>c :ToggleChangeView<CR>
+nmap <silent><leader>r :ToggleChangeView<CR>
+nmap <silent><leader>c :ToggleRaibowParenthesis<CR>
 nmap <silent> <Leader>ct :! ctags -R --c++-kinds=+p --fields=+iaS --extra=+q<cr>
 " FuF
 nnoremap <silent> <leader>ff     :FufFile<CR>
