@@ -6,7 +6,7 @@ zstyle ':vcs_info:*' enable git svn hg bzr
 
 zstyle ':vcs_info:*' stagedstr '%F{28}●'
 zstyle ':vcs_info:*' unstagedstr '%F{11}●'
-zstyle ':vcs_info:*' actionformats '%F{red}[%F{green}%b|%a%F{red}]%F{magenta}(%c%u%F{magenta})%f'
+zstyle ':vcs_info:*' actionformats '%F{red}[%F{green}%b|%a%F{red}]%F{magenta}(%c%u%m%F{magenta})%f'
 zstyle ':vcs_info:*' formats '%F{blue}%s%f:%F{yellow}%r%F{red}[%F{green}%b%F{red}]%F{magenta}(%c%u%m%F{magenta})%f'
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' use-prompt-escapes true
