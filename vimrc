@@ -2,10 +2,10 @@ set nocompatible
 "Include my plugins
 set runtimepath+=~/.vim/vim-addons/vim-addon-manager
 call vam#ActivateAddons([
-	    \'snipmate-snippets', 'ZenCoding',
+	    \'snipmate-snippets',
 	    \'ctrlp', 'LustyExplorer', 'The_NERD_tree', 'ack',
 	    \'EasyMotion', 'camelcasemotion', 'unimpaired', 'repeat',
-	    \'TaskList',
+	    \'TaskList', 'VimOrganizer',
 	    \'OmniCppComplete', 'TagBar', 'AutoComplPop',
 	    \'YankRing', 'matchit.zip', 'Gundo',
 	    \'surround',
@@ -14,13 +14,13 @@ call vam#ActivateAddons([
 	    \'FSwitch',
 	    \'tComment',
 	    \'cern_root', 'Markdown',
-	    \'delimitMate',
+	    \'delimitMate', 'Rainbow_Parenthsis_Bundle',
 	    \'svn:http://svn.macports.org/repository/macports/contrib/mpvim/',
 	    \'Syntastic', 'PowerLine',
 	    \'changesPlugin',
-	    \'sparkup',
+	    \'sparkup', 'visual-increment',
 	    \'wmgraphviz',
-	    \'Mustang2', 'wombat256',
+	    \'Mustang2', 'wombat256', 'AnsiEsc',
 	    \'LustyJuggler'
 	    \], {'auto_install' : 0})
 
@@ -122,7 +122,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nmap <Leader>, :NERDTreeToggle<cr>
-nmap <Leader>/ :NERDTreeToggle<cr>:TagbarToggle<CR>
 nmap <Leader>. :TagbarToggle<CR>
 nmap <silent> <leader>/ :nohlsearch<CR>
 " Parse file with astyle
