@@ -4,12 +4,24 @@ zstyle ':completion:*' completer _complete _approximate _correct _prefix _expand
 # Sort completion list by name
 zstyle ':completion:*' file-sort name
 
+# Open the select menu if there are more than 3 completions
+zstyle ':completion:*:default' menu select=3 yes
+
+# Show some color
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
 ## case-insensitive,partial-word and then substring completion
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+# generate descriptions with magic.
+zstyle ':completion:*' auto-description 'specify: %d'
 
 ## allow one error for every three characters typed in approximate completer
 zstyle -e ':completion:*:approximate:*' max-errors \
     'reply=( $(( ($#PREFIX+$#SUFFIX)/3 )) numeric )'
+# String to separate options from description
+zstyle ':completion:*' list-separator '#'
 
 ## offer indexes before parameters in subscripts
 zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
@@ -23,6 +35,8 @@ zstyle ':completion:*:functions' ignored-patterns '_*'
 ## filename suffixes to ignore during completion (except after rm command)
 zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns '*?.(o|c~|old|pro|zwc)' '*~'
 
+
+# Disable named-directories completion
 zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
 
 ## on processes completion complete all user processes
@@ -39,8 +53,12 @@ zstyle ':completion:*:cd:*' ignore-parents parent pwd
 # Search only 50 items in history
 zstyle ':completion:*:history-words' range 5:10
 
+# Separate man page sections.
+zstyle ':completion:*:manuals' separate-sections true
+
 ## formatting and messages
 zstyle ':completion:*' verbose yes
+zstyle ':completion:*' prompt 'Alternatives %e:'
 zstyle ':completion:*:descriptions' format $'%{\e[0;31m%}%d%{\e[0m%}'
 zstyle ':completion:*:messages' format $'%{\e[0;31m%}%d%{\e[0m%}'
 zstyle ':completion:*:warnings' format $'%{\e[0;31m%}No matches for: %d%{\e[0m%}'
