@@ -212,6 +212,9 @@ filetype plugin indent on
 autocmd filetype python set expandtab
 au FileType c,c++ let b:delimitMate_matchpairs = "(:),{:},[:],/*:*/"
 
+" Save on focus lost.
+au FocusLost * :wa
+
 " boxes integration
 nmap <silent> <leader>bf !!boxes -a l -d tjc -s 75<CR>
 vmap <silent> <leader>bf !boxes -a l -d tjc -s 75<CR>
