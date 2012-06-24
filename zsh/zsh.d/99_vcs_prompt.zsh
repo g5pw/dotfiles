@@ -10,9 +10,9 @@ zstyle ':vcs_info:*' actionformats '%F{red}[%F{green}%b|%a%F{red}]%F{magenta}(%c
 zstyle ':vcs_info:*' formats '%F{blue}%s%f:%F{yellow}%r%F{red}[%F{green}%b%F{red}]%F{magenta}(%c%u%m%F{magenta})%f'
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' use-prompt-escapes true
-zstyle ':vcs_info:git+set-message:*' hooks git_unstaged_files
+zstyle ':vcs_info:git+set-message:*' hooks git_check_unstaged_files
 
-function +vi-git_unstaged_files() {
+function +vi-git_check_unstaged_files() {
     if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then;
     	hook_com[misc]=$hook_com[misc_orig]
     else
