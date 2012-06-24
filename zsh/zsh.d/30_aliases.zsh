@@ -10,11 +10,11 @@ alias find='noglob find'
 alias grep='grep --colour'
 alias gvim='gvim -U ~/.gvimrc'
 alias h='history'
+alias ls='ls -hF --color=auto'
 alias l.='ls -A'
 alias l='ls'
 alias ll.='ls -al'
 alias ll='ls -l'
-alias ls='ls -G'
 alias less=$PAGER
 alias zless=$PAGER
 alias man='nocorrect man'
