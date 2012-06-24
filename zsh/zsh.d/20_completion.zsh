@@ -1,8 +1,8 @@
 # Completion options
-zstyle ':completion:*' completer _complete _approximate _correct _prefix _expand _history _ignored
+zstyle ':completion:*' completer _expand _complete _correct _approximate _prefix _history _ignored
 
 # Sort completion list by name
-zstyle ':completion:*' file-sort name
+zstyle ':completion:*' file-sort modification reverse
 
 # Open the select menu if there are more than 3 completions
 zstyle ':completion:*:default' menu select=3 yes
@@ -48,6 +48,8 @@ zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
 zstyle ':completion:*:*:*:*:processes' force-list always
 
+# Don't complete stuff already on the line
+zstyle ':completion::*:(rm|vi):*' ignore-line true
 
 # cd will never select the parent directory (e.g.: cd ../<TAB>):
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
