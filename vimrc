@@ -247,10 +247,14 @@ endif
 set pastetoggle=<F2>	"Disable auto indent when pasting
 
 " Yes! make me suffer!
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
 
 let snips_author = "Aljaž Srebrnič"
 
