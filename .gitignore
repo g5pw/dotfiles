@@ -1,6 +1,6 @@
 zsh/*.zwc
 zsh/cache/*
-zsh/.zcompdump
+zsh/.zcompdump*
 zsh/zdirdump
 zsh/*history
 zsh/zshapplist
