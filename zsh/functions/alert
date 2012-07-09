@@ -1,6 +1,10 @@
 function alert() {
-    "$@";
-    st=$?;
-    growlnotify -a iTerm -m "Command completed with exit code $st" -t "${@:1:1}";
-    return $st;
+    if [[ -n $@ ]]; then
+        "$@"
+        st=$?
+        growlnotify -a iTerm -m "Command completed with exit code $st" -t "${@:1:1}"
+        return $st
+    else
+        growlnotify -a iTerm -m "Command completed"
+    fi
 }
