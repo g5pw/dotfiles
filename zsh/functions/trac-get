@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh -f
+function trac-get {
+    local url=$1
+    local dir=$2
+
+    if [ -z $dir ]; then
+        dir=.
+    fi  
+
+    curl "$url?format=raw" --create-dirs -o $dir/$(basename $1)
+}
