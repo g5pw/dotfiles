@@ -83,6 +83,11 @@ set completeopt=longest,preview
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+set colorcolumn=85
+
 " Enable Doxygen auto-load
 let g:load_doxygen_syntax=1
 
