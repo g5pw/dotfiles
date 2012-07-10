@@ -246,15 +246,36 @@ endif
 
 set pastetoggle=<F2>	"Disable auto indent when pasting
 
-" Yes! make me suffer!
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+" Ctrl + Arrow is for moving text around and relies on vim-unimpaired by Tim Pope.
+nmap <C-Up>   [e
+imap <C-Up>   <C-O><C-Up>
+vmap <C-Up>   [egv
+nmap <C-Down> ]e
+imap <C-Down> <C-O><C-Down>
+vmap <C-Down> ]egv
+" Arrow is for moving around splits
+nnoremap <Up>        <C-W>k
+nnoremap <Down>      <C-W>j
+nnoremap <Left>      <C-W>h
+nnoremap <Right>     <C-W>l
+" Shift + Arrow is for moving splits around
+nnoremap <S-Up>      <C-W>K
+nnoremap <S-Down>    <C-W>J
+nnoremap <S-Left>    <C-W>H
+nnoremap <S-Right>   <C-W>L
+" Alt + Arrow is for minimizing/maximizing splits
+nnoremap <M-Up>      <C-W>_
+nnoremap <M-Down>    <C-W>=
+nnoremap <M-Left>    <C-W>=
+nnoremap <M-Right>   <C-W><Bar>
+
+" Indenting shortcuts
+nmap <C-Left>   <<
+imap <C-Left>   <C-O><C-Left>
+vmap <C-Left>   <gv
+nmap <C-Right>  >>
+imap <C-Right>  <C-O><C-Right>
+vmap <C-Right>  >gv
 
 let snips_author = "Aljaž Srebrnič"
 
