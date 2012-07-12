@@ -98,11 +98,6 @@ let g:tagbar_singleclick = 1
 "Settings for NERDTree
 let NERDTreeIgnore=['\.o$', '\~$', '$']
 
-"FuF Options
-let g:fuf_modesDisable = []
-let g:fuf_mrufile_maxItem = 400
-let g:fuf_mrucmd_maxItem = 400
-
 " Enable space error highlighting for portfiles
 let g:portfile_highlight_space_errors=1
 
@@ -140,47 +135,6 @@ nmap <Leader>bm :NERDTreeFromBookmark
 nmap <silent><leader>r :ToggleChangeView<CR>
 nmap <silent><leader>c :ToggleRaibowParenthesis<CR>
 nmap <silent> <Leader>ct :! ctags -R --c++-kinds=+p --fields=+iaS --extra=+q<cr>
-" FuF
-nnoremap <silent> <leader>ff     :FufFile<CR>
-nnoremap <silent> <leader>fj     :FufBuffer<CR>
-nnoremap <silent> <leader>fk     :FufFileWithCurrentBufferDir<CR>
-nnoremap <silent> <leader>fK     :FufFileWithFullCwd<CR>
-nnoremap <silent> <leader>fl     :FufCoverageFileChange<CR>
-nnoremap <silent> <leader>fL     :FufCoverageFileChange<CR>
-nnoremap <silent> <leader>f<C-l> :FufCoverageFileRegister<CR>
-nnoremap <silent> <leader>fd     :FufDirWithCurrentBufferDir<CR>
-nnoremap <silent> <leader>fD     :FufDirWithFullCwd<CR>
-nnoremap <silent> <leader>f<C-d> :FufDir<CR>
-nnoremap <silent> <leader>fn     :FufMruFile<CR>
-nnoremap <silent> <leader>fN     :FufMruFileInCwd<CR>
-nnoremap <silent> <leader>fm     :FufMruCmd<CR>
-nnoremap <silent> <leader>fu     :FufBookmarkFile<CR>
-nnoremap <silent> <leader>f<C-u> :FufBookmarkFileAdd<CR>
-vnoremap <silent> <leader>f<C-u> :FufBookmarkFileAddAsSelectedText<CR>
-nnoremap <silent> <leader>fi     :FufBookmarkDir<CR>
-nnoremap <silent> <leader>f<C-i> :FufBookmarkDirAdd<CR>
-nnoremap <silent> <leader>ft     :FufTag<CR>
-nnoremap <silent> <leader>fT     :FufTag!<CR>
-nnoremap <silent> <leader>f<C-]> :FufTagWithCursorWord!<CR>
-nnoremap <silent> <leader>f,     :FufBufferTag<CR>
-nnoremap <silent> <leader>f<     :FufBufferTag!<CR>
-vnoremap <silent> <leader>f,     :FufBufferTagWithSelectedText!<CR>
-vnoremap <silent> <leader>f<     :FufBufferTagWithSelectedText<CR>
-nnoremap <silent> <leader>f}     :FufBufferTagWithCursorWord!<CR>
-nnoremap <silent> <leader>f.     :FufBufferTagAll<CR>
-nnoremap <silent> <leader>f>     :FufBufferTagAll!<CR>
-vnoremap <silent> <leader>f.     :FufBufferTagAllWithSelectedText!<CR>
-vnoremap <silent> <leader>f>     :FufBufferTagAllWithSelectedText<CR>
-nnoremap <silent> <leader>f]     :FufBufferTagAllWithCursorWord!<CR>
-nnoremap <silent> <leader>fg     :FufTaggedFile<CR>
-nnoremap <silent> <leader>fG     :FufTaggedFile!<CR>
-nnoremap <silent> <leader>fo     :FufJumpList<CR>
-nnoremap <silent> <leader>fp     :FufChangeList<CR>
-nnoremap <silent> <leader>fq     :FufQuickfix<CR>
-nnoremap <silent> <leader>fy     :FufLine<CR>
-nnoremap <silent> <leader>fh     :FufHelp<CR>
-nnoremap <silent> <leader>fe     :FufEditDataFile<CR>
-nnoremap <silent> <leader>fr     :FufRenewCache<CR>
 " FuGitive
 nnoremap <silent><leader>gd :Gdiff<CR>
 nnoremap <silent><leader>gc :Gcommit -a<CR>
