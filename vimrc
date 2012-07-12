@@ -206,6 +206,13 @@ vmap <C-Up>   [egv
 nmap <C-Down> ]e
 imap <C-Down> <C-O><C-Down>
 vmap <C-Down> ]egv
+" Ctrl + Arrows: Indenting shortcuts
+nmap <C-Left>   <<
+imap <C-Left>   <C-O><C-Left>
+vmap <C-Left>   <gv
+nmap <C-Right>  >>
+imap <C-Right>  <C-O><C-Right>
+vmap <C-Right>  >gv
 " Arrow is for moving around splits
 nnoremap <Up>        <C-W>k
 nnoremap <Down>      <C-W>j
@@ -221,14 +228,11 @@ nnoremap <M-Up>      <C-W>_
 nnoremap <M-Down>    <C-W>=
 nnoremap <M-Left>    <C-W>=
 nnoremap <M-Right>   <C-W><Bar>
-
-" Indenting shortcuts
-nmap <C-Left>   <<
-imap <C-Left>   <C-O><C-Left>
-vmap <C-Left>   <gv
-nmap <C-Right>  >>
-imap <C-Right>  <C-O><C-Right>
-vmap <C-Right>  >gv
+" Shift + Alt + Arrow is for minimizing/maximizing splits
+nnoremap <S-M-Up>      <C-W>-
+nnoremap <S-M-Down>    <C-W>+
+nnoremap <S-M-Left>    <C-W><
+nnoremap <S-M-Right>   <C-W>>
 
 let snips_author = "Aljaž Srebrnič"
 
