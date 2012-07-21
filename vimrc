@@ -64,8 +64,6 @@ set laststatus=2	" Always show statusline
 set scrolloff=3		" Always keep 3 lines above/below cursor
 set undofile		" Save undo tree in file
 set undodir=~/.vim/undo//     " undo files
-"set visualbell          " don't beep
-"set noerrorbells	 " don't beep
 
 "folding settings
 set foldmethod=indent   "fold based on indent
