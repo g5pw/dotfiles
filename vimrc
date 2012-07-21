@@ -1,6 +1,20 @@
 set nocompatible
-"Include my plugins
+" Include VAM path
 set runtimepath+=~/.vim/vim-addons/vim-addon-manager
+
+fun MyPoolFun()
+    let d = vam#install#Pool()
+    let d['numbers.vim'] = { 'type' : 'git', 'url' : 'git://github.com/myusuf3/numbers.vim.git' }
+    let d['vim-indent-guides'] = { 'type' : 'git', 'url' : 'git://github.com/nathanaelkane/vim-indent-guides.git' }
+    let d['mpvim'] = { 'type' : 'svn', 'url' : 'http://svn.macports.org/repository/macports/contrib/mpvim/' }
+    let d['textobj-word-column.vim'] = { 'type' : 'git', 'url' : 'git://github.com/coderifous/textobj-word-column.vim.git' }
+    return d
+endf
+
+let g:vim_addon_manager = {}
+let g:vim_addon_manager.pool_fun = function('MyPoolFun')
+
+"Include my plugins
 call vam#ActivateAddons([
 	    \'snipmate-snippets',
 	    \'ctrlp', 'LustyExplorer', 'The_NERD_tree', 'ack',
@@ -11,13 +25,13 @@ call vam#ActivateAddons([
 	    \'vcscommand', 'fugitive', 'extradite',
 	    \'SudoEdit',
 	    \'FSwitch',
-	    \'tComment',
+	    \'tComment', 'closetag',
 	    \'cern_root', 'Markdown', 'mpvim',
 	    \'delimitMate', 'Rainbow_Parenthsis_Bundle',
 	    \'Syntastic', 'Powerline',
-	    \'changesPlugin', 'numbers.vim',
+	    \'changesPlugin', 'numbers.vim', 'vim-indent-guides',
 	    \'ZenCoding', 'visual-increment', 'surround',
-	    \'wmgraphviz',
+	    \'wmgraphviz', 'textobj-word-column.vim',
 	    \'Mustang2', 'wombat256', 'AnsiEsc',
 	    \'LustyJuggler'
 	    \], {'auto_install' : 0})
