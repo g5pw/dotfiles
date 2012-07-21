@@ -192,6 +192,7 @@ vmap <silent> <leader>mb !boxes -a l -d c -s 75<CR>
 nmap <silent> <leader>xb !!boxes -d c -r<CR>
 vmap <silent> <leader>xb !boxes -d c -r<CR>
 
+" CtrlP bindings
 nmap <silent> <Leader>t :CtrlP<CR>
 
 " Visual stuff
