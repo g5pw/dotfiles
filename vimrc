@@ -75,7 +75,7 @@ set foldlevel=1         "this is just what i use
 set backupcopy=yes
 
 set wildmenu
-set wildmode=list:longest
+set wildmode=longest,list:longest
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
@@ -89,7 +89,11 @@ set wildignore+=*.DS_Store?                      " OSX bullshit
 " Store swap files in fixed location, not current directory.
 set dir=~/.vim/swap//,/var/tmp//,/tmp//,.
 
-set completeopt=longest,preview
+" Disable vim intro message
+set shortmess+=I
+
+set complete=.,b,u,]
+set completeopt=menu,preview
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
