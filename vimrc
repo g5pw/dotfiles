@@ -2,7 +2,7 @@ set nocompatible
 " Include VAM path
 set runtimepath+=~/.vim/vim-addons/vim-addon-manager
 
-fun MyPoolFun()
+fun AddSources()
     let d = vam#install#Pool()
     let d['numbers.vim'] = { 'type' : 'git', 'url' : 'git://github.com/myusuf3/numbers.vim.git' }
     let d['vim-indent-guides'] = { 'type' : 'git', 'url' : 'git://github.com/nathanaelkane/vim-indent-guides.git' }
@@ -12,7 +12,7 @@ fun MyPoolFun()
 endf
 
 let g:vim_addon_manager = {}
-let g:vim_addon_manager.pool_fun = function('MyPoolFun')
+let g:vim_addon_manager.pool_fun = function('AddSources')
 
 "Include my plugins
 call vam#ActivateAddons([
