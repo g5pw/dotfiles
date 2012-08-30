@@ -41,3 +41,8 @@ export MP_svn=/opt/local/var/macports/sources/svn.macports.org/trunk/
 export ZDOTDIR=$HOME/.zsh
 
 fpath=($ZDOTDIR/functions $fpath)
+
+# Use GNU utils if possible
+if [[ -d /opt/local/libexec/gnubin/ ]]; then
+    path=(/opt/local/libexec/gnubin $path)
+fi
