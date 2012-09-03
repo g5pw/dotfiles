@@ -89,6 +89,10 @@ insert_sudo () { zle beginning-of-line; zle -U "sudo " }
 zle -N insert-sudo insert_sudo
 bindkey "^[s" insert-sudo
 
+insert_caffeinate () { zle beginning-of-line; zle -U "caffeinate " }
+zle -N insert-caffeinate insert_caffeinate
+bindkey "^[c" insert-caffeinate
+
 # Useful commands
 function rand() { exec $RANDOM % $1; }
 
