@@ -198,6 +198,16 @@ nnoremap <Leader>u :GundoToggle<CR>
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ve :e $MYVIMRC<CR>
 nmap <silent> <leader>vs :so $MYVIMRC<CR>
+augroup vimrcEx
+    autocmd!
+    autocmd FileType text setlocal textwidth=78
+    autocmd BufWritePost .vimrc source $MYVIMRC
+    autocmd BufReadPost *
+        \if line("'\"") > 1 && line("'\"") <= line("$") |
+        \   exe "normal! g`\"" |
+        \endif
+augroup END
+
 " YankRing
 nnoremap <silent> <leader>yr :YRShow<CR>
 nnoremap <silent> <leader>ys :YRSearch 
