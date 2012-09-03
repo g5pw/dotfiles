@@ -164,7 +164,7 @@ nmap <Space> za
 nmap <Leader><tab> :TScratch<cr>
 nmap <Leader>, :NERDTreeToggle<cr>
 nmap <Leader>. :TagbarToggle<CR>
-nmap <silent> <leader>/ :nohlsearch<CR>
+nmap <silent> <leader>/ :nohlsearch<CR>:echo 'Search highlight cleared'<CR>
 " Parse file with astyle
 nmap <silent> <Leader>as :%!astyle<CR>
 " NERDTree Bookmarks
