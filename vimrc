@@ -159,11 +159,6 @@ let g:Powerline_symbols = 'fancy'
 
 let g:extradite_showhash=1
 
-"Useful mappings
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
 " Toggle folds with space bar
 nmap <Space> za
 nmap <Leader><tab> :TScratch<cr>
