@@ -97,7 +97,7 @@ bindkey "^[c" insert-caffeinate
 function rand() { exec $RANDOM % $1; }
 
 # SCM-Breeze load
-[ -s "/Users/g5pw/.scm_breeze/scm_breeze.sh" ] && source "/Users/g5pw/.scm_breeze/scm_breeze.sh"
+[ -s /opt/local/share/scm_breeze/scm_breeze.sh ] && source /opt/local/share/scm_breeze/scm_breeze.sh
 
 #load more completions
 fpath=($ZDOTDIR/zsh-completions $fpath)
