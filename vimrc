@@ -247,6 +247,7 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 set pastetoggle=<F2>	"Disable auto indent when pasting
+au InsertLeave * set nopaste
 
 " Ctrl + Arrow is for moving text around and relies on vim-unimpaired by Tim Pope.
 nmap <C-Up>   [e
