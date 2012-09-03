@@ -123,6 +123,13 @@ set textwidth=79
 set formatoptions=qrn1
 set colorcolumn=85
 
+"Enable mouse support in terminal
+set mouse=a
+set ttymouse=xterm2
+
+" Enable context-aware superTab completions
+let g:SuperTabDefaultCompletionType = "context"
+
 " Enable Doxygen auto-load
 let g:load_doxygen_syntax=1
 
