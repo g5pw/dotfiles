@@ -110,6 +110,6 @@ fpath=($ZDOTDIR/zsh-completions $fpath)
 
 # fish-like history search
 [ -d $ZDOTDIR/zsh-history-substring-search/ ] && source $ZDOTDIR/zsh-history-substring-search/zsh-history-substring-search.zsh
-export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=203,fg=75,bold'
+export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=220,bold'
 
 cowsay -f "$(ls /opt/local/share/cowsay/cows/ | unsort 2>/dev/null | head -1)" "$(fortune -s)"
