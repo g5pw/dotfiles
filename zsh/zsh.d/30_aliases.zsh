@@ -23,6 +23,7 @@ alias memacsclient='/Applications/MacPorts/Emacs.app/Contents/MacOS/bin/emacscli
 alias mkdir='nocorrect mkdir'
 alias mv='nocorrect mv -i'
 alias msp430-cgdb='cgdb -d msp430-gdb'
+alias octave='octave -q'
 alias pi='portindex'
 alias port='noglob caffeinate port'
 alias prot="port" #Fix annoying typo alias
