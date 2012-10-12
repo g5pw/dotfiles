@@ -1,6 +1,3 @@
-## Treat aliases as separate comands
-setopt complete_aliases
-
 ## set options (setopt) ####
 ############################
 # In the following list, options set by default in all emulations are marked
@@ -134,7 +131,7 @@ setopt clobber
 # Prevents aliases on the command line from being internally substituted
 # before completion is attempted.  The effect is to make the alias a
 # distinct command for completion purposes.
-setopt NO_complete_aliases
+setopt complete_aliases
 
 # CORRECT (-0)
 # Try to correct the spelling of commands.
