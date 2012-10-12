@@ -1,0 +1,3 @@
+function aping() {
+    ping $1 | awk -F '[= ]' '/time=/{t=$((NF-1));f=3000-14*log(t^27);c="play -qn synth pl " f " fade 0.1 1 &";print $0;system(c)}'
+}
