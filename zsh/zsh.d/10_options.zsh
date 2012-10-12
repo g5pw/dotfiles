@@ -1,3 +1,6 @@
+## Treat aliases as separate comands
+setopt complete_aliases
+
 ## set options (setopt) ####
 ############################
 # In the following list, options set by default in all emulations are marked
@@ -477,48 +480,3 @@ setopt rm_star_wait
 # Use the zsh line editor.  Set by default in interactive shells connected to
 # a terminal.
 #setopt NO_zle
-alwaystoend
-autocd
-autonamedirs
-autopushd
-autoresume
-braceccl
-cdablevars
-completeinword
-correct
-extendedglob
-globcomplete
-histexpiredupsfirst
-histfindnodups
-histignorealldups
-histignoredups
-histignorespace
-histnofunctions
-histnostore
-histreduceblanks
-histsavenodups
-ignoreeof
-incappendhistory
-interactive
-interactivecomments
-nolistambiguous
-nolistbeep
-listpacked
-login
-longlistjobs
-magicequalsubst
-markdirs
-monitor
-pathdirs
-posixbuiltins
-printeightbit
-promptsubst
-pushdignoredups
-pushdsilent
-pushdtohome
-rcexpandparam
-rematchpcre
-rmstarwait
-sharehistory
-shinstdin
-zle
