@@ -220,6 +220,8 @@ filetype plugin indent on
 autocmd filetype python set expandtab
 autocmd FileType c,c++ let b:delimitMate_matchpairs = "(:),{:},[:],/*:*/"
 
+autocmd FileType octave setlocal keywordprg=info\ octave\ --vi-keys\ --index-search
+
 " Save on focus lost.
 autocmd FocusLost * :wa
 
