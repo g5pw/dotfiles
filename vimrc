@@ -200,8 +200,7 @@ nnoremap <leader>l :set list!<CR>
 " Gundo maps
 nnoremap <Leader>u :GundoToggle<CR>
 " Quickly edit/reload the vimrc file
-nmap <silent> <leader>ve :e $MYVIMRC<CR>
-nmap <silent> <leader>vs :so $MYVIMRC<CR>
+nnoremap <silent> <leader>ve :e $MYVIMRC<CR>
 augroup vimrcEx
     autocmd!
     autocmd FileType text setlocal textwidth=78
