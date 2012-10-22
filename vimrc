@@ -164,19 +164,19 @@ let g:Powerline_symbols = 'fancy'
 let g:extradite_showhash=1
 
 " Toggle folds with space bar
-nmap <Space> za
-nmap <Leader><tab> :TScratch<cr>
-nmap <Leader>, :NERDTreeToggle<cr>
-nmap <Leader>. :TagbarToggle<CR>
-nmap <silent> <leader>/ :nohlsearch<CR>:echo 'Search highlight cleared'<CR>
+nnoremap <Space> za
+nnoremap <Leader><tab> :TScratch<cr>
+nnoremap <Leader>, :NERDTreeToggle<cr>
+nnoremap <Leader>. :TagbarToggle<CR>
+nnoremap <silent> <leader>/ :nohlsearch<CR>:echo 'Search highlight cleared'<CR>
 " Parse file with astyle
-nmap <silent> <Leader>as :%!astyle<CR>
+nnoremap <silent> <Leader>as :%!astyle<CR>
 " NERDTree Bookmarks
-nmap <Leader>bm :NERDTreeFromBookmark 
+nnoremap <Leader>bm :NERDTreeFromBookmark 
+nnoremap <silent><leader>r :ToggleChangeView<CR>
+nnoremap <silent><leader>c :ToggleRaibowParenthesis<CR>
 " Parse dir with ctags
-nmap <silent><leader>r :ToggleChangeView<CR>
-nmap <silent><leader>c :ToggleRaibowParenthesis<CR>
-nmap <silent> <Leader>ct :! ctags -R --c++-kinds=+p --fields=+iaS --extra=+q<cr>
+nnoremap <silent> <Leader>ct :! ctags -R --c++-kinds=+p --fields=+iaS --extra=+q<cr>
 " FuGitive
 nnoremap <silent><leader>gd :Gdiff<CR>
 nnoremap <silent><leader>gc :Gcommit -a<CR>
@@ -190,13 +190,13 @@ nnoremap <silent><leader>g1 :w <bar> :Gdiff HEAD~1<CR>
 " Extradite options
 nnoremap <silent><leader>ge :Extradite<CR>
 " FShere
-nmap <silent> <leader>h		:FSHere<CR>
+nnoremap <silent> <leader>h	:FSHere<CR>
 " LustyJuggler
-nmap <silent> <leader>j :LustyJuggler<CR>
+nnoremap <silent> <leader>j :LustyJuggler<CR>
 " TaskList
-nmap <Leader>k <Plug>TaskList
+nnoremap <Leader>k <Plug>TaskList
 " Shortcut to rapidly toggle `set list`
-nmap <leader>l :set list!<CR>
+nnoremap <leader>l :set list!<CR>
 " Gundo maps
 nnoremap <Leader>u :GundoToggle<CR>
 " Quickly edit/reload the vimrc file
@@ -225,15 +225,15 @@ au FileType c,c++ let b:delimitMate_matchpairs = "(:),{:},[:],/*:*/"
 au FocusLost * :wa
 
 " boxes integration
-nmap <silent> <leader>bf !!boxes -a l -d tjc -s 75<CR>
-vmap <silent> <leader>bf !boxes -a l -d tjc -s 75<CR>
-nmap <silent> <leader>mb !!boxes -a l -d c -s 75<CR>
-vmap <silent> <leader>mb !boxes -a l -d c -s 75<CR>
-nmap <silent> <leader>xb !!boxes -d c -r<CR>
-vmap <silent> <leader>xb !boxes -d c -r<CR>
+nnoremap <silent> <leader>bf !!boxes -a l -d tjc -s 75<CR>
+vnoremap <silent> <leader>bf !boxes -a l -d tjc -s 75<CR>
+nnoremap <silent> <leader>mb !!boxes -a l -d c -s 75<CR>
+vnoremap <silent> <leader>mb !boxes -a l -d c -s 75<CR>
+nnoremap <silent> <leader>xb !!boxes -d c -r<CR>
+vnoremap <silent> <leader>xb !boxes -d c -r<CR>
 
 " CtrlP bindings
-nmap <silent> <Leader>t :CtrlP<CR>
+nnoremap <silent> <Leader>t :CtrlP<CR>
 
 " Visual stuff
 if has("gui_running")
