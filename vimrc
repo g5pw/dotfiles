@@ -81,13 +81,13 @@ set history=1000        " remember more commands and search history
 set undolevels=1000     " use many levels of undo
 set title               " change the terminal's title
 set laststatus=2	" Always show statusline
-set scrolloff=3		" Always keep 3 lines above/below cursor
+set scrolloff=5		" Always keep 3 lines above/below cursor
 set undofile		" Save undo tree in file
 set undodir=~/.vim/undo//     " undo files
 
 "folding settings
 set foldmethod=indent   "fold based on indent
-set foldnestmax=10      "deepest fold is 10 levels
+set foldnestmax=4       "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
 
