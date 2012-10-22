@@ -102,3 +102,6 @@ bindkey "^I" complete-with-dots
 
 # Complete word and try to complete again
 bindkey -M menuselect '^o' accept-and-infer-next-history
+
+# Custom completions:
+compdef sport=port
