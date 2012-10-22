@@ -235,6 +235,14 @@ vnoremap <silent> <leader>xb !boxes -d c -r<CR>
 " CtrlP bindings
 nnoremap <silent> <Leader>t :CtrlP<CR>
 
+" Cscope command abbreviations
+cnoreabbrev csa cs add
+cnoreabbrev csf cs find
+cnoreabbrev csk cs kill
+cnoreabbrev csr cs reset
+cnoreabbrev css cs show
+cnoreabbrev csh cs help
+
 " Visual stuff
 if has("gui_running")
     set ttyfast
