@@ -218,10 +218,10 @@ nnoremap <silent> <leader>ys :YRSearch
 filetype plugin indent on
 "Filetype-dependant stuff
 autocmd filetype python set expandtab
-au FileType c,c++ let b:delimitMate_matchpairs = "(:),{:},[:],/*:*/"
+autocmd FileType c,c++ let b:delimitMate_matchpairs = "(:),{:},[:],/*:*/"
 
 " Save on focus lost.
-au FocusLost * :wa
+autocmd FocusLost * :wa
 
 " boxes integration
 nnoremap <silent> <leader>bf !!boxes -a l -d tjc -s 75<CR>
@@ -258,7 +258,7 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 set pastetoggle=<F2>	"Disable auto indent when pasting
-au InsertLeave * set nopaste
+autocmd InsertLeave * set nopaste
 
 " Ctrl + Arrow is for moving text around and relies on vim-unimpaired by Tim Pope.
 nmap <C-Up>   [e
