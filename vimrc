@@ -282,7 +282,7 @@ nnoremap <M-Up>      <C-W>_
 nnoremap <M-Down>    <C-W>=
 nnoremap <M-Left>    <C-W>=
 nnoremap <M-Right>   <C-W><Bar>
-" Shift + Alt + Arrow is for minimizing/maximizing splits
+" Shift + Alt + Arrow is for resizing splits
 nnoremap <S-M-Up>      <C-W>-
 nnoremap <S-M-Down>    <C-W>+
 nnoremap <S-M-Left>    <C-W><
