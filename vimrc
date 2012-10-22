@@ -21,7 +21,7 @@ fun! SetupVAM()
   " Add custom sources
   fun! AddSources()
       let d = vam#install#Pool()
-      let d['mpvim']			= { 'type' : 'svn', 'url' : 'http://svn.macports.org/repository/macports/contrib/mpvim/' }
+      let d['mpvim'] = { 'type' : 'svn', 'url' : 'http://svn.macports.org/repository/macports/contrib/mpvim/' }
       return d
   endf
 
