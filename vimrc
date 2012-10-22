@@ -238,11 +238,11 @@ nnoremap <silent> <Leader>t :CtrlP<CR>
 " Visual stuff
 if has("gui_running")
     set ttyfast
-    colorscheme wombat256mod
+    colorscheme Tomorrow-Night
 endif
 
 if &t_Co >= 256
-    colorscheme Mustang
+    colorscheme wombat256mod
 endif
 
 if &t_Co > 2 || has("gui_running")
