@@ -127,6 +127,10 @@ set colorcolumn=85
 set mouse=a
 set ttymouse=xterm2
 
+"Always use cscope
+set cscopetag
+set cscopeverbose
+
 " Enable context-aware superTab completions
 let g:SuperTabDefaultCompletionType = "context"
 
