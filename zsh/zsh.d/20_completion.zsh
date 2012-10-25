@@ -37,7 +37,7 @@ zstyle ':completion::expand:*' tag-order all-expansions
 zstyle ':completion:*:functions' ignored-patterns '_*'
 
 ## filename suffixes to ignore during completion (except after rm command)
-zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns '*?.(o|c~|old|pro|zwc)' '*~'
+zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns '*?.(c~|old|zwc)' '*~'
 
 
 # Disable named-directories completion
