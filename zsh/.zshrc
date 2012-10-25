@@ -99,9 +99,6 @@ function rand() { exec $RANDOM % $1; }
 # SCM-Breeze load
 [ -s /opt/local/share/scm_breeze/scm_breeze.sh ] && source /opt/local/share/scm_breeze/scm_breeze.sh
 
-#load more completions
-fpath=($ZDOTDIR/zsh-completions $fpath)
-
 # load ZAW
 [ -d $ZDOTDIR/zaw/ ] && source $ZDOTDIR/zaw/zaw.zsh
 

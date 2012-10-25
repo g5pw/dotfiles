@@ -40,7 +40,9 @@ export MP_svn=/opt/local/var/macports/sources/svn.macports.org/trunk/
 # Set ZSH home dir
 export ZDOTDIR=$HOME/.zsh
 
-fpath=($ZDOTDIR/functions $fpath)
+#load my function and more completions
+fpath=($ZDOTDIR/functions $ZDOTDIR/zsh-completions/src $fpath)
+
 
 # Use GNU utils if possible
 if [[ -d /opt/local/libexec/gnubin/ ]]; then
