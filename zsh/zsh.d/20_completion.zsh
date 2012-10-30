@@ -54,6 +54,7 @@ zstyle ':completion:*:cd:*' tag-order local-directories named-directories path-d
 ## on processes completion complete all user processes
 zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
+zstyle ':completion:*:*:kill:*:jobs' list-colors 'no=01;31'
 zstyle ':completion:*:*:*:*:processes' force-list always
 
 # Don't complete stuff already on the line
