@@ -9,7 +9,7 @@ zstyle ':completion:*' file-sort modification reverse
 zstyle ':completion:*:ignored:*' single-ignored menu
 
 # prefix complete or approximate only
-zstyle ':completion:*:prefix:*' completer _complete _approximate
+zstyle ':completion:*:prefix:*' completer _complete _approximate:-many
 
 # Open the select menu if there are more than 3 completions
 zstyle ':completion:*:default' menu select=3 yes
