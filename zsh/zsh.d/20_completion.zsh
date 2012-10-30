@@ -4,6 +4,12 @@ zstyle ':completion:*' completer _expand _complete _correct _approximate _prefix
 # Sort completion list by name
 zstyle ':completion:*' file-sort modification reverse
 
+# If a single completion is found, present a menu instead of inserting it
+zstyle ':completion:*:ignored:*' single-ignored menu
+
+# prefix complete or approximate only
+zstyle ':completion:*:prefix:*' completer _complete _approximate
+
 # Open the select menu if there are more than 3 completions
 zstyle ':completion:*:default' menu select=3 yes
 
