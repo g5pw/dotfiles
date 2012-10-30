@@ -25,8 +25,9 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:
 zstyle ':completion:*' auto-description 'specify: %d'
 
 ## allow one error for every three characters typed in approximate completer
-zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX+$#SUFFIX)/3 )) numeric )'
-zstyle ':completion::approximate*:*' prefix-needed false
+zstyle ':completion:*:approximate-one:*' max-errors 1
+zstyle -e ':completion:*:approximate-many:*' max-errors 'reply=( $(( ($#PREFIX+$#SUFFIX)/3 )) numeric )'
+zstyle ':completion:*:approximate*:*' prefix-needed false
 
 # String to separate options from description
 zstyle ':completion:*' list-separator '#'
