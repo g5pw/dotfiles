@@ -49,7 +49,7 @@ zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns '*?.(c~|old|zwc)' '*~'
 
 
 # Disable named-directories completion
-zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
+zstyle ':completion:*:cd:*' tag-order local-directories named-directories path-directories directory-stack
 
 ## on processes completion complete all user processes
 zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
