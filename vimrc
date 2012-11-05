@@ -298,6 +298,18 @@ nnoremap <S-M-Down>    <C-W>+
 nnoremap <S-M-Left>    <C-W><
 nnoremap <S-M-Right>   <C-W>>
 
+" text & mutt files
+autocmd BufNewFile,BufRead /tmp/mutt*,/tmp/cvs*,*.txt set tw=72 noai noshowmatch
+autocmd BufNewFile,BufRead /tmp/mutt*,/tmp/cvs*,*.txt setlocal spell spelllang=en_us
+autocmd BufNewFile,BufRead /tmp/mutt*,/tmp/cvs*,*.txt syntax off
+
+" git commits
+autocmd BufNewFile,BufRead *.git/COMMIT_EDITMSG set tw=72 noai noshowmatch
+autocmd BufNewFile,BufRead *.git/COMMIT_EDITMSG setlocal spell spelllang=en_us
+
+" f7 toggles spelling on/off
+nn <F7> :setlocal spell! spell?<CR>
+
 let snips_author = "Aljaž Srebrnič"
 
 set guifont=Menlo\ for\ Powerline:h12
