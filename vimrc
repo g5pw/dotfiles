@@ -1,5 +1,6 @@
 set nocompatible
 
+" VAM setup " -------------------------------------------------------- {{{
 fun! SetupVAM()
   " YES, you can customize this vam_install_path path and everything still works!
   let vam_install_path = expand('$HOME') . '/.vim/vim-addons'
@@ -29,10 +30,7 @@ fun! SetupVAM()
   let g:vim_addon_manager.pool_fun = function('AddSources')
 
 
-  " Example drop git sources unless git is in PATH. Same plugins can
-  " be installed form www.vim.org. Lookup MergeSources to get more control
-  " let g:vim_addon_manager['drop_git_sources'] = !executable('git')
-  
+" Activated plugins -------------------------------------------------- {{{
   call vam#ActivateAddons([
 	      \'snipmate-snippets',
 	      \'ctrlp', 'LustyExplorer', 'The_NERD_tree', 'ack',
@@ -54,8 +52,13 @@ fun! SetupVAM()
 	      \'Mustang2', 'wombat256', 'AnsiEsc',
 	      \'LustyJuggler'
 	      \], {'auto_install' : 0})
+" }}}
 endf
 call SetupVAM()
+
+" }}}
+
+" Basic options ------------------------------------------------------ {{{
 
 "Set Mapleader
 let g:mapleader = ","
@@ -86,15 +89,11 @@ set scrolloff=5		" Always keep 3 lines above/below cursor
 set undofile		" Save undo tree in file
 set undodir=~/.vim/undo//     " undo files
 
-"folding settings
-set foldmethod=indent   "fold based on indent
-set foldnestmax=4       "deepest fold is 10 levels
-set nofoldenable        "dont fold by default
-set foldlevel=1         "this is just what i use
 
 " Retain custom icons & stuff
 set backupcopy=yes
 
+" WildIgnore menu {{{
 set wildmenu
 set wildmode=longest,list:longest
 set wildignore=*.swp,*.bak,*.pyc,*.class
@@ -106,6 +105,15 @@ set wildignore+=*.pyc                            " Python byte code
 set wildignore+=*.spl                            " compiled spelling word lists
 set wildignore+=*.sw?                            " Vim swap files
 set wildignore+=*.DS_Store?                      " OSX bullshit
+" }}}
+
+" Folding settings {{{
+set foldmethod=syntax   "fold based on indent
+set foldnestmax=4       "deepest fold is 10 levels
+set foldenable          "fold by default
+set foldlevel=1         "this is just what i use
+
+" }}}
 
 " Store swap files in fixed location, not current directory.
 set dir=~/.vim/swap//,/var/tmp//,/tmp//,.
@@ -131,6 +139,9 @@ set ttymouse=xterm2
 "Always use cscope
 set cscopetag
 set cscopeverbose
+"}}}
+
+" Plugin settings ---------------------------------------------------- {{{
 
 " Enable context-aware superTab completions
 let g:SuperTabDefaultCompletionType = "context"
@@ -164,6 +175,9 @@ let g:Powerline_symbols = 'fancy'
 
 let g:extradite_showhash=1
 
+" }}}
+
+" Mappings ----------------------------------------------------------- {{{
 " Toggle folds with space bar
 nnoremap <Space> za
 nnoremap <Leader><tab> :TScratch<cr>
@@ -225,6 +239,8 @@ autocmd FileType octave setlocal keywordprg=info\ octave\ --vi-keys\ --index-sea
 
 " Save on focus lost.
 autocmd FocusLost * :wa
+" f7 toggles spelling on/off
+nnoremap <F7> :setlocal spell! spell?<CR>
 
 " boxes integration
 nnoremap <silent> <leader>bf !!boxes -a l -d tjc -s 75<CR>
@@ -298,6 +314,10 @@ nnoremap <S-M-Down>    <C-W>+
 nnoremap <S-M-Left>    <C-W><
 nnoremap <S-M-Right>   <C-W>>
 
+" Mappings end }}}
+
+" Autocmds ----------------------------------------------------------- {{{
+" }}}
 " text & mutt files
 autocmd BufNewFile,BufRead /tmp/mutt*,/tmp/cvs*,*.txt set tw=72 noai noshowmatch
 autocmd BufNewFile,BufRead /tmp/mutt*,/tmp/cvs*,*.txt setlocal spell spelllang=en_us
@@ -306,9 +326,8 @@ autocmd BufNewFile,BufRead /tmp/mutt*,/tmp/cvs*,*.txt syntax off
 " git commits
 autocmd BufNewFile,BufRead *.git/COMMIT_EDITMSG set tw=72 noai noshowmatch
 autocmd BufNewFile,BufRead *.git/COMMIT_EDITMSG setlocal spell spelllang=en_us
+" Autocmds end }}}
 
-" f7 toggles spelling on/off
-nn <F7> :setlocal spell! spell?<CR>
 
 let snips_author = "Aljaž Srebrnič"
 
