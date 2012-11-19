@@ -39,7 +39,7 @@ fun! SetupVAM()
 	      \'OmniCppComplete', 'Tagbar', 'github:ervandew/supertab',
 	      \'github:maxbrunsfeld/vim-yankstack', 'matchit.zip', 'Gundo',
 	      \'vcscommand', 'fugitive', 'extradite',
-	      \'SudoEdit',
+	      \'SudoEdit', 'Clam',
 	      \'FSwitch', 'github:skammer/vim-css-color',
 	      \'tComment', 'ragtag', 'github:adinapoli/vim-markmultiple',
 	      \'cern_root', 'Markdown', 'mpvim', 'github:hail2u/vim-css3-syntax', 'vim-dokuwiki', 'factor', 'octave%3600', 'rust',
