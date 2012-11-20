@@ -89,6 +89,13 @@ set scrolloff=5		" Always keep 3 lines above/below cursor
 set undofile		" Save undo tree in file
 set undodir=~/.vim/undo//     " undo files
 
+set splitright
+set fillchars=diff:⣿,vert:│
+set autowrite
+set autoread
+
+" Don't try to highlight lines longer than 800 characters.
+set synmaxcol=800
 
 " Retain custom icons & stuff
 set backupcopy=yes
