@@ -104,6 +104,7 @@ set backupcopy=yes
 set wildmenu
 set wildmode=longest,list:longest
 set wildignore=*.swp,*.bak,*.pyc,*.class
+set wildignore+=.hg,.git,.svn
 set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
 set wildignore+=*.luac                           " Lua byte code
