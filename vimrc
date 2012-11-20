@@ -174,7 +174,7 @@ let g:SuperTabDefaultCompletionType = "context"
 " Enable Doxygen auto-load
 let g:load_doxygen_syntax=1
 
-"TagList options and maps
+"Tagbar options and maps
 let tagbar_autoclose = 1
 let tagbar_autofocus = 1
 let g:tagbar_singleclick = 1
@@ -196,6 +196,7 @@ let g:yankring_manual_clipboard_check = 0
 " Set Syntastic style
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 
+" Set Powerlyne style
 let g:Powerline_symbols = 'fancy'
 
 let g:extradite_showhash=1
