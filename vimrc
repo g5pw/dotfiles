@@ -204,6 +204,9 @@ let g:extradite_showhash=1
 " }}}
 
 " Mappings ----------------------------------------------------------- {{{
+" Made D behave
+nnoremap D d$
+
 " Toggle folds with space bar
 nnoremap <Space> za
 nnoremap <Leader><tab> :TScratch<cr>
@@ -239,32 +242,13 @@ nnoremap <Leader>k <Plug>TaskList
 " Shortcut to rapidly toggle `set list`
 nnoremap <leader>l :set list!<CR>
 " Gundo maps
-nnoremap <Leader>u :GundoToggle<CR>
-" Quickly edit/reload the vimrc file
+nnoremap <F5> :GundoToggle<CR>
+" Quickly edit the vimrc file
 nnoremap <silent> <leader>ve :e $MYVIMRC<CR>
-augroup vimrcEx
-    autocmd!
-    autocmd FileType text setlocal textwidth=78
-    autocmd BufWritePost .vimrc source $MYVIMRC
-    autocmd BufReadPost *
-        \if line("'\"") > 1 && line("'\"") <= line("$") |
-        \   exe "normal! g`\"" |
-        \endif
-augroup END
-
 " YankRing
 nnoremap <silent> <leader>yr :YRShow<CR>
 nnoremap <silent> <leader>ys :YRSearch 
 
-filetype plugin indent on
-"Filetype-dependant stuff
-autocmd filetype python set expandtab
-autocmd FileType c,c++ let b:delimitMate_matchpairs = "(:),{:},[:],/*:*/"
-
-autocmd FileType octave setlocal keywordprg=info\ octave\ --vi-keys\ --index-search
-
-" Save on focus lost.
-autocmd FocusLost * :wa
 " f7 toggles spelling on/off
 nnoremap <F7> :setlocal spell! spell?<CR>
 
@@ -286,24 +270,6 @@ cnoreabbrev csk cs kill
 cnoreabbrev csr cs reset
 cnoreabbrev css cs show
 cnoreabbrev csh cs help
-
-" Visual stuff
-if has("gui_running")
-    set ttyfast
-    colorscheme Tomorrow-Night
-endif
-
-if &t_Co >= 256
-    colorscheme wombat256mod
-endif
-
-if &t_Co > 2 || has("gui_running")
-    " switch syntax highlighting on, when the terminal has colors
-    syntax on
-endif
-
-set pastetoggle=<F2>	"Disable auto indent when pasting
-autocmd InsertLeave * set nopaste
 
 " Ctrl + Arrow is for moving text around and relies on vim-unimpaired by Tim Pope.
 nmap <C-Up>   [e
@@ -343,7 +309,178 @@ nnoremap <S-M-Right>   <C-W>>
 " Mappings end }}}
 
 " Autocmds ----------------------------------------------------------- {{{
+autocmd FileType c,c++ let b:delimitMate_matchpairs = "(:),{:},[:],/*:*/"
+autocmd FileType c setlocal foldmethod=marker foldmarker={,}
+
+" Auto-reload vimrc on save
+augroup vimrcEx
+    autocmd!
+    autocmd FileType text setlocal textwidth=78
+    autocmd BufWritePost .vimrc source $MYVIMRC
+    autocmd BufReadPost *
+        \if line("'\"") > 1 && line("'\"") <= line("$") |
+        \   exe "normal! g`\"" |
+        \endif
+augroup END
+
+" CSS and LessCSS (from sjl) {{{
+augroup ft_css
+    au!
+
+    au BufNewFile,BufRead *.less setlocal filetype=less
+
+    au Filetype less,css setlocal foldmethod=marker
+    au Filetype less,css setlocal foldmarker={,}
+    au Filetype less,css setlocal omnifunc=csscomplete#CompleteCSS
+    au Filetype less,css setlocal iskeyword+=-
+
+    " Use <leader>S to sort properties.  Turns this:
+    "
+    "     p {
+    "         width: 200px;
+    "         height: 100px;
+    "         background: red;
+    "
+    "         ...
+    "     }
+    "
+    " into this:
+
+    "     p {
+    "         background: red;
+    "         height: 100px;
+    "         width: 200px;
+    "
+    "         ...
+    "     }
+    au BufNewFile,BufRead *.less,*.css nnoremap <buffer> <localleader>S ?{<CR>jV/\v^\s*\}?$<CR>k:sort<CR>:noh<CR>
+
+    " Make {<cr> insert a pair of brackets in such a way that the cursor is correctly
+    " positioned inside of them AND the following code doesn't get unfolded.
+    au BufNewFile,BufRead *.less,*.css inoremap <buffer> {<cr> {}<left><cr><space><space><space><space>.<cr><esc>kA<bs>
+augroup END
 " }}}
+" Haskell {{{
+augroup ft_haskell
+    au!
+    au BufEnter *.hs compiler ghc
+augroup END
+
+" }}}
+" HTML and HTMLDjango {{{
+let g:html_indent_tags = ['p', 'li']
+
+augroup ft_html
+    au!
+
+    au BufNewFile,BufRead *.html setlocal filetype=htmldjango
+    au FileType html,jinja,htmldjango setlocal foldmethod=manual
+
+    " Use <localleader>f to fold the current tag.
+    au FileType html,jinja,htmldjango nnoremap <buffer> <localleader>f Vatzf
+
+    " Use <localleader>t to fold the current templatetag.
+    au FileType html,jinja,htmldjango nmap <buffer> <localleader>t viikojozf
+
+    " Indent tag
+    au FileType html,jinja,htmldjango nnoremap <buffer> <localleader>= Vat=
+
+    " Django tags
+    au FileType jinja,htmldjango inoremap <buffer> <c-t> {%<space><space>%}<left><left><left>
+
+    " Django variables
+    au FileType jinja,htmldjango inoremap <buffer> <c-f> {{<space><space>}}<left><left><left>
+augroup END
+
+" }}}
+" Java {{{
+augroup ft_java
+    au!
+
+    au FileType java setlocal foldmethod=marker
+    au FileType java setlocal foldmarker={,}
+augroup END
+
+" }}}
+" Javascript {{{
+augroup ft_javascript
+    au!
+
+    au FileType javascript setlocal foldmethod=marker
+    au FileType javascript setlocal foldmarker={,}
+
+    " Make {<cr> insert a pair of brackets in such a way that the cursor is correctly
+    " positioned inside of them AND the following code doesn't get unfolded.
+    au Filetype javascript inoremap <buffer> {<cr> {}<left><cr><space><space><space><space>.<cr><esc>kA<bs>
+augroup END
+
+" }}}
+" Lisp {{{
+augroup ft_lisp
+    au!
+    au FileType lisp call TurnOnLispFolding()
+augroup END
+
+" }}}
+" Markdown {{{
+augroup ft_markdown
+    au!
+
+    au BufNewFile,BufRead *.m*down setlocal filetype=markdown
+
+    " Use <localleader>1/2/3 to add headings.
+    au Filetype markdown nnoremap <buffer> <localleader>1 yypVr=:redraw<cr>
+    au Filetype markdown nnoremap <buffer> <localleader>2 yypVr-:redraw<cr>
+    au Filetype markdown nnoremap <buffer> <localleader>3 mzI###<space>`zllll <ESC>
+augroup END
+
+" }}}
+" Mercurial {{{
+augroup ft_mercurial
+    au!
+
+    au BufNewFile,BufRead *hg-editor-*.txt setlocal filetype=hgcommit
+augroup END
+" }}}
+" Python {{{
+augroup ft_python
+    au!
+    au FileType python set expandtab
+
+    au FileType python setlocal define=^\s*\\(def\\\\|class\\)
+    au FileType man nnoremap <buffer> <cr> :q<cr>
+
+    " Jesus, Python.  Five characters of punctuation for a damn string?
+    au FileType python inoremap <buffer> <c-g> _(u'')<left><left>
+
+    au FileType python inoremap <buffer> <c-b> """"""<left><left><left>
+augroup END
+
+" }}}
+" Ruby {{{
+augroup ft_ruby
+    au!
+    au Filetype ruby setlocal foldmethod=syntax
+augroup END
+
+" }}}
+" Vim {{{
+augroup ft_vim
+    au FileType vim setlocal foldmethod=marker
+    au FileType help setlocal textwidth=78
+    au BufWinEnter *.txt if &ft == 'help' | wincmd L | endif
+augroup END
+
+" }}}
+
+" Save on focus lost.
+autocmd FocusLost * :silent! :wall
+
+" Resize splits when the window is resized
+autocmd VimResized * :wincmd =
+
+autocmd InsertLeave * set nopaste
+
 " text & mutt files
 autocmd BufNewFile,BufRead /tmp/mutt*,/tmp/cvs*,*.txt set tw=72 noai noshowmatch
 autocmd BufNewFile,BufRead /tmp/mutt*,/tmp/cvs*,*.txt setlocal spell spelllang=en_us
@@ -354,6 +491,22 @@ autocmd BufNewFile,BufRead *.git/COMMIT_EDITMSG set tw=72 noai noshowmatch
 autocmd BufNewFile,BufRead *.git/COMMIT_EDITMSG setlocal spell spelllang=en_us
 " Autocmds end }}}
 
+" Visual stuff
+if has("gui_running")
+    set ttyfast
+    colorscheme Tomorrow-Night
+endif
+
+if &t_Co >= 256
+    colorscheme wombat256mod
+endif
+
+if &t_Co > 2 || has("gui_running")
+    " switch syntax highlighting on, when the terminal has colors
+    syntax on
+endif
+
+set pastetoggle=<F2>	"Disable auto indent when pasting
 
 let snips_author = "Aljaž Srebrnič"
 
