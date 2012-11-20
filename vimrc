@@ -64,6 +64,8 @@ call SetupVAM()
 let g:mapleader = ","
 let mapleader = ","
 
+filetype plugin indent on
+set encoding=utf-8
 set showmatch		" When a bracket is inserted, briefly jump to the matching one.
 set hidden	  	" do not close buffers, but hide them!
 set autoindent    	" always set autoindenting on
@@ -146,16 +148,17 @@ set dir=~/.vim/swap//,/var/tmp//,/tmp//,.
 " Disable vim intro message
 set shortmess+=I
 
-set complete=.,b,u,]
+set complete=.,w,b,u,t
 set completeopt=menu,preview
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
+set showbreak=↪
 
 set wrap
-set textwidth=79
+set textwidth=80
 set formatoptions=qrn1
-set colorcolumn=85
+set colorcolumn=80
 
 "Enable mouse support in terminal
 set mouse=a
