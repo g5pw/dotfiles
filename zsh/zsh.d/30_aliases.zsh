@@ -43,6 +43,7 @@ alias z='$EDITOR $ZDOTDIR/.zshrc;src'
 alias zmv="zmv -wM"
 alias zcp="zmv -wC"
 alias zln="zmv -wL"
+alias wchat="weechat-curses"
 
 ## global aliases, this is not good but it's useful
 alias -g G='|grep'
