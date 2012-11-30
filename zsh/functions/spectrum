@@ -15,5 +15,5 @@ FX=(
 
 for color in {000..255}; do
     FG[$color]="%{[38;5;${color}m%}"
-    BG[$color]="%}[48;5;${color}m%}"
+    BG[$color]="%{[48;5;${color}m%}"
 done
