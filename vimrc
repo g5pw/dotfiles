@@ -320,7 +320,7 @@ autocmd FileType c,c++ let b:delimitMate_matchpairs = "(:),{:},[:],/*:*/"
 augroup vimrcEx
     autocmd!
     autocmd FileType text setlocal textwidth=78
-    autocmd BufWritePost .vimrc source $MYVIMRC
+    autocmd BufWritePost .vimrc source $HOME/.vimrc
     autocmd BufReadPost *
         \if line("'\"") > 1 && line("'\"") <= line("$") |
         \   exe "normal! g`\"" |
