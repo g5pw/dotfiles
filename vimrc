@@ -67,19 +67,19 @@ let mapleader = ","
 filetype plugin indent on
 set encoding=utf-8
 set showmatch		" When a bracket is inserted, briefly jump to the matching one.
-set hidden	  	" do not close buffers, but hide them!
-set autoindent    	" always set autoindenting on
-set copyindent    	" copy the previous indentation on autoindenting
+set hidden		" do not close buffers, but hide them!
+set autoindent		" always set autoindenting on
+set copyindent		" copy the previous indentation on autoindenting
 set noexpandtab
 set softtabstop=4
 set shiftwidth=4
 set shiftround		" use multiple of shiftwidth when indenting with '<' and '>'"
 set ignorecase		" ignore case when searching
-set smartcase   	" ignore case if search pattern is all lowercase,
+set smartcase		" ignore case if search pattern is all lowercase,
 			" case-sensitive otherwise
-set smarttab    	" insert tabs on the start of a line according to
-set hlsearch    	" highlight search terms
-set incsearch   	" show search matches as you type"
+set smarttab		" insert tabs on the start of a line according to
+set hlsearch		" highlight search terms
+set incsearch		" show search matches as you type"
 set tildeop		" Use tilde as an operator
 set ruler
 set backspace=indent,eol,start
