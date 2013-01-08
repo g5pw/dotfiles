@@ -470,6 +470,19 @@ augroup ft_vim
 augroup END
 
 " }}}
+" Tex {{{
+augroup ft_tex
+    au FileType tex setlocal errorformat=%f:%l:\ %m,%f:%l-%\\d%\\+:\ %m
+    au FileType tex
+		\if filereadable('Makefile') |
+		\	setlocal makeprg=make |
+		\else |
+		\	exec "setlocal makeprg=make\\ -f\\ ~/Documents/Projects/Miscellaneous/latex.mk\\ " . substitute(bufname("%"),"tex$","pdf", "") |
+		\endif
+
+    au FileType tex nmap <leader>o :w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline -r <C-r>=line('.')<CR> %<.pdf %<CR>
+augroup END
+" }}}
 
 " Save on focus lost.
 autocmd FocusLost * :silent! :wall
