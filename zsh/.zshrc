@@ -115,4 +115,4 @@ function rand() { exec $RANDOM % $1; }
 [ -d $ZDOTDIR/zsh-history-substring-search/ ] && source $ZDOTDIR/zsh-history-substring-search/zsh-history-substring-search.zsh
 export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=220,bold'
 
-cowsay -f "$(ls /opt/local/share/cowsay/cows/ | unsort 2>/dev/null | head -1)" "$(fortune -s)"
+cowsay -f "$(ls /opt/local/share/cowsay/cows/*.cow | unsort 2>/dev/null | head -1)" "$(fortune -s)"
