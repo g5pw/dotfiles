@@ -493,9 +493,9 @@ autocmd VimResized * :wincmd =
 autocmd InsertLeave * set nopaste
 
 " text & mutt files
-autocmd BufNewFile,BufRead /tmp/mutt*,/tmp/cvs*,*.txt set tw=72 noai noshowmatch
-autocmd BufNewFile,BufRead /tmp/mutt*,/tmp/cvs*,*.txt setlocal spell spelllang=en_us
-autocmd BufNewFile,BufRead /tmp/mutt*,/tmp/cvs*,*.txt syntax off
+" autocmd BufNewFile,BufRead /tmp/mutt*,/tmp/cvs*,*.txt if &ft != 'help' | set tw=72 noai noshowmatch | endif
+" autocmd BufNewFile,BufRead /tmp/mutt*,/tmp/cvs*,*.txt if &ft != 'help' | setlocal spell spelllang=en_us | endif
+" autocmd BufNewFile,BufRead /tmp/mutt*,/tmp/cvs*,*.txt if &ft != 'help' | syntax off | endif
 
 " git commits
 autocmd BufNewFile,BufRead *.git/COMMIT_EDITMSG set tw=72 noai noshowmatch
