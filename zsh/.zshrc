@@ -93,6 +93,12 @@ insert_caffeinate () { zle beginning-of-line; zle -U "caffeinate " }
 zle -N insert-caffeinate insert_caffeinate
 bindkey "^[c" insert-caffeinate
 
+# Enable Ctrl-x-e to edit command line
+autoload -U edit-command-line
+# # Vi style:
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
 # Useful commands
 function rand() { exec $RANDOM % $1; }
 
