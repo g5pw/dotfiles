@@ -419,13 +419,6 @@ augroup ft_javascript
 augroup END
 
 " }}}
-" Lisp {{{
-augroup ft_lisp
-    au!
-    au FileType lisp call TurnOnLispFolding()
-augroup END
-
-" }}}
 " Markdown {{{
 augroup ft_markdown
     au!
