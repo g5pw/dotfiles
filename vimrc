@@ -317,7 +317,7 @@ nnoremap <S-M-Right>   <C-W>>
 autocmd FileType c,c++ let b:delimitMate_matchpairs = "(:),{:},[:],/*:*/"
 autocmd FileType c setlocal foldmethod=marker foldmarker={,}
 
-" Auto-reload vimrc on save
+" Auto-reload vimrc on save {{{
 augroup vimrcEx
     autocmd!
     autocmd FileType text setlocal textwidth=78
@@ -327,7 +327,7 @@ augroup vimrcEx
         \   exe "normal! g`\"" |
         \endif
 augroup END
-
+" }}}
 " CSS and LessCSS (from sjl) {{{
 augroup ft_css
     au!
