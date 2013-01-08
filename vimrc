@@ -443,6 +443,7 @@ augroup END
 augroup ft_python
     au!
     au FileType python set expandtab
+    au FileType python set ofu=pythoncomplete#Complete
 
     au FileType python setlocal define=^\s*\\(def\\\\|class\\)
     au FileType man nnoremap <buffer> <cr> :q<cr>
