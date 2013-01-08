@@ -9,7 +9,7 @@ fi
 (( ${+EDITOR} )) || export EDITOR=`which vim`
 (( ${+VISUAL} )) || export VISUAL=`which vim`
 (( ${+FCEDIT} )) || export FCEDIT=`which vim`
-(( ${+PAGER} )) || export PAGER=`which vimpager`
+(( ${+PAGER} )) || export PAGER=`which less`
 (( ${+LESSCHARSET} )) || export LESSCHARSET='utf-8' ## charset for pager
 #Less syntax coloring
 (( ${+LESSOPEN} )) || export LESSOPEN="| /opt/local/bin/src-hilite-lesspipe.sh %s"
