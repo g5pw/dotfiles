@@ -497,7 +497,7 @@ autocmd BufNewFile,BufRead *.git/COMMIT_EDITMSG setlocal spell spelllang=en_us
 " Visual stuff
 if has("gui_running")
     set ttyfast
-    colorscheme Tomorrow-Night
+    colorscheme Tomorrow-Night-Eighties
 endif
 
 if &t_Co >= 256
