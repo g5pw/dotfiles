@@ -108,4 +108,5 @@ bindkey "^I" complete-with-dots
 bindkey -M menuselect '^o' accept-and-infer-next-history
 
 # Custom completions:
-compdef sport=port
+compdef sp=port
+compdef p=port
