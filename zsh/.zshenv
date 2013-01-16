@@ -44,3 +44,7 @@ fpath=($ZDOTDIR/functions $ZDOTDIR/zsh-completions/src $fpath)
 if [[ -d /opt/local/libexec/gnubin/ ]]; then
     path=(/opt/local/libexec/gnubin $path)
 fi
+# Use perl utils if possible
+if [[ -d /opt/local/libexec/perl5.12 ]]; then
+    path=(/opt/local/libexec/perl5.12 $path)
+fi
