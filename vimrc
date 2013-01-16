@@ -204,7 +204,7 @@ let g:Powerline_symbols = 'fancy'
 
 let g:extradite_showhash=1
 
-call tcomment#DefineType('portfile', '# %s')
+let g:tcomment_types = {'portfile': '# %s'}
 
 " }}}
 
