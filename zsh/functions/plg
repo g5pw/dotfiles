@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+function plg() {
+    if [[ -z $1 && ! -e $PWD/Portfile ]]; then
+        echo "Usage: plog portname"
+        return -1
+    fi
+    $PAGER $(port logfile $1)
+}
