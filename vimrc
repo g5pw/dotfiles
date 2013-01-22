@@ -44,13 +44,13 @@ fun! SetupVAM()
 	      \'tComment', 'ragtag', 'github:adinapoli/vim-markmultiple',
 	      \'cern_root', 'Markdown', 'mpvim', 'github:hail2u/vim-css3-syntax', 'vim-dokuwiki', 'factor', 'octave%3600', 'rust', 'VimClojure',
 	      \'delimitMate', 'Rainbow_Parenthsis_Bundle',
-	      \'Syntastic', 'Powerline', 'dwm',
+	      \'Syntastic', 'Powerline',
 	      \'changesPlugin', 'github:myusuf3/numbers.vim', 'github:nathanaelkane/vim-indent-guides',
 	      \'ZenCoding', 'visual-increment', 'surround',
 	      \'wmgraphviz',
 	      \'github:coderifous/textobj-word-column.vim', 'textobj-diff', 'textobj-comment', 'textobj-function', 'textobj-fold',
-	      \'Mustang2', 'wombat256', 'AnsiEsc',
-	      \'LustyJuggler'
+	      \'Mustang2', 'wombat256',
+	      \'LustyJuggler', 'github:tpope/vim-git'
 	      \], {'auto_install' : 0})
 " }}}
 endf
