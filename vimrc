@@ -485,6 +485,15 @@ augroup ft_tex
     au FileType tex nmap <leader>o :w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline -r <C-r>=line('.')<CR> %<.pdf %<CR>
 augroup END
 " }}}
+" txt & mutt files {{{
+" autocmd BufNewFile,BufRead /tmp/mutt*,/tmp/cvs*,*.txt if &ft != 'help' | set tw=72 noai noshowmatch | endif
+" autocmd BufNewFile,BufRead /tmp/mutt*,/tmp/cvs*,*.txt if &ft != 'help' | setlocal spell spelllang=en_us | endif
+" autocmd BufNewFile,BufRead /tmp/mutt*,/tmp/cvs*,*.txt if &ft != 'help' | syntax off | endif
+" }}}
+" Git Commit msgs {{{
+autocmd BufNewFile,BufRead *.git/COMMIT_EDITMSG set noai noshowmatch
+autocmd BufNewFile,BufRead *.git/COMMIT_EDITMSG setlocal spell spelllang=en_us
+" }}}
 
 " Save on focus lost.
 autocmd FocusLost * :silent! :wall
@@ -494,14 +503,6 @@ autocmd VimResized * :wincmd =
 
 autocmd InsertLeave * set nopaste
 
-" text & mutt files
-" autocmd BufNewFile,BufRead /tmp/mutt*,/tmp/cvs*,*.txt if &ft != 'help' | set tw=72 noai noshowmatch | endif
-" autocmd BufNewFile,BufRead /tmp/mutt*,/tmp/cvs*,*.txt if &ft != 'help' | setlocal spell spelllang=en_us | endif
-" autocmd BufNewFile,BufRead /tmp/mutt*,/tmp/cvs*,*.txt if &ft != 'help' | syntax off | endif
-
-" git commits
-autocmd BufNewFile,BufRead *.git/COMMIT_EDITMSG set tw=72 noai noshowmatch
-autocmd BufNewFile,BufRead *.git/COMMIT_EDITMSG setlocal spell spelllang=en_us
 " Autocmds end }}}
 
 " Visual stuff
