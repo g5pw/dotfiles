@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 function pcc() {
     if [[ -z $1 && ! -e $PWD/Portfile ]]; then
-        echo "Usage: plog portname"
+        echo "Usage: pcc portname"
         return -1
     fi
     sudo port -v checksum $1 2>&1 | grep -A1 -m 1 checksums | pbcopy
