@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
 function acronym() {
-    retawq --dump=http://www.acronymfinder.com/$1.html | sed -e '/*/!d' -e 's/*/✪ /g' | column -s '|' -t;
+    echo "Acronyms for $1:"
+    elinks --dump http://www.acronymfinder.com/ssh.html | sed -e '/*/!d' -e 's/*/✪ /g' -e 's/ *\[.*\]/|/' -e 's/^ *//' | column -s '|' -t;
 }
