@@ -97,7 +97,7 @@ set autowrite
 set autoread
 
 " Don't try to highlight lines longer than 800 characters.
-set synmaxcol=800
+set synmaxcol=400
 
 " Retain custom icons & stuff
 set backupcopy=yes
