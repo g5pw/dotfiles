@@ -96,6 +96,8 @@ set fillchars=diff:⣿,vert:│
 set autowrite
 set autoread
 
+set virtualedit=block
+
 " Don't try to highlight lines longer than 800 characters.
 set synmaxcol=400
 
