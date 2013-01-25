@@ -45,6 +45,7 @@ fun! SetupVAM()
 	      \'FSwitch', 'github:skammer/vim-css-color',
 	      \'tComment', 'ragtag', 'github:adinapoli/vim-markmultiple',
 	      \'cern_root', 'Markdown', 'mpvim', 'github:hail2u/vim-css3-syntax', 'vim-dokuwiki', 'factor', 'octave%3600', 'rust', 'VimClojure',
+	      \'haskellmode-vim',
 	      \'delimitMate', 'Rainbow_Parenthsis_Bundle',
 	      \'Syntastic', 'Powerline',
 	      \'changesPlugin', 'github:myusuf3/numbers.vim', 'github:nathanaelkane/vim-indent-guides',
@@ -175,6 +176,10 @@ set cscopeverbose
 "}}}
 
 " Plugin settings ---------------------------------------------------- {{{
+
+" Haskell dirs
+let g:haddock_browser = "elinks"
+let g:haddock_docdir = "/opt/local/share/doc/ghc/html/"
 
 " Enable context-aware superTab completions
 let g:SuperTabDefaultCompletionType = "context"
