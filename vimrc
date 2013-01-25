@@ -174,7 +174,6 @@ set ttymouse=xterm2
 set cscopetag
 set cscopeverbose
 "}}}
-
 " Plugin settings ---------------------------------------------------- {{{
 
 " Haskell dirs
@@ -217,7 +216,6 @@ let g:extradite_showhash=1
 let g:tcomment_types = {'portfile': '# %s'}
 
 " }}}
-
 " Mappings ----------------------------------------------------------- {{{
 " Made D behave
 nnoremap D d$
@@ -322,7 +320,6 @@ nnoremap <S-M-Left>    <C-W><
 nnoremap <S-M-Right>   <C-W>>
 
 " Mappings end }}}
-
 " Autocmds ----------------------------------------------------------- {{{
 autocmd FileType c,c++ let b:delimitMate_matchpairs = "(:),{:},[:],/*:*/"
 
@@ -502,7 +499,7 @@ augroup END
 autocmd BufNewFile,BufRead *.git/COMMIT_EDITMSG set noai noshowmatch
 autocmd BufNewFile,BufRead *.git/COMMIT_EDITMSG setlocal spell spelllang=en_us
 " }}}
-
+" Misc {{{
 " Save on focus lost.
 autocmd FocusLost * :silent! :wall
 
@@ -510,7 +507,7 @@ autocmd FocusLost * :silent! :wall
 autocmd VimResized * :wincmd =
 
 autocmd InsertLeave * set nopaste
-
+" }}}
 " Autocmds end }}}
 " Visual stuff ------------------------------------------------------- {{{
 if has("gui_running")
