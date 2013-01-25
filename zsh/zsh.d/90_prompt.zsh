@@ -3,7 +3,7 @@ bat_status () {
     tick=($FG[124]▁ $FG[125]▂ $FG[226]▃ $FG[227]▄ $FG[228]▅ $FG[150]▆ $FG[149]▇ $FG[148]█)
     conn=`ioreg -n AppleSmartBattery | grep ExternalConnected | awk '{ print $5 }'`
     chrg=`ioreg -n AppleSmartBattery | grep IsCharging | awk '{ print $5 }'`
-    time=`ioreg -n AppleSmartBattery | grep TimeRemaining | awk '{ print $5 }'`
+    # time=`ioreg -n AppleSmartBattery | grep TimeRemaining | awk '{ print $5 }'`
     max=`ioreg -n AppleSmartBattery | grep MaxCapacity | awk '{ print $5 }'`
     cur=`ioreg -n AppleSmartBattery | grep CurrentCapacity | awk '{ print $5 }'`
     full=`ioreg -n AppleSmartBattery | grep FullyCharged | awk '{ print $5 }'`
