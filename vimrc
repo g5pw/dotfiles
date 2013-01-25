@@ -104,6 +104,9 @@ set synmaxcol=400
 " Retain custom icons & stuff
 set backupcopy=yes
 
+set pastetoggle=<F2>	"Disable auto indent when pasting
+set guifont=Menlo\ for\ Powerline:h12 "Set GUI font
+
 " WildIgnore menu {{{
 set wildmenu
 set wildmode=longest,list:longest
@@ -518,9 +521,4 @@ if &t_Co > 2 || has("gui_running")
     " switch syntax highlighting on, when the terminal has colors
     syntax on
 endif
-
-set pastetoggle=<F2>	"Disable auto indent when pasting
-
-
-set guifont=Menlo\ for\ Powerline:h12
 " }}}
