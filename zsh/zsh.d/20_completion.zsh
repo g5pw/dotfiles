@@ -58,7 +58,7 @@ zstyle ':completion:*:*:kill:*:jobs' list-colors 'no=01;31'
 zstyle ':completion:*:*:*:*:processes' force-list always
 
 # Don't complete stuff already on the line
-zstyle ':completion::*:(rm|vi|vim):*' ignore-line true
+zstyle ':completion::complete:(rm|vi|vim):*' ignore-line true
 
 # cd will never select the parent directory (e.g.: cd ../<TAB>):
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
@@ -81,17 +81,17 @@ zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p
 zstyle ':completion:*:my-accounts' users-hosts $my_accounts
 
 # only java files for javac
-zstyle ':completion:*:javac:*' files '*.java'
+zstyle ':completion::complete:javac:*' files '*.java'
 
-# no binary files for vi or textmate
-zstyle ':completion:*:(vi|mate|vim|gvim|mvim):*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
+# no binary files for vi, textmate or sublime text
+zstyle ':completion::complete:(v|vi|vim|mvim|mate|subl):*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
 # no binary files for less
-zstyle ':completion:*:(less|zless):*' ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
+zstyle ':completion::complete:(less|zless):*' ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
 # tar files
-zstyle ':completion:*:tar:*' files '*.tar|*.tgz|*.tz|*.tar.Z|*.tar.bz2|*.tZ|*.tar.gz'
+zstyle ':completion::complete:tar:*' files '*.tar|*.tgz|*.tz|*.tar.Z|*.tar.bz2|*.tZ|*.tar.gz'
 # latex to the fullest
 # for printing
-zstyle ':completion:*:(xdvi|dvips):*' files '*.dvi'
+zstyle ':completion::complete:(xdvi|dvips):*' files '*.dvi'
 # Group relatex matches:
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*:-command-:*:(commands|builtins|reserved-words-aliases)' group-name commands
