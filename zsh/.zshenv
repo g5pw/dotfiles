@@ -35,7 +35,8 @@ export WORDCHARS='*?-[]~=/&;!#$%^(){}<>'
 # Important dirs
 export Projects=$HOME/Documents/Projects
 export Uni=$HOME/Documents/University
-export MP_svn=/opt/local/var/macports/sources/svn.macports.org/trunk/
+export MP_main=/opt/local/var/macports/sources/svn.macports.org/dports
+export MP_personal=/opt/local/var/macports/sources/mp-g5pw/dports
 
 #load my function and more completions
 fpath=($ZDOTDIR/functions $ZDOTDIR/zsh-completions/src $fpath)
