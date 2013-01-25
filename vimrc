@@ -1,5 +1,6 @@
 " vim: foldmethod=marker foldlevel=0
 set nocompatible
+let snips_author = "Aljaž Srebrnič"
 
 " VAM setup " -------------------------------------------------------- {{{
 fun! SetupVAM()
@@ -523,6 +524,5 @@ endif
 
 set pastetoggle=<F2>	"Disable auto indent when pasting
 
-let snips_author = "Aljaž Srebrnič"
 
 set guifont=Menlo\ for\ Powerline:h12
