@@ -506,6 +506,7 @@ autocmd FocusLost * :silent! :wall
 " Resize splits when the window is resized
 autocmd VimResized * :wincmd =
 
+" Exit paste mode when exiting insert
 autocmd InsertLeave * set nopaste
 " }}}
 " Autocmds end }}}
