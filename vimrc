@@ -53,7 +53,7 @@ fun! SetupVAM()
 	      \'factor',
 	      \'octave%3600',
 	      \'rust',
-	      \'VimClojure',
+	      \'github:tpope/vim-foreplay', 'github:guns/vim-clojure-static',
 	      \'haskellmode-vim',
 	      \'delimitMate', 'Rainbow_Parenthsis_Bundle',
 	      \'Syntastic', 'Powerline',
