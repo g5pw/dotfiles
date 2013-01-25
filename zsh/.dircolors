@@ -1,4 +1,4 @@
-
+# vim: ft=dircolors
 # Dark 256 color solarized theme for the color GNU ls utility.
 # Used and tested with dircolors (GNU coreutils) 8.5
 #
@@ -257,6 +257,9 @@ EXEC 01;38;5;64
 
 # Source code stuff
 .yml	00;38;5;111
+.zsh	00;38;5;111
+.sh	00;38;5;111
+.bash	00;38;5;111
 .sql	00;38;5;110
 .html	00;38;5;109
 .css	00;38;5;109
