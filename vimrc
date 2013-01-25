@@ -8,6 +8,7 @@ fun! SetupVAM()
   let vam_install_path = expand('$HOME') . '/.vim/vim-addons'
   exec 'set runtimepath+='.vam_install_path.'/vim-addon-manager'
 
+  " Install VAM if not present {{{
   " * unix based os users may want to use this code checking out VAM
   " * windows users want to use http://mawercer.de/~marc/vam/index.php
   "   to fetch VAM, VAM-known-repositories and the listed plugins
@@ -20,8 +21,8 @@ fun! SetupVAM()
     " VAM run helptags automatically if you install or update plugins
     exec 'helptags '.fnameescape(vam_install_path.'/vim-addon-manager/doc')
   endif
-
-  " Add custom sources
+  " }}}
+  " Add custom sources {{{
   fun! AddSources()
       let d = vam#install#Pool()
       let d['mpvim'] = { 'type' : 'svn', 'url' : 'http://svn.macports.org/repository/macports/contrib/mpvim/' }
@@ -30,9 +31,8 @@ fun! SetupVAM()
 
   let g:vim_addon_manager = {}
   let g:vim_addon_manager.pool_fun = function('AddSources')
-
-
-" Activated plugins -------------------------------------------------- {{{
+  "}}}
+  " Activated plugins -------------------------------------------------- {{{
   call vam#ActivateAddons([
 	      \'snipmate-snippets',
 	      \'ctrlp', 'LustyExplorer', 'The_NERD_tree', 'ack',
@@ -57,9 +57,7 @@ fun! SetupVAM()
 " }}}
 endf
 call SetupVAM()
-
 " }}}
-
 " Basic options ------------------------------------------------------ {{{
 
 "Set Mapleader
@@ -506,8 +504,7 @@ autocmd VimResized * :wincmd =
 autocmd InsertLeave * set nopaste
 
 " Autocmds end }}}
-
-" Visual stuff
+" Visual stuff ------------------------------------------------------- {{{
 if has("gui_running")
     set ttyfast
     colorscheme Tomorrow-Night-Eighties
@@ -526,3 +523,4 @@ set pastetoggle=<F2>	"Disable auto indent when pasting
 
 
 set guifont=Menlo\ for\ Powerline:h12
+" }}}
