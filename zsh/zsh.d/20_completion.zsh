@@ -3,7 +3,7 @@ zstyle ':completion:*' completer _expand _complete _ignored _approximate:-one \
 				_correct _approximate:-many _prefix _history 
 
 # Sort completion list by name
-zstyle ':completion:*' file-sort modification reverse
+zstyle ':completion:*' file-sort modification
 
 # If a single completion is found, present a menu instead of inserting it
 zstyle ':completion:*:ignored:*' single-ignored menu
