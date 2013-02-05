@@ -4,66 +4,113 @@ let snips_author = "Aljaž Srebrnič"
 
 " VAM setup " -------------------------------------------------------- {{{
 fun! SetupVAM()
-  " YES, you can customize this vam_install_path path and everything still works!
-  let vam_install_path = expand('$HOME') . '/.vim/vim-addons'
-  exec 'set runtimepath+='.vam_install_path.'/vim-addon-manager'
+    " YES, you can customize this vam_install_path path and everything still works!
+    let vam_install_path = expand('$HOME') . '/.vim/vim-addons'
+    exec 'set runtimepath+='.vam_install_path.'/vim-addon-manager'
 
-  " Install VAM if not present {{{
-  " * unix based os users may want to use this code checking out VAM
-  " * windows users want to use http://mawercer.de/~marc/vam/index.php
-  "   to fetch VAM, VAM-known-repositories and the listed plugins
-  "   without having to install curl, unzip, git tool chain first
-  " -> BUG [4] (git-less installation)
-  if !filereadable(vam_install_path.'/vim-addon-manager/.git/config') && 1 == confirm("git clone VAM into ".vam_install_path."?","&Y\n&N")
-    " I'm sorry having to add this reminder. Eventually it'll pay off.
-    call confirm("Remind yourself that most plugins ship with documentation (README*, doc/*.txt). Its your first source of knowledge. If you can't find the info you're looking for in reasonable time ask maintainers to improve documentation")
-    exec '!p='.shellescape(vam_install_path).'; mkdir -p "$p" && cd "$p" && git clone --depth 1 git://github.com/MarcWeber/vim-addon-manager.git'
-    " VAM run helptags automatically if you install or update plugins
-    exec 'helptags '.fnameescape(vam_install_path.'/vim-addon-manager/doc')
-  endif
-  " }}}
-  " Add custom sources {{{
-  fun! AddSources()
-      let d = vam#install#Pool()
-      let d['mpvim'] = { 'type' : 'svn', 'url' : 'http://svn.macports.org/repository/macports/contrib/mpvim/' }
-      return d
-  endf
+    " Install VAM if not present {{{
+    " * unix based os users may want to use this code checking out VAM
+    " * windows users want to use http://mawercer.de/~marc/vam/index.php
+    "   to fetch VAM, VAM-known-repositories and the listed plugins
+    "   without having to install curl, unzip, git tool chain first
+    " -> BUG [4] (git-less installation)
+    if !filereadable(vam_install_path.'/vim-addon-manager/.git/config') && 1 == confirm("git clone VAM into ".vam_install_path."?","&Y\n&N")
+	" I'm sorry having to add this reminder. Eventually it'll pay off.
+	call confirm("Remind yourself that most plugins ship with documentation (README*, doc/*.txt). Its your first source of knowledge. If you can't find the info you're looking for in reasonable time ask maintainers to improve documentation")
+	exec '!p='.shellescape(vam_install_path).'; mkdir -p "$p" && cd "$p" && git clone --depth 1 git://github.com/MarcWeber/vim-addon-manager.git'
+	" VAM run helptags automatically if you install or update plugins
+	exec 'helptags '.fnameescape(vam_install_path.'/vim-addon-manager/doc')
+    endif
+    " }}}
+    " Add custom sources {{{
+    fun! AddSources()
+	let d = vam#install#Pool()
+	let d['mpvim'] = { 'type' : 'svn', 'url' : 'http://svn.macports.org/repository/macports/contrib/mpvim/' }
+	return d
+    endf
 
-  let g:vim_addon_manager = {}
-  let g:vim_addon_manager.pool_fun = function('AddSources')
-  "}}}
-  " Activated plugins -------------------------------------------------- {{{
-  call vam#ActivateAddons([
-	      \'snipmate-snippets',
-	      \'ctrlp', 'LustyExplorer', 'The_NERD_tree', 'ack',
-	      \'EasyMotion', 'camelcasemotion', 'unimpaired', 'repeat',
-	      \'TaskList', 'VimOrganizer', 'editorconfig-vim',
-	      \'OmniCppComplete', 'Tagbar', 'github:ervandew/supertab',
-	      \'github:maxbrunsfeld/vim-yankstack', 'matchit.zip', 'Gundo',
-	      \'vcscommand', 'fugitive', 'extradite',
-	      \'vimux', 'github:julienr/vimux-pyutils',
-	      \'SudoEdit', 'Clam',
-	      \'FSwitch',
-	      \'tComment', 'ragtag', 'github:adinapoli/vim-markmultiple',
-	      \'cern_root',
-	      \'Markdown',
-	      \'mpvim',
-	      \'github:hail2u/vim-css3-syntax', 'github:skammer/vim-css-color',
-	      \'vim-dokuwiki',
-	      \'factor',
-	      \'octave%3600',
-	      \'rust',
-	      \'github:tpope/vim-foreplay', 'github:guns/vim-clojure-static',
-	      \'haskellmode-vim',
-	      \'delimitMate', 'Rainbow_Parenthsis_Bundle',
-	      \'Syntastic', 'Powerline',
-	      \'changesPlugin', 'github:myusuf3/numbers.vim', 'github:nathanaelkane/vim-indent-guides',
-	      \'ZenCoding', 'visual-increment', 'surround',
-	      \'wmgraphviz',
-	      \'github:coderifous/textobj-word-column.vim', 'textobj-diff', 'textobj-comment', 'textobj-function', 'textobj-fold',
-	      \'Mustang2', 'wombat256',
-	      \'LustyJuggler', 'github:tpope/vim-git'
-	      \], {'auto_install' : 0})
+    let g:vim_addon_manager = {}
+    let g:vim_addon_manager.pool_fun = function('AddSources')
+    "}}}
+    " Activated plugins -------------------------------------------------- {{{
+    let addons = []
+    " Text {{{
+    call add(addons, 'snipmate-snippets')
+    call add(addons, 'repeat')
+    call add(addons, 'github:maxbrunsfeld/vim-yankstack')
+    call add(addons, 'matchit.zip')
+    call add(addons, 'Gundo')
+    call add(addons, 'delimitMate')
+    call add(addons, 'Rainbow_Parenthsis_Bundle')
+    call add(addons, 'visual-increment')
+    call add(addons, 'tComment')
+    call add(addons, 'github:ervandew/supertab')
+    call add(addons, 'Tabular')
+    call add(addons, 'surround')
+    " }}}
+    " Movement {{{
+    call add(addons, 'EasyMotion')
+    call add(addons, 'camelcasemotion')
+    call add(addons, 'unimpaired')
+    call add(addons, 'github:adinapoli/vim-markmultiple')
+    call add(addons, 'TaskList')
+    call add(addons, 'LustyJuggler')
+    " }}}
+    " File System/Integration {{{
+    call add(addons, 'LustyExplorer')
+    call add(addons, 'The_NERD_tree')
+    call add(addons, 'ack')
+    call add(addons, 'ctrlp')
+    call add(addons, 'vcscommand')
+    call add(addons, 'fugitive')
+    call add(addons, 'extradite')
+    call add(addons, 'vimux')
+    call add(addons, 'github:julienr/vimux-pyutils')
+    call add(addons, 'Clam')
+    call add(addons, 'FSwitch')
+    call add(addons, 'VimOrganizer')
+    call add(addons, 'editorconfig-vim')
+    call add(addons, 'Tagbar')
+    call add(addons, 'github:tpope/vim-git')
+    call add(addons, 'github:tpope/vim-foreplay')
+    "}}}
+    " Language support {{{
+    call add(addons, 'cern_root')
+    call add(addons, 'Markdown')
+    call add(addons, 'mpvim')
+    call add(addons, 'github:hail2u/vim-css3-syntax')
+    call add(addons, 'github:skammer/vim-css-color')
+    call add(addons, 'vim-dokuwiki')
+    call add(addons, 'factor')
+    call add(addons, 'octave%3600')
+    call add(addons, 'rust')
+    call add(addons, 'github:guns/vim-clojure-static')
+    call add(addons, 'haskellmode-vim')
+    call add(addons, 'ragtag')
+    call add(addons, 'wmgraphviz')
+    call add(addons, 'ZenCoding')
+    call add(addons, 'OmniCppComplete')
+    " }}}
+    " Utilities {{{
+    call add(addons, 'Syntastic')
+    call add(addons, 'Powerline')
+    call add(addons, 'changesPlugin')
+    call add(addons, 'github:myusuf3/numbers.vim')
+    call add(addons, 'github:nathanaelkane/vim-indent-guides',)
+    call add(addons, 'SudoEdit')
+    " }}}
+    " Themes {{{
+    call add(addons, 'Mustang2')
+    call add(addons, 'wombat256')
+    " }}}
+    " TextObjects {{{
+    call add(addons, 'github:coderifous/textobj-word-column.vim')
+    call add(addons, 'textobj-diff')
+    call add(addons, 'textobj-comment')
+    call add(addons, 'textobj-function')
+    call add(addons, 'textobj-fold')
+    " }}}
+    call vam#ActivateAddons(addons, {'auto_install' : 0})
 " }}}
 endf
 call SetupVAM()
