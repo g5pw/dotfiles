@@ -47,6 +47,7 @@ fun! SetupVAM()
     call add(addons, 'github:ervandew/supertab')
     call add(addons, 'Tabular')
     call add(addons, 'surround')
+    call add(addons, 'abolish')
     " }}}
     " Movement {{{
     call add(addons, 'EasyMotion')
