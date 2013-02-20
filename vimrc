@@ -574,6 +574,9 @@ augroup END
 autocmd FileType gitcommit set noai noshowmatch
 autocmd FileType gitcommit setlocal spell
 " }}}
+" SVN commit msgs {{{
+autocmd FileType svn setlocal spell
+" }}}
 " Misc {{{
 " Save on focus lost.
 autocmd FocusLost * :silent! :wall
