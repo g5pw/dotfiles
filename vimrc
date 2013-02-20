@@ -75,6 +75,7 @@ fun! SetupVAM()
     call add(addons, 'Tagbar')
     call add(addons, 'github:tpope/vim-git')
     call add(addons, 'github:tpope/vim-foreplay')
+    call add(addons, 'TagHighlight')
     "}}}
     " Language support {{{
     call add(addons, 'cern_root')
@@ -101,6 +102,8 @@ fun! SetupVAM()
     call add(addons, 'github:myusuf3/numbers.vim')
     call add(addons, 'github:nathanaelkane/vim-indent-guides',)
     call add(addons, 'SudoEdit')
+    call add(addons, 'Vitality')
+    call add(addons, 'Splice')
     " }}}
     " Themes {{{
     call add(addons, 'Mustang2')
