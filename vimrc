@@ -245,6 +245,10 @@ let g:SuperTabDefaultCompletionType = "context"
 " Enable Doxygen auto-load
 let g:load_doxygen_syntax=1
 
+" CtrlP settings
+let g:ctrlp_map = '<Leader>t'
+let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend|elf)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
+
 "Tagbar options and maps
 let tagbar_autoclose = 1
 let tagbar_autofocus = 1
