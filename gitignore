@@ -28,6 +28,9 @@ build/
 .svn
 CVS
 
+#TagHighlight tags
+types_*.taghl
+
 
 # automatic backup files
 *~.nib
