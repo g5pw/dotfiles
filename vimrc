@@ -198,10 +198,11 @@ function! MyFoldText() " {{{
     " expand tabs into spaces
     let onetab = strpart('          ', 0, &tabstop)
     let line = substitute(line, '\t', onetab, 'g')
+    let line = substitute(line, split(&foldmarker, ',')[0], '', '')
 
     let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
-    let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
-    return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
+    let fillcharcount = windowwidth - 3 - len(line) - len(foldedlinecount)
+    return line . '…' . repeat(" ", fillcharcount) . '…' . foldedlinecount
 endfunction " }}}
 set foldtext=MyFoldText()
 " }}}
