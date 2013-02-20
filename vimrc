@@ -571,8 +571,8 @@ augroup END
 " autocmd BufNewFile,BufRead /tmp/mutt*,/tmp/cvs*,*.txt if &ft != 'help' | syntax off | endif
 " }}}
 " Git Commit msgs {{{
-autocmd BufNewFile,BufRead *.git/COMMIT_EDITMSG set noai noshowmatch
-autocmd BufNewFile,BufRead *.git/COMMIT_EDITMSG setlocal spell spelllang=en_us
+autocmd FileType gitcommit set noai noshowmatch
+autocmd FileType gitcommit setlocal spell
 " }}}
 " Misc {{{
 " Save on focus lost.
