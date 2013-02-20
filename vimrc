@@ -320,7 +320,7 @@ nnoremap <Leader>k <Plug>TaskList
 " Shortcut to rapidly toggle `set list`
 nnoremap <leader>l :set list!<CR>
 " Gundo maps
-nnoremap <F5> :GundoToggle<CR>
+nnoremap <leader>u :GundoToggle<CR>
 " Quickly edit the vimrc file
 nnoremap <silent> <leader>ve :e $MYVIMRC<CR>
 
