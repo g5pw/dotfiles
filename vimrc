@@ -335,8 +335,6 @@ vnoremap <silent> <leader>mb !boxes -a l -d c -s 75<CR>
 nnoremap <silent> <leader>xb !!boxes -d c -r<CR>
 vnoremap <silent> <leader>xb !boxes -d c -r<CR>
 
-" CtrlP bindings
-nnoremap <silent> <Leader>t :CtrlP<CR>
 " YankStack bindings
 nmap <M-p> <Plug>yankstack_substitute_older_paste
 nmap <M-P> <Plug>yankstack_substitute_newer_paste
