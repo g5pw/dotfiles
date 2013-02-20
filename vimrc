@@ -267,10 +267,8 @@ let g:portfile_highlight_space_errors=1
 "delimitMate options
 let delimitMate_balance_matchpairs = 1
 
-"YankRing options
-let yankring_history_dir = "$HOME/.vim/yankring"
-let g:yankring_clipboard_monitor = 0
-let g:yankring_manual_clipboard_check = 0
+"Yankstack options
+let g:yankstack_map_keys = 0
 
 " Set Syntastic style
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
@@ -325,9 +323,6 @@ nnoremap <leader>l :set list!<CR>
 nnoremap <F5> :GundoToggle<CR>
 " Quickly edit the vimrc file
 nnoremap <silent> <leader>ve :e $MYVIMRC<CR>
-" YankRing
-nnoremap <silent> <leader>yr :YRShow<CR>
-nnoremap <silent> <leader>ys :YRSearch 
 
 " f7 toggles spelling on/off
 nnoremap <F7> :setlocal spell! spell?<CR>
@@ -342,6 +337,9 @@ vnoremap <silent> <leader>xb !boxes -d c -r<CR>
 
 " CtrlP bindings
 nnoremap <silent> <Leader>t :CtrlP<CR>
+" YankStack bindings
+nmap <M-p> <Plug>yankstack_substitute_older_paste
+nmap <M-P> <Plug>yankstack_substitute_newer_paste
 
 " Cscope command abbreviations
 cnoreabbrev csa cs add
