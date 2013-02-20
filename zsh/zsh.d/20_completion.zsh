@@ -1,5 +1,5 @@
 # Completion options
-zstyle ':completion:*' completer _expand _complete _ignored _approximate:-one \
+zstyle ':completion:*' completer _expand _complete _approximate:-one _ignored \
 				_correct _approximate:-many _prefix _history 
 
 # Sort completion list by name
