@@ -36,6 +36,7 @@ fun! SetupVAM()
     let addons = []
     " Text {{{
     call add(addons, 'snipmate-snippets')
+    call add(addons, 'UltiSnips')
     call add(addons, 'repeat')
     call add(addons, 'github:maxbrunsfeld/vim-yankstack')
     call add(addons, 'matchit.zip')
@@ -238,6 +239,9 @@ set cscopeverbose
 " Haskell dirs
 let g:haddock_browser = "elinks"
 let g:haddock_docdir = "/opt/local/share/doc/ghc/html/"
+
+" UltiSnips settings
+let g:UltiSnipsSnippetDirectories = ["UltiSnips", "snippets"]
 
 " Enable context-aware superTab completions
 let g:SuperTabDefaultCompletionType = "context"
