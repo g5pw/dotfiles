@@ -286,8 +286,8 @@ nnoremap D d$
 " Toggle folds with space bar
 nnoremap <Space> za
 nnoremap <Leader><tab> :TScratch<cr>
-nnoremap <Leader>, :NERDTreeToggle<cr>
-nnoremap <Leader>. :TagbarToggle<CR>
+nnoremap <Leader>. :NERDTreeToggle<cr>
+nnoremap <Leader>, :TagbarToggle<CR>
 nnoremap <silent> <leader>/ :nohlsearch<CR>:echo 'Search highlight cleared'<CR>
 " Parse file with astyle
 nnoremap <silent> <Leader>as :%!astyle<CR>
