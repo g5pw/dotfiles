@@ -165,7 +165,7 @@ set synmaxcol=400
 set backupcopy=yes
 
 set pastetoggle=<F2>	"Disable auto indent when pasting
-set guifont=Menlo\ for\ Powerline:h12 "Set GUI font
+set guifont=Menlo\ for\ Powerline:h11 "Set GUI font
 
 " WildIgnore menu {{{
 set wildmenu
