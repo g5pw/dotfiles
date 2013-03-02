@@ -202,8 +202,8 @@ function! MyFoldText() " {{{
     let line = substitute(line, split(&foldmarker, ',')[0], '', '')
 
     let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
-    let fillcharcount = windowwidth - 3 - len(line) - len(foldedlinecount)
-    return line . '…' . repeat(" ", fillcharcount) . '…' . foldedlinecount
+    let fillcharcount = windowwidth - len(line) - len(foldedlinecount) - 7
+    return line . ' ⤥ ' . repeat("…", fillcharcount) . ' (' . foldedlinecount .')'
 endfunction " }}}
 set foldtext=MyFoldText()
 " }}}
