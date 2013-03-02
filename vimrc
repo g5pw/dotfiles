@@ -233,6 +233,9 @@ set ttymouse=xterm2
 "Always use cscope
 set cscopetag
 set cscopeverbose
+if filereadable("cscope.out")
+    cs add cscope.out
+endif
 "}}}
 " Plugin settings {{{
 
