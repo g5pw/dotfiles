@@ -183,10 +183,10 @@ set wildignore+=*.DS_Store?                      " OSX bullshit
 " }}}
 
 " Folding settings {{{
-set foldmethod=syntax   "fold based on indent
-set foldnestmax=4       "deepest fold is 10 levels
-set foldenable          "fold by default
-set foldlevel=1         "this is just what i use
+set foldmethod=syntax   " fold based on syntax
+set foldnestmax=4       " deepest fold is 4 levels
+set foldenable          " fold by default
+set foldlevel=1         " this is just what i use
 
 " Custom folded text function by sjl
 function! MyFoldText() " {{{
