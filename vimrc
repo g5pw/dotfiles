@@ -152,7 +152,7 @@ set undofile		" Save undo tree in file
 set undodir=~/.vim/undo//     " undo files
 
 set splitright
-set fillchars=diff:⣿,vert:│
+set fillchars=diff:⣿,vert:│,fold:-
 set autowrite
 set autoread
 
