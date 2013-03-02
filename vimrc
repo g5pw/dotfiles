@@ -2,7 +2,7 @@
 set nocompatible
 let snips_author = "Aljaž Srebrnič"
 
-" VAM setup " -------------------------------------------------------- {{{
+" VAM setup {{{
 fun! SetupVAM()
     " YES, you can customize this vam_install_path path and everything still works!
     let vam_install_path = expand('$HOME') . '/.vim/vim-addons'
@@ -121,7 +121,7 @@ fun! SetupVAM()
 endf
 call SetupVAM()
 " }}}
-" Basic options ------------------------------------------------------ {{{
+" Basic options {{{
 
 "Set Mapleader
 let g:mapleader = ","
@@ -237,7 +237,7 @@ set ttymouse=xterm2
 set cscopetag
 set cscopeverbose
 "}}}
-" Plugin settings ---------------------------------------------------- {{{
+" Plugin settings {{{
 
 " Haskell dirs
 let g:haddock_browser = "elinks"
@@ -284,7 +284,7 @@ let g:extradite_showhash=1
 let g:tcomment_types = {'portfile': '# %s'}
 
 " }}}
-" Mappings ----------------------------------------------------------- {{{
+" Mappings {{{
 " Made D behave
 nnoremap D d$
 
@@ -398,7 +398,7 @@ nnoremap <T-Left>    <C-W>=
 nnoremap <T-Right>   <C-W><Bar>
 
 " Mappings end }}}
-" Autocmds ----------------------------------------------------------- {{{
+" Autocmds {{{
 autocmd FileType c,c++ let b:delimitMate_matchpairs = "(:),{:},[:],/*:*/"
 
 " Auto-reload vimrc on save {{{
@@ -591,7 +591,7 @@ autocmd VimResized * :wincmd =
 autocmd InsertLeave * set nopaste
 " }}}
 " Autocmds end }}}
-" Visual stuff ------------------------------------------------------- {{{
+" Visual stuff {{{
 if has("gui_running")
     set ttyfast
     colorscheme Tomorrow-Night-Eighties
