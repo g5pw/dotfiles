@@ -35,7 +35,6 @@ fun! SetupVAM()
     " Activated plugins -------------------------------------------------- {{{
     let addons = []
     " Text {{{
-    call add(addons, 'snipmate-snippets')
     call add(addons, 'UltiSnips')
     call add(addons, 'repeat')
     call add(addons, 'github:maxbrunsfeld/vim-yankstack')
@@ -59,7 +58,6 @@ fun! SetupVAM()
     call add(addons, 'LustyJuggler')
     " }}}
     " File System/Integration {{{
-    call add(addons, 'LustyExplorer')
     call add(addons, 'The_NERD_tree')
     call add(addons, 'ack')
     call add(addons, 'ctrlp')
@@ -106,8 +104,7 @@ fun! SetupVAM()
     call add(addons, 'Splice')
     " }}}
     " Themes {{{
-    call add(addons, 'Mustang2')
-    call add(addons, 'wombat256')
+    call add(addons, 'molokai')
     " }}}
     " TextObjects {{{
     call add(addons, 'github:coderifous/textobj-word-column.vim')
