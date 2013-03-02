@@ -244,7 +244,6 @@ let g:haddock_browser = "elinks"
 let g:haddock_docdir = "/opt/local/share/doc/ghc/html/"
 
 " UltiSnips settings
-let g:UltiSnipsSnippetDirectories = ["UltiSnips", "snippets"]
 
 " Enable context-aware superTab completions
 let g:SuperTabDefaultCompletionType = "context"
