@@ -48,6 +48,7 @@ fun! SetupVAM()
     call add(addons, 'Tabular')
     call add(addons, 'surround')
     call add(addons, 'abolish')
+    call add(addons, 'multiselect')
     " }}}
     " Movement {{{
     call add(addons, 'EasyMotion')
@@ -60,6 +61,7 @@ fun! SetupVAM()
     " File System/Integration {{{
     call add(addons, 'The_NERD_tree')
     call add(addons, 'ack')
+    call add(addons, 'ag')
     call add(addons, 'ctrlp')
     call add(addons, 'vcscommand')
     call add(addons, 'fugitive')
@@ -102,6 +104,7 @@ fun! SetupVAM()
     call add(addons, 'SudoEdit')
     call add(addons, 'Vitality')
     call add(addons, 'Splice')
+    call add(addons, 'quickfixsigns')
     " }}}
     " Themes {{{
     call add(addons, 'molokai')
