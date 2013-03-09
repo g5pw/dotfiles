@@ -20,6 +20,9 @@ autoload -U $ZDOTDIR/functions/*(:t)
 # Load 256 colors!
 autoload spectrum && spectrum
 
+# enable extended glob
+setopt extended_glob
+
 # Include files from zsh.d directory
 for file in $ZDOTDIR/zsh.d/*.zsh^*.disabled; do
     source $file
