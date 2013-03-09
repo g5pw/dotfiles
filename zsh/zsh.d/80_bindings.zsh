@@ -1,0 +1,1 @@
+bindkey '^P' push-input
