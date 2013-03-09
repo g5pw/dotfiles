@@ -11,7 +11,7 @@
 # to be diferent from default
 
 # Insert all filenames that match the glob pattern
-# unsetopt glob_complete
+setopt glob_complete
 
 # Enable PCRE
 setopt re_match_pcre
@@ -441,7 +441,12 @@ setopt rm_star_wait
 # Print commands and their arguments as they are executed.
 #setopt xtrace
 
-# ZLE (-Z)
-# Use the zsh line editor.  Set by default in interactive shells connected to
-# a terminal.
-#setopt NO_zle
+setopt hist_reduce_blanks
+setopt complete_in_word
+setopt ignoreeof
+setopt long_list_jobs
+setopt magic_equal_subst
+setopt pushd_ignore_dups
+setopt pushd_to_home
+setopt share_history
+setopt null_glob
