@@ -6,6 +6,15 @@ if [ "`id -gn`" = "`id -un`" -a `id -u` -gt 99 ]; then
         umask 022
 fi
 
+HISTSIZE=10000
+if (( ! EUID )); then
+    HISTFILE=$ZDOTDIR/zsh_history_root
+else
+    HISTFILE=$ZDOTDIR/zsh_history
+fi
+SAVEHIST=5000
+export HISTFILE HISTSIZE SAVEHIST
+
 ## maximum size of the directory stack.
 export DIRSTACKSIZE=20
 
