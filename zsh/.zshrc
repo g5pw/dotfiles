@@ -102,6 +102,9 @@ function rand() { exec $RANDOM % $1; }
 # SCM-Breeze load
 [ -s /opt/local/share/scm_breeze/scm_breeze.sh ] && source /opt/local/share/scm_breeze/scm_breeze.sh
 
+#Load fasd
+eval "$(fasd --init auto)"
+
 # load ZAW
 [ -d $ZDOTDIR/zaw/ ] && source $ZDOTDIR/zaw/zaw.zsh
 
