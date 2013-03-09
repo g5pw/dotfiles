@@ -1,12 +1,21 @@
+autoload -U compinit && compinit
+zmodload -i zsh/complist
+
 # Completion options
 zstyle ':completion:*' completer _expand _complete _approximate:-one _ignored \
 				_correct _approximate:-many _prefix _history 
 
+# Completion caching
+zstyle ':completion::complete:*' use-cache 1
+zstyle ':completion::complete:*' cache-path ~/.zsh/cache
+
+
 # Sort completion list by name
 zstyle ':completion:*' file-sort modification
 
-# If a single completion is found, present a menu instead of inserting it
-zstyle ':completion:*:ignored:*' single-ignored menu
+# Expand partial paths
+zstyle ':completion:*' expand 'yes'
+zstyle ':completion:*' squeeze-slashes 'yes'
 
 # prefix complete or approximate only
 zstyle ':completion:*:prefix:*' completer _complete _approximate:-many
@@ -22,6 +31,7 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 # generate descriptions with magic.
+zstyle ':completion:*:options' description 'yes'
 zstyle ':completion:*' auto-description 'specify: %d'
 
 ## allow one error for every three characters typed in approximate completer
@@ -65,6 +75,8 @@ zstyle ':completion:*:cd:*' ignore-parents parent pwd
 
 # Search only 50 items in history
 zstyle ':completion:*:history-words' range 5:10
+zstyle ':completion:*:history-words' stop yes
+zstyle ':completion:*:history-words' remove-all-dups yes
 
 # Separate man page sections.
 zstyle ':completion:*:manuals' separate-sections true
@@ -95,6 +107,9 @@ zstyle ':completion::complete:(xdvi|dvips):*' files '*.dvi'
 # Group relatex matches:
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*:-command-:*:(commands|builtins|reserved-words-aliases)' group-name commands
+
+# Separate matches into groups
+zstyle ':completion:*:matches' group 'yes'
 
 complete-with-dots() {
     echo -n "\e[31m...\e[0m"
