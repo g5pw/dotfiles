@@ -596,6 +596,7 @@ autocmd InsertLeave * set nopaste
 " Visual stuff {{{
 if has("gui_running")
     set ttyfast
+    colorscheme Tomorrow-Night
 endif
 
 if &t_Co >= 256
