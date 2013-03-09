@@ -386,28 +386,10 @@ setopt prompt_subst
 # Do not print the directory stack after pushd or popd.
 setopt pushd_silent
 
-# RCS (+f) <D>
-# After /etc/zshenv is sourced on startup, source the
-# .zshenv, /etc/zprofile, .zprofile,
-# /etc/zshrc, .zshrc, /etc/zlogin, .zlogin, and .zlogout
-# files, as described in section Files.
-# If this option is unset, the /etc/zshenv file is still sourced, but any
-# of the others will not be; it can be set at any time to prevent the
-# remaining startup files after the currently executing one from
-# being sourced.
-#setopt NO_rcs
-
 # REC_EXACT (-S)
 # In completion, recognize exact matches even
 # if they are ambiguous.
 #setopt rec_exact
-
-# RESTRICTED (-r)
-# Enables restricted mode.  This option cannot be changed using
-# unsetopt, and setting it inside a function always changes it
-# globally regardless of the LOCAL_OPTIONS option.  See
-# section Restricted Shell.
-#setopt restricted
 
 # RM_STAR_WAIT
 # If querying the user before executing `rm *' or `rm path/*',
@@ -455,20 +437,6 @@ setopt rm_star_wait
 # SH_WORD_SPLIT (-y) <K> <S>
 # Causes field splitting to be performed on unquoted parameter expansions.
 # Note that this option has nothing to do with word splitting.
-# (See section Parameter Expansion.)
-#setopt sh_word_split
-
-# SINGLE_COMMAND (-t, ksh: -t)
-# If the shell is reading from standard input, it exits after a single command
-# has been executed.  This also makes the shell non-interactive, unless the
-# INTERACTIVE option is explicitly set on the command line.
-# The value of this option cannot be changed anywhere other than the command line.
-#setopt single_command
-
-# VERBOSE (-v, ksh: -v)
-# Print shell input lines as they are read.
-#setopt verbose
-
 # XTRACE (-x, ksh: -x)
 # Print commands and their arguments as they are executed.
 #setopt xtrace
