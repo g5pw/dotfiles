@@ -1,9 +1,3 @@
-## The maximum number of events stored in the internal history list.
-export HISTSIZE=10000
-
-## The maximum number of history events to save in the history file.
-export SAVEHIST=9500
-
 #load Mapfile
 zmodload zsh/mapfile
 

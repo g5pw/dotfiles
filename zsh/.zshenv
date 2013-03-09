@@ -6,14 +6,18 @@ if [ "`id -gn`" = "`id -un`" -a `id -u` -gt 99 ]; then
         umask 022
 fi
 
-HISTSIZE=10000
+## The maximum number of events stored in the internal history list.
+export HISTSIZE=10000
+
+## The maximum number of history events to save in the history file.
+export SAVEHIST=9500
+
 if (( ! EUID )); then
     HISTFILE=$ZDOTDIR/zsh_history_root
 else
     HISTFILE=$ZDOTDIR/zsh_history
 fi
-SAVEHIST=5000
-export HISTFILE HISTSIZE SAVEHIST
+export HISTFILE
 
 ## maximum size of the directory stack.
 export DIRSTACKSIZE=20
