@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+# This function reloads functions
+
+function reload() {
+    unfunction $1 && autoload -Uz $1
+}
