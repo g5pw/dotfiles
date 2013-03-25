@@ -1,4 +1,5 @@
 ## aliases ####
+alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport'
 alias c='clear'
 alias calc='noglob calc'
 alias cdiff='colordiff'
@@ -7,6 +8,7 @@ alias cp='nocorrect cp -i'
 alias ds='dirs'
 alias dss='dirs -v'
 alias du1='du -hs *(/)' ## du with depth 1
+alias ea='vim $ZDOTDIR/zsh.d/30_aliases.zsh && SILENT=true src'
 alias find='noglob find'
 alias fu='sudo $( fc -ln -1)'
 alias grep='grep --colour'
