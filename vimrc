@@ -234,11 +234,11 @@ set mouse=a
 set ttymouse=xterm2
 
 "Always use cscope
+if filereadable("cscope.out")
+    cscope add cscope.out
+endif
 set cscopetag
 set cscopeverbose
-if filereadable("cscope.out")
-    cs add cscope.out
-endif
 "}}}
 " Plugin settings {{{
 
