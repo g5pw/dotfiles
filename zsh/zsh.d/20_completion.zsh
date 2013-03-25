@@ -96,7 +96,7 @@ zstyle ':completion:*:my-accounts' users-hosts $my_accounts
 zstyle ':completion::complete:javac:*' files '*.java'
 
 # no binary files for vi, textmate or sublime text
-zstyle ':completion::complete:(v|vi|vim|mvim|mate|subl):*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
+zstyle ':completion::complete:(v|vi|vim|mvim|mate|subl):*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc|zwc)'
 # no binary files for less
 zstyle ':completion::complete:(less|zless):*' ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
 # tar files
