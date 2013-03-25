@@ -3,7 +3,6 @@ alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Resources/
 alias c='clear'
 alias calc='noglob calc'
 alias cdiff='colordiff'
-alias clj='rlwrap clj'
 alias cp='nocorrect cp -i'
 alias ds='dirs'
 alias dss='dirs -v'
