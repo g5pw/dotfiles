@@ -23,9 +23,6 @@ autoload -U zcalc
 # Load a better move!
 autoload -U zmv
 
-# Autoload my functions
-autoload -U $ZDOTDIR/functions/*(:t)
-
 ## This allows incremental completion of a word.
 ## After starting this command, a list of completion
 ## choices can be shown after every character you
@@ -58,3 +55,6 @@ zle -N predict-off
 autoload -U edit-command-line
 # # Vi style:
 zle -N edit-command-line
+
+# Autoload my functions
+autoload -Uz $ZDOTDIR/functions/*(:t)
