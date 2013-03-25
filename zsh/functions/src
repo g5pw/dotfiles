@@ -3,9 +3,9 @@
 src ()
 {
     autoload -U zrecompile
-    [ -f $ZDOTDIR/.zshrc ] && zrecompile -p $ZDOTDIR/.zshrc
-    [ -f $ZDOTDIR/.zcompdump ] && zrecompile -p $ZDOTDIR/.zcompdump
-    [ -f $ZDOTDIR/.zshrc.zwc.old ] && rm -f $ZDOTDIR/.zshrc.zwc.old
-    [ -f $ZDOTDIR/.zcompdump.zwc.old ] && rm -f $ZDOTDIR/.zcompdump.zwc.old
+    for f in (.zshrc .zcompdump .zprofile .zshenv); do
+	[ -f $ZDOTDIR/$f ] && zrecompile -p $ZDOTDIR/$f
+	[ -f $ZDOTDIR/$f.old ] && rm -f $ZDOTDIR/$f.old
+    done
     source $ZDOTDIR/.zshrc
 }
