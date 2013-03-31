@@ -1,0 +1,15 @@
+#compdef mdls
+
+#   mdls [-name attributeName] file ...  
+
+function _attributeName {    
+compadd -X %B' --- Select one of the possible metadata attributes --- %b' \
+     -p kMDItem  \
+   $(/usr/bin/mdimport -A | awk '{print $1}' | \
+   perl -p -e "s;('|kMDItem);;g"    )   
+}  
+
+
+   _arguments \
+    '-name[one of the possible metadata attributes]: :_attributeName'\
+    '*: :_files'
