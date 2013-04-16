@@ -4,9 +4,9 @@
 [submodule "zsh/zsh-completions"]
 	path = zsh/zsh-completions
 	url = https://github.com/zsh-users/zsh-completions.git
-[submodule "zsh/zaw"]
-	path = zsh/zaw
-	url = git://github.com/zsh-users/zaw.git
 [submodule "zsh/zsh-history-substring-search"]
 	path = zsh/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search.git
+[submodule "zsh/zsh-fuzzy-match"]
+	path = zsh/zsh-fuzzy-match
+	url = git://github.com/tarruda/zsh-fuzzy-match.git

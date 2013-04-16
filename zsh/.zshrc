@@ -15,8 +15,8 @@ function rand() { exec $RANDOM % $1; }
 #Load fasd
 eval "$(fasd --init auto)"
 
-# load ZAW
-[ -d $ZDOTDIR/zaw/ ] && source $ZDOTDIR/zaw/zaw.zsh
+# load zsh-fuzzy-match
+[ -d $ZDOTDIR/zsh-fuzzy-match/ ] && source $ZDOTDIR/zsh-fuzzy-match/fuzzy-match.zsh
 
 # load highlighting
 [ -d $ZDOTDIR/zsh-syntax-highlighting/ ] && source $ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
