@@ -450,3 +450,4 @@ setopt pushd_ignore_dups
 setopt pushd_to_home
 setopt share_history
 setopt null_glob
+setopt cdablevars
