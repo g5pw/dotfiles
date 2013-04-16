@@ -1,0 +1,8 @@
+#compdef whichf
+
+_whichf () {
+    compadd -X "Shell functions" -k functions
+    return $?
+}
+
+_whichf "$@"
