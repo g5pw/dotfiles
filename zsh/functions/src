@@ -3,7 +3,7 @@
 src ()
 {
     autoload -U zrecompile
-    for f in (.zshrc .zcompdump .zprofile .zshenv); do
+    foreach f ( .zshrc .zcompdump .zprofile .zshenv ); do
 	[ -f $ZDOTDIR/$f ] && zrecompile -p $ZDOTDIR/$f
 	[ -f $ZDOTDIR/$f.old ] && rm -f $ZDOTDIR/$f.old
     done
