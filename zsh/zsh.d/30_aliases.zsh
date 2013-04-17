@@ -7,7 +7,7 @@ alias cp='nocorrect cp -i'
 alias ds='dirs'
 alias dss='dirs -v'
 alias du1='du -hs *(/)' ## du with depth 1
-alias ea='vim $ZDOTDIR/zsh.d/30_aliases.zsh && SILENT=true src'
+alias ea='$EDITOR $ZDOTDIR/zsh.d/30_aliases.zsh && source $ZDOTDIR/zsh.d/30_aliases.zsh'
 alias ef='edit_function'
 alias find='noglob find'
 alias fu='sudo $( fc -ln -1)'
