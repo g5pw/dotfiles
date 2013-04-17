@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+edit_function() {
+    $EDITOR $(whichf $1)
+    echo "Reloading $1..."
+    reload $1
+}

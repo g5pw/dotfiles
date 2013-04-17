@@ -125,3 +125,6 @@ bindkey -M menuselect '^o' accept-and-infer-next-history
 # Custom completions:
 compdef sp=port
 compdef p=port
+compdef reload=whichf
+compdef edit_function=whichf
+compdef ef=whichf
