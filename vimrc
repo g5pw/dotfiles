@@ -27,16 +27,6 @@ fun! SetupVAM()
 	exec 'helptags '.fnameescape(vam_install_path.'/vim-addon-manager/doc')
     endif
     " }}}
-    " Add custom sources {{{
-    fun! AddSources()
-	let d = vam#install#Pool()
-	let d['mpvim'] = { 'type' : 'svn', 'url' : 'http://svn.macports.org/repository/macports/contrib/mpvim/' }
-	return d
-    endf
-
-    let g:vim_addon_manager = {}
-    let g:vim_addon_manager.pool_fun = function('AddSources')
-    "}}}
     " Activated plugins -------------------------------------------------- {{{
     let addons = []
     " Text {{{
@@ -85,7 +75,6 @@ fun! SetupVAM()
     " Language support {{{
     call add(addons, 'cern_root')
     call add(addons, 'Markdown')
-    call add(addons, 'mpvim')
     call add(addons, 'github:hail2u/vim-css3-syntax')
     call add(addons, 'github:skammer/vim-css-color')
     call add(addons, 'vim-dokuwiki')
