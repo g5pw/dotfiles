@@ -2,6 +2,11 @@
 set nocompatible
 let snips_author = "Aljaž Srebrnič"
 
+" Use powerline {{{
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+" }}}
 " VAM setup {{{
 fun! SetupVAM()
     " YES, you can customize this vam_install_path path and everything still works!
@@ -97,7 +102,6 @@ fun! SetupVAM()
     " }}}
     " Utilities {{{
     call add(addons, 'Syntastic')
-    call add(addons, 'Powerline')
     call add(addons, 'changesPlugin')
     call add(addons, 'github:myusuf3/numbers.vim')
     call add(addons, 'github:nathanaelkane/vim-indent-guides',)
