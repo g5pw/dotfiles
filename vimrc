@@ -145,7 +145,7 @@ set title               " change the terminal's title
 set laststatus=2	" Always show statusline
 set scrolloff=5		" Always keep 3 lines above/below cursor
 set undofile		" Save undo tree in file
-set undodir=~/.vim/undo//     " undo files
+set undodir=~/.vim/tmp/undo//     " undo files
 
 set splitright
 set fillchars=diff:⣿,vert:│,fold:-
@@ -205,7 +205,7 @@ set foldtext=MyFoldText()
 " }}}
 
 " Store swap files in fixed location, not current directory.
-set dir=~/.vim/swap//,/var/tmp//,/tmp//,.
+set dir=~/.vim/tmp/swap//,/var/tmp//,/tmp//,.
 
 " Disable vim intro message
 set shortmess+=I
