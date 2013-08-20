@@ -38,8 +38,8 @@ fun! SetupVAM()
     call add(addons, 'delimitMate')
     call add(addons, 'Rainbow_Parenthsis_Bundle')
     call add(addons, 'visual-increment')
-    call add(addons, 'tComment')
     call add(addons, 'github:ervandew/supertab')
+    call add(addons, 'commentary')
     call add(addons, 'Tabular')
     call add(addons, 'surround')
     call add(addons, 'abolish')
@@ -276,7 +276,6 @@ let g:Powerline_symbols = 'fancy'
 
 let g:extradite_showhash=1
 
-let g:tcomment_types = {'portfile': '# %s'}
 
 " }}}
 " Mappings {{{
@@ -518,6 +517,9 @@ augroup ft_mercurial
 
     au BufNewFile,BufRead *hg-editor-*.txt setlocal filetype=hgcommit
 augroup END
+" }}}
+" Portfile {{{
+autocmd FileType portfile set commentstring=#\ %s
 " }}}
 " Python {{{
 augroup ft_python
