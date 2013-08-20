@@ -46,10 +46,10 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 export WORDCHARS='*?-[]~=/&;!#$%^(){}<>'
 
 # Important dirs
-export Projects=$HOME/Documents/Projects
-export Uni=$HOME/Documents/University
-export MP_main=/opt/local/var/macports/sources/svn.macports.org/dports
-export MP_personal=/opt/local/var/macports/sources/mp-g5pw/dports
+hash -d Projects=$HOME/Documents/Projects
+hash -d Uni=$HOME/Documents/University
+hash -d MP_main=/opt/local/var/macports/sources/svn.macports.org/dports
+hash -d MP_personal=/opt/local/var/macports/sources/mp-g5pw/dports
 
 #load my function and more completions
 fpath=($ZDOTDIR/functions $ZDOTDIR/zsh-completions/src $fpath)
