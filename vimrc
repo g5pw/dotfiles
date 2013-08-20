@@ -54,6 +54,8 @@ fun! SetupVAM()
     " File System/Integration {{{
     call add(addons, 'vimfiler')
     call add(addons, 'ctrlp')
+    call add(addons, 'ctrlp-funky')
+    call add(addons, 'ctrlp-z')
     call add(addons, 'fugitive')
     call add(addons, 'extradite')
     call add(addons, 'FSwitch')
@@ -257,6 +259,7 @@ let g:load_doxygen_syntax=1
 " CtrlP settings
 let g:ctrlp_map = '<Leader>t'
 let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend|elf)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
+let g:ctrlp_extensions = ['funky']
 
 "Tagbar options and maps
 let tagbar_autoclose = 1
@@ -305,6 +308,14 @@ nnoremap D d$
 nnoremap <leader>a :<C-u>Unite grep -default-action=above<CR>
 nnoremap <leader>A :<C-u>execute 'Unite grep:.::' . expand("<cword>") . ' -default-action=above -auto-preview'<CR>
 nnoremap <leader>j :<C-u>Unite buffer<CR>
+
+"Ctrl-p mappings
+nnoremap <leader>z :CtrlPZ
+nnoremap <Leader>Z :execute 'CtrlPZ' . expand('<cword>')<Cr>
+" expand Functions
+nnoremap <Leader>fu :CtrlPFunky<Cr>
+" narrow the list down with a word under cursor
+nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 
 " YouCompleteMe mappings
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
