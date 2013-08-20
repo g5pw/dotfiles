@@ -50,10 +50,9 @@ fun! SetupVAM()
     call add(addons, 'unimpaired')
     call add(addons, 'github:adinapoli/vim-markmultiple')
     call add(addons, 'TaskList')
-    call add(addons, 'LustyJuggler')
     " }}}
     " File System/Integration {{{
-    call add(addons, 'The_NERD_tree')
+    call add(addons, 'vimfiler')
     call add(addons, 'ctrlp')
     call add(addons, 'fugitive')
     call add(addons, 'extradite')
@@ -86,6 +85,8 @@ fun! SetupVAM()
     call add(addons, 'Vitality')
     call add(addons, 'Splice')
     call add(addons, 'quickfixsigns')
+    call add(addons, 'unite')
+    call add(addons, 'vimproc')
     " }}}
     " Themes {{{
     call add(addons, 'molokai')
@@ -227,6 +228,22 @@ set cscopeverbose
 let g:haddock_browser = "elinks"
 let g:haddock_docdir = "/opt/local/share/doc/ghc/html/"
 
+" Unite stuff {{{
+let g:unite_data_directory = '~/.vim/tmp/unite/'
+let g:unite_source_process_enable_confirm = 1
+let g:unite_enable_split_vertically = 0
+let g:unite_winheight = 20
+let g:unite_source_grep_command = 'ag'
+let g:unite_source_grep_default_opts = '--nocolor --nogroup --hidden'
+let g:unite_source_grep_recursive_opt = ''
+let g:ref_use_vimproc = 1
+let g:ref_open = 'vsplit'
+let g:ref_cache_dir = expand('~/.vim/tmp/ref_cache/')
+let g:unite_enable_start_insert = 1
+let g:unite_enable_short_source_names = 1
+let g:unite_prompt = '» '
+" }}}
+
 " UltiSnips settings
 
 " YouCompleteMe settings
@@ -245,8 +262,11 @@ let tagbar_autoclose = 1
 let tagbar_autofocus = 1
 let g:tagbar_singleclick = 1
 
-"Settings for NERDTree
-let NERDTreeIgnore=['\.o$', '\~$', '$']
+" VimFiler settings
+let g:vimfiler_as_default_explorer=1
+let g:vimfiler_data_directory = expand('~/.vim/tmp/vimfiler/')
+let g:vimfiler_quick_look_command = 'qlmanage -p'
+let g:vimfiler_ignore_pattern = '\(^\.\|.py[oc]$\)'
 
 " Enable space error highlighting for portfiles
 let g:portfile_highlight_space_errors=1
@@ -271,19 +291,27 @@ let g:extradite_showhash=1
 " Made D behave
 nnoremap D d$
 
+" Unite mappings
+nnoremap <leader>a :<C-u>Unite grep -default-action=above<CR>
+nnoremap <leader>A :<C-u>execute 'Unite grep:.::' . expand("<cword>") . ' -default-action=above -auto-preview'<CR>
+nnoremap <leader>j :<C-u>Unite buffer<CR>
+
 " YouCompleteMe mappings
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " Toggle folds with space bar
 nnoremap <Space> za
 nnoremap <Leader><tab> :TScratch<cr>
-nnoremap <Leader>. :NERDTreeToggle<cr>
 nnoremap <Leader>, :TagbarToggle<CR>
 nnoremap <silent> <leader>/ :nohlsearch<CR>:echo 'Search highlight cleared'<CR>
 " Parse file with astyle
 nnoremap <silent> <Leader>as :%!astyle<CR>
-" NERDTree Bookmarks
-nnoremap <Leader>bm :NERDTreeFromBookmark 
+
+" VimFiler mappings
+nnoremap <leader>cd :<C-u>:VimFilerBufferDir -buffer-name=explorer -toggle<CR>`
+nnoremap <Leader>. :VimFiler<cr>
+
+
 nnoremap <silent><leader>r :ToggleChangeView<CR>
 " Parse dir with ctags
 nnoremap <silent> <Leader>ct :! ctags -R --c++-kinds=+p --fields=+iaS --extra=+q<cr>
@@ -301,8 +329,6 @@ nnoremap <silent><leader>g1 :w <bar> :Gdiff HEAD~1<CR>
 nnoremap <silent><leader>ge :Extradite<CR>
 " FShere
 nnoremap <silent> <leader>h	:FSHere<CR>
-" LustyJuggler
-nnoremap <silent> <leader>j :LustyJuggler<CR>
 " TaskList
 nnoremap <Leader>k <Plug>TaskList
 " Shortcut to rapidly toggle `set list`
