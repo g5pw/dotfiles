@@ -36,7 +36,6 @@ fun! SetupVAM()
     call add(addons, 'matchit.zip')
     call add(addons, 'Gundo')
     call add(addons, 'delimitMate')
-    call add(addons, 'Rainbow_Parenthsis_Bundle')
     call add(addons, 'visual-increment')
     call add(addons, 'github:ervandew/supertab')
     call add(addons, 'commentary')
@@ -55,22 +54,14 @@ fun! SetupVAM()
     " }}}
     " File System/Integration {{{
     call add(addons, 'The_NERD_tree')
-    call add(addons, 'ack')
-    call add(addons, 'ag')
     call add(addons, 'ctrlp')
-    call add(addons, 'vcscommand')
     call add(addons, 'fugitive')
     call add(addons, 'extradite')
-    call add(addons, 'vimux')
-    call add(addons, 'github:julienr/vimux-pyutils')
-    call add(addons, 'Clam')
     call add(addons, 'FSwitch')
     call add(addons, 'VimOrganizer')
     call add(addons, 'editorconfig-vim')
     call add(addons, 'Tagbar')
-    call add(addons, 'github:tpope/vim-git')
     call add(addons, 'github:tpope/vim-foreplay')
-    call add(addons, 'TagHighlight')
     "}}}
     " Language support {{{
     call add(addons, 'cern_root')
@@ -78,9 +69,7 @@ fun! SetupVAM()
     call add(addons, 'github:hail2u/vim-css3-syntax')
     call add(addons, 'github:skammer/vim-css-color')
     call add(addons, 'vim-dokuwiki')
-    call add(addons, 'factor')
     call add(addons, 'octave%3600')
-    call add(addons, 'rust')
     call add(addons, 'github:guns/vim-clojure-static')
     call add(addons, 'haskellmode-vim')
     call add(addons, 'Haskell_Conceal')
@@ -293,7 +282,6 @@ nnoremap <silent> <Leader>as :%!astyle<CR>
 " NERDTree Bookmarks
 nnoremap <Leader>bm :NERDTreeFromBookmark 
 nnoremap <silent><leader>r :ToggleChangeView<CR>
-nnoremap <silent><leader>c :ToggleRaibowParenthesis<CR>
 " Parse dir with ctags
 nnoremap <silent> <Leader>ct :! ctags -R --c++-kinds=+p --fields=+iaS --extra=+q<cr>
 " FuGitive
