@@ -37,8 +37,8 @@ fun! SetupVAM()
     call add(addons, 'Gundo')
     call add(addons, 'delimitMate')
     call add(addons, 'visual-increment')
-    call add(addons, 'github:ervandew/supertab')
     call add(addons, 'commentary')
+    call add(addons, 'YouCompleteMe')
     call add(addons, 'Tabular')
     call add(addons, 'surround')
     call add(addons, 'abolish')
@@ -76,7 +76,6 @@ fun! SetupVAM()
     call add(addons, 'ragtag')
     call add(addons, 'wmgraphviz')
     call add(addons, 'ZenCoding')
-    call add(addons, 'OmniCppComplete')
     " }}}
     " Utilities {{{
     call add(addons, 'Syntastic')
@@ -230,8 +229,9 @@ let g:haddock_docdir = "/opt/local/share/doc/ghc/html/"
 
 " UltiSnips settings
 
-" Enable context-aware superTab completions
-let g:SuperTabDefaultCompletionType = "context"
+" YouCompleteMe settings
+let g:ycm_key_invoke_completion = '<C-\>'
+let g:ycm_extra_conf_globlist = ['~/Documents/Projects/*']
 
 " Enable Doxygen auto-load
 let g:load_doxygen_syntax=1
@@ -270,6 +270,9 @@ let g:extradite_showhash=1
 " Mappings {{{
 " Made D behave
 nnoremap D d$
+
+" YouCompleteMe mappings
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " Toggle folds with space bar
 nnoremap <Space> za
