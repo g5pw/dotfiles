@@ -82,7 +82,7 @@ fun! SetupVAM()
     call add(addons, 'Syntastic')
     call add(addons, 'changesPlugin')
     call add(addons, 'github:myusuf3/numbers.vim')
-    call add(addons, 'github:nathanaelkane/vim-indent-guides',)
+    call add(addons, 'github:nathanaelkane/vim-indent-guides')
     call add(addons, 'SudoEdit')
     call add(addons, 'Vitality')
     call add(addons, 'Splice')
@@ -332,8 +332,9 @@ nnoremap <silent> <Leader>as :%!astyle<CR>
 nnoremap <leader>cd :<C-u>:VimFilerBufferDir -buffer-name=explorer -toggle<CR>`
 nnoremap <Leader>. :VimFiler<cr>
 
-
+" Changes mappings
 nnoremap <silent><leader>r :ToggleChangeView<CR>
+
 " Parse dir with ctags
 nnoremap <silent> <Leader>ct :! ctags -R --c++-kinds=+p --fields=+iaS --extra=+q<cr>
 " FuGitive
@@ -431,8 +432,6 @@ nnoremap <T-Right>   <C-W><Bar>
 
 " Mappings end }}}
 " Autocmds {{{
-autocmd FileType c,c++ let b:delimitMate_matchpairs = "(:),{:},[:],/*:*/"
-
 " Auto-reload vimrc on save {{{
 augroup vimrcEx
     autocmd!
@@ -616,6 +615,8 @@ autocmd FileType gitcommit setlocal spell
 autocmd FileType svn setlocal spell
 " }}}
 " Misc {{{
+autocmd FileType c,c++ let b:delimitMate_matchpairs = "(:),{:},[:],/*:*/"
+
 " Save on focus lost.
 autocmd FocusLost * :silent! :wall
 
@@ -641,7 +642,7 @@ if &t_Co > 2 || has("gui_running")
     syntax on
 endif
 " }}}
-
+" Custom functions {{{
 function! s:DiffWithSaved()
   let filetype=&ft
   diffthis
@@ -650,3 +651,4 @@ function! s:DiffWithSaved()
   exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 com! DiffSaved call s:DiffWithSaved()
+" }}}
