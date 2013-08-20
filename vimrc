@@ -85,6 +85,7 @@ fun! SetupVAM()
     call add(addons, 'Vitality')
     call add(addons, 'Splice')
     call add(addons, 'quickfixsigns')
+    call add(addons, 'github:mhinz/vim-startify')
     call add(addons, 'unite')
     call add(addons, 'vimproc')
     " }}}
@@ -273,6 +274,15 @@ let g:portfile_highlight_space_errors=1
 
 "delimitMate options
 let delimitMate_balance_matchpairs = 1
+
+" Startify options
+let g:startify_bookmarks = [ '~/.vimrc', '~/.zsh/.zshrc' ]
+let g:startify_skiplist = [
+           \ 'COMMIT_EDITMSG',
+           \ $VIMRUNTIME .'/doc',
+           \ 'vim-addons/.*/doc'
+           \ ]
+let g:startify_custom_indices = ['f', 'j', 'd', 'k', 'g', 'h', 'r', 'u', 'v', 'n']
 
 "Yankstack options
 let g:yankstack_map_keys = 0
