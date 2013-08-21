@@ -253,6 +253,10 @@ let g:unite_prompt = '» '
 " }}}
 
 " UltiSnips settings
+let g:UltiSnipsExpandTrigger = '<c-l>'
+let g:UltiSnipsJumpForwardTrigger = '<c-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
+let g:UltiSnipsListSnippets = '<c-h>'
 
 " YouCompleteMe settings
 let g:ycm_key_invoke_completion = '<C-\>'
