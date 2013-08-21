@@ -14,6 +14,7 @@ alias fu='sudo $( fc -ln -1)'
 alias grep='grep --colour'
 alias gvim='gvim -U ~/.gvimrc'
 alias h='history'
+alias heroku="heroku-1.9"
 alias ip='curl ifconfig.me/ip'
 alias ipfwls="sudo ipfw -atN list"
 alias ls='ls -hF --color=auto'
