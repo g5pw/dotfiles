@@ -637,6 +637,11 @@ endif
 
 if &t_Co >= 256
     colorscheme jellybeans
+
+    hi StartifyBracket ctermfg=240
+    hi StartifyNumber  ctermfg=215
+    hi StartifyPath    ctermfg=245
+    hi StartifySlash   ctermfg=240
 endif
 
 if &t_Co > 2 || has("gui_running")
