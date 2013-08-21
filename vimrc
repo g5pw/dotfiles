@@ -430,17 +430,18 @@ nnoremap <S-M-Left>    <C-W><
 nnoremap <S-M-Right>   <C-W>>
 
 " Remaps for iTerm. It won't show meta as M but as T
-nmap <T-p> <Plug>yankstack_substitute_older_paste
-nmap <T-P> <Plug>yankstack_substitute_newer_paste
-nnoremap <S-T-Up>      <C-W>-
-nnoremap <S-T-Down>    <C-W>+
-nnoremap <S-T-Left>    <C-W><
-nnoremap <S-T-Right>   <C-W>>
-nnoremap <T-Up>      <C-W>_
-nnoremap <T-Down>    <C-W>=
-nnoremap <T-Left>    <C-W>=
-nnoremap <T-Right>   <C-W><Bar>
-
+if $TERM_PROGRAM == "iTerm.app"
+    nmap <T-p> <M-p>
+    nmap <T-P> <M-p>
+    nnoremap <S-T-Up>    <S-M-Up>
+    nnoremap <S-T-Down>  <S-M-Down>
+    nnoremap <S-T-Left>  <S-M-Left>
+    nnoremap <S-T-Right> <S-M-Right>
+    nnoremap <T-Up>      <M-Up>
+    nnoremap <T-Down>    <M-Down>
+    nnoremap <T-Left>    <M-Left>
+    nnoremap <T-Right>   <M-Right>
+endif
 " Mappings end }}}
 " Autocmds {{{
 " Auto-reload vimrc on save {{{
