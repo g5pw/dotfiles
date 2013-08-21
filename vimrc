@@ -63,6 +63,8 @@ fun! SetupVAM()
     call add(addons, 'editorconfig-vim')
     call add(addons, 'Tagbar')
     call add(addons, 'github:tpope/vim-foreplay')
+    call add(addons, 'github:rizzatti/funcoo.vim')
+    call add(addons, 'github:rizzatti/dash.vim')
     "}}}
     " Language support {{{
     call add(addons, 'cern_root')
