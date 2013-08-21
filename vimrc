@@ -621,8 +621,7 @@ augroup END
 " autocmd BufNewFile,BufRead /tmp/mutt*,/tmp/cvs*,*.txt if &ft != 'help' | syntax off | endif
 " }}}
 " Git Commit msgs {{{
-autocmd FileType gitcommit set noai noshowmatch
-autocmd FileType gitcommit setlocal spell
+autocmd FileType gitcommit setlocal spell noautoindent noshowmatch
 " }}}
 " SVN commit msgs {{{
 autocmd FileType svn setlocal spell
