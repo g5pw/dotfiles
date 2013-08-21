@@ -301,6 +301,8 @@ let g:yankstack_map_keys = 0
 
 " Set Syntastic style
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+let g:syntastic_tcl_nagelfar_conf = ''
+let g:syntastic_python_checkers = ['pyflakes']
 
 " Set Powerlyne style
 let g:Powerline_symbols = 'fancy'
