@@ -643,6 +643,8 @@ autocmd InsertLeave * set nopaste
 if has("gui_running")
     set ttyfast
     colorscheme Tomorrow-Night-Eighties
+    " MacVim runtime path fix
+    set rtp+=/opt/local/share/vim/vimfiles
 endif
 
 if &t_Co >= 256
