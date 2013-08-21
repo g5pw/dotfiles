@@ -24,7 +24,11 @@ unset fasd_cache
 [ -d $ZDOTDIR/zsh-fuzzy-match/ ] && source $ZDOTDIR/zsh-fuzzy-match/fuzzy-match.zsh
 
 # load highlighting
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(brackets main)
 [ -d $ZDOTDIR/zsh-syntax-highlighting/ ] && source $ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=56'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=35'
+ZSH_HIGHLIGHT_STYLES[function]='fg=28'
 
 # fish-like history search
 [ -d $ZDOTDIR/zsh-history-substring-search/ ] && source $ZDOTDIR/zsh-history-substring-search/zsh-history-substring-search.zsh
