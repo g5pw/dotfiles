@@ -93,6 +93,8 @@ fun! SetupVAM()
     " }}}
     " Themes {{{
     call add(addons, 'molokai')
+    call add(addons, 'Distinguished')
+    call add(addons, 'jellybeans')
     " }}}
     " TextObjects {{{
     call add(addons, 'github:coderifous/textobj-word-column.vim')
@@ -630,11 +632,11 @@ autocmd InsertLeave * set nopaste
 " Visual stuff {{{
 if has("gui_running")
     set ttyfast
-    colorscheme Tomorrow-Night
+    colorscheme Tomorrow-Night-Eighties
 endif
 
 if &t_Co >= 256
-    colorscheme Tomorrow-Night
+    colorscheme jellybeans
 endif
 
 if &t_Co > 2 || has("gui_running")
