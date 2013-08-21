@@ -148,6 +148,9 @@ set autoread
 
 set virtualedit=block
 
+set switchbuf=useopen,usetab,newtab	" Specify the behavior when switching between buffers
+set viminfo^=%				" Remember info about open buffers on close
+
 " Don't try to highlight lines longer than 800 characters.
 set synmaxcol=400
 
