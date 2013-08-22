@@ -92,6 +92,7 @@ fun! SetupVAM()
     call add(addons, 'github:mhinz/vim-startify')
     call add(addons, 'unite')
     call add(addons, 'vimproc')
+    call add(addons, 'github:zhaocai/linepower.vim')
     " }}}
     " Themes {{{
     call add(addons, 'molokai')
