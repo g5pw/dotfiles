@@ -266,6 +266,12 @@ let g:ycm_extra_conf_globlist = ['~/Documents/Projects/*']
 " Enable Doxygen auto-load
 let g:load_doxygen_syntax=1
 
+" Signify options
+let g:signify_vcs_list = [ 'git', 'svn', 'hg']
+let g:signify_mapping_next_hunk = '<leader>gj'
+let g:signify_mapping_prev_hunk = '<leader>gk'
+let g:signify_mapping_toggle_highlight = '<leader>gh'
+
 " CtrlP settings
 let g:ctrlp_map = '<Leader>t'
 let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend|elf)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
