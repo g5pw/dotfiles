@@ -78,7 +78,7 @@ fun! SetupVAM()
     call add(addons, 'Haskell_Conceal')
     call add(addons, 'ragtag')
     call add(addons, 'wmgraphviz')
-    call add(addons, 'ZenCoding')
+    call add(addons, 'Emmet')
     " }}}
     " Utilities {{{
     call add(addons, 'Syntastic')
