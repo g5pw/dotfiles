@@ -75,6 +75,7 @@ fun! SetupVAM()
     call add(addons, 'ragtag')
     call add(addons, 'wmgraphviz')
     call add(addons, 'Emmet')
+    call add(addons, 'github:LaTeX-Box-Team/LaTeX-Box')
     " }}}
     " Utilities {{{
     call add(addons, 'Syntastic')
@@ -244,6 +245,14 @@ let g:airline_mode_map = {
     \ 'S'  : 'S',
     \ '' : 'S',
     \ }
+" }}}
+
+" Latex-Box {{{
+let g:LatexBox_viewer = "/Applications/Skim.app/Contents/MacOS/Skim"
+let g:LatexBox_latexmk_async = 1
+let g:LatexBox_autojump = 1
+let g:LatexBox_Folding = 1
+let g:LatexBox_split_width = 20
 " }}}
 
 " Haskell dirs
@@ -622,16 +631,14 @@ augroup END
 
 " }}}
 " Tex {{{
-augroup ft_tex
-    au FileType tex setlocal errorformat=%f:%l:\ %m,%f:%l-%\\d%\\+:\ %m
-    au FileType tex
-		\if filereadable('Makefile') |
-		\	setlocal makeprg=make |
-		\else |
-		\	exec "setlocal makeprg=make\\ -f\\ ~/Documents/Projects/Miscellaneous/latex.mk\\ " . substitute(bufname("%"),"tex$","pdf", "") |
-		\endif
-
-    au FileType tex nmap <leader>o :w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline -r <C-r>=line('.')<CR> %<.pdf %<CR>
+augroup ft_latex
+    " Skim Goodness
+    au Filetype tex map <silent> <Leader>ls :silent !/Applications/Skim.app/Contents/SharedSupport/displayline
+            \ <C-R>=line('.')<CR> "<C-R>=LatexBox_GetOutputFile()<CR>" "%:p"<CR>
+    au Filetype tex imap ]] <Plug>LatexCloseCurEnv
+    au Filetype tex nmap <buffer> <F5>   <Plug>LatexChangeEnv
+    au Filetype tex vmap <buffer> <F7>   <Plug>LatexWrapSelection
+    au Filetype tex vmap <buffer> <S-F7> <Plug>LatexEnvWrapSelection
 augroup END
 " }}}
 " txt & mutt files {{{
