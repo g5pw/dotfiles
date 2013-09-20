@@ -2,11 +2,6 @@
 set nocompatible
 let snips_author = "Aljaž Srebrnič"
 
-" Use powerline {{{
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
-" }}}
 " VAM setup {{{
 fun! SetupVAM()
     " YES, you can customize this vam_install_path path and everything still works!
@@ -93,7 +88,7 @@ fun! SetupVAM()
     call add(addons, 'github:mhinz/vim-startify')
     call add(addons, 'unite')
     call add(addons, 'vimproc')
-    call add(addons, 'github:zhaocai/linepower.vim')
+    call add(addons, 'vim-airline')
     " }}}
     " Themes {{{
     call add(addons, 'molokai')
@@ -234,6 +229,22 @@ set cscopetag
 set cscopeverbose
 "}}}
 " Plugin settings {{{
+" vim-airline {{{
+let g:airline_powerline_fonts = 1
+let g:airline_mode_map = {
+    \ '__' : '-',
+    \ 'n'  : 'N',
+    \ 'i'  : 'I',
+    \ 'R'  : 'R',
+    \ 'c'  : 'C',
+    \ 'v'  : 'V',
+    \ 'V'  : 'V',
+    \ '' : 'V',
+    \ 's'  : 'S',
+    \ 'S'  : 'S',
+    \ '' : 'S',
+    \ }
+" }}}
 
 " Haskell dirs
 let g:haddock_browser = "elinks"
