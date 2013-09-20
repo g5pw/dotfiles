@@ -112,6 +112,7 @@ call SetupVAM()
 
 "Set Mapleader
 let g:mapleader = ","
+let g:maplocalleader = ","
 
 filetype plugin indent on
 set encoding=utf-8
