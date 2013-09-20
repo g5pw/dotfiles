@@ -338,6 +338,12 @@ let g:Powerline_symbols = 'fancy'
 
 let g:extradite_showhash=1
 
+" SudoEdit {{{
+if !has('gui_running')
+    let g:sudoAuth = 'sudo'
+endif
+" }}}
+
 
 " }}}
 " Mappings {{{
