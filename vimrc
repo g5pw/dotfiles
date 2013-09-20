@@ -389,8 +389,6 @@ nnoremap <silent><leader>g0 :w <bar> Git diff -U0<CR>
 nnoremap <silent><leader>g1 :w <bar> :Gdiff HEAD~1<CR>
 " Extradite options
 nnoremap <silent><leader>ge :Extradite<CR>
-" FShere
-nnoremap <silent> <leader>h	:FSHere<CR>
 " TaskList
 nnoremap <Leader>k <Plug>TaskList
 " Shortcut to rapidly toggle `set list`
@@ -519,6 +517,12 @@ augroup ft_css
     " Make {<cr> insert a pair of brackets in such a way that the cursor is correctly
     " positioned inside of them AND the following code doesn't get unfolded.
     au BufNewFile,BufRead *.less,*.css inoremap <buffer> {<cr> {}<left><cr><space><space><space><space>.<cr><esc>kA<bs>
+augroup END
+" }}}
+" C {{{
+augroup ft_c
+" FSwitch
+    au Filetype c,cpp,h,hpp nnoremap <silent> <leader>h :FSHere<CR>
 augroup END
 " }}}
 " Haskell {{{
