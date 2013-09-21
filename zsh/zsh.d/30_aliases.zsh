@@ -67,6 +67,7 @@ alias -g T='|tail'
 alias -g UC='|uniq -c'
 alias -g US='|sort -u'
 alias -g W='|wc -l'
+alias -g C='|colout'
 
 # Suffix aliases
 alias -s tex=vim
