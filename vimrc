@@ -644,8 +644,10 @@ augroup END
 " Tex {{{
 augroup ft_latex
     " Skim Goodness
-    au Filetype tex map <silent> <Leader>ls :silent !/Applications/Skim.app/Contents/SharedSupport/displayline
-            \ <C-R>=line('.')<CR> "<C-R>=LatexBox_GetOutputFile()<CR>" "%:p"<CR>
+    au Filetype tex map <buffer> <silent> <LocalLeader>ls :silent
+                \ !/Applications/Skim.app/Contents/SharedSupport/displayline -r -b
+                \ <C-R>=line('.')<CR> "<C-R>=LatexBox_GetOutputFile()<CR>"
+                \ "%:p" <CR>
     au Filetype tex imap ]] <Plug>LatexCloseCurEnv
     au Filetype tex nmap <buffer> <F5>   <Plug>LatexChangeEnv
     au Filetype tex vmap <buffer> <F7>   <Plug>LatexWrapSelection
