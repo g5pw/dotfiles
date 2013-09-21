@@ -261,7 +261,7 @@ let g:haddock_browser = "elinks"
 let g:haddock_docdir = "/opt/local/share/doc/ghc/html/"
 
 " Unite stuff {{{
-let g:unite_data_directory = '~/.vim/tmp/unite/'
+let g:unite_data_directory = expand('~/.vim/tmp/unite')
 let g:unite_source_process_enable_confirm = 1
 let g:unite_enable_split_vertically = 0
 let g:unite_winheight = 20
