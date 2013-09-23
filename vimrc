@@ -413,6 +413,9 @@ cnoreabbrev csr cs reset
 cnoreabbrev css cs show
 cnoreabbrev csh cs help
 
+" SudoEdit abbrev
+cnoreabbrev w!! SudoWrite
+
 " Ctrl + Arrow is for moving text around and relies on vim-unimpaired by Tim Pope.
 nmap <C-Up>   [e
 imap <C-Up>   <C-O><C-Up>
