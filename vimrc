@@ -287,6 +287,7 @@ let g:UltiSnipsListSnippets = '<c-h>'
 " YouCompleteMe settings
 let g:ycm_key_invoke_completion = '<C-\>'
 let g:ycm_extra_conf_globlist = ['~/Documents/Projects/*']
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " Enable Doxygen auto-load
 let g:load_doxygen_syntax=1
