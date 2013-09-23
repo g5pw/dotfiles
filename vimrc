@@ -160,6 +160,8 @@ set backupcopy=yes
 set pastetoggle=<F2>	"Disable auto indent when pasting
 set guifont=Menlo\ for\ Powerline:h11 "Set GUI font
 
+set cursorline
+
 " WildIgnore menu {{{
 set wildmenu
 set wildmode=longest,list:longest
