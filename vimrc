@@ -372,7 +372,6 @@ nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " Toggle folds with space bar
 nnoremap <Space> za
-nnoremap <Leader><tab> :TScratch<cr>
 nnoremap <Leader>, :TagbarToggle<CR>
 nnoremap <silent> <leader>/ :nohlsearch<CR>:echo 'Search highlight cleared'<CR>
 " Parse file with astyle
@@ -401,8 +400,6 @@ nnoremap <silent><leader>g1 :w <bar> :Gdiff HEAD~1<CR>
 nnoremap <silent><leader>ge :Extradite<CR>
 " TaskList
 nnoremap <Leader>k <Plug>TaskList
-" Shortcut to rapidly toggle `set list`
-nnoremap <leader>l :set list!<CR>
 " Gundo maps
 nnoremap <leader>u :GundoToggle<CR>
 " Quickly edit the vimrc file
@@ -410,14 +407,6 @@ nnoremap <silent> <leader>ve :e $MYVIMRC<CR>
 
 " f7 toggles spelling on/off
 nnoremap <F7> :setlocal spell! spell?<CR>
-
-" boxes integration
-nnoremap <silent> <leader>bf !!boxes -a l -d tjc -s 75<CR>
-vnoremap <silent> <leader>bf !boxes -a l -d tjc -s 75<CR>
-nnoremap <silent> <leader>mb !!boxes -a l -d c -s 75<CR>
-vnoremap <silent> <leader>mb !boxes -a l -d c -s 75<CR>
-nnoremap <silent> <leader>xb !!boxes -d c -r<CR>
-vnoremap <silent> <leader>xb !boxes -d c -r<CR>
 
 " YankStack bindings
 nmap <M-p> <Plug>yankstack_substitute_older_paste
