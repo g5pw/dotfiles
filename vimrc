@@ -27,7 +27,7 @@ fun! SetupVAM()
     " Text {{{
     call add(addons, 'UltiSnips')
     call add(addons, 'repeat')
-    call add(addons, 'github:maxbrunsfeld/vim-yankstack')
+    call add(addons, 'YankRing')
     call add(addons, 'matchit.zip')
     call add(addons, 'Gundo')
     call add(addons, 'delimitMate')
@@ -329,9 +329,6 @@ let g:startify_skiplist = [
            \ ]
 let g:startify_custom_indices = ['f', 'j', 'd', 'k', 'g', 'h', 'r', 'u', 'v', 'n']
 
-"Yankstack options
-let g:yankstack_map_keys = 0
-
 " Set Syntastic style
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_tcl_nagelfar_conf = ''
@@ -408,9 +405,8 @@ nnoremap <silent> <leader>ve :e $MYVIMRC<CR>
 " f7 toggles spelling on/off
 nnoremap <F7> :setlocal spell! spell?<CR>
 
-" YankStack bindings
-nmap <M-p> <Plug>yankstack_substitute_older_paste
-nmap <M-P> <Plug>yankstack_substitute_newer_paste
+" Map Y to something sane
+nmap Y y$
 
 " Cscope command abbreviations
 cnoreabbrev csa cs add
