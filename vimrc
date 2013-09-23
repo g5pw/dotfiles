@@ -251,7 +251,7 @@ let g:airline_mode_map = {
 " }}}
 
 " Latex-Box {{{
-let g:LatexBox_viewer = "/Applications/Skim.app/Contents/MacOS/Skim"
+let g:LatexBox_viewer = "open -a Skim"
 let g:LatexBox_latexmk_async = 1
 let g:LatexBox_autojump = 1
 let g:LatexBox_Folding = 1
