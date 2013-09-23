@@ -44,7 +44,7 @@ fun! SetupVAM()
     call add(addons, 'camelcasemotion')
     call add(addons, 'unimpaired')
     call add(addons, 'github:adinapoli/vim-markmultiple')
-    call add(addons, 'TaskList')
+    call add(addons, 'vim-seek')
     " }}}
     " File System/Integration {{{
     call add(addons, 'vimfiler')
@@ -57,7 +57,7 @@ fun! SetupVAM()
     call add(addons, 'VimOrganizer')
     call add(addons, 'editorconfig-vim')
     call add(addons, 'Tagbar')
-    call add(addons, 'github:tpope/vim-foreplay')
+    call add(addons, 'vim-fireplace')
     call add(addons, 'dispatch')
     call add(addons, 'github:rizzatti/funcoo.vim')
     call add(addons, 'github:rizzatti/dash.vim')
@@ -79,7 +79,6 @@ fun! SetupVAM()
     " }}}
     " Utilities {{{
     call add(addons, 'Syntastic')
-    call add(addons, 'changesPlugin')
     call add(addons, 'github:myusuf3/numbers.vim')
     call add(addons, 'indentLine')
     call add(addons, 'SudoEdit')
@@ -395,8 +394,6 @@ nnoremap <silent><leader>g0 :w <bar> Git diff -U0<CR>
 nnoremap <silent><leader>g1 :w <bar> :Gdiff HEAD~1<CR>
 " Extradite options
 nnoremap <silent><leader>ge :Extradite<CR>
-" TaskList
-nnoremap <Leader>k <Plug>TaskList
 " Gundo maps
 nnoremap <leader>u :GundoToggle<CR>
 " Quickly edit the vimrc file
