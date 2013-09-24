@@ -80,7 +80,6 @@ fun! SetupVAM()
     " Utilities {{{
     call add(addons, 'Syntastic')
     call add(addons, 'github:myusuf3/numbers.vim')
-    call add(addons, 'indentLine')
     call add(addons, 'SudoEdit')
     call add(addons, 'Vitality')
     call add(addons, 'Splice')
