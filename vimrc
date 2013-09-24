@@ -467,33 +467,50 @@ endif
 " Mappings end }}}
 " Autocmds {{{
 " Vim {{{
-au FileType vim setlocal foldmethod=marker
-au FileType help setlocal textwidth=78
-au BufWinEnter *.txt if &ft == 'help' | wincmd L | endif
+augroup vim
+    au!
+    au FileType vim setlocal foldmethod=marker
+    au FileType help setlocal textwidth=78
+    au BufWinEnter *.txt if &ft == 'help' | wincmd L | endif
+augroup END
+" }}}
+" VCS {{{
+augroup vcs
+    au!
+    " Check spelling in VCS commit messages
+    autocmd FileType svn,gitcommit setlocal spell noshowmatch
+    " Disable jump to last known position
+    autocmd FileType svn,gitcommit augroup last_pos
+		\ au!
+		\augroup END
+augroup END
 " }}}
 " Misc {{{
-" Check spelling in VCS commit messages
-autocmd FileType svn,gitcommit setlocal spell noshowmatch
+augroup misc
+    au!
+    autocmd FileType text setlocal textwidth=78
 
-autocmd FileType text setlocal textwidth=78
+    " Auto-reload vimrc on save
+    autocmd BufWritePost .vimrc source $HOME/.vimrc
 
-" Auto-reload vimrc on save
-autocmd BufWritePost .vimrc source $HOME/.vimrc
+    " Save on focus lost.
+    autocmd FocusLost * :silent! :w
 
-" Save on focus lost.
-autocmd FocusLost * :silent! :wall
+    " Resize splits when the window is resized
+    autocmd VimResized * :wincmd =
 
-" Resize splits when the window is resized
-autocmd VimResized * :wincmd =
-
-" Exit paste mode when exiting insert
-autocmd InsertLeave * set nopaste
-
-" Return to last edit position when opening files (You want this!)
-autocmd BufReadPost *
-     \ if line("'\"") > 0 && line("'\"") <= line("$") |
-     \   exe "normal! g`\"" |
-     \ endif
+    " Exit paste mode when exiting insert
+    autocmd InsertLeave * set nopaste
+augroup END
+" }}}
+" Return to last edit position when opening files (You want this!) {{{
+augroup last_pos
+    au!
+    autocmd BufReadPost *
+		\ if line("'\"") > 0 && line("'\"") <= line("$") |
+		\   exe "normal! g`\"" |
+		\ endif
+augroup END
 " }}}
 " Autocmds end }}}
 " Visual stuff {{{
