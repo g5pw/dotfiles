@@ -232,6 +232,9 @@ set cscopetag
 set cscopeverbose
 "}}}
 " Plugin settings {{{
+" {{{
+let g:yankring_history_dir = '$HOME/.vim/tmp'
+" }}}
 " vim-airline {{{
 let g:airline_powerline_fonts = 1
 let g:airline_mode_map = {
