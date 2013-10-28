@@ -324,7 +324,7 @@ let g:vimfiler_ignore_pattern = '\(^\.\|.py[oc]$\)'
 let g:portfile_highlight_space_errors=1
 
 " Startify options
-let g:startify_bookmarks = [ '~/.vimrc', '~/.zsh/.zshrc' ]
+let g:startify_bookmarks = [ $MYVIMRC, '~/.zsh/.zshrc' ]
 let g:startify_skiplist = [
            \ 'COMMIT_EDITMSG',
            \ $VIMRUNTIME .'/doc',
@@ -529,6 +529,8 @@ if &t_Co >= 256
     colorscheme jellybeans
 
     hi StartifyBracket ctermfg=240
+    hi StartifyFooter  ctermfg=111
+    hi StartifyHeader  ctermfg=203
     hi StartifyNumber  ctermfg=215
     hi StartifyPath    ctermfg=245
     hi StartifySlash   ctermfg=240
