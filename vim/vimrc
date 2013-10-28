@@ -33,7 +33,7 @@ fun! SetupVAM()
     call add(addons, 'github:kana/vim-smartinput')
     call add(addons, 'visual-increment')
     call add(addons, 'commentary')
-    call add(addons, 'YouCompleteMe')
+    "call add(addons, 'YouCompleteMe')
     call add(addons, 'Tabular')
     call add(addons, 'surround')
     call add(addons, 'abolish')
@@ -196,7 +196,7 @@ function! MyFoldText() " {{{
     let line = substitute(line, split(&foldmarker, ',')[0], '', '')
 
     let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
-    let fillcharcount = windowwidth - len(line) - len(foldedlinecount) - 7
+    let fillcharcount = windowwidth - len(line) - len(foldedlinecount) - 9
     return line . ' ⤥ ' . repeat("…", fillcharcount) . ' (' . foldedlinecount .')'
 endfunction " }}}
 set foldtext=MyFoldText()
