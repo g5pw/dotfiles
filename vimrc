@@ -250,8 +250,12 @@ let g:airline_mode_map = {
     \ 'S'  : 'S',
     \ '' : 'S',
     \ }
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.whitespace = 'Ξ'
 " }}}
-
 " Latex-Box {{{
 let g:LatexBox_viewer = "open -a Skim"
 let g:LatexBox_latexmk_async = 1
