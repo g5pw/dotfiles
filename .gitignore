@@ -5,3 +5,5 @@ zsh/zdirdump
 zsh/*history*
 zsh/zshapplist
 zsh/configure_zsh_templates
+vim/tmp/*
+vim/vim-addons/*
