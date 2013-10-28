@@ -30,7 +30,7 @@ fun! SetupVAM()
     call add(addons, 'YankRing')
     call add(addons, 'matchit.zip')
     call add(addons, 'Gundo')
-    call add(addons, 'delimitMate')
+    call add(addons, 'github:kana/vim-smartinput')
     call add(addons, 'visual-increment')
     call add(addons, 'commentary')
     call add(addons, 'YouCompleteMe')
@@ -318,9 +318,6 @@ let g:vimfiler_ignore_pattern = '\(^\.\|.py[oc]$\)'
 
 " Enable space error highlighting for portfiles
 let g:portfile_highlight_space_errors=1
-
-"delimitMate options
-let delimitMate_balance_matchpairs = 1
 
 " Startify options
 let g:startify_bookmarks = [ '~/.vimrc', '~/.zsh/.zshrc' ]
