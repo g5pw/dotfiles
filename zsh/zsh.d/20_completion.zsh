@@ -20,8 +20,8 @@ zstyle ':completion:*' squeeze-slashes 'yes'
 # prefix complete or approximate only
 zstyle ':completion:*:prefix:*' completer _complete _approximate:-many
 
-# Open the select menu if there are more than 3 completions
-zstyle ':completion:*:default' menu select=3 yes
+# Use selection menu
+zstyle ':completion:*:default' menu select yes
 
 # Show some color
 zstyle ':completion:*' list-colors ''
