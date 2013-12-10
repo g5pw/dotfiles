@@ -10,10 +10,12 @@ bindkey -s '\ep' '^Upopd >/dev/null; dirs -v^M'
 
 bindkey "\ef" insert-files ## Alt-f
 
-bindkey "^X^Z" predict-on ## C-x C-z
-bindkey "^Z" predict-off ## C-z
+autoload predict-on
+predict-toggle() { ((predict_on=1-predict_on)) && predict-on || predict-off }
+zle -N predict-toggle
+bindkey '^Z'   predict-toggle
 zstyle ':predict' verbose true
-zstyle ':predict' toggle true
+zstyle ':predict' cursor key
 
 # Rationalize dot in CD command
 rationalise-dot() {
