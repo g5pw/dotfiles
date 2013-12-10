@@ -43,7 +43,7 @@ alias rm="rm -i"
 alias serverhere='python -m SimpleHTTPServer'
 alias sp="noglob caffeinate sudo port"
 alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
-alias t='tree'
+alias t='task'
 alias u='uptime'
 alias v='f -t -e vim -b viminfo'
 alias vi='vim'
@@ -54,6 +54,7 @@ alias zmv="zmv -wM"
 alias zcp="zmv -wC"
 alias zln="zmv -wL"
 alias wchat="weechat-curses"
+alias y='tree'
 
 ## global aliases, this is not good but it's useful
 alias -g G='|grep'
