@@ -33,17 +33,16 @@ fun! SetupVAM()
     call add(addons, 'github:kana/vim-smartinput')
     call add(addons, 'visual-increment')
     call add(addons, 'commentary')
-    "call add(addons, 'YouCompleteMe')
+    call add(addons, 'YouCompleteMe')
     call add(addons, 'Tabular')
     call add(addons, 'surround')
     call add(addons, 'abolish')
     call add(addons, 'multiselect')
     " }}}
     " Movement {{{
-    call add(addons, 'EasyMotion')
+    call add(addons, 'github:haya14busa/vim-easymotion')
     call add(addons, 'camelcasemotion')
     call add(addons, 'unimpaired')
-    call add(addons, 'github:adinapoli/vim-markmultiple')
     call add(addons, 'github:justinmk/vim-sneak')
     " }}}
     " File System/Integration {{{
@@ -60,8 +59,9 @@ fun! SetupVAM()
     call add(addons, 'Tagbar')
     call add(addons, 'vim-fireplace')
     call add(addons, 'dispatch')
-    call add(addons, 'github:rizzatti/funcoo.vim')
-    call add(addons, 'github:rizzatti/dash.vim')
+    call add(addons, 'github:tpope/vim-vinegar')
+    call add(addons, 'github:Keithbsmiley/investigate.vim')
+    call add(addons, 'github:farseer90718/vim-taskwarrior')
     "}}}
     " Language support {{{
     call add(addons, 'cern_root')
@@ -80,19 +80,19 @@ fun! SetupVAM()
     " }}}
     " Utilities {{{
     call add(addons, 'Syntastic')
-    call add(addons, 'github:myusuf3/numbers.vim')
     call add(addons, 'SudoEdit')
     call add(addons, 'Vitality')
     call add(addons, 'Splice')
     call add(addons, 'vim-signify')
     call add(addons, 'vim-startify')
+    call add(addons, 'vimroom')
     call add(addons, 'unite')
     call add(addons, 'vimproc')
     call add(addons, 'vim-airline')
+    call add(addons, 'Crunch')
     " }}}
     " Themes {{{
-    call add(addons, 'molokai')
-    call add(addons, 'Distinguished')
+    call add(addons, 'Solarized')
     call add(addons, 'jellybeans')
     " }}}
     " TextObjects {{{
@@ -230,6 +230,8 @@ if filereadable("cscope.out")
 endif
 set cscopetag
 set cscopeverbose
+set number
+set relativenumber
 "}}}
 " Plugin settings {{{
 " {{{
@@ -268,6 +270,10 @@ let g:LatexBox_split_width = 20
 let g:haddock_browser = "elinks"
 let g:haddock_docdir = "/opt/local/share/doc/ghc/html/"
 
+" VimRoom {{{
+let g:vimroom_sidebar_height = 5
+let g:vimroom_width = 100
+" }}}
 " Unite stuff {{{
 let g:unite_data_directory = expand('~/.vim/tmp/unite')
 let g:unite_source_process_enable_confirm = 1
@@ -520,7 +526,7 @@ augroup END
 " Visual stuff {{{
 if has("gui_running")
     set ttyfast
-    colorscheme Tomorrow-Night-Eighties
+    colorscheme solarized
     " MacVim runtime path fix
     set rtp+=/opt/local/share/vim/vimfiles
 endif
