@@ -1,69 +1,70 @@
 snippet new "new"
 # -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8::et:sw=4:ts=4:sts=4
 # $Id$
-PortSystem		1.0
-name			    ${1:PortName}
-version			    ${2:PortVersion}
-maintainers		    ${3:MaintainerHandle}
-categories		    ${4:Categories}
-description		    ${5:Description}
-long_description	${6:LongDescription}
-platforms		    ${7:Platforms}
-homepage		    ${8:Homepage}
+PortSystem          1.0
+
+name                ${1:PortName}
+version             ${2:PortVersion}
+maintainers         ${3:MaintainerHandle}
+categories          ${4:Categories}
+description         ${5:Description}
+long_description    ${6:LongDescription}
+platforms           ${7:Platforms}
+homepage            ${8:Homepage}
 endsnippet
 
 snippet cargs "cargs"
-configure.args${1:-append/-delete}		${2:args}
+configure.args${1:-append/-delete}      ${2:args}
 endsnippet
 
 snippet cenv "cenv"
-configure.env${1:-append/-delete}		${2:args}
+configure.env${1:-append/-delete}       ${2:args}
 endsnippet
 
 snippet dlib "dlib"
-depends_lib${1:-append/-delete}			${2:args}
+depends_lib${1:-append/-delete}         ${2:args}
 endsnippet
 
 snippet drun "drun"
-depends_run${1:-append/-delete}			${2:args}
+depends_run${1:-append/-delete}         ${2:args}
 endsnippet
 
 snippet dbuild "dbuild"
-depends_build${1:-append/-delete}		${2:args}
+depends_build${1:-append/-delete}       ${2:args}
 endsnippet
 
 snippet var "var"
 variant ${1:name} description {${2:text}} {
-	${3}
+    ${3}
 }
 endsnippet
 
 snippet fetch "fetch"
 ${1:pre-/post-}fetch {
-	${2}
+    ${2}
 }
 endsnippet
 
 snippet patch "patch"
 ${1:pre-/post-}patch {
-	${2}
+    ${2}
 }
 endsnippet
 
 snippet conf "conf"
 ${1:pre-/post-}configure {
-	${2}
+    ${2}
 }
 endsnippet
 
 snippet build "build"
 ${1:pre-/post-}build {
-	${2}
+    ${2}
 }
 endsnippet
 
 snippet dest "dest"
 ${1:pre-/post-}destroot {
-	${2}
+    ${2}
 }
 endsnippet
