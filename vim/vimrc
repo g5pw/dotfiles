@@ -268,6 +268,9 @@ let g:LatexBox_autojump = 1
 let g:LatexBox_Folding = 1
 let g:LatexBox_split_width = 20
 " }}}
+" VCSCommand {{{
+let VCSCommandMapPrefix = '<Leader>s'
+" }}}
 " Haskell dirs {{{
 let g:haddock_browser = "elinks"
 let g:haddock_docdir = "/opt/local/share/doc/ghc/html/"
@@ -337,7 +340,7 @@ let g:startify_skiplist = [
            \ $VIMRUNTIME .'/doc',
            \ 'vim-addons/.*/doc'
            \ ]
-let g:startify_custom_indices = ['f', 'j', 'd', 'k', 'g', 'h', 'r', 'u', 'v', 'n']
+let g:startify_custom_indices = ['f', 'd', 'g', 'r', 'r', 't', 'v', 'c']
 " }}}
 " Set Syntastic style {{{
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
@@ -402,7 +405,7 @@ nnoremap <silent><leader>g1 :w <bar> :Gdiff HEAD~1<CR>
 " Extradite options
 nnoremap <silent><leader>ge :Extradite<CR>
 " Gundo maps
-nnoremap <leader>u :GundoToggle<CR>
+nnoremap U :GundoToggle<CR>
 " Quickly edit the vimrc file
 nnoremap <silent> <leader>ve :e $MYVIMRC<CR>
 
@@ -482,6 +485,7 @@ augroup vim
     au!
     au FileType vim setlocal foldmethod=marker
     au FileType help setlocal textwidth=78
+    au FileType help nnoremap <silent> <buffer> q :q<CR>
     au BufWinEnter *.txt if &ft == 'help' | wincmd L | endif
 augroup END
 " }}}
