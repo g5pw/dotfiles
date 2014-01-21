@@ -503,10 +503,8 @@ augroup END
 " Misc {{{
 augroup misc
     au!
-    autocmd FileType text setlocal textwidth=78
-
     " Auto-reload vimrc on save
-    autocmd BufWritePost .vimrc source $HOME/.vimrc
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
 
     " Save on focus lost.
     autocmd FocusLost * :silent! :w
