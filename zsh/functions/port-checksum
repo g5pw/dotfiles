@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh -f
+function port-checksum () {
+    port -v checksum $1 2>/dev/null | grep --color=never -E '  (md5|rmd160|sha256) *[0-9a-f]*'
+    return $?
+}
