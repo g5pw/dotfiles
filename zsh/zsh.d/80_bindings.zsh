@@ -1,4 +1,5 @@
 bindkey '^P' push-input
+bindkey -M vicmd '^P' push-input
 
 bindkey "^Xi" incremental-complete-word ## C-x-i
 
@@ -7,6 +8,7 @@ bindkey "^[m" copy-prev-shell-word
 
 # If AUTO_PUSHD is set, Meta-p pops the dir stack
 bindkey -s '\ep' '^Upopd >/dev/null; dirs -v^M'
+bindkey -M vicmd -s '\ep' 'I^Upopd >/dev/null; dirs -v^M'
 
 bindkey "\ef" insert-files ## Alt-f
 
