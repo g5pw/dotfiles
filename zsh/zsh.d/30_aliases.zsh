@@ -6,7 +6,7 @@ alias calc='noglob calc'
 alias cdiff='colordiff'
 alias cp='nocorrect cp -i'
 alias ds='dirs'
-alias dss='dirs -v'
+alias dsv='dirs -v'
 alias du1='du -hs *(/)' ## du with depth 1
 alias ea='$EDITOR $ZDOTDIR/zsh.d/30_aliases.zsh && source $ZDOTDIR/zsh.d/30_aliases.zsh'
 alias ef='edit_function'
@@ -18,11 +18,11 @@ alias h='history'
 alias heroku="heroku-1.9"
 alias ip='curl ifconfig.me/ip'
 alias ipfwls="sudo ipfw -atN list"
-alias ls='ls -hF --color=auto'
 alias l.='ls -A'
 alias l='ls'
 alias ll.='ls -al'
 alias ll='ls -l'
+alias ls='ls -hF --color=auto'
 alias lscom="python -m serial.tools.list_ports"
 alias lsusb="system_profiler SPUSBDataType"
 alias lswifi='/System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -s | sort -k 3'
@@ -46,7 +46,6 @@ alias rgrep='grep -r'
 alias rm="rm -i"
 alias serverhere='python -m SimpleHTTPServer'
 alias sp="noglob caffeinate sudo port"
-alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 alias t='task'
 alias u='uptime'
 alias v='f -t -e vim -b viminfo'
@@ -72,7 +71,7 @@ alias -g T='|tail'
 alias -g UC='|uniq -c'
 alias -g US='|sort -u'
 alias -g W='|wc -l'
-alias -g C='|colout'
+alias -g C='|colout -T ~/.config/colout/themes/'
 
 # Suffix aliases
 alias -s tex=vim
