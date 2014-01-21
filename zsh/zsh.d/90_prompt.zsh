@@ -1,8 +1,8 @@
 ## set prompts ####
 zstyle  ':prompt:rtab' fish yes
-battery=$'$BG[239]$(bat_status)$FG[239] '
+battery='$BG[239]$(bat_status)$FG[239] '
 user_host='$BG[060]⮀ $FG[007]$FX[bold]%n$FX[no-bold]$FG[060] '
-dir=$'$BG[075]⮀ $FG[000]$(rtab)$FG[075] '
+dir='$BG[075]⮀ $FG[000]$(rtab)$FG[075] '
 clock='$BG[204]⮀$FG[228]%* '
 export PROMPT=$battery$user_host$dir$clock'$FX[reset]$FG[204]⮀ $FG[178]%#$FX[reset] '
 export PROMPT2='$FG[131]%_$FG[121] ➣ $FX[reset]'
