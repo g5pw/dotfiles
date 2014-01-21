@@ -265,11 +265,10 @@ let g:LatexBox_autojump = 1
 let g:LatexBox_Folding = 1
 let g:LatexBox_split_width = 20
 " }}}
-
-" Haskell dirs
+" Haskell dirs {{{
 let g:haddock_browser = "elinks"
 let g:haddock_docdir = "/opt/local/share/doc/ghc/html/"
-
+" }}}
 " VimRoom {{{
 let g:vimroom_sidebar_height = 5
 let g:vimroom_width = 100
@@ -289,47 +288,46 @@ let g:unite_enable_start_insert = 1
 let g:unite_enable_short_source_names = 1
 let g:unite_prompt = '» '
 " }}}
-
-" UltiSnips settings
+" UltiSnips settings {{{
 let g:UltiSnipsExpandTrigger = '<c-l>'
 let g:UltiSnipsJumpForwardTrigger = '<c-j>'
 let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
 let g:UltiSnipsListSnippets = '<c-h>'
-
-" YouCompleteMe settings
+" }}}
+" YouCompleteMe settings {{{
 let g:ycm_key_invoke_completion = '<C-\>'
 let g:ycm_extra_conf_globlist = ['~/Documents/Projects/*']
 let g:ycm_autoclose_preview_window_after_insertion = 1
-
+" }}}
 " Enable Doxygen auto-load
 let g:load_doxygen_syntax=1
 
-" Signify options
+" Signify options {{{
 let g:signify_vcs_list = [ 'git', 'svn', 'hg']
 let g:signify_mapping_next_hunk = '<leader>gj'
 let g:signify_mapping_prev_hunk = '<leader>gk'
 let g:signify_mapping_toggle_highlight = '<leader>gh'
-
-" CtrlP settings
+" }}}
+" CtrlP settings {{{
 let g:ctrlp_map = '<Leader>t'
 let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend|elf)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
 let g:ctrlp_extensions = ['funky']
-
-"Tagbar options and maps
+" }}}
+" Tagbar options and maps {{{
 let tagbar_autoclose = 1
 let tagbar_autofocus = 1
 let g:tagbar_singleclick = 1
-
-" VimFiler settings
+" }}}
+" VimFiler settings {{{
 let g:vimfiler_as_default_explorer=1
 let g:vimfiler_data_directory = expand('~/.vim/tmp/vimfiler/')
 let g:vimfiler_quick_look_command = 'qlmanage -p'
 let g:vimfiler_ignore_pattern = '\(^\.\|.py[oc]$\)'
-
+" }}}
 " Enable space error highlighting for portfiles
 let g:portfile_highlight_space_errors=1
 
-" Startify options
+" Startify options {{{
 let g:startify_bookmarks = [ $MYVIMRC, '~/.zsh/.zshrc' ]
 let g:startify_skiplist = [
            \ 'COMMIT_EDITMSG',
@@ -337,17 +335,13 @@ let g:startify_skiplist = [
            \ 'vim-addons/.*/doc'
            \ ]
 let g:startify_custom_indices = ['f', 'j', 'd', 'k', 'g', 'h', 'r', 'u', 'v', 'n']
-
-" Set Syntastic style
+" }}}
+" Set Syntastic style {{{
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_tcl_nagelfar_conf = ''
 let g:syntastic_python_checkers = ['pyflakes']
-
-" Set Powerlyne style
-let g:Powerline_symbols = 'fancy'
-
+" }}}
 let g:extradite_showhash=1
-
 " SudoEdit {{{
 if !has('gui_running')
     let g:sudoAuth = 'sudo'
@@ -426,6 +420,11 @@ cnoreabbrev csh cs help
 " SudoEdit abbrev
 cnoreabbrev w!! SudoWrite
 
+" Arrow is for moving around splits
+nnoremap <Up>        <C-W>k
+nnoremap <Down>      <C-W>j
+nnoremap <Left>      <C-W>h
+nnoremap <Right>     <C-W>l
 " Ctrl + Arrow is for moving text around and relies on vim-unimpaired by Tim Pope.
 nmap <C-Up>   [e
 imap <C-Up>   <C-O><C-Up>
@@ -440,11 +439,6 @@ vmap <C-Left>   <gv
 nmap <C-Right>  >>
 imap <C-Right>  <C-O><C-Right>
 vmap <C-Right>  >gv
-" Arrow is for moving around splits
-nnoremap <Up>        <C-W>k
-nnoremap <Down>      <C-W>j
-nnoremap <Left>      <C-W>h
-nnoremap <Right>     <C-W>l
 " Shift + Arrow is for moving splits around
 nnoremap <S-Up>      <C-W>K
 nnoremap <S-Down>    <C-W>J
