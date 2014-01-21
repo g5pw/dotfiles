@@ -9,6 +9,9 @@ done
 # Useful commands
 function rand() { exec $RANDOM % $1; }
 
+# Useful command similar to xargs
+autoload -U zargs
+
 # SCM-Breeze load
 [ -s /opt/local/share/scm_breeze/scm_breeze.sh ] && source /opt/local/share/scm_breeze/scm_breeze.sh
 
@@ -24,8 +27,8 @@ unset fasd_cache
 [ -d $ZDOTDIR/zsh-fuzzy-match/ ] && source $ZDOTDIR/zsh-fuzzy-match/fuzzy-match.zsh
 
 # load highlighting
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(brackets main)
 [ -d $ZDOTDIR/zsh-syntax-highlighting/ ] && source $ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets)
 ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=56'
 ZSH_HIGHLIGHT_STYLES[alias]='fg=35'
 ZSH_HIGHLIGHT_STYLES[function]='fg=28'
