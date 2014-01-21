@@ -165,8 +165,13 @@ EXEC 01;38;5;64
 .CR2    00;38;5;136
 .ico    00;38;5;136
 
+# Documents
+.org	    ;38;5;185
+.doc	    ;38;5;185
+.docx	    ;38;5;185
+.tex        ;38;5;185
+
 # Files of special interest (base1 + bold)
-.tex             01;38;5;245
 .rdf             01;38;5;245
 .owl             01;38;5;245
 .n3              01;38;5;245
@@ -225,6 +230,7 @@ EXEC 01;38;5;64
 .oga    00;38;5;166
 .spx    00;38;5;166
 .xspf   00;38;5;166
+.m3u	  ;38;5;167
 
 # Video formats (as audio + bold)
 .mov    01;38;5;166
