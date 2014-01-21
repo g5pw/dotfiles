@@ -230,6 +230,9 @@ if filereadable("cscope.out")
 endif
 set cscopetag
 set cscopeverbose
+" Don't spellcheck LaTeX comments:
+let g:tex_comment_nospell= 1
+
 set number
 set relativenumber
 "}}}
