@@ -51,7 +51,7 @@ setopt auto_name_dirs
 
 # AUTO_PUSHD (-N)
 # Make cd push the old directory onto the directory stack.
-setopt	 auto_pushd
+setopt auto_pushd
 
 # AUTO_RESUME (-W)
 # Treat single word simple commands without redirection
