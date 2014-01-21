@@ -12,3 +12,13 @@ imap <buffer> ((     \eqref{
 
 imap <c-Enter> <c-o>o\item<space>
 nmap <c-Enter> o\item<space>
+
+" SmartInput {{{
+call smartinput#map_to_trigger('i', '$', '$', '$')
+call smartinput#define_rule({
+	    \ 'at': '\%#',
+	    \ 'char': '$',
+	    \ 'input': '$$<Left>',
+	    \ 'filetype': ['tex'],
+	    \})
+" }}}
