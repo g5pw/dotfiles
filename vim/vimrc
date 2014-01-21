@@ -354,8 +354,6 @@ if !has('gui_running')
     let g:sudoAuth = 'sudo'
 endif
 " }}}
-
-
 " }}}
 " Mappings {{{
 " Made D behave
