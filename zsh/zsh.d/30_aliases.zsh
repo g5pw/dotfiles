@@ -1,4 +1,5 @@
 ## aliases ####
+alias rg='ranger'
 alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport'
 alias c='clear'
 alias calc='noglob calc'
@@ -22,6 +23,8 @@ alias l.='ls -A'
 alias l='ls'
 alias ll.='ls -al'
 alias ll='ls -l'
+alias lscom="python -m serial.tools.list_ports"
+alias lsusb="system_profiler SPUSBDataType"
 alias lswifi='/System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -s | sort -k 3'
 alias less=$PAGER
 alias zless=$PAGER
@@ -36,6 +39,7 @@ alias o='open'
 alias octave='octave -q'
 alias pi='portindex'
 alias p='noglob caffeinate port'
+alias pstree='pstree -g 3'
 alias psy="sudo port sync"
 alias rm='nocorrect rm -i'
 alias rgrep='grep -r'
