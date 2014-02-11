@@ -146,6 +146,8 @@ set fillchars=diff:⣿,vert:│,fold:-
 set autowrite
 set autoread
 
+set lazyredraw          " redraw only when we need to."
+
 set virtualedit=block
 
 set switchbuf=useopen,usetab,newtab	" Specify the behavior when switching between buffers
