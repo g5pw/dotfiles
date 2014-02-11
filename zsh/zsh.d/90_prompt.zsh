@@ -18,7 +18,7 @@ export ZCALCPROMPT="$FX[bold]$FG[208]%1v$FX[no-bold]$FG[111] ⫸ $FX[reset] "
 
 function zle-keymap-select {
     if [[ $KEYMAP == vicmd ]]; then
-      mode_color=123
+      mode_color=037
     else
       mode_color=178
     fi
