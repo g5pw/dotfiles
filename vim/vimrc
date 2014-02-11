@@ -361,6 +361,9 @@ endif
 " Made D behave
 nnoremap D d$
 
+" highlight last inserted text
+nmap gV `[v`]
+
 " Unite mappings
 nnoremap <leader>a :<C-u>Unite grep -default-action=above<CR>
 nnoremap <leader>A :<C-u>execute 'Unite grep:.::' . expand("<cword>") . ' -default-action=above -auto-preview'<CR>
