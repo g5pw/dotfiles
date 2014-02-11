@@ -36,6 +36,9 @@ limit -s
 # This are characters that separates words
 export WORDCHARS='*?-[]~=/&;!#$%^(){}<>'
 
+# set go PATH
+export GOPATH="$HOME/.go"
+
 # Important dirs
 hash -d Projects=$HOME/Documents/Projects
 hash -d Uni=$HOME/Documents/University
