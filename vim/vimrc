@@ -540,7 +540,8 @@ if has("gui_running")
 endif
 
 if &t_Co >= 256
-    colorscheme jellybeans
+    colorscheme solarized
+    set background=dark
 
     hi StartifyBracket ctermfg=240
     hi StartifyFooter  ctermfg=111
