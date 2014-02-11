@@ -25,7 +25,7 @@ export DIRSTACKSIZE=20
 ## If nonnegative, commands whose combined user and system execution times
 ## (measured in seconds) are greater than this value have timing
 ## statistics printed for them.
-export REPORTTIME=10
+export REPORTTIME=20
 
 ## use hard limits, except for a smaller stack and no core dumps
 unlimit
