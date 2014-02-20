@@ -42,6 +42,7 @@ fun! SetupVAM()
     " Movement {{{
     call add(addons, 'EasyMotion')
     call add(addons, 'unimpaired')
+    call add(addons, 'github:takac/vim-hardtime')
     " }}}
     " File System/Integration {{{
     call add(addons, 'vimfiler')
@@ -570,3 +571,7 @@ function! HLNext (blinktime)
     redraw
 endfunction
 " }}}
+" Kick the habit!
+let g:hardtime_default_on = 1
+let g:list_of_normal_keys = ['h', 'j','k','l']
+let g:list_of_visual_keys = ['h', 'j','k','l']
