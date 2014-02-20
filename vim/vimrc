@@ -381,14 +381,13 @@ nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " Toggle folds with space bar
 nnoremap <Space> za
-nnoremap <Leader>, :TagbarToggle<CR>
+nnoremap <Leader>. :TagbarToggle<CR>
 nnoremap <silent> <leader>/ :nohlsearch<CR>:echo 'Search highlight cleared'<CR>
 " Parse file with astyle
 nnoremap <silent> <Leader>as :%!astyle<CR>
 
 " VimFiler mappings
 nnoremap <leader>cd :<C-u>:VimFilerBufferDir -buffer-name=explorer -toggle<CR>`
-nnoremap <Leader>. :VimFiler<cr>
 
 " Changes mappings
 nnoremap <silent><leader>r :ToggleChangeView<CR>
