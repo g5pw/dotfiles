@@ -31,12 +31,12 @@ zle -N rationalise-dot
 bindkey . rationalise-dot
 
 insert_sudo () { zle beginning-of-line; zle -U "sudo " }
-zle -N insert-sudo insert_sudo
-bindkey "^[s" insert-sudo
+zle -N insert_sudo
+bindkey "^[s" insert_sudo
 
 insert_caffeinate () { zle beginning-of-line; zle -U "caffeinate " }
-zle -N insert-caffeinate insert_caffeinate
-bindkey "^[c" insert-caffeinate
+zle -N insert_caffeinate
+bindkey "^[c" insert_caffeinate
 
 # Undo completion
 bindkey "^[u" undo
