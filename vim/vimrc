@@ -40,7 +40,7 @@ fun! SetupVAM()
     call add(addons, 'multiselect')
     " }}}
     " Movement {{{
-    call add(addons, 'github:haya14busa/vim-easymotion')
+    call add(addons, 'EasyMotion')
     call add(addons, 'camelcasemotion')
     call add(addons, 'unimpaired')
     call add(addons, 'github:justinmk/vim-sneak')
@@ -328,6 +328,17 @@ let g:vimfiler_ignore_pattern = '\(^\.\|.py[oc]$\)'
 " Enable space error highlighting for portfiles
 let g:portfile_highlight_space_errors=1
 
+" EasyMotion settings {{{
+let g:EasyMotion_smartcase = 1
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
+nmap s         <Plug>(easymotion-s2)
+xmap s         <Plug>(easymotion-s2)
+omap z         <Plug>(easymotion-s2)
+nmap <Leader>s <Plug>(easymotion-sn)
+xmap <Leader>s <Plug>(easymotion-sn)
+omap <Leader>z <Plug>(easymotion-sn)
+" }}}
 " Startify options {{{
 let g:startify_bookmarks = [ $MYVIMRC, '~/.zsh/.zshrc' ]
 let g:startify_skiplist = [
