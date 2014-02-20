@@ -55,7 +55,7 @@ zstyle ':completion::expand:*' tag-order all-expansions
 zstyle ':completion:*:functions' ignored-patterns '_*'
 
 ## filename suffixes to ignore during completion (except after rm command)
-zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns '*?.(c~|old|zwc)' '*~'
+zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns '*?.(c~|old|zwc)(.)'
 
 
 # Disable named-directories completion
@@ -71,7 +71,7 @@ zstyle ':completion:*:*:*:*:processes' force-list always
 zstyle ':completion::complete:(rm|vi|vim):*' ignore-line true
 
 # cd will never select the parent directory (e.g.: cd ../<TAB>):
-zstyle ':completion:*:cd:*' ignore-parents parent pwd
+zstyle ':completion:*' ignore-parents parent pwd ..
 
 # Search only 50 items in history
 zstyle ':completion:*:history-words' range 5:10
@@ -104,6 +104,8 @@ zstyle ':completion::complete:tar:*' files '*.tar|*.tgz|*.tz|*.tar.Z|*.tar.bz2|*
 # latex to the fullest
 # for printing
 zstyle ':completion::complete:(xdvi|dvips):*' files '*.dvi'
+# Complete only nonempty directories for rmdir
+zstyle ':completion::complete:rmdir:*' directories '*(/^F)'
 # Group relatex matches:
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*:-command-:*:(commands|builtins|reserved-words-aliases)' group-name commands
