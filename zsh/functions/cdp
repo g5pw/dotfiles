@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 function cdp() {
     if [ -z $1 ]; then
-	echo "Usage: cdp portname"
+	echo "Usage: $0 portname"
 	return -1
     fi
     cd $(port dir $1)
