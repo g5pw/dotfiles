@@ -110,13 +110,3 @@ zstyle ':completion:*:-command-:*:(commands|builtins|reserved-words-aliases)' gr
 
 # Separate matches into groups
 zstyle ':completion:*:matches' group 'yes'
-
-# Custom completions:
-compdef sp=port
-compdef p=port
-compdef reload=whichf
-compdef edit_function=whichf
-compdef ef=whichf
-compdef g=git
-compdef mcd=cd
-compdef t=task
