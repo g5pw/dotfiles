@@ -233,6 +233,9 @@ let g:tex_comment_nospell= 1
 
 set number
 set relativenumber
+
+" Don't wait a lot for mappings
+set timeoutlen=300
 "}}}
 " Plugin settings {{{
 " {{{
