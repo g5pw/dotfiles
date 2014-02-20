@@ -115,7 +115,6 @@ set showmatch		" When a bracket is inserted, briefly jump to the matching one.
 set hidden		" do not close buffers, but hide them!
 set autoindent		" always set autoindenting on
 set copyindent		" copy the previous indentation on autoindenting
-set smartindent
 set noexpandtab
 set softtabstop=4
 set shiftwidth=4
