@@ -58,6 +58,8 @@ fun! SetupVAM()
     call add(addons, 'github:tpope/vim-vinegar')
     call add(addons, 'github:Keithbsmiley/investigate.vim')
     call add(addons, 'github:farseer90718/vim-taskwarrior')
+    call add(addons, 'vimwiki')
+    call add(addons, 'github:teranex/vimwiki-tasks')
     "}}}
     " Language support {{{
     call add(addons, 'cern_root')
@@ -362,6 +364,9 @@ let g:extradite_showhash=1
 if !has('gui_running')
     let g:sudoAuth = 'sudo'
 endif
+" }}}
+" VimWiki {{{
+let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', 'path_html': '~/Sites/vimwiki'}]
 " }}}
 " }}}
 " Mappings {{{
