@@ -111,17 +111,6 @@ zstyle ':completion:*:-command-:*:(commands|builtins|reserved-words-aliases)' gr
 # Separate matches into groups
 zstyle ':completion:*:matches' group 'yes'
 
-complete-with-dots() {
-    echo -n "\e[31m...\e[0m"
-    zle complete-word
-    zle redisplay
-}
-zle -N complete-with-dots
-bindkey "^I" complete-with-dots
-
-# Complete word and try to complete again
-bindkey -M menuselect '^o' accept-and-infer-next-history
-
 # Custom completions:
 compdef sp=port
 compdef p=port

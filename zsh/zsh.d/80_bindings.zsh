@@ -43,6 +43,17 @@ bindkey "^[u" undo
 
 bindkey -M vicmd V edit-command-line
 
+complete-with-dots() {
+    echo -n "\e[31m...\e[0m"
+    zle complete-word
+    zle redisplay
+}
+zle -N complete-with-dots
+bindkey "^I" complete-with-dots
+
+# Complete word and try to complete again
+bindkey -M menuselect '^o' accept-and-infer-next-history
+
 bindkey '^X^A' fasd-complete    # C-x C-a to do fasd-complete (fils and directories)
 bindkey '^X^F' fasd-complete-f  # C-x C-f to do fasd-complete-f (only files)
 bindkey '^X^D' fasd-complete-d  # C-x C-d to do fasd-complete-d (only directories))
