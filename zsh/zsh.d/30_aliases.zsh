@@ -2,7 +2,7 @@
 alias rg='ranger'
 alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport'
 alias c='clear'
-alias calc='noglob calc'
+alias calc='nocorrect noglob calc'
 alias cdiff='colordiff'
 alias cp='nocorrect cp -i'
 alias ds='dirs'
