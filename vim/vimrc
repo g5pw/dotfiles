@@ -41,9 +41,7 @@ fun! SetupVAM()
     " }}}
     " Movement {{{
     call add(addons, 'EasyMotion')
-    call add(addons, 'camelcasemotion')
     call add(addons, 'unimpaired')
-    call add(addons, 'github:justinmk/vim-sneak')
     " }}}
     " File System/Integration {{{
     call add(addons, 'vimfiler')
