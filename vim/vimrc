@@ -146,7 +146,7 @@ set autoread
 
 set lazyredraw          " redraw only when we need to."
 
-set virtualedit=block
+set virtualedit=block,onemore
 
 set switchbuf=useopen,usetab,newtab	" Specify the behavior when switching between buffers
 set viminfo^=%				" Remember info about open buffers on close
