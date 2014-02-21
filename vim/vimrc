@@ -376,11 +376,12 @@ nnoremap D d$
 nmap gV `[v`]
 
 " Unite mappings
-nnoremap <leader>a :<C-u>Unite grep -default-action=above<CR>
-nnoremap <leader>A :<C-u>execute 'Unite grep:.::' . expand("<cword>") . ' -default-action=above -auto-preview'<CR>
-nnoremap <leader>j :<C-u>Unite buffer<CR>
-
+nnoremap <leader>a :Unite grep -default-action=above<CR>
+nnoremap <leader>A :execute 'Unite grep:.::' . expand("<cword>") . ' -default-action=above -auto-preview'<CR>
+nnoremap <leader>j :Unite -quick-match buffer<CR>
+nnoremap <leader>t :Unite outline<CR>
 nnoremap <leader>y :Unite history/yank<CR>
+nnoremap <C-p> :Unite file_rec/async<cr>
 " YouCompleteMe mappings
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
