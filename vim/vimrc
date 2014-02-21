@@ -36,7 +36,8 @@ fun! SetupVAM()
     call add(addons, 'Tabular')
     call add(addons, 'surround')
     call add(addons, 'abolish')
-    call add(addons, 'multiselect')
+    call add(addons, 'vim-multiple-cursors')
+    call add(addons, 'vim-autoformat')
     " }}}
     " Movement {{{
     call add(addons, 'EasyMotion')
@@ -369,6 +370,7 @@ let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', 'path_html': '~/Sites/vimwik
 " }}}
 " }}}
 " Mappings {{{
+noremap <F3> :Autoformat<CR>
 " Made D behave
 nnoremap D d$
 
