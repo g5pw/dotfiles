@@ -403,15 +403,13 @@ nnoremap <silent><leader>r :ToggleChangeView<CR>
 " Parse dir with ctags
 nnoremap <silent> <Leader>ct :! ctags -R --c++-kinds=+p --fields=+iaS --extra=+q<cr>
 " FuGitive
-nnoremap <silent><leader>gd :Gdiff<CR>
-nnoremap <silent><leader>gc :Gcommit -a<CR>
-nnoremap <silent><leader>gf :Gcommit %<CR>
-nnoremap <silent><leader>gs :Gstatus<CR>
-nnoremap <silent><leader>gw :Gwrite<CR>
-nnoremap <silent><leader>gr :Gread<CR>
-nnoremap <silent><leader>gb :Gblame<CR>
-nnoremap <silent><leader>g0 :w <bar> Git diff -U0<CR>
-nnoremap <silent><leader>g1 :w <bar> :Gdiff HEAD~1<CR>
+nnoremap <silent><leader>gd :Gdiff<cr>
+nnoremap <silent><leader>gc :Gcommit<cr>
+nnoremap <silent><leader>gb :Gblame<cr>
+nnoremap <silent><leader>gp :Git push<cr>
+nnoremap <silent><leader>gr :Gremove<cr>
+nnoremap <silent><leader>gs :Gstatus<cr>
+nnoremap <silent><leader>gw :Gwrite<cr>
 " Extradite options
 nnoremap <silent><leader>ge :Extradite<CR>
 " Gundo maps
