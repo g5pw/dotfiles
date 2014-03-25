@@ -26,6 +26,7 @@ fun! SetupVAM()
     let addons = []
     " Text {{{
     call add(addons, 'UltiSnips')
+    call add(addons, 'vim-snippets')
     call add(addons, 'repeat')
     call add(addons, 'matchit.zip')
     call add(addons, 'Gundo')
