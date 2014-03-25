@@ -244,6 +244,11 @@ set relativenumber
 set timeoutlen=300
 "}}}
 " Plugin settings {{{
+" hardtime: Kick the habit! {{{
+let g:hardtime_default_on = 1
+let g:list_of_normal_keys = ['h', 'j','k','l']
+let g:list_of_visual_keys = ['h', 'j','k','l']
+" }}}
 " vim-airline {{{
 let g:airline_powerline_fonts = 1
 let g:airline_mode_map = {
@@ -584,7 +589,3 @@ function! HLNext (blinktime)
     redraw
 endfunction
 " }}}
-" Kick the habit!
-let g:hardtime_default_on = 1
-let g:list_of_normal_keys = ['h', 'j','k','l']
-let g:list_of_visual_keys = ['h', 'j','k','l']
