@@ -1,0 +1,33 @@
+# vim: ft=muttrc
+include "/opt/local/etc/orpierc"
+
+# Command mode bindings
+bind "s" command_swap
+bind "d" command_drop
+bind "a" command_begin_abbrev
+bind "v" command_begin_browsing
+bind "b" command_cycle_base
+
+bind "D" command_clear
+
+# Edit mode
+bind \177 edit_backspace
+bind "x" edit_backspace
+
+# Browse mode bindings
+bind "j" browse_next_line
+bind "k" browse_prev_line
+bind "h" browse_scroll_left
+bind "l" browse_scroll_right
+bind "J" browse_rollup
+bind "K" browse_rolldown
+bind "v" browse_view
+bind "e" browse_edit
+bind "x" browse_drop
+bind "X" browse_keep
+bind "o" browse_dropn
+bind "O" browse_keepn
+bind "<esc>" browse_end
+
+# Abbrev mode bindings
+bind "<esc>" abbrev_exit
