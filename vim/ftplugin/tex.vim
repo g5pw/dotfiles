@@ -21,4 +21,10 @@ call smartinput#define_rule({
 	    \ 'input': '$$<Left>',
 	    \ 'filetype': ['tex'],
 	    \})
+call smartinput#define_rule({
+	    \ 'at': '\%#',
+	    \ 'char': '`',
+	    \ 'input': '`''<Left>',
+	    \ 'filetype': ['tex'],
+	    \})
 " }}}
