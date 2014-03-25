@@ -308,6 +308,10 @@ let g:unite_enable_short_source_names = 1
 let g:unite_prompt = '» '
 " Enable yank history collection
 let g:unite_source_history_yank_enable = 1
+" Use the fuzzy matcher for everything
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+" Use the rank sorter for everything
+call unite#filters#sorter_default#use(['sorter_rank'])
 " }}}
 " UltiSnips settings {{{
 let g:UltiSnipsExpandTrigger = '<c-l>'
@@ -387,13 +391,70 @@ nnoremap D d$
 " highlight last inserted text
 nmap gV `[v`]
 
-" Unite mappings
-nnoremap <leader>a :Unite grep -default-action=above<CR>
+" Unite mappings {{{
+
+" General fuzzy search
+nnoremap <silent> u<space> :<C-u>Unite
+      \ -buffer-name=files buffer file_mru bookmark file_rec/async<CR>
+
+" Quick registers
+nnoremap <silent> ur :<C-u>Unite -buffer-name=register register<CR>
+
+" Quick buffer and mru
+nnoremap <silent> uu :<C-u>Unite -quick-match -buffer-name=buffers buffer file_mru<CR>
+
+" Quick yank history
+nnoremap <silent> uy :<C-u>Unite -buffer-name=yanks history/yank<CR>
+
+" Quick outline
+nnoremap <silent> uo :<C-u>Unite -buffer-name=outline -vertical outline<CR>
+
+" Quick sessions (projects)
+nnoremap <silent> up :<C-u>Unite -buffer-name=sessions session<CR>
+
+" Quick sources
+nnoremap <silent> ua :<C-u>Unite -buffer-name=sources source<CR>
+
+" Quickly switch lcd
+nnoremap <silent> ud
+      \ :<C-u>Unite -buffer-name=change-cwd -default-action=lcd directory_mru<CR>
+
+" Quick file search
+nnoremap <silent> uf :<C-u>Unite -buffer-name=files file_rec/async file/new<CR>
+
+" Quick grep from cwd
+nnoremap <silent> ug :<C-u>Unite -buffer-name=grep grep:.<CR>
+
+" Quick grep from current word
+nnoremap <silent> uG :<C-u>UniteWithCursorWord -buffer-name=grep -default-action=above -auto-preview grep:. <CR>
+
+" Quick help
+nnoremap <silent> uh :<C-u>Unite -buffer-name=help help<CR>
+
+" Quick line using the word under cursor
+nnoremap <silent> ul :<C-u>UniteWithCursorWord -buffer-name=search_file line<CR>
+
+" Quick MRU search
+nnoremap <silent> um :<C-u>Unite -buffer-name=mru file_mru<CR>
+
+" Quick find
+nnoremap <silent> un :<C-u>Unite -buffer-name=find find:.<CR>
+
+" Quick commands
+nnoremap <silent> uc :<C-u>Unite -buffer-name=commands command<CR>
+
+" Quick bookmarks
+nnoremap <silent> ub :<C-u>Unite -buffer-name=bookmarks bookmark<CR>
+
+" Fuzzy search from current buffer
+" nnoremap <silent> ub :<C-u>UniteWithBufferDir
+" \ -buffer-name=files -prompt=%\ buffer file_mru bookmark file<CR>
+
+" Quick commands
+nnoremap <silent> u; :<C-u>Unite -buffer-name=history history/command command<CR>
+
 nnoremap <leader>A :execute 'Unite grep:.::' . expand("<cword>") . ' -default-action=above -auto-preview'<CR>
-nnoremap <leader>j :Unite -quick-match buffer<CR>
-nnoremap <leader>t :Unite outline<CR>
-nnoremap <leader>y :Unite history/yank<CR>
-nnoremap <C-p> :Unite file_rec/async<cr>
+"}}}
 " YouCompleteMe mappings
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
