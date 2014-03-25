@@ -351,12 +351,12 @@ let g:portfile_highlight_space_errors=1
 let g:EasyMotion_smartcase = 1
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
-nmap s         <Plug>(easymotion-s2)
-xmap s         <Plug>(easymotion-s2)
-omap z         <Plug>(easymotion-s2)
-nmap <Leader>s <Plug>(easymotion-sn)
-xmap <Leader>s <Plug>(easymotion-sn)
-omap <Leader>z <Plug>(easymotion-sn)
+nmap s <Plug>(easymotion-s2)
+xmap s <Plug>(easymotion-s2)
+omap z <Plug>(easymotion-s2)
+nmap S <Plug>(easymotion-sn)
+xmap S <Plug>(easymotion-sn)
+omap Z <Plug>(easymotion-sn)
 " }}}
 " Startify options {{{
 let g:startify_bookmarks = [ $MYVIMRC, '~/.zsh/.zshrc' ]
