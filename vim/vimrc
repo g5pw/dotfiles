@@ -63,6 +63,7 @@ fun! SetupVAM()
     call add(addons, 'github:teranex/vimwiki-tasks')
     "}}}
     " Language support {{{
+    call add(addons, 'SingleCompile')
     call add(addons, 'cern_root')
     call add(addons, 'Markdown')
     call add(addons, 'vim-css3-syntax')
@@ -245,6 +246,12 @@ set relativenumber
 set timeoutlen=300
 "}}}
 " Plugin settings {{{
+" SingleCompile {{{
+let g:SingleCompile_showquickfixiferror = 1
+let g:SingleCompile_showresultafterrun = 1
+let g:SingleCompile_silentcompileifshowquickfix = 1
+call SingleCompile#ChooseCompiler('c','clang') " Clang is the default C compiler
+" }}}
 " hardtime: Kick the habit! {{{
 let g:hardtime_default_on = 1
 let g:list_of_normal_keys = ['h', 'j','k','l']
