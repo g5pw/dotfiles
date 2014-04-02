@@ -295,7 +295,7 @@ let g:LatexBox_quickfix = 2
 let g:LatexBox_split_width = 20
 " }}}
 " VCSCommand {{{
-let VCSCommandMapPrefix = '<Leader>s'
+let VCSCommandMapPrefix = '<Leader>v'
 " }}}
 " Haskell dirs {{{
 let g:haddock_browser = "elinks"
