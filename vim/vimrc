@@ -536,6 +536,8 @@ cnoreabbrev csh cs help
 " SudoEdit abbrev
 cnoreabbrev w!! SudoWrite
 
+" MacVim, don't be silly
+let g:macvim_skip_cmd_opt_movement = 1
 " Arrow is for moving around splits
 nnoremap <Up>        <C-W>k
 nnoremap <Down>      <C-W>j
