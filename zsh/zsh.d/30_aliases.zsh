@@ -7,6 +7,7 @@ alias cdiff='colordiff'
 alias cp='nocorrect cp -i'
 alias ds='dirs'
 alias dsv='dirs -v'
+alias dsc='dirs -c'
 alias du1='du -hs *(/)' ## du with depth 1
 alias ea='$EDITOR $ZDOTDIR/zsh.d/30_aliases.zsh && source $ZDOTDIR/zsh.d/30_aliases.zsh'
 alias ef='edit_function'
@@ -25,7 +26,7 @@ alias ll='ls -l'
 alias ls='ls -hF --color=auto'
 alias lscom="python -m serial.tools.list_ports"
 alias lsusb="system_profiler SPUSBDataType"
-alias lswifi='/System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -s | sort -k 3'
+alias lswifi='/System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -s | sort -rk 3'
 alias less=$PAGER
 alias zless=$PAGER
 alias man='nocorrect man'
