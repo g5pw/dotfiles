@@ -149,8 +149,9 @@ set undofile		" Save undo tree in file
 set undodir=~/.vim/tmp/undo//     " undo files
 
 set splitright
+set splitbelow
 set fillchars=diff:⣿,vert:│,fold:-
-set autowrite
+set autowriteall
 set autoread
 
 set lazyredraw          " redraw only when we need to."
