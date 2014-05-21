@@ -6,7 +6,7 @@ config windowHintsSpread true
 
 bind e:cmd;alt hint ASDFGHJKLQWERTYUIOPCVBN # use whatever keys you want
 
-bind g:cmd;alt grid padding:5 0:6,3
+bind g:alt grid padding:5 0:6,3
 
 # Abstract positions
 alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
