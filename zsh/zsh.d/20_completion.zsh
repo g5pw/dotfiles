@@ -3,7 +3,7 @@ zmodload -i zsh/complist
 
 # Completion options
 zstyle ':completion:*' completer _expand _complete _approximate:-one _ignored \
-				_correct _approximate:-many _prefix _history 
+				_correct _approximate:-many _prefix _history
 
 # Completion caching
 zstyle ':completion::complete:*' use-cache 1
