@@ -83,11 +83,11 @@ fun! SetupVAM()
     call add(addons, 'vim-signify')
     call add(addons, 'vim-startify')
     call add(addons, 'vimroom')
-    call add(addons, 'unite')
-    call add(addons, 'unite-outline')
-    call add(addons, 'unite-help')
-    call add(addons, 'github:Shougo/neomru.vim')
     call add(addons, 'vimproc')
+    call add(addons, 'unite')
+    call add(addons, 'github:Shougo/unite-outline')
+    call add(addons, 'github:Shougo/unite-help')
+    call add(addons, 'github:Shougo/neomru.vim')
     call add(addons, 'vim-airline')
     call add(addons, 'Crunch')
     " }}}
@@ -248,7 +248,7 @@ set relativenumber
 
 " Don't wait a lot for mappings
 set timeoutlen=300
-"}}}
+" }}}
 " Plugin settings {{{
 " SingleCompile {{{
 let g:SingleCompile_showquickfixiferror = 1
