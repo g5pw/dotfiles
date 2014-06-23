@@ -74,8 +74,8 @@ function rand() { exec $RANDOM % $1; }
 function sleeptime() {
     echo $1
     for i in {3..10}; do
-    	sleep=`expr $i '*' 90`
-    	date -j -v+${sleep}M
+	sleep=`expr $i '*' 90`
+	date -j -v+${sleep}M
 done
 }
 
