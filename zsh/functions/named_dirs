@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh -f
+
+function named_dirs () {
+    local config_file=$HOME/.named_dirs
+    if [[ -z $1 || -z $2 ]]; then
+	cat $config_file
+	return 0
+    fi
+    hash -d $1=$2
+    echo "$1\\t$2" >> $config_file
+    column -t $config_file | sponge > $config_file
+}
