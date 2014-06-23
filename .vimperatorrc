@@ -1,3 +1,4 @@
+set gui=noaddons,nobookmarks,nomenu,nonavigation,tabs
 set complete=slfb
 set editor="/opt/local/bin/mvim -f"
 set hintchars=hjklasdfgyuiopqwertnmzxcvb
@@ -23,4 +24,6 @@ nmap <C-A-p> <C-S-p>
 nmap ,/ :nohlsearch<CR>
 
 nmap ,t :tabopen! 
+
+nmap <c-l> :reload<CR>
 " vim: set ft=vimperator:
