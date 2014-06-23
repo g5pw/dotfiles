@@ -21,13 +21,12 @@ bind generic S none
 # Unbind refresh
 bind generic R none
 
-bind generic ^f move-page-down
-bind generic ^b move-page-up
+bind generic <Ctrl-f> move-page-down
+bind generic <Ctrl-b> move-page-up
 bind generic s view-status
 bind generic r refresh
 bind generic g move-first-line
 bind generic G move-last-line
-bind generic space enter
 bind generic S !git status
 bind generic A !git commit --amend
 bind generic P !git push
