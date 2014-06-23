@@ -626,7 +626,7 @@ augroup END
 augroup last_pos
     au!
     autocmd BufReadPost *
-		\ if line("'\"") > 0 && line("'\"") <= line("$") |
+		\ if &ft !~ 'git\|svn\|hg' && line("'\"") > 0 && line("'\"") <= line("$") |
 		\   exe "normal! g`\"" |
 		\ endif
 augroup END
