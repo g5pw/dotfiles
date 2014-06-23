@@ -15,57 +15,57 @@ homepage            ${8:Homepage}
 endsnippet
 
 snippet cargs "cargs"
-configure.args${1:-append/-delete}      ${2:args}
+configure.args${1:-append}${2:-delete}      ${0:args}
 endsnippet
 
 snippet cenv "cenv"
-configure.env${1:-append/-delete}       ${2:args}
+configure.env${1:-append}${2:-delete}       ${0:args}
 endsnippet
 
 snippet dlib "dlib"
-depends_lib${1:-append/-delete}         ${2:args}
+depends_lib${1:-append}${2:-delete}         ${0:args}
 endsnippet
 
 snippet drun "drun"
-depends_run${1:-append/-delete}         ${2:args}
+depends_run${1:-append}${2:-delete}         ${0:args}
 endsnippet
 
 snippet dbuild "dbuild"
-depends_build${1:-append/-delete}       ${2:args}
+depends_build${1:-append}${2:-delete}       ${0:args}
 endsnippet
 
 snippet var "var"
 variant ${1:name} description {${2:text}} {
-    ${3}
+    $0
 }
 endsnippet
 
 snippet fetch "fetch"
 ${1:pre-/post-}fetch {
-    ${2}
+    $0
 }
 endsnippet
 
 snippet patch "patch"
 ${1:pre-/post-}patch {
-    ${2}
+    $0
 }
 endsnippet
 
 snippet conf "conf"
 ${1:pre-/post-}configure {
-    ${2}
+    $0
 }
 endsnippet
 
 snippet build "build"
-${1:pre-/post-}build {
-    ${2}
+${1:pre-}${2:post-}build \{
+    $0
 }
 endsnippet
 
 snippet dest "dest"
-${1:pre-/post-}destroot {
-    ${2}
+${1:pre-}${2:post-}destroot {
+    $0
 }
 endsnippet
