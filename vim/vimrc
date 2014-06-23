@@ -395,6 +395,7 @@ let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_tcl_nagelfar_conf = ''
 let g:syntastic_python_checkers = ['pyflakes']
 let g:syntastic_c_checkers = ['splint', 'make', 'gcc']
+let g:syntastic_tex_checkers = ['chktex']
 " }}}
 let g:extradite_showhash=1
 " SudoEdit {{{
