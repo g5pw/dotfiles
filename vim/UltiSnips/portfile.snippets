@@ -14,6 +14,12 @@ platforms           ${7:Platforms}
 homepage            ${8:Homepage}
 endsnippet
 
+snippet git "git"
+PortGroup           github 1.0
+
+github.setup        ${1:author} ${2:repo} ${3:version} ${4:version_prepend}
+endsnippet
+
 snippet cargs "cargs"
 configure.args${1:-append}${2:-delete}      ${0:args}
 endsnippet
@@ -67,5 +73,12 @@ endsnippet
 snippet dest "dest"
 ${1:pre-}${2:post-}destroot {
     $0
+}
+endsnippet
+
+snippet pysub "pysub"
+if \{ \$\{name} ${1:ne} \$\{subport} } \{
+    $0
+    livecheck.type      none
 }
 endsnippet
