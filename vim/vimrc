@@ -407,6 +407,10 @@ let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', 'path_html': '~/Sites/vimwik
 " }}}
 " }}}
 " Mappings {{{
+" SingleCompile
+noremap <leader>c :SCCompile<CR>
+noremap <leader>cr :SCCompileRun<CR>
+
 noremap <F3> :Autoformat<CR>
 " Made D behave
 nnoremap D d$
