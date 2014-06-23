@@ -34,3 +34,10 @@ call smartinput#define_rule({
 	    \ 'input': '<Esc>0C<cr>',
 	    \ 'filetype': ['markdown'],
 	    \})
+" Auto close bold
+call smartinput#define_rule({
+	    \ 'at': '\%#',
+	    \ 'char': '*',
+	    \ 'input': '**<Left>',
+	    \ 'filetype': ['markdown'],
+	    \})
