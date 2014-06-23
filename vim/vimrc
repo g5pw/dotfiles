@@ -1,7 +1,4 @@
 " vim: foldmethod=marker foldlevel=0
-set nocompatible
-let snips_author = "Aljaž Srebrnič"
-
 " VAM setup {{{
 fun! SetupVAM()
     " YES, you can customize this vam_install_path path and everything still works!
