@@ -40,3 +40,4 @@ types_*.taghl
 Backup[ ]of[ ]*.pages/
 Backup[ ]of[ ]*.key/
 Backup[ ]of[ ]*.numbers/
+*.pyc
