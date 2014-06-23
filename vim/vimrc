@@ -633,6 +633,12 @@ augroup last_pos
 		\ endif
 augroup END
 " }}}
+" Unite {{{
+augroup unite
+    au!
+    autocmd FileType unite :DisableWhitespace
+augroup END
+" }}}
 " Autocmds end }}}
 " Visual stuff {{{
 if has("gui_running")
