@@ -35,7 +35,9 @@ fun! SetupVAM()
     call add(addons, 'surround')
     call add(addons, 'abolish')
     call add(addons, 'vim-multiple-cursors')
+    call add(addons, 'wildfire')
     call add(addons, 'vim-autoformat')
+    call add(addons, 'vim-expand-region')
     call add(addons, 'better-whitespace')
     " }}}
     " Movement {{{
@@ -74,6 +76,7 @@ fun! SetupVAM()
     call add(addons, 'wmgraphviz')
     call add(addons, 'Emmet')
     call add(addons, 'LaTeX_Box')
+    call add(addons, 'github:fmoralesc/vim-pinpoint')
     " }}}
     " Utilities {{{
     call add(addons, 'Syntastic')
@@ -105,6 +108,7 @@ fun! SetupVAM()
     call add(addons, 'textobj-line')
     call add(addons, 'textobj-latex')
     call add(addons, 'vim-textobj-underscore')
+    call add(addons, 'github:wellle/targets.vim')
     " }}}
     call vam#ActivateAddons(addons, {'auto_install' : 0})
 " }}}
