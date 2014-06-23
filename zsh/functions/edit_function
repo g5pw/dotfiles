@@ -1,6 +1,10 @@
 #!/usr/bin/env zsh
 
 edit_function() {
+    if [[ -z $1 ]]; then
+	echo "Usage: $0 function_name"
+	return -1
+    fi
     $EDITOR $(whichf $1)
     echo "Reloading $1..."
     reload $1
