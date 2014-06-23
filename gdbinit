@@ -1474,4 +1474,4 @@ set $CONTEXTSIZE_CODE  = 10
 
 
 #EOF
-
+source /usr/local/share/peda/peda.py
