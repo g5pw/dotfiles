@@ -12,22 +12,25 @@ set textwidth=0
 set wrapmargin=0
 set linebreak
 
-call smartinput#map_to_trigger('i', '*', '*', '*')
+" Continue on list with enter
 call smartinput#define_rule({
-	    \ 'at': '^\* .*',
+	    \ 'at': '^\s\{2,}\* .\+\%#',
 	    \ 'char': '<Enter>',
 	    \ 'input': '<cr>* ',
 	    \ 'filetype': ['markdown'],
 	    \})
+call smartinput#map_to_trigger('i', '*', '*', '*')
+" Auto-align list
 call smartinput#define_rule({
-	    \ 'at': '\%#',
+	    \ 'at': '^ \+\%#',
 	    \ 'char': '*',
-	    \ 'input': '**<Left>',
+	    \ 'input': '* ',
 	    \ 'filetype': ['markdown'],
 	    \})
+" Stop list on empty item
 call smartinput#define_rule({
-	    \ 'at': '^\* \%#',
+	    \ 'at': '^\s\{2,}\*\s*\%#$',
 	    \ 'char': '<Enter>',
-	    \ 'input': '<c-o>cc<cr>',
+	    \ 'input': '<Esc>0C<cr>',
 	    \ 'filetype': ['markdown'],
 	    \})
