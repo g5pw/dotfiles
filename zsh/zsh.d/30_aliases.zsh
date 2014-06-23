@@ -11,6 +11,7 @@ alias dsc='dirs -c'
 alias du1='du -hs *(/)' ## du with depth 1
 alias ea='$EDITOR $ZDOTDIR/zsh.d/30_aliases.zsh && source $ZDOTDIR/zsh.d/30_aliases.zsh'
 alias ef='edit_function'
+alias ez='$EDITOR $ZDOTDIR/.zshrc;src'
 alias find='noglob find'
 alias JUSTFUCKINGDOIT='sudo -p "Oh, come on... alright, gimme your password:" $(fc -ln -1)'
 alias grep='grep --colour'
@@ -39,26 +40,25 @@ alias msp430-cgdb='cgdb -d msp430-gdb'
 alias o='open'
 alias octave='octave -q'
 alias pi='portindex'
-alias p='noglob caffeinate port'
+alias p='noglob port-wrapper'
 alias pstree='pstree -g 3'
 alias psy="sudo port sync"
 alias rm='nocorrect rm -i'
 alias rgrep='grep -r'
 alias rm="rm -i"
 alias serverhere='python -m SimpleHTTPServer'
-alias sp="noglob caffeinate sudo port"
 alias t='nocorrect noglob task'
 alias task='nocorrect noglob task'
 alias u='uptime'
 alias v='f -t -e vim -b viminfo'
 alias vi='vim'
 alias vd="vifm"
-alias z='$EDITOR $ZDOTDIR/.zshrc;src'
 # The many forms of zmv.
 alias zmv="zmv -wM"
 alias zcp="zmv -wC"
 alias zln="zmv -wL"
 alias wchat="weechat-curses"
+alias w="ansiweather"
 alias y='tree'
 
 ## global aliases, this is not good but it's useful
@@ -74,6 +74,7 @@ alias -g UC='|uniq -c'
 alias -g US='|sort -u'
 alias -g W='|wc -l'
 alias -g C='|colout -T ${XDG_CONFIG_HOME:-~/.config}/colout/themes/'
+alias -g P='|percol|'
 
 # Suffix aliases
 alias -s tex=vim
