@@ -1,0 +1,5 @@
+edit mode async
+edit editor '/opt/local/bin/mvim %s'
+
+setenv GNUTERM 'qt'
+PS1 ("\\[\\033[01;31m\\]\\s:\\#> \\[\\033[0m\\]")

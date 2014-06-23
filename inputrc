@@ -1,0 +1,31 @@
+set editing-mode vi
+set completion-display-width 96
+set completion-prefix-display-length 10
+set show-all-if-ambiguous on
+set visible-stats on
+# set skip-completed-text on
+
+set keymap vi-insert
+"\C-l":	 clear-screen	 # CTRL-L
+"\C-x": kill-whole-line
+
+# Vim style history search
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+"\e[C": forward-char
+"\e[D": backward-char
+
+
+set keymap vi-command
+# Edit options before rerunning previous command, eg: ls a b c -> ls -al a b c
+"\e-": "^f i"
+
+# Cycle thru completions.
+"\e/": menu-complete
+
+# glob patterns without executing, eg: 'rm *x'
+"\ee": glob-expand-word
+
+# Two escapes clear command line.
+"\e\e": kill-whole-line
