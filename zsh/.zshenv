@@ -40,8 +40,8 @@ export WORDCHARS='*?-[]~=/&;!#$%^(){}<>'
 export GOPATH="$HOME/.go"
 
 # Important dirs
-while read line; do
-    hash -d ${line/ /=}
+while read name dir; do
+    hash -d $name=${~dir}
 done < $HOME/.named_dirs
 
 #load my function and more completions
