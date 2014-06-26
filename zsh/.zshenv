@@ -41,7 +41,7 @@ export GOPATH="$HOME/.go"
 
 # Important dirs
 while read name dir; do
-    hash -d $name=${~dir}
+    hash -d $name=${(e)dir}
 done < $HOME/.named_dirs
 
 #load my function and more completions
