@@ -40,10 +40,9 @@ export WORDCHARS='*?-[]~=/&;!#$%^(){}<>'
 export GOPATH="$HOME/.go"
 
 # Important dirs
-hash -d Projects=$HOME/Documents/Projects
-hash -d Uni=$HOME/Documents/University
-hash -d MP_main=/opt/local/var/macports/sources/svn.macports.org/dports
-hash -d MP_personal=/opt/local/var/macports/sources/mp-g5pw/dports
+while read line; do
+    hash -d ${line/ /=}
+done < $HOME/.named_dirs
 
 #load my function and more completions
 fpath=($ZDOTDIR/functions $ZDOTDIR/zsh-completions/src $fpath)
