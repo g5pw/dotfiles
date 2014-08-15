@@ -10,3 +10,6 @@
 [submodule "zsh/zsh-fuzzy-match"]
 	path = zsh/zsh-fuzzy-match
 	url = git://github.com/tarruda/zsh-fuzzy-match.git
+[submodule "zsh/zaw"]
+	path = zsh/zaw
+	url = git://github.com/zsh-users/zaw.git
