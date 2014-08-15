@@ -169,7 +169,7 @@ EXEC 01;38;5;64
 .org	    ;38;5;185
 .doc	    ;38;5;185
 .docx	    ;38;5;185
-.tex        ;38;5;185
+.pdf        ;38;5;185
 
 # Files of special interest (base1 + bold)
 .rdf             01;38;5;245
@@ -262,6 +262,7 @@ EXEC 01;38;5;64
 # http://wiki.xiph.org/index.php/MIME_Types_and_File_Extensions
 
 # Source code stuff
+.tex	01;38;5;111
 .yml	00;38;5;111
 .zsh	00;38;5;111
 .sh	00;38;5;111
