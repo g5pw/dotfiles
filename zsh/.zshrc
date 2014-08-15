@@ -34,6 +34,12 @@ ZSH_HIGHLIGHT_STYLES[function]='fg=28'
 [ -d $ZDOTDIR/zsh-history-substring-search/ ] && source $ZDOTDIR/zsh-history-substring-search/zsh-history-substring-search.zsh
 export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=220,bold'
 
+# Load ZAW
+[ -d $ZDOTDIR/zaw/ ] && source $ZDOTDIR/zaw/zaw.zsh
+zstyle ':filter-select:highlight' matched fg=yellow,standout
+zstyle ':filter-select' case-insensitive yes
+zstyle ':filter-select' extended-search yes
+
 # bind UP and DOWN arrow keys
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
