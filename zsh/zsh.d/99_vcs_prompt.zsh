@@ -4,6 +4,9 @@ autoload -Uz vcs_info
 # Disable unused VCS
 zstyle ':vcs_info:*' enable git svn hg bzr
 
+# Don't use hub when doing vcs stuff! (ruby is slooooow)
+zstyle ':vcs_info:git:*:-all-' command /opt/local/bin/git
+
 zstyle ':vcs_info:*' stagedstr '%F{28}◉'
 zstyle ':vcs_info:*' unstagedstr '%F{11}⦿'
 zstyle ':vcs_info:*' actionformats "$BG[88]⮀$FG[67]%a$BG[123]⮀$FG[069] %s $BG[229]$FG[123]⮀ $FG[033]$FX[bold]%r$FX[no-bold] $BG[177]$FG[229]⮀$FG[088] ⭠ %b $FX[reset]$FG[177]⮀ %F{magenta}%c%u%m "
