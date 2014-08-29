@@ -74,7 +74,7 @@ alias -g UC='|uniq -c'
 alias -g US='|sort -u'
 alias -g W='|wc -l'
 alias -g C='|colout -T ${XDG_CONFIG_HOME:-~/.config}/colout/themes/'
-alias -g P='|percol|'
+alias -g P='|peco|'
 
 # Suffix aliases
 alias -s tex=vim
