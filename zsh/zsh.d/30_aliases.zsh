@@ -57,7 +57,7 @@ alias vd="vifm"
 alias zmv="zmv -wM"
 alias zcp="zmv -wC"
 alias zln="zmv -wL"
-alias wchat="weechat-curses"
+alias wchat="weechat"
 alias w="ansiweather"
 alias y='tree'
 
