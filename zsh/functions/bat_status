@@ -1,12 +1,12 @@
 #!/usr/bin/env zsh
 function bat_status () {
     tick=($FG[124]▁ $FG[125]▂ $FG[226]▃ $FG[227]▄ $FG[228]▅ $FG[150]▆ $FG[149]▇ $FG[148]█)
-    conn=`ioreg -n AppleSmartBattery | awk '/ExternalConnected/ { print $5 }'`
-    chrg=`ioreg -n AppleSmartBattery | awk '/IsCharging/ { print $5 }'`
-    # time=`ioreg -n AppleSmartBattery | awk '/TimeRemaining/ { print $5 }'`
-    max=`ioreg -n AppleSmartBattery | awk '/MaxCapacity/ { print $5 }'`
-    cur=`ioreg -n AppleSmartBattery | awk '/CurrentCapacity/ { print $5 }'`
-    full=`ioreg -n AppleSmartBattery | awk '/FullyCharged/ { print $5 }'`
+    conn=$(ioreg -n AppleSmartBattery | awk '/ExternalConnected/ { print $5 }')
+    chrg=$(ioreg -n AppleSmartBattery | awk '/IsCharging/ { print $5 }')
+    # time=$(ioreg -n AppleSmartBattery | awk '/TimeRemaining/ { print $5 }')
+    max=$(ioreg -n AppleSmartBattery | awk '/MaxCapacity/ { print $5 }')
+    cur=$(ioreg -n AppleSmartBattery | awk '/CurrentCapacity/ { print $5 }')
+    full=$(ioreg -n AppleSmartBattery | awk '/FullyCharged/ { print $5 }')
     pcnt=$(($cur*100 / $max ))
     if [[ $full == 'Yes' ]]; then
 	echo -n "$FG[050]⚡$FG[000]"
