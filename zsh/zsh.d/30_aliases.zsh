@@ -24,9 +24,9 @@ alias l.='ls -A'
 alias l='ls'
 alias ll.='ls -al'
 alias ll='ls -l'
+alias llusb="system_profiler SPUSBDataType"
 alias ls='ls -hF --color=auto'
 alias lscom="python -m serial.tools.list_ports"
-alias lsusb="system_profiler SPUSBDataType"
 alias lswifi='/System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -s | sort -rk 3'
 alias less=$PAGER
 alias zless=$PAGER
