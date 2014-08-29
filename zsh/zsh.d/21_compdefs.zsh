@@ -1,5 +1,4 @@
 # Custom completions:
-compdef sp=port
 compdef p=port
 compdef reload=whichf
 compdef edit_function=whichf
