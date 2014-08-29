@@ -15,7 +15,6 @@ alias ez='$EDITOR $ZDOTDIR/.zshrc;src'
 alias find='noglob find'
 alias JUSTFUCKINGDOIT='sudo -p "Oh, come on... alright, gimme your password:" $(fc -ln -1)'
 alias grep='grep --colour'
-alias gvim='gvim -U ~/.gvimrc'
 alias h='history'
 alias heroku="heroku-1.9"
 alias ip='curl ifconfig.me/ip'
