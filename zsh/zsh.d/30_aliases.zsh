@@ -78,3 +78,4 @@ alias -g P='|peco|'
 # Suffix aliases
 alias -s tex=vim
 alias -s zsh=vim
+alias -s txt=vim
