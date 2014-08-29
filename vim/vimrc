@@ -399,6 +399,7 @@ let g:extradite_showhash=1
 if !has('gui_running')
     let g:sudoAuth = 'sudo'
 endif
+let g:sudo_tee = '/opt/local/libexec/gnubin/tee'
 " }}}
 " VimWiki {{{
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', 'path_html': '~/Sites/vimwiki'}]
