@@ -1,2 +1,2 @@
 # dot-prefixed files are skipped unless explicitly named
-rcup -K zsh/{.dircolors,.zprofile,.zshenv,.zshrc}
+rcup -K zsh/{.dircolors,.zprofile,.zshenv,.zshrc,.zlogin}
