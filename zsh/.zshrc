@@ -20,9 +20,6 @@ fi
 source "$fasd_cache"
 unset fasd_cache
 
-# load zsh-fuzzy-match
-[ -d $ZDOTDIR/zsh-fuzzy-match/ ] && source $ZDOTDIR/zsh-fuzzy-match/fuzzy-match.zsh
-
 # load highlighting
 [ -d $ZDOTDIR/zsh-syntax-highlighting/ ] && source $ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets)
