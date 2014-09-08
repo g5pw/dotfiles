@@ -43,7 +43,6 @@ fun! SetupVAM()
     " Movement {{{
     call add(addons, 'EasyMotion')
     call add(addons, 'unimpaired')
-    call add(addons, 'github:takac/vim-hardtime')
     " }}}
     " File System/Integration {{{
     call add(addons, 'vimfiler')
@@ -262,10 +261,6 @@ let g:SingleCompile_showresultafterrun = 1
 let g:SingleCompile_silentcompileifshowquickfix = 1
 call SingleCompile#ChooseCompiler('c','clang') " Clang is the default C compiler
 " }}}
-" hardtime: Kick the habit! {{{
-let g:hardtime_default_on = 1
-let g:list_of_normal_keys = ['h', 'j','k','l']
-let g:list_of_visual_keys = ['h', 'j','k','l']
 " }}}
 " vim-airline {{{
 let g:airline_powerline_fonts = 1
