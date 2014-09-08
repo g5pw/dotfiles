@@ -71,7 +71,7 @@ zstyle ':completion:*:*:*:*:processes' force-list always
 zstyle ':completion::complete:(rm|vi|vim):*' ignore-line true
 
 # cd will never select the parent directory (e.g.: cd ../<TAB>):
-zstyle ':completion:*' ignore-parents parent pwd ..
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
 
 # Search only 50 items in history
 zstyle ':completion:*:history-words' range 5:10
