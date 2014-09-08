@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
 function bat_status () {
+    [[ "$(uname)" == "Darwin" ]] || exit
     tick=($FG[124]▁ $FG[125]▂ $FG[226]▃ $FG[227]▄ $FG[228]▅ $FG[150]▆ $FG[149]▇ $FG[148]█)
     conn=$(ioreg -n AppleSmartBattery | awk '/ExternalConnected/ { print $5 }')
     chrg=$(ioreg -n AppleSmartBattery | awk '/IsCharging/ { print $5 }')
