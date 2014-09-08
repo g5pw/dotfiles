@@ -1,5 +1,6 @@
 # Load interesting modules
 zmodload zsh/mapfile
+zmodload zsh/mathfunc
 zmodload zsh/regex
 zmodload zsh/pcre
 
