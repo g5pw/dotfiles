@@ -1,14 +1,10 @@
-#load Mapfile
+# Load interesting modules
 zmodload zsh/mapfile
-
-# Add Regexp replacing
 zmodload zsh/regex
+zmodload zsh/pcre
 
 # Load colors
 autoload -U colors && colors
-
-## Add PCRE support
-zmodload zsh/pcre
 
 # smart urls
 autoload -U url-quote-magic
