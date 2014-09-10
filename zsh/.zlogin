@@ -1,1 +1,5 @@
-cowsay -f "$(ls /opt/local/share/cowsay/cows/*.cow | unsort 2>/dev/null | head -1)" "$(fortune -a)"
+if [[ -o interactive ]]; then
+    cows=($(cowsay -l | grep -v :))
+    cowsay -f ${(q)cows[$(($RANDOM % ${#cows}))]} "$(fortune -a)"
+    unset cows
+fi
