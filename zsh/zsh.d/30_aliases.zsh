@@ -46,8 +46,14 @@ alias rm='nocorrect rm -i'
 alias rgrep='grep -r'
 alias rm="rm -i"
 alias serverhere='python -m SimpleHTTPServer'
-alias t='nocorrect noglob task'
-alias task='nocorrect noglob task'
+# TaskWarrior aliases
+if which task &> /dev/null; then
+    alias t='nocorrect noglob task'
+    alias task='nocorrect noglob task'
+    alias tl="nocorrect noglob task list"
+    alias ta="nocorrect noglob task add"
+    alias td="nocorrect noglob task done"
+fi
 alias u='uptime'
 alias v='f -t -e vim -b viminfo'
 alias vi='vim'
