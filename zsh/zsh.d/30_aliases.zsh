@@ -57,7 +57,6 @@ fi
 alias u='uptime'
 alias v='f -t -e vim -b viminfo'
 alias vi='vim'
-alias vd="vifm"
 # The many forms of zmv.
 alias zmv="zmv -wM"
 alias zcp="zmv -wC"
