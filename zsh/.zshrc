@@ -21,11 +21,14 @@ source "$fasd_cache"
 unset fasd_cache
 
 # load highlighting
+zstyle ':zsh-syntax-highlighting:*'	 enabled		    main brackets
+zstyle ':zsh-syntax-highlighting:main:*' history-expansion	    fg=56
+zstyle ':zsh-syntax-highlighting:main:*' alias			    fg=35
+zstyle ':zsh-syntax-highlighting:main:*' function		    fg=28
+zstyle ':zsh-syntax-highlighting:main:*' double-hyphen-option	    fg=140
+zstyle ':zsh-syntax-highlighting:main:*' single-hyphen-option	    fg=61
+zstyle ':zsh-syntax-highlighting:main:*' back-quoted-argument	    fg=147
 [ -d $ZDOTDIR/zsh-syntax-highlighting/ ] && source $ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets)
-ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=56'
-ZSH_HIGHLIGHT_STYLES[alias]='fg=35'
-ZSH_HIGHLIGHT_STYLES[function]='fg=28'
 
 # fish-like history search
 [ -d $ZDOTDIR/zsh-history-substring-search/ ] && source $ZDOTDIR/zsh-history-substring-search/zsh-history-substring-search.zsh
