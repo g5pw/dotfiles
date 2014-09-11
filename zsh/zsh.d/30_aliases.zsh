@@ -1,5 +1,4 @@
 ## aliases ####
-alias rg='ranger'
 alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport'
 alias c='clear'
 alias calc='nocorrect noglob calc'
@@ -34,7 +33,6 @@ alias memacs='/Applications/MacPorts/Emacs.app/Contents/MacOS/Emacs'
 alias memacsclient='/Applications/MacPorts/Emacs.app/Contents/MacOS/bin/emacsclient'
 alias mkdir='nocorrect mkdir'
 alias mv='nocorrect mv -i'
-alias mmv='noglob zmv -W'
 alias msp430-cgdb='cgdb -d msp430-gdb'
 alias o='open'
 alias octave='octave -q'
@@ -42,10 +40,14 @@ alias pi='portindex'
 alias p='noglob port-wrapper'
 alias pstree='pstree -g 3'
 alias psy="sudo port sync"
+alias rg='ranger'
 alias rm='nocorrect rm -i'
 alias rgrep='grep -r'
-alias rm="rm -i"
 alias serverhere='python -m SimpleHTTPServer'
+alias u='uptime'
+alias v='f -t -e vim -b viminfo'
+alias vi='vim'
+
 # TaskWarrior aliases
 if which task &> /dev/null; then
     alias t='nocorrect noglob task'
@@ -54,13 +56,13 @@ if which task &> /dev/null; then
     alias ta="nocorrect noglob task add"
     alias td="nocorrect noglob task done"
 fi
-alias u='uptime'
-alias v='f -t -e vim -b viminfo'
-alias vi='vim'
+
 # The many forms of zmv.
+alias mmv='noglob zmv -W'
 alias zmv="zmv -wM"
 alias zcp="zmv -wC"
 alias zln="zmv -wL"
+
 alias wchat="weechat"
 alias w="ansiweather"
 alias y='tree'
