@@ -383,7 +383,7 @@ let g:startify_skiplist = [
            \ $VIMRUNTIME .'/doc',
            \ 'vim-addons/.*/doc'
            \ ]
-let g:startify_custom_indices = ['f', 'd', 'g', 'r', 'r', 't', 'v', 'c']
+let g:startify_custom_indices = ['f', 'd', 'g', 'r', 'c']
 let g:startify_list_order = ['bookmarks', 'files', 'dir', 'sessions']
 " }}}
 " Set Syntastic style {{{
