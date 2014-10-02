@@ -3,15 +3,6 @@ if [ -f $HOME/.profile ]; then
     source $HOME/.profile
 fi
 
-export EDITOR=`which vim`
-export PAGER=`which less`
-export VISUAL=$EDITOR
-export FCEDIT=$EDITOR
-export LESSCHARSET='utf-8' ## charset for pager
-#Less syntax coloring
-export LESSOPEN="| src-hilite-lesspipe.sh %s"
-export LESS='-ReiJW'
-
 #custom exports for coloured less
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
