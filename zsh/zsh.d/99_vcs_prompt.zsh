@@ -23,8 +23,9 @@ function +vi-git_check_unstaged_files() {
     fi
 }
 
-precmd() {
+_vcs_precmd() {
     vcs_info
 }
+add-zsh-hook precmd _vcs_precmd
 
 export RPROMPT=$'$FG[000]%(?..$FG[007]$BG[196]$FX[bold] ✘ %?$FX[no-bold]$FG[196]) ${vcs_info_msg_0_}$FX[reset]'

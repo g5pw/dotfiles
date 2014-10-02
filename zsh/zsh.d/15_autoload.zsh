@@ -20,6 +20,9 @@ autoload -U zcalc
 # Load a better move!
 autoload -U zmv
 
+# Helper function to load zsh hooks
+autoload -Uz add-zsh-hook
+
 ## This allows incremental completion of a word.
 ## After starting this command, a list of completion
 ## choices can be shown after every character you
