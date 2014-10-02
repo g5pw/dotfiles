@@ -379,6 +379,7 @@ omap Z <Plug>(easymotion-sn)
 let g:startify_bookmarks = [ $MYVIMRC, $ZDOTDIR.'.zshrc' ]
 let g:startify_skiplist = [
            \ 'COMMIT_EDITMSG',
+	   \ 'svn-commit.tmp',
            \ $VIMRUNTIME .'/doc',
            \ 'vim-addons/.*/doc'
            \ ]
