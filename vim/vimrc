@@ -261,7 +261,6 @@ let g:SingleCompile_showresultafterrun = 1
 let g:SingleCompile_silentcompileifshowquickfix = 1
 call SingleCompile#ChooseCompiler('c','clang') " Clang is the default C compiler
 " }}}
-" }}}
 " vim-airline {{{
 let g:airline_powerline_fonts = 1
 let g:airline_mode_map = {
