@@ -1,0 +1,44 @@
+[init]
+    templatedir = ~/.git-template
+[user]
+    email = a2piratesoft@gmail.com
+    name = Aljaž \"g5pw\" Srebrnič
+[core]
+    excludesfile = ~/.gitignore
+    quotepath = false
+    whitespace = trailing-space,space-before-tab
+[color]
+    ui = auto
+[format]
+    pretty = full
+[alias]
+    d = diff
+    logs = log --stat -C
+    ci = commit
+    st = status
+    co = checkout
+    lc = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+    unstage = reset HEAD --
+[advice]
+    statusHints = false
+[branch]
+    autosetupmerge = true
+    autosetuprebase = always
+[rerere]
+    enabled = true
+[push]
+    default = simple
+[difftool]
+    prompt = false
+[merge]
+    tool = splice
+
+# Mergetools here
+[mergetool]
+    prompt = false
+[mergetool "splice"]
+    cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
+    trustExitCode = true
+
+[include]
+    path = "~/.gitconfig.private"
