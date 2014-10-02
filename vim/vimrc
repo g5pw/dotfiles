@@ -376,7 +376,7 @@ xmap S <Plug>(easymotion-sn)
 omap Z <Plug>(easymotion-sn)
 " }}}
 " Startify options {{{
-let g:startify_bookmarks = [ $MYVIMRC, '~/.zsh/.zshrc' ]
+let g:startify_bookmarks = [ $MYVIMRC, $ZDOTDIR.'.zshrc' ]
 let g:startify_skiplist = [
            \ 'COMMIT_EDITMSG',
            \ $VIMRUNTIME .'/doc',
