@@ -11,6 +11,4 @@ export LESSCHARSET='utf-8' ## charset for pager
 export LESSOPEN="| src-hilite-lesspipe.sh %s"
 export LESS='-ReiJW'
 
-export GREP_OPTIONS="-n"
-
 export PATH="$HOME/.cabal/bin:$HOME/.go/bin:$HOME/bin:$PATH"
