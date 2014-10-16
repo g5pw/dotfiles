@@ -646,12 +646,11 @@ endif
 if has("gui_running")
     set ttyfast
     set guifont=Menlo\ for\ Powerline:h12
-    colorscheme solarized
     " MacVim runtime path fix
     set rtp+=/opt/local/share/vim/vimfiles
 endif
 
-if &t_Co >= 256
+if &t_Co >= 256 || has("gui_running")
     colorscheme solarized
     set background=dark
 
