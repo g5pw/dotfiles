@@ -655,12 +655,12 @@ if &t_Co >= 256
     colorscheme solarized
     set background=dark
 
-    hi StartifyBracket ctermfg=240
-    hi StartifyFooter  ctermfg=111
-    hi StartifyHeader  ctermfg=203
-    hi StartifyNumber  ctermfg=215
-    hi StartifyPath    ctermfg=245
-    hi StartifySlash   ctermfg=240
+    highlight StartifyBracket ctermfg=240
+    highlight StartifyFooter  ctermfg=111
+    highlight StartifyHeader  ctermfg=203
+    highlight StartifyNumber  ctermfg=215
+    highlight StartifyPath    ctermfg=245
+    highlight StartifySlash   ctermfg=240
 endif
 " }}}
 " Custom functions {{{
