@@ -638,6 +638,11 @@ augroup END
 " }}}
 " Autocmds end }}}
 " Visual stuff {{{
+if &t_Co > 2 || has("gui_running")
+    " switch syntax highlighting on, when the terminal has colors
+    syntax enable
+endif
+
 if has("gui_running")
     set ttyfast
     set guifont=Menlo\ for\ Powerline:h12
@@ -656,11 +661,6 @@ if &t_Co >= 256
     hi StartifyNumber  ctermfg=215
     hi StartifyPath    ctermfg=245
     hi StartifySlash   ctermfg=240
-endif
-
-if &t_Co > 2 || has("gui_running")
-    " switch syntax highlighting on, when the terminal has colors
-    syntax on
 endif
 " }}}
 " Custom functions {{{
