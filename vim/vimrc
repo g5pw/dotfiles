@@ -655,8 +655,8 @@ if &t_Co >= 256 || has("gui_running")
     set background=dark
 
     highlight StartifyBracket ctermfg=240
-    highlight StartifyFooter  ctermfg=111
-    highlight StartifyHeader  ctermfg=203
+    highlight StartifyFooter  ctermfg=203
+    highlight StartifyHeader  ctermfg=111
     highlight StartifyNumber  ctermfg=215
     highlight StartifyFile    ctermfg=227
     highlight StartifyPath    ctermfg=245
