@@ -658,6 +658,7 @@ if &t_Co >= 256 || has("gui_running")
     highlight StartifyFooter  ctermfg=111
     highlight StartifyHeader  ctermfg=203
     highlight StartifyNumber  ctermfg=215
+    highlight StartifyFile    ctermfg=227
     highlight StartifyPath    ctermfg=245
     highlight StartifySlash   ctermfg=240
 endif
