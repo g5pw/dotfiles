@@ -23,18 +23,6 @@ export GPG_TTY=`tty`
 #Configure language
 export LANG="en_US.UTF-8"
 
-#add ROOT to python path
-if [ -n "$PYTHONPATH" ]; then
-	export PYTHONPATH="$PYTHONPATH:/opt/local/lib/root/"
-else
-	export PYTHONPATH="/opt/local/lib/root/"
-fi
-
-# Python init file
-if [ -f ~/.pythonrc ]; then
-	export PYTHONSTARTUP="$HOME/.pythonrc"
-fi
-
 #Tweak prompt
 export PS1="\[\`if [[ \$? = "0" ]]; then color cyan; else color cyan red; fi\`\]\u@\[\`color bold red\`\]\h:\[\`color blue\`\]\W:\[\`color normal yellow\`\]\A:\[\`color bold black\`\]\!\$\[\`color\`\] "
 export PS2="\[\`color bold black\`\] ➣  \[\`color\`\]"

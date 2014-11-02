@@ -12,3 +12,15 @@ export LESSOPEN="| src-hilite-lesspipe.sh %s"
 export LESS='-ReiJW'
 
 export PATH="$HOME/.cabal/bin:$HOME/.go/bin:$HOME/bin:$PATH"
+
+#add ROOT to python path
+if [ -n "$PYTHONPATH" ]; then
+	export PYTHONPATH="$PYTHONPATH:/opt/local/lib/root/"
+else
+	export PYTHONPATH="/opt/local/lib/root/"
+fi
+
+# Python init file
+if [ -f ~/.pythonrc ]; then
+	export PYTHONSTARTUP="$HOME/.pythonrc"
+fi
