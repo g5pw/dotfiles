@@ -12,6 +12,7 @@ alias ea='$EDITOR $ZDOTDIR/zsh.d/30_aliases.zsh && source $ZDOTDIR/zsh.d/30_alia
 alias ef='edit_function'
 alias ez='$EDITOR $ZDOTDIR/.zshrc;src'
 alias find='noglob find'
+alias j='jobs'
 alias JUSTFUCKINGDOIT='sudo -p "Oh, come on... alright, gimme your password:" $(fc -ln -1)'
 alias grep='grep --colour'
 alias h='history'
