@@ -364,6 +364,7 @@ let g:vimfiler_tree_opened_icon = '▾'
 let g:vimfiler_tree_closed_icon = '▸'
 let g:vimfiler_marked_file_icon = '✓'
 " }}}
+let g:better_whitespace_filetypes_blacklist = ['unite']
 " Enable space error highlighting for portfiles {{{
 let g:portfile_highlight_space_errors=1
 " }}}
@@ -630,12 +631,6 @@ augroup last_pos
 		\ if &ft !~ 'git\|svn\|hg' && line("'\"") > 0 && line("'\"") <= line("$") |
 		\   exe "normal! g`\"" |
 		\ endif
-augroup END
-" }}}
-" Unite {{{
-augroup unite
-    au!
-    autocmd FileType unite :DisableWhitespace
 augroup END
 " }}}
 " Autocmds end }}}
