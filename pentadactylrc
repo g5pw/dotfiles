@@ -1,6 +1,7 @@
 set editor="/opt/local/bin/mvim -f"
 set hintkeys=hjklasdfgyuiopqwertnmzxcvb
 
+set showtabline=never
 
 " Mappings
 nmap gn <C-S-n>
