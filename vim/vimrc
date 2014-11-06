@@ -241,6 +241,7 @@ set ttymouse=xterm2
 
 "Always use cscope
 if filereadable("cscope.out")
+    set nocscopeverbose
     cscope add cscope.out
 endif
 set cscopetag
