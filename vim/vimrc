@@ -482,8 +482,6 @@ nnoremap <silent> ub :<C-u>Unite -buffer-name=bookmarks bookmark<CR>
 
 " Quick commands
 nnoremap <silent> u; :<C-u>Unite -buffer-name=history history/command command<CR>
-
-nnoremap <leader>A :execute 'Unite grep:.::' . expand("<cword>") . ' -default-action=above -auto-preview'<CR>
 "}}}
 " YouCompleteMe mappings
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
