@@ -22,5 +22,5 @@ nmap ,t :tabopen!
 
 nmap <c-l> :reload<CR>
 
-colorscheme zenburn
+colorscheme solarized-dark
 " vim: set ft=vimperator:
