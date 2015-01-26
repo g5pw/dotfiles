@@ -408,6 +408,9 @@ let g:sudo_tee = '/opt/local/libexec/gnubin/tee'
 " VimWiki {{{
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', 'path_html': '~/Sites/vimwiki'}]
 " }}}
+" Gundo {{{
+let g:gundo_close_on_revert=1
+" }}}
 " }}}
 " Mappings {{{
 " SingleCompile
@@ -485,6 +488,9 @@ nnoremap <silent> u; :<C-u>Unite -buffer-name=history history/command command<CR
 "}}}
 " YouCompleteMe mappings
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" Boxes mappings
+vnoremap gcb :!boxes -s 80 -a c<CR>
 
 " Toggle folds with space bar
 nnoremap <Space> za
