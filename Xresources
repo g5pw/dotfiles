@@ -14,6 +14,22 @@ Xft.hintstyle:              hintslight
 ! More info at:
 ! http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.1.pod
 !-------------------------------------------------------------------------------
+URxvt.internalBorder: 0
+URxvt.externalBorder: 0
+
+URxvt.saveLines: 10000
+URxvt.scrollTtyOutput:   false
+URxvt.scrollWithBuffer:  true
+URxvt.scrollTtyKeypress: true
+
+URxvt.font: xft:inconsolata for powerline:pixelsize=12:antialias=true:hinting=true,xft:dejavu sans mono:pixelsize=12:antialias=true:hinting=true
+URxvt.boldFont: xft:inconsolata for powerline:bold:pixelsize=12:antialias=true:hinting=true,xft:dejavu sans mono:bold:pixelsize=12:antialias=true:hinting=true
+URxvt.italicFont: xft:inconsolata for powerline:italic:pixelsize=12:antialias=true:hinting=true,xft:dejavu sans mono:italic:pixelsize=12:antialias=true:hinting=true
+URxvt.boldItalicFont: xft:inconsolata for powerline:bold:italic:pixelsize=12:antialias=true:hinting=true,xft:dejavu sans mono:bold:italic:pixelsize=12:antialias=true:hinting=true
+
+URxvt.iconFile:    /usr/share/icons/Adwaita/scalable/apps/utilities-terminal-symbolic.svg
+
+URxvt*loginShell: true
 
 URxvt.depth:                32
 URxvt.geometry:             90x30
@@ -22,13 +38,10 @@ URxvt.fading:               0
 ! URxvt.urgentOnBell:         true
 URxvt.visualBell:           true
 URxvt.loginShell:           true
-URxvt.saveLines:            3000
-URxvt.internalBorder:       3
 URxvt.lineSpace:            0
 
 ! Fonts
-! URxvt.allow_bold:           false
-URxvt*font:		    xft:Meslo LG M for Powerline:pixelsize=10
+URxvt.allow_bold:           false
 
 ! Fix font space
 URxvt*letterSpace: -1
