@@ -654,6 +654,9 @@ if &t_Co >= 256 || has("gui_running")
     colorscheme solarized
     set background=dark
 
+    let g:doxygen_enhanced_color=1
+    highlight doxygenBrief ctermbg=240
+
     highlight StartifyBracket ctermfg=240
     highlight StartifyFooter  ctermfg=203
     highlight StartifyHeader  ctermfg=111
