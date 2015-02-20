@@ -89,14 +89,14 @@ zstyle ':completion:*:messages' format "$FG[075]%d$FX[reset]"
 zstyle ':completion:*:warnings' format "$FG[160]$FX[underline]No matches for:$FX[reset]$FG[197] %d$FX[reset]"
 zstyle ':completion:*:corrections' format "$FG[208]%d $FG[197](errors: %e)$FX[reset]"
 zstyle ':completion:*' select-prompt "%SScrolling active: current selection at %p%s"
-	    
+
 zstyle ':completion:*:my-accounts' users-hosts $my_accounts
 
 # only java files for javac
 zstyle ':completion::complete:javac:*' files '*.java'
 
 # no binary files for vi, textmate or sublime text
-zstyle ':completion::complete:(v|vi|vim|mvim|mate|subl):*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc|zwc)'
+zstyle ':completion::complete:(v|vi|vim|mvim|emacs|mate|subl):*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc|zwc)'
 # no binary files for less
 zstyle ':completion::complete:(less|zless):*' ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
 # tar files
