@@ -1,13 +1,13 @@
 set editor="/opt/local/bin/mvim -f"
 set hintkeys=hjklasdfgyuiopqwertnmzxcvb
 
-set showtabline=never
+set gui=none
 
 " Mappings
 nmap gn <C-S-n>
 nmap gN <C-S-p>
 
-nmap gp :tgroup pushtab 
+nmap gp :tabgroups pushtab 
 nmap gP :tabgroups pulltab 
 
 nmap e :javascript TabView.toggle()<CR>
@@ -22,5 +22,5 @@ nmap ,t :tabopen!
 
 nmap <c-l> :reload<CR>
 
-colorscheme solarized-dark
+colorscheme zenburn
 " vim: set ft=vimperator:
