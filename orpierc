@@ -2,11 +2,12 @@
 include "/opt/local/etc/orpierc"
 
 # Command mode bindings
+unbind_function "s"
+unbind_function "a"
 bind "s" command_swap
 bind "d" command_drop
 bind "a" command_begin_abbrev
 bind "v" command_begin_browsing
-bind "b" command_cycle_base
 
 bind "D" command_clear
 
