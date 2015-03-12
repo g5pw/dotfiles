@@ -363,7 +363,7 @@ let g:vimfiler_tree_opened_icon = '▾'
 let g:vimfiler_tree_closed_icon = '▸'
 let g:vimfiler_marked_file_icon = '✓'
 " }}}
-let g:better_whitespace_filetypes_blacklist = ['unite']
+let g:better_whitespace_filetypes_blacklist = ['unite', 'startify']
 " Enable space error highlighting for portfiles {{{
 let g:portfile_highlight_space_errors=1
 " }}}
