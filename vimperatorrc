@@ -1,5 +1,5 @@
 set editor="/opt/local/bin/mvim -f"
-set hintkeys=hjklasdfgyuiopqwertnmzxcvb
+set hintchars=hjklasdfgyuiopqwertnmzxcvb
 
 set gui=none
 
