@@ -1,5 +1,5 @@
 # Include files from zsh.d directory
-for file in $ZDOTDIR/zsh.d/*~*disabled*; do
+for file in $ZDOTDIR/zsh.d/*.zsh; do
     source $file
 done
 
