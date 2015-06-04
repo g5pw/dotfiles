@@ -85,7 +85,7 @@ zstyle ':completion:*:manuals' separate-sections true
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' prompt 'Alternatives %e:'
 zstyle ':completion:*:descriptions' format "$FG[111]$FX[underline]%d$FX[reset]"
-zstyle ':completion:*:messages' format "$FG[075]%d$FX[reset]"
+zstyle ':completion:*:messages' format "$FG[75]%d$FX[reset]"
 zstyle ':completion:*:warnings' format "$FG[160]$FX[underline]No matches for:$FX[reset]$FG[197] %d$FX[reset]"
 zstyle ':completion:*:corrections' format "$FG[208]%d $FG[197](errors: %e)$FX[reset]"
 zstyle ':completion:*' select-prompt "%SScrolling active: current selection at %p%s"

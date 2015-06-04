@@ -2,11 +2,11 @@
 zstyle  ':prompt:rtab' fish yes
 mode_color=178
 battery='$BG[239]$(bat_status)$FG[239] '
-user_host='$BG[060]⮀ $FG[007]$FX[bold]%n$FX[no-bold]$FG[060] '
-dir='$BG[075]⮀ $FG[000]$(rtab)$FG[075] '
+user_host='$BG[60]⮀ $FG[7]$FX[bold]%n $FX[no-bold]$FG[60]'
+dir='$BG[75]⮀ $FG[0]$(rtab)$FG[75] '
 clock='$BG[204]⮀$FG[228]%* '
 export PROMPT=$battery$user_host$dir$clock'$FX[reset]$FG[204]⮀ $FG[$mode_color]%#$FX[reset] '
-export PROMPT2='$FG[131]%_$FG[121] ➣ $FX[reset]'
+export PROMPT2='$FG[131]%_$FG[121] ⮀ $FX[reset]'
 
 ## ask me 'do you wish to see all XX possibilities' before menu selection
 export LISTPROMPT=''
@@ -18,7 +18,7 @@ export ZCALCPROMPT="$FX[bold]$FG[208]%1v$FX[no-bold]$FG[111] ⫸ $FX[reset] "
 
 function zle-keymap-select {
     if [[ $KEYMAP == vicmd ]]; then
-      mode_color=037
+      mode_color=37
     else
       mode_color=178
     fi
