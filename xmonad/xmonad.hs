@@ -16,8 +16,9 @@ import XMonad.Actions.WindowMenu
 
 import XMonad.Config.Desktop (desktopLayoutModifiers)
 
-import XMonad.Hooks.UrgencyHook
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.UrgencyHook
+import XMonad.Hooks.ManageDocks
 
 import XMonad.Layout.NoBorders
 import XMonad.Layout.ShowWName
@@ -94,7 +95,7 @@ myKeys conf@(XConfig {XMonad.modMask = myModMask}) = M.fromList
              , ((myModMask, xK_Left),  prevWS)
              , ((myModMask, xK_Right), nextWS)
 
-             -- ,((modMask x, xK_b     ), sendMessage ToggleStruts)
+             , ((myModMask, xK_b     ), sendMessage ToggleStruts)
 
              -- Media keys
              , ((0, xF86XK_AudioRaiseVolume), spawn "pulseaudio-ctl up")
