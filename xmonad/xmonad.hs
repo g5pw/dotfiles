@@ -221,4 +221,5 @@ main = do
              }
              `additionalKeys`
              [ ((myModMask, xK_d), AL.launchApp myXPConfig { defaultText = "~" } "thunar" )
+             , ((myModMask, xK_o), AL.launchApp myXPConfig { defaultText = "~" } "xdg-open" )
              ]
