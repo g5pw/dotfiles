@@ -1,13 +1,24 @@
 #!/usr/bin/env zsh
 function bat_status () {
-    [[ "$(uname)" == "Darwin" ]] || exit
     tick=($FG[124]▁ $FG[125]▂ $FG[226]▃ $FG[227]▄ $FG[228]▅ $FG[150]▆ $FG[149]▇ $FG[148]█)
-    conn=$(ioreg -n AppleSmartBattery | awk '/ExternalConnected/ { print $5 }')
-    chrg=$(ioreg -n AppleSmartBattery | awk '/IsCharging/ { print $5 }')
-    # time=$(ioreg -n AppleSmartBattery | awk '/TimeRemaining/ { print $5 }')
-    max=$(ioreg -n AppleSmartBattery | awk '/MaxCapacity/ { print $5 }')
-    cur=$(ioreg -n AppleSmartBattery | awk '/CurrentCapacity/ { print $5 }')
-    full=$(ioreg -n AppleSmartBattery | awk '/FullyCharged/ { print $5 }')
+
+    if [[ "$(uname)" == "Darwin" ]]; then
+	conn=$(ioreg -n AppleSmartBattery | awk '/ExternalConnected/ { print $5 }')
+	chrg=$(ioreg -n AppleSmartBattery | awk '/IsCharging/ { print $5 }')
+	# time=$(ioreg -n AppleSmartBattery | awk '/TimeRemaining/ { print $5 }')
+	max=$(ioreg -n AppleSmartBattery | awk '/MaxCapacity/ { print $5 }')
+	cur=$(ioreg -n AppleSmartBattery | awk '/CurrentCapacity/ { print $5 }')
+	full=$(ioreg -n AppleSmartBattery | awk '/FullyCharged/ { print $5 }')
+    else
+    	battery="/sys/class/power_supply/BAT0"
+    	bat_status=$(cat $battery/status)
+	conn=$(cat /sys/class/power_supply/AC/online)
+	max=$(cat $battery/energy_full)
+	cur=$(cat $battery/energy_now)
+	[[ "$bat_status"  == "Charging" ]] && chrg="Yes"
+	[[ "$bat_status"  == "Full" ]] && full="Yes"
+    fi
+
     pcnt=$(($cur*100 / $max ))
     if [[ $full == 'Yes' ]]; then
 	echo -n "$FG[050]⚡$FG[000]"
