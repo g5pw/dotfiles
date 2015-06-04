@@ -6,13 +6,6 @@ fi
 export CLICOLOR="YES"
 export LSCOLORS="ExGxFxdxCxDxDxhbadExEx"
 export GREP_OPTIONS='--color=auto'
-#Less syntax coloring
-export LESSOPEN="| /opt/local/bin/src-hilite-lesspipe.sh %s"
-export LESS=' -R  '
-
-#Editor
-export EDITOR="/opt/local/bin/vim"
-export PAGER="/opt/local/bin/less"
 
 #Set some useful paths in CDPATH
 export CDPATH="$HOME/Documents:$HOME/Documents/Projects:$HOME/Documents/University:$HOME/Sites"
