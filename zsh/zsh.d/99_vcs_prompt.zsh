@@ -5,7 +5,7 @@ autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git svn hg bzr
 
 # Don't use hub when doing vcs stuff! (ruby is slooooow)
-zstyle ':vcs_info:git:*:-all-' command /opt/local/bin/git
+zstyle ':vcs_info:git:*:-all-' command $(whence -p git)
 
 zstyle ':vcs_info:*' stagedstr '%F{28}◉'
 zstyle ':vcs_info:*' unstagedstr '%F{11}⦿'
