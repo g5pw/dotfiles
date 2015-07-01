@@ -1,5 +1,5 @@
 if [[ -o interactive ]]; then
     cows=($(cowsay -l | grep -v :))
-    cowsay -f ${(q)cows[$(($RANDOM % ${#cows} + 1))]} "$(fortune -os)"
+    fortune -os | cowsay -nf ${(q)cows[$(($RANDOM % ${#cows} + 1))]}
     unset cows
 fi
