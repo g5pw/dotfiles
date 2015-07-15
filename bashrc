@@ -5,7 +5,6 @@ fi
 
 export CLICOLOR="YES"
 export LSCOLORS="ExGxFxdxCxDxDxhbadExEx"
-export GREP_OPTIONS='--color=auto'
 
 #Set some useful paths in CDPATH
 export CDPATH="$HOME/Documents:$HOME/Documents/Projects:$HOME/Documents/University:$HOME/Sites"
