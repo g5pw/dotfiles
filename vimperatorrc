@@ -16,7 +16,7 @@ nmap <silent> ge :echo TabGroup().tabView.GroupItems.getActiveGroupItem().getTit
 nmap <C-A-n> <C-S-n>
 nmap <C-A-p> <C-S-p>
 
-nmap ,/ :nohlfind<CR>
+nmap ,/ :nohlsearch<CR>
 
 nmap ,t :tabopen! 
 
