@@ -1,5 +1,5 @@
 # Set locale
-export LANG=en_US.UTF-8
+export LANG=it_IT.UTF-8 LC_MESSAGES=en_US.UTF-8
 
 # Export variables
 export EDITOR=`which vim`
