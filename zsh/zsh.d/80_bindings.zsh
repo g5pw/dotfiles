@@ -1,3 +1,6 @@
+# Enable vi shell bindings
+bindkey -v
+
 bindkey '^P' push-input
 bindkey -M vicmd '^P' push-input
 
