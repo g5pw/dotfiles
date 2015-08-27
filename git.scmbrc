@@ -5,7 +5,7 @@
 #   (I chose 'e' because it is easy to slide your finger to it from '$'.)
 export git_env_char="r"
 # - Max changed files before reverting to 'git status'. git_status_shortcuts() will be slower for lots of changed files.
-export gs_max_changes="20"
+export gs_max_changes="50"
 # - When using the git_add_shorcuts() command, automatically invoke 'git rm' to remove deleted files?
 export ga_auto_remove="yes"
 
@@ -95,6 +95,8 @@ git_stash_apply_alias="gssa"
 git_stash_pop_alias="gssp"
 git_stash_list_alias="gssl"
 git_tag_alias="gt"
+# Hub aliases (https://github.com/github/hub)
+git_pull_request_alias="gpr"
 
 
 # Git Keyboard Shortcuts
