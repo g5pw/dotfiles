@@ -9,14 +9,16 @@ function bat_status () {
 	max=$(ioreg -n AppleSmartBattery | awk '/MaxCapacity/ { print $5 }')
 	cur=$(ioreg -n AppleSmartBattery | awk '/CurrentCapacity/ { print $5 }')
 	full=$(ioreg -n AppleSmartBattery | awk '/FullyCharged/ { print $5 }')
-    else
-    	battery="/sys/class/power_supply/BAT0"
-    	bat_status=$(cat $battery/status)
+    elif [[ -r "/sys/class/power_supply/BAT0" ]]; then
+	battery="/sys/class/power_supply/BAT0"
+	bat_status=$(cat $battery/status)
 	conn=$(cat /sys/class/power_supply/AC/online)
 	max=$(cat $battery/energy_full)
 	cur=$(cat $battery/energy_now)
 	[[ "$bat_status"  == "Charging" ]] && chrg="Yes"
 	[[ "$bat_status"  == "Full" ]] && full="Yes"
+    else
+	return
     fi
 
     pcnt=$(($cur*100 / $max ))
