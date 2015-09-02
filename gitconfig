@@ -13,6 +13,7 @@
     pretty = full
 [alias]
     d = diff
+    wd = diff --color-words
     logs = log --stat -C
     ci = commit
     st = status
@@ -42,3 +43,5 @@
 
 [include]
     path = "~/.gitconfig.private"
+[diff]
+	tool = vimdiff
