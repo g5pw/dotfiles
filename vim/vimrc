@@ -219,7 +219,7 @@ set dir=~/.vim/tmp/swap//,/var/tmp//,/tmp//,.
 " Disable vim intro message
 set shortmess+=I
 
-set complete=.,w,b,u,t
+set complete=.,w,b,u,t,i,kspell
 set completeopt=menu,preview
 
 " Use the same symbols as TextMate for tabstops and EOLs
