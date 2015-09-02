@@ -1,117 +1,115 @@
 " vim: foldmethod=marker foldlevel=0
+set nocompatible | filetype indent plugin on | syn on
 " VAM setup {{{
 fun! SetupVAM()
-    " YES, you can customize this vam_install_path path and everything still works!
-    let vam_install_path = expand('$HOME') . '/.vim/vim-addons'
-    exec 'set runtimepath+='.vam_install_path.'/vim-addon-manager'
+    let c = get(g:, 'vim_addon_manager', {})
+    let g:vim_addon_manager = c
+    let c.plugin_root_dir = expand('$HOME', 1) . '/.vim/vim-addons'
 
-    " Install VAM if not present {{{
-    " * unix based os users may want to use this code checking out VAM
-    " * windows users want to use http://mawercer.de/~marc/vam/index.php
-    "   to fetch VAM, VAM-known-repositories and the listed plugins
-    "   without having to install curl, unzip, git tool chain first
-    " -> BUG [4] (git-less installation)
-    if !filereadable(vam_install_path.'/vim-addon-manager/.git/config') && 1 == confirm("git clone VAM into ".vam_install_path."?","&Y\n&N")
-	" I'm sorry having to add this reminder. Eventually it'll pay off.
-	call confirm("Remind yourself that most plugins ship with documentation (README*, doc/*.txt). Its your first source of knowledge. If you can't find the info you're looking for in reasonable time ask maintainers to improve documentation")
-	exec '!p='.shellescape(vam_install_path).'; mkdir -p "$p" && cd "$p" && git clone --depth 1 git://github.com/MarcWeber/vim-addon-manager.git'
-	" VAM run helptags automatically if you install or update plugins
-	exec 'helptags '.fnameescape(vam_install_path.'/vim-addon-manager/doc')
+    " Force your ~/.vim/after directory to be last in &rtp always:
+    " let g:vim_addon_manager.rtp_list_hook = 'vam#ForceUsersAfterDirectoriesToBeLast'
+
+    " most used options you may want to use:
+    " let c.log_to_buf = 1
+    " let c.auto_install = 0
+    let &rtp.=(empty(&rtp)?'':',').c.plugin_root_dir.'/vim-addon-manager'
+    if !isdirectory(c.plugin_root_dir.'/vim-addon-manager/autoload')
+	execute '!git clone --depth=1 git://github.com/MarcWeber/vim-addon-manager '
+		    \       shellescape(c.plugin_root_dir.'/vim-addon-manager', 1)
     endif
     " }}}
     " Activated plugins -------------------------------------------------- {{{
-    let addons = []
+    call vam#ActivateAddons([])
     " Text {{{
-    call add(addons, 'UltiSnips')
-    call add(addons, 'vim-snippets')
-    call add(addons, 'repeat')
-    call add(addons, 'matchit.zip')
-    call add(addons, 'Gundo')
-    call add(addons, 'github:kana/vim-smartinput')
-    call add(addons, 'visual-increment')
-    call add(addons, 'commentary')
-    call add(addons, 'YouCompleteMe')
-    call add(addons, 'Tabular')
-    call add(addons, 'surround')
-    call add(addons, 'abolish')
-    call add(addons, 'vim-multiple-cursors')
-    call add(addons, 'wildfire')
-    call add(addons, 'vim-autoformat')
-    call add(addons, 'vim-expand-region')
-    call add(addons, 'better-whitespace')
+    VAMActivate UltiSnips
+    VAMActivate vim-snippets
+    VAMActivate repeat
+    VAMActivate matchit.zip
+    VAMActivate Gundo
+    VAMActivate github:kana/vim-smartinput
+    VAMActivate visual-increment
+    VAMActivate commentary
+    VAMActivate YouCompleteMe
+    VAMActivate Tabular
+    VAMActivate surround
+    VAMActivate abolish
+    VAMActivate vim-multiple-cursors
+    VAMActivate wildfire
+    VAMActivate vim-autoformat
+    VAMActivate vim-expand-region
+    VAMActivate better-whitespace
     " }}}
     " Movement {{{
-    call add(addons, 'EasyMotion')
-    call add(addons, 'unimpaired')
+    VAMActivate EasyMotion
+    VAMActivate unimpaired
     " }}}
     " File System/Integration {{{
-    call add(addons, 'vimfiler')
-    call add(addons, 'fugitive')
-    call add(addons, 'extradite')
-    call add(addons, 'vcscommand')
-    call add(addons, 'FSwitch')
-    call add(addons, 'VimOrganizer')
-    call add(addons, 'editorconfig-vim')
-    call add(addons, 'Tagbar')
-    call add(addons, 'vim-fireplace')
-    call add(addons, 'dispatch')
-    call add(addons, 'github:tpope/vim-vinegar')
-    call add(addons, 'github:Keithbsmiley/investigate.vim')
-    call add(addons, 'github:farseer90718/vim-taskwarrior')
-    call add(addons, 'vimwiki')
-    call add(addons, 'github:teranex/vimwiki-tasks')
+    VAMActivate vimfiler
+    VAMActivate fugitive
+    VAMActivate extradite
+    VAMActivate vcscommand
+    VAMActivate FSwitch
+    VAMActivate VimOrganizer
+    VAMActivate editorconfig-vim
+    VAMActivate Tagbar
+    VAMActivate vim-fireplace
+    VAMActivate dispatch
+    VAMActivate github:tpope/vim-vinegar
+    VAMActivate github:Keithbsmiley/investigate.vim
+    VAMActivate github:farseer90718/vim-taskwarrior
+    VAMActivate vimwiki
+    VAMActivate github:teranex/vimwiki-tasks
     "}}}
     " Language support {{{
-    call add(addons, 'SingleCompile')
-    call add(addons, 'cern_root')
-    call add(addons, 'vim-css3-syntax')
+    VAMActivate SingleCompile
+    VAMActivate cern_root
+    VAMActivate vim-css3-syntax
     " call add(addons, 'github:skammer/vim-css-color')
-    call add(addons, 'vim-dokuwiki')
-    call add(addons, 'octave%3600')
-    call add(addons, 'vim-clojure-static')
-    call add(addons, 'haskellmode-vim')
-    call add(addons, 'Haskell_Conceal')
-    call add(addons, 'ragtag')
-    call add(addons, 'wmgraphviz')
-    call add(addons, 'Emmet')
-    call add(addons, 'LaTeX_Box')
-    call add(addons, 'github:fmoralesc/vim-pinpoint')
+    VAMActivate vim-dokuwiki
+    VAMActivate octave%3600
+    VAMActivate vim-clojure-static
+    VAMActivate haskellmode-vim
+    VAMActivate Haskell_Conceal
+    VAMActivate ragtag
+    VAMActivate wmgraphviz
+    VAMActivate Emmet
+    VAMActivate LaTeX_Box
+    VAMActivate github:fmoralesc/vim-pinpoint
     " }}}
     " Utilities {{{
-    call add(addons, 'github:inside/vim-search-pulse')
-    call add(addons, 'Syntastic')
-    call add(addons, 'SudoEdit')
-    call add(addons, 'Vitality')
-    call add(addons, 'Splice')
-    call add(addons, 'vim-signify')
-    call add(addons, 'vim-startify')
-    call add(addons, 'goyo')
-    call add(addons, 'github:junegunn/limelight.vim')
-    call add(addons, 'vimproc')
-    call add(addons, 'unite')
-    call add(addons, 'github:Shougo/unite-outline')
-    call add(addons, 'github:Shougo/unite-help')
-    call add(addons, 'github:Shougo/neomru.vim')
-    call add(addons, 'vim-airline')
-    call add(addons, 'Crunch')
+    VAMActivate github:inside/vim-search-pulse
+    VAMActivate Syntastic
+    VAMActivate SudoEdit
+    VAMActivate Vitality
+    VAMActivate Splice
+    VAMActivate vim-signify
+    VAMActivate vim-startify
+    VAMActivate goyo
+    VAMActivate github:junegunn/limelight.vim
+    VAMActivate vimproc
+    VAMActivate unite
+    VAMActivate github:Shougo/unite-outline
+    VAMActivate github:Shougo/unite-help
+    VAMActivate github:Shougo/neomru.vim
+    VAMActivate vim-airline
+    VAMActivate Crunch
     " }}}
     " Themes {{{
-    call add(addons, 'Solarized')
-    call add(addons, 'jellybeans')
+    VAMActivate Solarized
+    VAMActivate jellybeans
     " }}}
     " TextObjects {{{
-    call add(addons, 'github:coderifous/textobj-word-column.vim')
-    call add(addons, 'textobj-diff')
-    call add(addons, 'textobj-comment')
-    call add(addons, 'textobj-function')
-    call add(addons, 'textobj-fold')
-    call add(addons, 'textobj-entire')
-    call add(addons, 'textobj-line')
-    call add(addons, 'textobj-latex')
-    call add(addons, 'vim-textobj-underscore')
-    call add(addons, 'github:wellle/targets.vim')
+    VAMActivate github:coderifous/textobj-word-column.vim
+    VAMActivate textobj-diff
+    VAMActivate textobj-comment
+    VAMActivate textobj-function
+    VAMActivate textobj-fold
+    VAMActivate textobj-entire
+    VAMActivate textobj-line
+    VAMActivate textobj-latex
+    VAMActivate vim-textobj-underscore
+    VAMActivate github:wellle/targets.vim
     " }}}
-    call vam#ActivateAddons(addons, {'auto_install' : 0})
 " }}}
 endf
 call SetupVAM()
@@ -122,7 +120,6 @@ call SetupVAM()
 let g:mapleader = ","
 let g:maplocalleader = ";"
 
-filetype plugin indent on
 set encoding=utf-8
 set showmatch		" When a bracket is inserted, briefly jump to the matching one.
 set hidden		" do not close buffers, but hide them!
