@@ -9,8 +9,8 @@ zstyle ':vcs_info:git:*:-all-' command $(whence -p git)
 
 zstyle ':vcs_info:*' stagedstr '%F{28}◉'
 zstyle ':vcs_info:*' unstagedstr '%F{11}⦿'
-zstyle ':vcs_info:*' actionformats "$BG[88]⮀$FG[67]%a$BG[123]⮀$FG[69] %s $BG[229]$FG[123]⮀ $FG[33]$FX[bold]%r$FX[no-bold] $BG[177]$FG[229]⮀$FG[88] ⭠ %b $FX[reset]$FG[177]⮀ %F{magenta}%c%u%m "
-zstyle ':vcs_info:*' formats "$BG[123]⮀$FG[69] %s $BG[229]$FG[123]⮀ $FG[33]$FX[bold]%r$FX[no-bold] $BG[177]$FG[229]⮀$FG[88] ⭠ %b $FX[reset]$FG[177]⮀ %F{magenta}%c%u%m "
+zstyle ':vcs_info:*' actionformats "$BG[88]$FG[67]%a$BG[123]$FG[69] %s $BG[229]$FG[123] $FG[33]$FX[bold]%r$FX[no-bold] $BG[177]$FG[229]$FG[88]  %b $FX[reset]$FG[177] %F{magenta}%c%u%m "
+zstyle ':vcs_info:*' formats "$BG[123]$FG[69] %s $BG[229]$FG[123] $FG[33]$FX[bold]%r$FX[no-bold] $BG[177]$FG[229]$FG[88]  %b $FX[reset]$FG[177] %F{magenta}%c%u%m "
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' use-prompt-escapes true
 zstyle ':vcs_info:git+set-message:*' hooks git_check_unstaged_files
