@@ -5,4 +5,4 @@ compdef ef=whichf
 compdef g=git
 compdef mcd=cd
 which port &>/dev/null && compdef p=port
-which task &>/dev/null && compdef t=task
+which task &>/dev/null && compdef tw=task

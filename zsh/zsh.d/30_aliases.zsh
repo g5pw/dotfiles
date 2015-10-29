@@ -53,7 +53,7 @@ alias vi=$EDITOR
 
 # TaskWarrior aliases
 if which task &> /dev/null; then
-    alias t='nocorrect noglob task'
+    alias tw='nocorrect noglob task'
     alias task='nocorrect noglob task'
     alias tl="nocorrect noglob task list"
     alias ta="nocorrect noglob task add"
