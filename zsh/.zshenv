@@ -55,8 +55,3 @@ fi
 if [[ -d /opt/local/libexec/perl5.12 ]]; then
     path=(/opt/local/libexec/perl5.12 $path)
 fi
-
-# Use ruby19 programs if possible
-if [[ -d /opt/local/libexec/ruby1.9 ]]; then
-    path=(/opt/local/libexec/ruby1.9 $path)
-fi
