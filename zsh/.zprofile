@@ -14,3 +14,12 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 
 # enable extended glob
 setopt extended_glob
+#
+# Use GNU utils if possible
+if [[ -d /opt/local/libexec/gnubin ]]; then
+    path=(/opt/local/libexec/gnubin $path)
+fi
+# Use perl utils if possible
+if [[ -d /opt/local/libexec/perl5.12 ]]; then
+    path=(/opt/local/libexec/perl5.12 $path)
+fi
