@@ -233,7 +233,9 @@ set colorcolumn=80
 
 "Enable mouse support in terminal
 set mouse=a
-set ttymouse=xterm2
+if !has('nvim')
+    set ttymouse=xterm2
+endif
 
 "Always use cscope
 if filereadable("cscope.out")
