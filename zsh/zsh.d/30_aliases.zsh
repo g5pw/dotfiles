@@ -48,8 +48,8 @@ alias rm='nocorrect rm -i'
 alias rgrep='grep -r'
 alias servethis='python -m http.server'
 alias u='uptime'
-alias v='f -t -e vim -b viminfo'
-alias vi='vim'
+alias v="f -t -e $EDITOR -b viminfo"
+alias vi=$EDITOR
 
 # TaskWarrior aliases
 if which task &> /dev/null; then
@@ -86,5 +86,5 @@ alias -g C='|colout -T ${XDG_CONFIG_HOME:-~/.config}/colout/themes/'
 alias -g P='|peco|'
 
 # Suffix aliases
-alias -s tex=vim
-alias -s txt=vim
+alias -s tex=$EDITOR
+alias -s txt=$EDITOR
