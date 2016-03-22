@@ -62,7 +62,7 @@ zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns '*?.(c~|old|zwc)(.)'
 zstyle ':completion:*:cd:*' tag-order local-directories named-directories path-directories directory-stack
 
 ## on processes completion complete all user processes
-zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
+zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,args -w -w"
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
 zstyle ':completion:*:*:kill:*:jobs' list-colors 'no=01;31'
 zstyle ':completion:*:*:*:*:processes' force-list always
