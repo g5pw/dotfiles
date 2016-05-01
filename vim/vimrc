@@ -1,118 +1,74 @@
 " vim: foldmethod=marker foldlevel=0
 set nocompatible | filetype indent plugin on | syn on
-" VAM setup {{{
-fun! SetupVAM()
-    let c = get(g:, 'vim_addon_manager', {})
-    let g:vim_addon_manager = c
-    let c.plugin_root_dir = expand('$HOME', 1) . '/.vim/vim-addons'
-
-    " Force your ~/.vim/after directory to be last in &rtp always:
-    " let g:vim_addon_manager.rtp_list_hook = 'vam#ForceUsersAfterDirectoriesToBeLast'
-
-    " most used options you may want to use:
-    " let c.log_to_buf = 1
-    " let c.auto_install = 0
-    let &rtp.=(empty(&rtp)?'':',').c.plugin_root_dir.'/vim-addon-manager'
-    if !isdirectory(c.plugin_root_dir.'/vim-addon-manager/autoload')
-	execute '!git clone --depth=1 git://github.com/MarcWeber/vim-addon-manager '
-		    \       shellescape(c.plugin_root_dir.'/vim-addon-manager', 1)
-    endif
-    " }}}
-    " Activated plugins -------------------------------------------------- {{{
-    call vam#ActivateAddons([])
-    " Text {{{
-    VAMActivate UltiSnips
-    VAMActivate vim-snippets
-    VAMActivate repeat
-    VAMActivate matchit.zip
-    VAMActivate Gundo
-    VAMActivate github:kana/vim-smartinput
-    VAMActivate visual-increment
-    VAMActivate commentary
-    VAMActivate YouCompleteMe
-    VAMActivate Tabular
-    VAMActivate surround
-    VAMActivate abolish
-    VAMActivate vim-multiple-cursors
-    VAMActivate wildfire
-    VAMActivate vim-autoformat
-    VAMActivate vim-expand-region
-    VAMActivate better-whitespace
-    " }}}
-    " Movement {{{
-    VAMActivate EasyMotion
-    VAMActivate unimpaired
-    " }}}
-    " File System/Integration {{{
-    VAMActivate vimfiler
-    VAMActivate fugitive
-    VAMActivate extradite
-    VAMActivate vcscommand
-    VAMActivate FSwitch
-    VAMActivate VimOrganizer
-    VAMActivate editorconfig-vim
-    VAMActivate Tagbar
-    VAMActivate vim-fireplace
-    VAMActivate dispatch
-    VAMActivate github:tpope/vim-vinegar
-    VAMActivate github:Keithbsmiley/investigate.vim
-    VAMActivate github:farseer90718/vim-taskwarrior
-    VAMActivate vimwiki
-    VAMActivate github:teranex/vimwiki-tasks
-    "}}}
-    " Language support {{{
-    VAMActivate SingleCompile
-    VAMActivate cern_root
-    VAMActivate vim-css3-syntax
-    " call add(addons, 'github:skammer/vim-css-color')
-    VAMActivate vim-dokuwiki
-    VAMActivate octave%3600
-    VAMActivate vim-clojure-static
-    VAMActivate haskellmode-vim
-    VAMActivate Haskell_Conceal
-    VAMActivate ragtag
-    VAMActivate wmgraphviz
-    VAMActivate Emmet
-    VAMActivate LaTeX_Box
-    VAMActivate github:fmoralesc/vim-pinpoint
-    " }}}
-    " Utilities {{{
-    VAMActivate github:inside/vim-search-pulse
-    VAMActivate Syntastic
-    VAMActivate SudoEdit
-    VAMActivate Vitality
-    VAMActivate Splice
-    VAMActivate vim-signify
-    VAMActivate vim-startify
-    VAMActivate goyo
-    VAMActivate github:junegunn/limelight.vim
-    VAMActivate vimproc
-    VAMActivate unite
-    VAMActivate github:Shougo/unite-outline
-    VAMActivate github:Shougo/unite-help
-    VAMActivate github:Shougo/neomru.vim
-    VAMActivate vim-airline
-    VAMActivate Crunch
-    " }}}
-    " Themes {{{
-    VAMActivate Solarized
-    VAMActivate jellybeans
-    " }}}
-    " TextObjects {{{
-    VAMActivate github:coderifous/textobj-word-column.vim
-    VAMActivate textobj-diff
-    VAMActivate textobj-comment
-    VAMActivate textobj-function
-    VAMActivate textobj-fold
-    VAMActivate textobj-entire
-    VAMActivate textobj-line
-    VAMActivate textobj-latex
-    VAMActivate vim-textobj-underscore
-    VAMActivate github:wellle/targets.vim
-    " }}}
+" Plugins {{{
+call plug#begin('~/.vim/plugged')
+" Text {{{
+Plug 'sirver/UltiSnips' | Plug 'honza/vim-snippets'
+Plug 'tpope/vim-repeat'
+Plug 'edsono/vim-matchit'
+Plug 'mbbill/undotree'
+Plug 'kana/vim-smartinput'
+Plug 'triglav/vim-visual-increment'
+Plug 'tpope/vim-commentary'
+Plug 'Valloric/YouCompleteMe'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-abolish'
+Plug 'gcmt/wildfire.vim'
+Plug 'Chiel92/vim-autoformat'
+Plug 'ntpeters/vim-better-whitespace'
 " }}}
-endf
-call SetupVAM()
+" Movement {{{
+" Plug 'EasyMotion'
+Plug 'tpope/vim-unimpaired'
+" }}}
+" File System/Integration {{{
+Plug 'Shougo/vimfiler.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'int3/vim-extradite'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-vinegar'
+Plug 'keith/investigate.vim'
+"}}}
+" Language support {{{
+Plug 'xuhdev/SingleCompile'
+" Plug 'cern_root'
+" Plug 'vim-css3-syntax'
+" Plug 'skammer/vim-css-color')
+" Plug 'vim-dokuwiki'
+Plug 'jvirtanen/vim-octave', {'for': 'octave'}
+" Plug 'vim-clojure-static'
+Plug 'lukerandall/haskellmode-vim', {'for': 'haskell'}
+Plug 'tpope/vim-ragtag', {'for': 'html'}
+Plug 'mattn/emmet-vim', {'for': 'html'}
+Plug 'lervag/vimtex', {'for': 'tex'}
+Plug 'fmoralesc/vim-pinpoint'
+" }}}
+" Utilities {{{
+Plug 'inside/vim-search-pulse'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-eunuch'
+Plug 'jfelchner/vitality.vim'
+Plug 'sjl/splice.vim'
+Plug 'mhinz/vim-signify'
+Plug 'mhinz/vim-startify'
+Plug 'Shougo/vimproc'
+Plug 'Shougo/unite.vim' | Plug 'Shougo/unite-outline' | Plug 'Shougo/unite-help'
+Plug 'Shougo/neomru.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'chrisbra/vim-diff-enhanced'
+" }}}
+" Themes {{{
+Plug 'altercation/vim-colors-solarized'
+Plug 'nanotech/jellybeans.vim'
+" }}}
+" TextObjects {{{
+Plug 'coderifous/textobj-word-column.vim'
+Plug 'rbonvall/vim-textobj-latex'
+Plug 'wellle/targets.vim'
+Plug 'kana/vim-textobj-user' | Plug 'glts/vim-textobj-comment' | Plug 'kana/vim-textobj-diff' | Plug 'kana/vim-textobj-function' | Plug 'kana/vim-textobj-line' | Plug 'kana/vim-textobj-underscore'
+" }}}
+call plug#end()
 " }}}
 " Basic options {{{
 
