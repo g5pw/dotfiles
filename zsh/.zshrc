@@ -43,6 +43,10 @@ zstyle ':filter-select' rotate-list yes # enable rotation for filter-select
 zstyle ':filter-select' case-insensitive yes # enable case-insensitive search
 zstyle ':filter-select' extended-search yes # see below
 
+# Load zsh-autosuggestions
+[ -d $ZDOTDIR/zsh-autosuggestions ] && source $ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh
+bindkey "^[e" autosuggest-execute
+
 
 # bind UP and DOWN arrow keys
 zmodload zsh/terminfo
