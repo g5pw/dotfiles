@@ -73,7 +73,7 @@ call plug#end()
 " Basic options {{{
 
 "Set Mapleader
-let g:mapleader = ","
+let g:mapleader = "\<Space>"
 let g:maplocalleader = ";"
 
 set encoding=utf-8
@@ -365,9 +365,17 @@ let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', 'path_html': '~/Sites/vimwik
 " }}}
 " }}}
 " Mappings {{{
-" SingleCompile
+" Spacemacs-like mappings {{{
+nnoremap <leader>fs :w<CR>
+nnoremap <leader>bd :bd<CR>
+nnoremap <silent> <leader>ff :<C-u>Unite
+      \ -buffer-name=files buffer file_mru bookmark file_rec/async<CR>
+" }}}
+
+" SingleCompile {{{
 noremap <leader>c :SCCompile<CR>
 noremap <leader>cr :SCCompileRun<CR>
+" }}}
 
 noremap <F3> :Autoformat<CR>
 " Made D behave
@@ -445,7 +453,6 @@ nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 vnoremap gcb :!boxes -s 80 -a c<CR>
 
 " Toggle folds with space bar
-nnoremap <Space> za
 nnoremap <Leader>. :TagbarToggle<CR>
 nnoremap <silent> <leader>/ :nohlsearch<CR>:echo 'Search highlight cleared'<CR>
 " Parse file with astyle
