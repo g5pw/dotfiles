@@ -363,9 +363,6 @@ let g:sudo_tee = '/opt/local/libexec/gnubin/tee'
 " VimWiki {{{
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', 'path_html': '~/Sites/vimwiki'}]
 " }}}
-" Gundo {{{
-let g:gundo_close_on_revert=1
-" }}}
 " }}}
 " Mappings {{{
 " SingleCompile
@@ -472,8 +469,8 @@ nnoremap <silent><leader>gs :Gstatus<cr>
 nnoremap <silent><leader>gw :Gwrite<cr>
 " Extradite options
 nnoremap <silent><leader>ge :Extradite<CR>
-" Gundo maps
-nnoremap U :GundoToggle<CR>
+" UndoTree maps
+nnoremap U :<CR>
 " Quickly edit the vimrc file
 nnoremap <silent> <leader>ve :e $MYVIMRC<CR>
 
