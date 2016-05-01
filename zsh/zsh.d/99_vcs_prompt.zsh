@@ -2,7 +2,7 @@
 autoload -Uz vcs_info
 
 # Disable unused VCS
-zstyle ':vcs_info:*' enable git svn hg bzr
+zstyle ':vcs_info:*' enable git svn
 
 # Don't use hub when doing vcs stuff! (ruby is slooooow)
 zstyle ':vcs_info:git:*:-all-' command $(whence -p git)
