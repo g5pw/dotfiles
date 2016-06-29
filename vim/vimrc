@@ -610,7 +610,7 @@ if has("gui_running")
 endif
 
 if &t_Co >= 256 || has("gui_running")
-    colorscheme solarized
+    colorscheme jellybeans
     set background=dark
 
     let g:doxygen_enhanced_color=1
