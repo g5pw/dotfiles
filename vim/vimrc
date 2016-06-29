@@ -567,7 +567,7 @@ augroup vcs
     " Disable jump to last known position
     autocmd FileType svn,gitcommit augroup last_pos
 		\ au!
-		\augroup END
+		\ augroup END
 augroup END
 " }}}
 " Misc {{{
