@@ -2,6 +2,7 @@ set editor="/opt/local/bin/mvim -f"
 set hintchars=hjklasdfgyuiopqwertnmzxcvb
 
 set gui=none
+set statuslinevisibility=visible
 
 " Mappings
 nmap gn <C-S-n>
