@@ -16,6 +16,7 @@ alias ec="emacsclient -c -n -a ''"
 alias find='noglob find'
 alias j='jobs'
 alias JUSTFUCKINGDOIT='sudo -p "Oh, come on... alright, gimme your password:" $(fc -ln -1)'
+alias gdh='git diff HEAD~.. --'
 alias grep='grep --colour'
 alias h='history'
 alias heroku="heroku-1.9"
