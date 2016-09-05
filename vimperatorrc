@@ -3,6 +3,7 @@ set hintchars=hjklasdfgyuiopqwertnmzxcvb
 
 set gui=none
 set statuslinevisibility=visible
+set status+=ssl
 
 " Mappings
 nmap gn <C-S-n>
