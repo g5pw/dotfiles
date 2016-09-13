@@ -187,10 +187,3 @@ exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/g5pw/.config/i3/w
 exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/g5pw/.config/i3/workspace-2.json'"
 exec --no-startup-id "i3-msg 'workspace 3; append_layout /home/g5pw/.config/i3/workspace-3.json'"
 exec --no-startup-id "i3-msg 'workspace 9; append_layout /home/g5pw/.config/i3/workspace-9.json'"
-
-
-exec --no-startup-id zeal
-exec --no-startup-id copyq
-exec --no-startup-id owncloud
-exec --no-startup-id rsibreak
-# exec xkbcomp -I"$HOME"
