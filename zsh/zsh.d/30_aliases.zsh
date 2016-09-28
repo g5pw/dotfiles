@@ -88,3 +88,4 @@ alias -g P='|peco|'
 # Suffix aliases
 alias -s tex=$EDITOR
 alias -s txt=$EDITOR
+alias -s git="git clone"
