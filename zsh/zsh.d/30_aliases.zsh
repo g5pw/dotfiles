@@ -71,7 +71,7 @@ alias w="ansiweather"
 alias y='tree'
 
 ## global aliases, this is not good but it's useful
-alias -g G='|grep'
+alias -g G='|noglob grep'
 alias -g H='|head'
 alias -g L='|less'
 alias -g N='&>/dev/null&'
