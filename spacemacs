@@ -31,7 +31,6 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     ruby
      (auto-completion :variables
                       auto-completion-complete-with-key-sequence "jk"
                       )
@@ -63,6 +62,7 @@ values."
      markdown
      php
      python
+     ruby
      rust
      shell-scripts
      sql
