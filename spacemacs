@@ -377,6 +377,9 @@ you should place your code here."
     '(progn
        (setcdr (assoc "\\.pdf\\'" org-file-apps) "open -a Skim %s")))
 
+  (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("/views/.*\\.php\\'" . web-mode))
 
   (setq plantuml-jar-path "/usr/share/plantuml/lib/plantuml.jar")
   (setq powerline-default-separator 'alternate)
