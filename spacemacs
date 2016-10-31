@@ -55,6 +55,7 @@ values."
      c-c++
      emacs-lisp
      extra-langs
+     haskell
      html
      ipython-notebook
      latex
@@ -78,6 +79,7 @@ values."
           )
      github
      gtags
+     ibuffer
      pandoc
      (ranger :variables
              ranger-show-preview t)
@@ -356,6 +358,8 @@ you should place your code here."
 
   (require 'org-wunderlist)
 
+  (setq ibuffer-group-buffers-by "projects")
+
   (setq ispell-dictionary "italian")
 
   ;; Lets me type special combining characters
@@ -374,6 +378,7 @@ you should place your code here."
        (setcdr (assoc "\\.pdf\\'" org-file-apps) "open -a Skim %s")))
 
 
+  (setq plantuml-jar-path "/usr/share/plantuml/lib/plantuml.jar")
   (setq powerline-default-separator 'alternate)
 
 
