@@ -605,7 +605,7 @@ endif
 
 if has("gui_running")
     set ttyfast
-    set guifont=Menlo\ for\ Powerline:h12
+    set guifont="Hack:h11"
     " MacVim runtime path fix
     set rtp+=/opt/local/share/vim/vimfiles
 endif
