@@ -60,6 +60,7 @@ Plug 'chrisbra/vim-diff-enhanced'
 " }}}
 " Themes {{{
 Plug 'altercation/vim-colors-solarized'
+Plug 'jacoborus/tender'
 Plug 'nanotech/jellybeans.vim'
 " }}}
 " TextObjects {{{
@@ -610,7 +611,7 @@ if has("gui_running")
 endif
 
 if &t_Co >= 256 || has("gui_running")
-    colorscheme jellybeans
+    colorscheme tender
     set background=dark
 
     let g:doxygen_enhanced_color=1
@@ -623,6 +624,10 @@ if &t_Co >= 256 || has("gui_running")
     highlight StartifyFile    ctermfg=227 guifg=#F9FF5E
     highlight StartifyPath    ctermfg=245 guifg=#9C9C9C
     highlight StartifySlash   ctermfg=240 guifg=#6B6B6B
+
+    let macvim_skip_colorscheme = 1
+    let g:tender_airline = 1
+    let g:airline_theme = 'tender'
 endif
 " }}}
 " Custom functions {{{
