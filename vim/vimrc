@@ -625,6 +625,9 @@ if &t_Co >= 256 || has("gui_running")
     highlight StartifyPath    ctermfg=245 guifg=#9C9C9C
     highlight StartifySlash   ctermfg=240 guifg=#6B6B6B
 
+    if exists("+termguicolors")
+	set termguicolors
+    endif
     let macvim_skip_colorscheme = 1
     let g:tender_airline = 1
     let g:airline_theme = 'tender'
