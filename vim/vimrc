@@ -5,7 +5,7 @@ call plug#begin('~/.vim/plugged')
 " Text {{{
 Plug 'sirver/UltiSnips' | Plug 'honza/vim-snippets'
 Plug 'tpope/vim-repeat'
-Plug 'edsono/vim-matchit'
+Plug 'vim-scripts/matchit.zip'
 Plug 'mbbill/undotree'
 Plug 'kana/vim-smartinput'
 Plug 'triglav/vim-visual-increment'
