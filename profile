@@ -2,8 +2,12 @@
 export LANG=it_IT.UTF-8 LC_MESSAGES=en_US.UTF-8
 
 # Export variables
-export EDITOR=`which vim`
-export PAGER=`which less`
+if type exec_scmb_expand_args &> /dev/null; then
+    export EDITOR="exec_scmb_expand_args nvim"
+else
+    export EDITOR="nvim"
+fi
+export PAGER=less
 export VISUAL=$EDITOR
 export FCEDIT=$EDITOR
 export LESSCHARSET='utf-8' ## charset for pager
@@ -26,4 +30,8 @@ if [ -f ~/.pythonrc ]; then
 fi
 
 gpg-connect-agent /bye
-export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
+if [[ -z $XDG_RUNTIME_DIR ]]; then
+    export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
+else
+    export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh
+fi
