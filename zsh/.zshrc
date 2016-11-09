@@ -52,7 +52,7 @@ fi
 # Load zsh-autosuggestions
 if [ -d $ZDOTDIR/zsh-autosuggestions ]; then
     source $ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh
-    export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
+    export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
 fi
 bindkey "^[e" autosuggest-execute
 
