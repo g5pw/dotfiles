@@ -2,11 +2,7 @@
 export LANG=it_IT.UTF-8 LC_MESSAGES=en_US.UTF-8
 
 # Export variables
-if type exec_scmb_expand_args &> /dev/null; then
-    export EDITOR="exec_scmb_expand_args nvim"
-else
-    export EDITOR="nvim"
-fi
+export EDITOR="nvim"
 export PAGER=less
 export VISUAL=$EDITOR
 export FCEDIT=$EDITOR
