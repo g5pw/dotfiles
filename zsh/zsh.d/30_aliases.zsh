@@ -1,4 +1,7 @@
 ## aliases ####
+if type exec_scmb_expand_args &> /dev/null; then
+    GIT_EXPAND='exec_scmb_expand_args '
+fi
 alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport'
 alias c='clear'
 alias calc='nocorrect noglob calc'
@@ -11,9 +14,9 @@ alias du1='du -hs *(/)' ## du with depth 1
 alias ea='$EDITOR $ZDOTDIR/zsh.d/30_aliases.zsh && source $ZDOTDIR/zsh.d/30_aliases.zsh'
 alias ef='edit_function'
 alias ez='$EDITOR $ZDOTDIR/.zshrc;src'
-alias e="emacsclient -t -a ''"
-alias en="emacsclient -c -n -a ''"
-alias ec="emacsclient -n -a ''"
+alias e="${GIT_EXPAND}emacsclient -t -a ''"
+alias en="${GIT_EXPAND}emacsclient -c -n -a ''"
+alias ec="${GIT_EXPAND}emacsclient -n -a ''"
 alias find='noglob find'
 alias j='jobs'
 alias JUSTFUCKINGDOIT='sudo -p "Oh, come on... alright, gimme your password:" $(fc -ln -1)'
