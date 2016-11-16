@@ -53,6 +53,7 @@ alias servethis='python -m http.server'
 alias u='uptime'
 alias v="f -t -e $EDITOR -b viminfo"
 alias vi=$EDITOR
+alias vim=$EDITOR
 
 # TaskWarrior aliases
 if which task &> /dev/null; then
