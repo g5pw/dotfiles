@@ -52,8 +52,8 @@ alias rgrep='grep -r'
 alias servethis='python -m http.server'
 alias u='uptime'
 alias v="f -t -e $EDITOR -b viminfo"
-alias vi="$GIT_EXPAND$EDITOR""
-alias vim="$GIT_EXPAND$EDITOR""
+alias vi="$GIT_EXPAND$EDITOR"
+alias vim="$GIT_EXPAND$EDITOR"
 
 # TaskWarrior aliases
 if which task &> /dev/null; then
