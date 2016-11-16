@@ -74,6 +74,10 @@ alias wchat="weechat"
 alias w="ansiweather"
 alias y='tree'
 
+# Git aliases
+alias gcop='git checkout --patch'
+alias grsp='git reset --patch --'
+
 ## global aliases, this is not good but it's useful
 alias -g G='|noglob grep'
 alias -g H='|head'
