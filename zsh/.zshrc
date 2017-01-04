@@ -9,9 +9,6 @@ function rand() { exec $RANDOM % $1; }
 # Useful command similar to xargs
 autoload -U zargs
 
-# SCM-Breeze load
-[ -s /opt/local/share/scm_breeze/scm_breeze.sh ] && source /opt/local/share/scm_breeze/scm_breeze.sh
-
 #Load fasd
 fasd_cache="$HOME/.fasd-init-zsh"
 if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
