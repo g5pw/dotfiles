@@ -62,6 +62,7 @@ Plug 'Shougo/unite.vim' | Plug 'Shougo/unite-outline' | Plug 'Shougo/unite-help'
 Plug 'Shougo/neomru.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'chrisbra/vim-diff-enhanced'
+Plug 'Shougo/vinarise.vim'
 " }}}
 " Themes {{{
 Plug 'altercation/vim-colors-solarized'
@@ -216,6 +217,7 @@ set relativenumber
 set timeoutlen=300
 " }}}
 " Plugin settings {{{
+let g:vinarise_enable_auto_detect = 1
 let g:deoplete#enable_at_startup = 1
 " Incsearch {{{
 map /  <Plug>(incsearch-forward)
