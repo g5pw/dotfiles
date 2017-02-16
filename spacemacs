@@ -358,7 +358,7 @@ you should place your code here."
 
   (setq ibuffer-group-buffers-by "projects")
 
-  (setq ispell-dictionary "italian")
+  (setq ispell-dictionary "italiano")
 
   ;; Lets me type special combining characters
   (setq mac-right-option-modifier nil)
