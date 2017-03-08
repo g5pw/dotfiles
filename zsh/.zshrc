@@ -64,3 +64,7 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
 [ -r $HOME/.iterm2_shell_integration.zsh ] && source $HOME/.iterm2_shell_integration.zsh
+if [[ $TERM == xterm-termite ]]; then
+    source /etc/profile.d/vte-2.91.sh
+    __vte_osc7
+fi
