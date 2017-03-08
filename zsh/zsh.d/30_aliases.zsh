@@ -46,7 +46,7 @@ alias pi='portindex'
 alias p='noglob port-wrapper'
 alias pstree='pstree -g 3'
 alias psy="sudo port sync"
-alias rg='ranger'
+alias rgr='ranger'
 alias rm='nocorrect rm -i'
 alias rgrep='grep -r'
 alias servethis='python -m http.server'
@@ -77,6 +77,7 @@ alias y='tree'
 # Git aliases
 alias gcop='git checkout --patch'
 alias grsp='git reset --patch --'
+alias gpst='git push --tags'
 
 ## global aliases, this is not good but it's useful
 alias -g G='|noglob grep'
