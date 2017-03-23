@@ -68,6 +68,7 @@ Plug 'Shougo/vinarise.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'jacoborus/tender'
 Plug 'nanotech/jellybeans.vim'
+Plug 'edkolev/tmuxline.vim'
 " }}}
 " TextObjects {{{
 Plug 'coderifous/textobj-word-column.vim'
