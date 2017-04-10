@@ -42,10 +42,7 @@ alias msp430-cgdb='cgdb -d msp430-gdb'
 alias myip='curl ifconfig.me/ip'
 alias o='open'
 alias octave='octave -q'
-alias pi='portindex'
-alias p='noglob port-wrapper'
 alias pstree='pstree -g 3'
-alias psy="sudo port sync"
 alias rgr='ranger'
 alias rm='nocorrect rm -i'
 alias rgrep='grep -r'
@@ -55,6 +52,11 @@ alias v="f -t -e $EDITOR -b viminfo"
 alias vi="$GIT_EXPAND$EDITOR"
 alias vim="$GIT_EXPAND$EDITOR"
 
+if which port &> /dev/null; then
+    alias psy="(cd /opt/local/var/macports/sources/github.com/macports/macports-ports && git pull && portindex)"
+    alias pi='portindex'
+    alias p='noglob port-wrapper'
+fi
 # TaskWarrior aliases
 if which task &> /dev/null; then
     alias tw='nocorrect noglob task'
