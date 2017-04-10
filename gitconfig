@@ -34,6 +34,7 @@
     prompt = false
 [merge]
     tool = splice
+    ff = only
 
 # Mergetools here
 [mergetool]
@@ -45,4 +46,10 @@
 [include]
     path = "~/.gitconfig.private"
 [diff]
-	tool = vimdiff
+    tool = icdiff
+[difftool]
+    prompt = false
+[difftool "icdiff"]
+    cmd = icdiff --line-numbers $LOCAL $REMOTE
+[gpg]
+    program = gpg2
