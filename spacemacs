@@ -107,7 +107,6 @@ values."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
-                                      org-wunderlist
                                       gitlab
                                       color-theme-sanityinc-tomorrow
                                       helm-gitlab
@@ -404,8 +403,6 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-
-  (require 'org-wunderlist)
 
   (setq ibuffer-group-buffers-by "projects")
 
