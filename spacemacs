@@ -84,11 +84,13 @@ values."
      github
      gtags
      ibuffer
+     imenu-list
      ivy
      osx
      pandoc
      (ranger :variables
              ranger-show-preview t)
+     restclient
      semantic
      spell-checking
      (shell :variables
