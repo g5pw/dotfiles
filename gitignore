@@ -46,4 +46,8 @@ Backup[ ]of[ ]*.numbers/
 
 # Source code tag databases
 tags
+TAGS
+GPATH
+GRTAGS
+GTAGS
 cscope.out
