@@ -60,6 +60,9 @@ values."
                                         "DONE(d)" "CANCELED(c)"))
           org-latex-create-formula-image-program 'dvipng
           org-latex-packages-alist '(("" "siunitx" t)))
+     (plantuml :variables
+               org-plantuml-jar-path "/usr/share/plantuml/lib/plantuml.jar"
+               plantuml-jar-path "/usr/share/plantuml/lib/plantuml.jar")
      php
      python
      ruby
@@ -104,7 +107,6 @@ values."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
-                                      plantuml-mode
                                       org-wunderlist
                                       gitlab
                                       color-theme-sanityinc-tomorrow
@@ -428,7 +430,6 @@ you should place your code here."
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("/views/.*\\.php\\'" . web-mode))
 
-  (setq plantuml-jar-path "/usr/share/plantuml/lib/plantuml.jar")
   (setq powerline-default-separator 'alternate)
 
 
