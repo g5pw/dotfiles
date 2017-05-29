@@ -59,8 +59,7 @@ values."
                                         "|"
                                         "DONE(d)" "CANCELED(c)"))
           org-latex-create-formula-image-program 'dvipng
-          org-latex-packages-alist '(("" "siunitx" t))
-          )
+          org-latex-packages-alist '(("" "siunitx" t)))
      php
      python
      ruby
@@ -71,16 +70,13 @@ values."
 
      ;; tools
      (auto-completion :variables
-                      auto-completion-complete-with-key-sequence "jk"
-                      )
-
+                      auto-completion-complete-with-key-sequence "jk")
      cscope
      dash
      fasd
      (git :variables
           git-gutter-use-fringe t
-          magit-push-always-verify nil
-          )
+          magit-push-always-verify nil)
      github
      gtags
      ibuffer
@@ -442,5 +438,4 @@ you should place your code here."
   (spacemacs/set-leader-keys
     "gi" 'helm-gitlab-issues
     "gp" 'helm-gitlab-projects)
-
 )
