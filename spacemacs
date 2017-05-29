@@ -31,11 +31,23 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     (auto-completion :variables
-                      auto-completion-complete-with-key-sequence "jk"
-                      )
-     ibuffer
-     ivy
+     ;; ----------------------------------------------------------------
+     ;; Example of useful layers you may want to use right away.
+     ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
+     ;; `M-m f e R' (Emacs style) to install them.
+     ;; ----------------------------------------------------------------
+     ;;
+     ;; languages
+     c-c++
+     emacs-lisp
+     extra-langs
+     haskell
+     html
+     ipython-notebook
+     javascript
+     latex
+     lua
+     markdown
      (org :variables
           org-enable-github-support t
           org-bullets-bullet-list '("■" "◆" "✦" "✸" "✱")
@@ -49,19 +61,6 @@ values."
           org-latex-create-formula-image-program 'dvipng
           org-latex-packages-alist '(("" "siunitx" t))
           )
-     osx
-
-     ;; languages
-     c-c++
-     emacs-lisp
-     extra-langs
-     haskell
-     html
-     ipython-notebook
-     javascript
-     latex
-     lua
-     markdown
      php
      python
      ruby
@@ -71,6 +70,10 @@ values."
      yaml
 
      ;; tools
+     (auto-completion :variables
+                      auto-completion-complete-with-key-sequence "jk"
+                      )
+
      cscope
      dash
      fasd
@@ -81,6 +84,8 @@ values."
      github
      gtags
      ibuffer
+     ivy
+     osx
      pandoc
      (ranger :variables
              ranger-show-preview t)
