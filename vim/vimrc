@@ -66,8 +66,7 @@ Plug 'Shougo/vinarise.vim'
 " }}}
 " Themes {{{
 Plug 'altercation/vim-colors-solarized'
-Plug 'jacoborus/tender'
-Plug 'nanotech/jellybeans.vim'
+Plug 'dracula/vim'
 Plug 'edkolev/tmuxline.vim'
 " }}}
 " TextObjects {{{
@@ -644,7 +643,7 @@ if has("gui_running")
 endif
 
 if &t_Co >= 256 || has("gui_running")
-    colorscheme tender
+    colorscheme dracula
     set background=dark
 
     let g:doxygen_enhanced_color=1
@@ -662,8 +661,7 @@ if &t_Co >= 256 || has("gui_running")
 	set termguicolors
     endif
     let macvim_skip_colorscheme = 1
-    let g:tender_airline = 1
-    let g:airline_theme = 'tender'
+    let g:airline_theme = 'dracula'
 endif
 " }}}
 " Custom functions {{{

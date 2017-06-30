@@ -109,7 +109,7 @@ This function should only modify configuration layer settings."
                                       gitlab
                                       color-theme-sanityinc-tomorrow
                                       helm-gitlab
-                                      creamsody-theme
+                                      dracula-theme
                                       )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -182,7 +182,7 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(sanityinc-tomorrow-eighties
+   dotspacemacs-themes '(dracula
                          tangotango
                          leuven
                          solarized-dark

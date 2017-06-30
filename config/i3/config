@@ -168,13 +168,13 @@ bar {
         tray_output CRT1
         position top
         colors {
-            background #000000
-            statusline #ffffff
+            background #282A36
+            statusline #E6E6E6
 
-            focused_workspace  #ffffff #285577
-            active_workspace   #ffffff #333333
-            inactive_workspace #888888 #222222
-            urgent_workspace   #ffffff #900000
+            focused_workspace  #4D4D4D #BD93F9
+            active_workspace   #4D4D4D #CAA9FA
+            inactive_workspace #E6E6E6 #4d4d4d
+            urgent_workspace   #E6E6E6 #ff5555
        }
 }
 
