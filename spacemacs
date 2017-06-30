@@ -87,7 +87,10 @@ This function should only modify configuration layer settings."
      osx
      pandoc
      (ranger :variables
-             ranger-show-preview t)
+             ranger-show-preview t
+             ranger-enter-with-minus t
+             ranger-cleanup-on-disable t
+             )
      restclient
      semantic
      spell-checking
