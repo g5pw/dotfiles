@@ -39,13 +39,13 @@ This function should only modify configuration layer settings."
      ;; languages
      c-c++
      emacs-lisp
-     extra-langs
      haskell
      html
      ipython-notebook
      javascript
      latex
      lua
+     major-modes
      markdown
      (org :variables
           org-enable-github-support t
