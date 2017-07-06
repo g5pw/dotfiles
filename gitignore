@@ -14,6 +14,9 @@ dsa_priv.pem
 *.xcworkspace
 xcuserdata
 
+# Exclude JetBrains projects dir
+/.idea/
+
 # Generated files
 VersionX-revision.h
 
