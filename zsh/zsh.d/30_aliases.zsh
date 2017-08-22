@@ -80,6 +80,7 @@ alias y='tree'
 alias gcop='git checkout --patch'
 alias grsp='git reset --patch --'
 alias gpst='git push --tags'
+alias grbm='git rebase --autostash origin/master'
 
 ## global aliases, this is not good but it's useful
 alias -g G='|noglob grep'
