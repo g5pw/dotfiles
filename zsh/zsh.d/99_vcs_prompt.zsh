@@ -28,4 +28,4 @@ _vcs_precmd() {
 }
 add-zsh-hook precmd _vcs_precmd
 
-export RPROMPT=$'$FG[0]%(?..$FG[7]$BG[196]$FX[bold] ✘ %?$FX[no-bold]$FG[196]) ${vcs_info_msg_0_}$FX[reset]'
+export RPROMPT=$'$FG[236]%(?..$FG[7]$BG[196]$FX[bold] ✘ %?$FX[no-bold]$FG[196]) ${vcs_info_msg_0_}$FX[reset]'
