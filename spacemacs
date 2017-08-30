@@ -45,7 +45,7 @@ This function should only modify configuration layer settings."
      javascript
      latex
      lua
-     major-modes
+     extra-langs
      markdown
      (org :variables
           org-enable-github-support t
