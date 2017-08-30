@@ -48,17 +48,7 @@ This function should only modify configuration layer settings."
      extra-langs
      markdown
      (org :variables
-          org-enable-github-support t
-          org-bullets-bullet-list '("■" "◆" "✦" "✸" "✱")
-          org-ellipsis " ⤵"
-          org-return-follows-link t
-          org-enforce-todo-dependencies t
-          org-enforce-todo-checkbox-dependencies t
-          org-todo-keywords '((sequence "TODO(t)" "STARTED(s)" "WAITING(w)"
-                                        "|"
-                                        "DONE(d)" "CANCELED(c)"))
-          org-latex-create-formula-image-program 'dvipng
-          org-latex-packages-alist '(("" "siunitx" t)))
+          org-enable-github-support t)
      (plantuml :variables
                org-plantuml-jar-path "/usr/share/plantuml/lib/plantuml.jar"
                plantuml-jar-path "/usr/share/plantuml/lib/plantuml.jar")
@@ -442,4 +432,17 @@ before packages are loaded."
   (spacemacs/set-leader-keys
     "gi" 'helm-gitlab-issues
     "gp" 'helm-gitlab-projects)
+  (setq
+   org-bullets-bullet-list '("■" "◆" "✦" "✸" "✱")
+   org-ellipsis " ⤵"
+   org-return-follows-link t
+   org-enforce-todo-dependencies t
+   org-enforce-todo-checkbox-dependencies t
+   org-todo-keywords '((sequence "TODO(t)" "STARTED(s)" "WAITING(w)"
+                                 "|"
+                                 "DONE(d)" "CANCELED(c)"))
+   org-latex-create-formula-image-program 'dvipng
+   org-latex-packages-alist '(("" "siunitx" t))
+   org-refile-targets (quote ((nil :maxlevel . 2)
+                              (org-agenda-files :maxlevel . 2))))
 )
