@@ -399,7 +399,6 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  (load-file "~/.spacemacs.secret.el")
   (setq ibuffer-group-buffers-by "projects")
 
   (setq ispell-dictionary "italiano")
@@ -445,4 +444,5 @@ before packages are loaded."
    org-latex-packages-alist '(("" "siunitx" t))
    org-refile-targets (quote ((nil :maxlevel . 2)
                               (org-agenda-files :maxlevel . 2))))
+  (load-file "~/.spacemacs.secret.el")
 )
