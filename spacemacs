@@ -428,10 +428,9 @@ before packages are loaded."
 
   ;; Set keys
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "v" 'org-toggle-latex-fragment)
-  (spacemacs/set-leader-keys-for-major-mode 'org-beamer-mode "ep" 'org-beamer-export-to-pdf)
-  (spacemacs/set-leader-keys-for-major-mode 'org-beamer-mode "eo" '(lambda (a s v b)
-                                                                     (if a (org-beamer-export-to-pdf t s v b)
-                                                                       (org-open-file (org-beamer-export-to-pdf nil s v b)))))
+  (spacemacs/set-leader-keys-for-minor-mode 'org-beamer-mode "ep" 'org-beamer-export-to-pdf)
+  (spacemacs/set-leader-keys-for-minor-mode 'org-beamer-mode "eo" '(lambda () (interactive) (org-open-file (org-beamer-export-to-pdf))))
+  (spacemacs/set-leader-keys-for-minor-mode 'org-beamer-mode "se" 'org-beamer-select-environment)
 
   (spacemacs/set-leader-keys
     "gi" 'helm-gitlab-issues
