@@ -48,7 +48,8 @@ This function should only modify configuration layer settings."
      major-modes
      markdown
      (org :variables
-          org-enable-github-support t)
+          org-enable-github-support t
+          org-want-todo-bindings t)
      (plantuml :variables
                org-plantuml-jar-path "/usr/share/plantuml/lib/plantuml.jar"
                plantuml-jar-path "/usr/share/plantuml/lib/plantuml.jar")
