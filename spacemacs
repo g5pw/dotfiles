@@ -435,7 +435,11 @@ before packages are loaded."
   (spacemacs/set-leader-keys
     "gi" 'helm-gitlab-issues
     "gp" 'helm-gitlab-projects)
+
+  (setq calendar-week-start-day 1)
+
   (setq
+   org-agenda-start-on-weekday 1
    org-bullets-bullet-list '("■" "◆" "✦" "✸" "✱")
    org-ellipsis " ⤵"
    org-return-follows-link t
