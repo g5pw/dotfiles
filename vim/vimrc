@@ -36,7 +36,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'keith/investigate.vim'
 "}}}
 " Language support {{{
-Plug 'xuhdev/SingleCompile'
+Plug 'xuhdev/SingleCompile' , {'on': ['SCCompile', 'SCCompileRun', 'SCCCompileRunAsync']}
 " Plug 'cern_root'
 " Plug 'vim-css3-syntax'
 " Plug 'skammer/vim-css-color')
@@ -56,7 +56,6 @@ Plug 'tpope/vim-eunuch'
 Plug 'jfelchner/vitality.vim'
 Plug 'sjl/splice.vim'
 Plug 'mhinz/vim-signify'
-Plug 'mhinz/vim-startify'
 Plug 'Shougo/vimproc'
 Plug 'Shougo/unite.vim' | Plug 'Shougo/unite-outline' | Plug 'Shougo/unite-help'
 Plug 'Shougo/neomru.vim'
@@ -248,7 +247,6 @@ noremap <silent><expr> zg? incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
 let g:SingleCompile_showquickfixiferror = 1
 let g:SingleCompile_showresultafterrun = 1
 let g:SingleCompile_silentcompileifshowquickfix = 1
-call SingleCompile#ChooseCompiler('c','clang') " Clang is the default C compiler
 " }}}
 " vim-airline {{{
 let g:airline_powerline_fonts = 1
@@ -364,20 +362,6 @@ omap z <Plug>(easymotion-s2)
 nmap S <Plug>(easymotion-sn)
 xmap S <Plug>(easymotion-sn)
 omap Z <Plug>(easymotion-sn)
-" }}}
-" Startify options {{{
-let g:startify_bookmarks = [ $MYVIMRC, $ZDOTDIR.'.zshrc' ]
-let g:startify_skiplist = [
-           \ 'COMMIT_EDITMSG',
-	   \ 'svn-commit.tmp',
-           \ $VIMRUNTIME .'/doc',
-           \ 'vim-addons/.*/doc'
-           \ ]
-let g:startify_custom_indices = ['f', 'd', 'g', 'r', 'c']
-let g:startify_list_order = ['bookmarks', 'files', 'dir', 'sessions']
-let g:startify_custom_header =
-	\ map(split(system('fortune -s | cowsay -f meow'), '\n'), '"   ". v:val') + ['']
-let g:startify_enable_special = 0
 " }}}
 " Set Syntastic style {{{
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
