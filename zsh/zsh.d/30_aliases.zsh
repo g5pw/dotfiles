@@ -50,6 +50,7 @@ alias servethis='python -m http.server'
 alias u='uptime'
 alias v="f -t -e $EDITOR -b viminfo"
 alias vi="$GIT_EXPAND$EDITOR"
+alias view="$GIT_EXPAND$EDITOR -R"
 alias vim="$GIT_EXPAND$EDITOR"
 
 if which port &> /dev/null; then
