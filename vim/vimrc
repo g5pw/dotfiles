@@ -51,7 +51,7 @@ Plug 'fmoralesc/vim-pinpoint'
 " }}}
 " Utilities {{{
 Plug 'inside/vim-search-pulse'
-Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 Plug 'tpope/vim-eunuch'
 Plug 'jfelchner/vitality.vim'
 Plug 'sjl/splice.vim'
@@ -218,6 +218,10 @@ set timeoutlen=300
 " Plugin settings {{{
 let g:vinarise_enable_auto_detect = 1
 let g:deoplete#enable_at_startup = 1
+" ALE {{{
+let g:ale_sign_error = '💣'
+let g:ale_sign_warning = '⚠ '
+" }}}
 " Incsearch {{{
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
@@ -269,7 +273,7 @@ endif
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.whitespace = 'Ξ'
 let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline#extensions#hunks#enabled = 1
 " }}}
@@ -362,14 +366,6 @@ omap z <Plug>(easymotion-s2)
 nmap S <Plug>(easymotion-sn)
 xmap S <Plug>(easymotion-sn)
 omap Z <Plug>(easymotion-sn)
-" }}}
-" Set Syntastic style {{{
-let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
-let g:syntastic_tcl_nagelfar_conf = ''
-let g:syntastic_python_checkers = ['pyflakes']
-let g:syntastic_c_checkers = ['splint', 'make', 'gcc']
-let g:syntastic_tex_checkers = ['chktex']
-let g:syntastic_always_populate_loclist = 1
 " }}}
 let g:extradite_showhash=1
 " SudoEdit {{{
