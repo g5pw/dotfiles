@@ -629,14 +629,6 @@ if &t_Co >= 256 || has("gui_running")
     let g:doxygen_enhanced_color=1
     highlight doxygenBrief ctermbg=240
 
-    highlight StartifyBracket ctermfg=240 guifg=#6b6b60
-    highlight StartifyFooter  ctermfg=203 guifg=#fe655a
-    highlight StartifyHeader  ctermfg=111 guifg=#98A8FF
-    highlight StartifyNumber  ctermfg=215 guifg=#F7BC66
-    highlight StartifyFile    ctermfg=227 guifg=#F9FF5E
-    highlight StartifyPath    ctermfg=245 guifg=#9C9C9C
-    highlight StartifySlash   ctermfg=240 guifg=#6B6B6B
-
     if exists("+termguicolors")
 	set termguicolors
     endif
