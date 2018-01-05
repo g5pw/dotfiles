@@ -51,7 +51,5 @@
     prompt = false
 [difftool "icdiff"]
     cmd = icdiff --line-numbers $LOCAL $REMOTE
-[gpg]
-    program = gpg2
 [rebase]
 	autostash = true
