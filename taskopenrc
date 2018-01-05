@@ -6,7 +6,7 @@ TASKBIN='task'
 # If you sync tasks NOTES_FOLDER should be a location that syncs and is available to
 # other computers, i.e. /users/dropbox/tasknotes
 # NOTES_FOLDER to store notes in, must already exist!
-NOTES_FOLDER="$HOME/Dropbox/tasknotes/"
+NOTES_FOLDER="$HOME/Dropbox/Apps/tasknotes/"
 
 # Preferred extension for tasknotes
 NOTES_EXT=".md"
