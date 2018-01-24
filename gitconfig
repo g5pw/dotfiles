@@ -52,4 +52,5 @@
 [difftool "icdiff"]
     cmd = icdiff --line-numbers $LOCAL $REMOTE
 [rebase]
-	autostash = true
+	autoStash = true
+	autoSquash = true
