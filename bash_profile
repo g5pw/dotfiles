@@ -46,7 +46,3 @@ export GPG_TTY
 # Cleanup
 unset append prepend
 
-# Source the .bashrc
-if [ -f "$HOME/.bashrc" ] ; then
-  . $HOME/.bashrc
-fi
