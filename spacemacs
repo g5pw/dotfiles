@@ -561,6 +561,9 @@ before packages are loaded."
    org-refile-targets (quote ((nil :maxlevel . 2)
                               (org-agenda-files :maxlevel . 2))))
 
+  (define-key evil-normal-state-map "~" 'evil-invert-case)
+  (define-key evil-visual-state-map "~" 'evil-invert-case)
+
   (unless (display-graphic-p)
     (require 'evil-terminal-cursor-changer)
     (evil-terminal-cursor-changer-activate)
