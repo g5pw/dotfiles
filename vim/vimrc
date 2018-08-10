@@ -185,7 +185,7 @@ set complete=.,w,b,u,t,i,kspell
 set completeopt=menu,preview
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
+set listchars=tab:▸-,eol:¬,extends:❯,precedes:❮,trail:·
 set showbreak=↪
 
 set wrap
