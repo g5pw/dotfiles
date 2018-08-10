@@ -549,7 +549,7 @@ before packages are loaded."
   (setq
    org-agenda-start-on-weekday 1
    org-bullets-bullet-list '("■" "◆" "✦" "✸" "✱")
-   org-ellipsis " ⤵"
+   org-ellipsis " ⤵ "
    org-return-follows-link t
    org-enforce-todo-dependencies t
    org-enforce-todo-checkbox-dependencies t
