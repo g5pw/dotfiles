@@ -110,6 +110,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-additional-packages '(
                                       gitlab
                                       color-theme-sanityinc-tomorrow
+                                      evil-terminal-cursor-changer
                                       helm-gitlab
                                       dracula-theme
                                       )
@@ -559,5 +560,10 @@ before packages are loaded."
    org-latex-packages-alist '(("" "siunitx" t))
    org-refile-targets (quote ((nil :maxlevel . 2)
                               (org-agenda-files :maxlevel . 2))))
+
+  (unless (display-graphic-p)
+    (require 'evil-terminal-cursor-changer)
+    (evil-terminal-cursor-changer-activate)
+    )
   (load-file "~/.spacemacs.secret.el")
 )
