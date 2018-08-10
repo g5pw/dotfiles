@@ -6,9 +6,6 @@ fi
 export CLICOLOR="YES"
 export LSCOLORS="ExGxFxdxCxDxDxhbadExEx"
 
-#Set some useful paths in CDPATH
-export CDPATH="$HOME/Documents:$HOME/Documents/Projects:$HOME/Documents/University:$HOME/Sites"
-
 # GPG stuff
 export GPG_TTY=`tty`
 

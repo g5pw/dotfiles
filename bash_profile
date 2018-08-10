@@ -46,3 +46,5 @@ export GPG_TTY
 # Cleanup
 unset append prepend
 
+#Set some useful paths in CDPATH
+export CDPATH="$HOME/Documents:$HOME/Documents/Projects:$HOME/Documents/University:$HOME/Sites"
