@@ -59,6 +59,7 @@ Plug 'mhinz/vim-signify'
 Plug 'Shougo/vimproc'
 Plug 'Shougo/unite.vim' | Plug 'Shougo/unite-outline' | Plug 'Shougo/unite-help'
 Plug 'Shougo/neomru.vim'
+Plug 'lambdalisue/suda.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'Shougo/vinarise.vim'
@@ -368,12 +369,6 @@ xmap S <Plug>(easymotion-sn)
 omap Z <Plug>(easymotion-sn)
 " }}}
 let g:extradite_showhash=1
-" SudoEdit {{{
-if !has('gui_running')
-    let g:sudoAuth = 'sudo'
-endif
-let g:sudo_tee = '/opt/local/libexec/gnubin/tee'
-" }}}
 " VimWiki {{{
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', 'path_html': '~/Sites/vimwiki'}]
 " }}}
@@ -524,7 +519,7 @@ vnoremap <CR> }
 " }}}
 
 " SudoEdit abbrev
-cnoreabbrev w!! :SudoWrite
+cnoreabbrev W :w suda://%
 
 " MacVim, don't be silly
 let g:macvim_skip_cmd_opt_movement = 1
