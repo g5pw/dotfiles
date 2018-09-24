@@ -33,9 +33,36 @@ rationalise-dot() {
 zle -N rationalise-dot
 bindkey . rationalise-dot
 
-insert_sudo () { zle beginning-of-line; zle -U "sudo " }
-zle -N insert_sudo
-bindkey "^[s" insert_sudo
+# run command line as user root via sudo:
+function sudo-command-line () {
+    [[ -z $BUFFER ]] && zle up-history
+    if [[ $BUFFER != sudo\ * ]]; then
+        BUFFER="sudo $BUFFER"
+        CURSOR=$(( CURSOR+5 ))
+    fi
+}
+zle -N sudo-command-line
+bindkey "^[s" sudo-command-line
+
+# jump behind the first word on the cmdline
+# useful to add options.
+function jump_after_first_word () {
+    local words
+    words=(${(z)BUFFER})
+
+    if (( ${#words} <= 1 )) ; then
+        CURSOR=${#BUFFER}
+    else
+        CURSOR=${#${words[1]}}
+    fi
+}
+zle -N jump_after_first_word
+bindkey "^[o" jump_after_first_word
+
+# insert datetime on key shortcut
+function insert-datestamp () { LBUFFER+=${(%):-'%D{%Y-%m-%d}'}; }
+zle -N insert-datestamp
+bindkey "^[d" insert-datestamp
 
 # Undo completion
 bindkey "^[u" undo
