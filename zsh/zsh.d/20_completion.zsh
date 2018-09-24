@@ -68,7 +68,7 @@ zstyle ':completion:*:*:kill:*:jobs' list-colors 'no=01;31'
 zstyle ':completion:*:*:*:*:processes' force-list always
 
 # Don't complete stuff already on the line
-zstyle ':completion::complete:(rm|vi|vim):*' ignore-line true
+zstyle ':completion::complete:(rm|vi|vim|diff|mv):*' ignore-line true
 
 # cd will never select the parent directory (e.g.: cd ../<TAB>):
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
