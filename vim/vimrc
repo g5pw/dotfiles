@@ -589,6 +589,7 @@ augroup vcs
     autocmd FileType svn,gitcommit augroup last_pos
 		\ au!
 		\ augroup END
+    autocmd FileType gitcommit nnoremap <leader>d :DiffGitCached<CR>40<c-w>+<c-w><up>
 augroup END
 " }}}
 " Misc {{{
