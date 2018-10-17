@@ -21,6 +21,14 @@ unset fasd_cache
 if [ -d $ZDOTDIR/zsh-history-substring-search/ ]; then
     source $ZDOTDIR/zsh-history-substring-search/zsh-history-substring-search.zsh
     export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=220,bold'
+
+    # bind UP and DOWN arrow keys
+    bindkey "\e[A" history-substring-search-up
+    bindkey "\e[B" history-substring-search-down
+
+    # bind k and j for VI mode
+    bindkey -M vicmd 'k' history-substring-search-up
+    bindkey -M vicmd 'j' history-substring-search-down
 fi
 
 # Load ZAW
@@ -41,15 +49,6 @@ if [ -d $ZDOTDIR/zsh-autosuggestions ]; then
 fi
 bindkey "^[e" autosuggest-execute
 
-
-# bind UP and DOWN arrow keys
-zmodload zsh/terminfo
-bindkey "\e[A" history-substring-search-up
-bindkey "\e[B" history-substring-search-down
-
-# bind k and j for VI mode
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
 
 [ -r $HOME/.iterm2_shell_integration.zsh ] && source $HOME/.iterm2_shell_integration.zsh
 if [[ $TERM == xterm-termite ]]; then
