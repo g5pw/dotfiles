@@ -46,8 +46,9 @@ fi
 if [ -d $ZDOTDIR/zsh-autosuggestions ]; then
     source $ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh
     export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
+    export ZSH_AUTOSUGGEST_USE_ASYNC='yes'
+    bindkey "^[e" autosuggest-execute
 fi
-bindkey "^[e" autosuggest-execute
 
 
 [ -r $HOME/.iterm2_shell_integration.zsh ] && source $HOME/.iterm2_shell_integration.zsh
