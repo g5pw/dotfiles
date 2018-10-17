@@ -17,18 +17,6 @@ fi
 source "$fasd_cache"
 unset fasd_cache
 
-# load highlighting
-if [ -d $ZDOTDIR/zsh-syntax-highlighting/ ]; then
-    source $ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-    zstyle ':zsh-syntax-highlighting:*'      enabled                main brackets
-    zstyle ':zsh-syntax-highlighting:main:*' history-expansion      fg=56
-    zstyle ':zsh-syntax-highlighting:main:*' alias                  fg=35
-    zstyle ':zsh-syntax-highlighting:main:*' function               fg=28
-    zstyle ':zsh-syntax-highlighting:main:*' double-hyphen-option   fg=140
-    zstyle ':zsh-syntax-highlighting:main:*' single-hyphen-option   fg=61
-    zstyle ':zsh-syntax-highlighting:main:*' back-quoted-argument   fg=147
-fi
-
 # fish-like history search
 if [ -d $ZDOTDIR/zsh-history-substring-search/ ]; then
     source $ZDOTDIR/zsh-history-substring-search/zsh-history-substring-search.zsh
@@ -67,4 +55,9 @@ bindkey -M vicmd 'j' history-substring-search-down
 if [[ $TERM == xterm-termite ]]; then
     source /etc/profile.d/vte-2.91.sh
     __vte_osc7
+fi
+
+# load highlighting
+if [ -d $ZDOTDIR/zsh-syntax-highlighting/ ]; then
+    source $ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
