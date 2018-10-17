@@ -5,7 +5,9 @@ fi
 alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport'
 alias c='clear'
 alias calc='nocorrect noglob calc'
+alias cat='bat'
 alias cdiff='colordiff'
+alias cf="${GIT_EXPAND}clang-format -i"
 alias cp='nocorrect cp -i'
 alias ds='dirs'
 alias dsv='dirs -v'
@@ -33,6 +35,7 @@ alias llusb="system_profiler SPUSBDataType"
 alias ls='ls -hF --color=auto'
 alias lscom="python -m serial.tools.list_ports"
 alias lswifi='/System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -s | sort -rnk 3'
+alias lstty='print -l /dev/tty[AU]*'
 alias less=$PAGER
 alias zless=$PAGER
 alias man='nocorrect man'
@@ -40,9 +43,10 @@ alias mkdir='nocorrect mkdir'
 alias mv='nocorrect mv -i'
 alias msp430-cgdb='cgdb -d msp430-gdb'
 alias myip='curl ifconfig.me/ip'
+alias n='nnn'
 alias o='open'
 alias octave='octave -q'
-alias pstree='pstree -g 3'
+alias pstree='pstree -g'
 alias rgr='ranger'
 alias rm='nocorrect rm -i'
 alias rgrep='grep -r'
@@ -52,6 +56,8 @@ alias v="f -t -e $EDITOR -b viminfo"
 alias vi="$GIT_EXPAND$EDITOR"
 alias view="$GIT_EXPAND$EDITOR -R"
 alias vim="$GIT_EXPAND$EDITOR"
+alias ta="tmux attach-session -t"
+alias tn="tmux new-session -s"
 
 if which port &> /dev/null; then
     alias psy="(cd /opt/local/var/macports/sources/github.com/macports/macports-ports && git pull && portindex)"
