@@ -1,8 +1,9 @@
 # fish-like history search
 [ -d $ZDOTDIR/zsh-history-substring-search/ ] || exit 255
 
+
 source $ZDOTDIR/zsh-history-substring-search/zsh-history-substring-search.zsh
-# export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=220,bold'
+export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=220,bold'
 
 # bind UP and DOWN arrow keys
 bindkey "\e[A" history-substring-search-up
