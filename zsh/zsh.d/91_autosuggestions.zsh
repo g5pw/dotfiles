@@ -1,5 +1,3 @@
-#!/usr/bin/env zsh
-
 # Load zsh-autosuggestions
 [ -d $ZDOTDIR/zsh-autosuggestions ] || exit 255
 

@@ -1,5 +1,3 @@
-#!/usr/bin/env zsh
-
 # fish-like history search
 [ -d $ZDOTDIR/zsh-history-substring-search/ ] || exit 255
 

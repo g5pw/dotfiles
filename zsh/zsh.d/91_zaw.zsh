@@ -1,5 +1,3 @@
-#!/usr/bin/env zsh
-
 # Load ZAW
 [ -d $ZDOTDIR/zaw/ ] || exit 255
 

@@ -1,5 +1,3 @@
-#!/usr/bin/env zsh
-
 #Load fasd
 fasd_cache="$HOME/.fasd-init-zsh"
 if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then

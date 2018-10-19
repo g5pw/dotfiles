@@ -1,5 +1,3 @@
-#!/usr/bin/env zsh
-
 # load highlighting
 [ -d $ZDOTDIR/zsh-syntax-highlighting/ ] || exit 255
 
