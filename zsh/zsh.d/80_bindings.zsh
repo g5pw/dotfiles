@@ -79,7 +79,3 @@ bindkey "^I" complete-with-dots
 
 # Complete word and try to complete again
 bindkey -M menuselect '^o' accept-and-infer-next-history
-
-bindkey '^X^A' fasd-complete    # C-x C-a to do fasd-complete (fils and directories)
-bindkey '^X^F' fasd-complete-f  # C-x C-f to do fasd-complete-f (only files)
-bindkey '^X^D' fasd-complete-d  # C-x C-d to do fasd-complete-d (only directories))
