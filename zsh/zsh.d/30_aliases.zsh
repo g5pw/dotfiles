@@ -116,3 +116,5 @@ alias -g P='|peco|'
 alias -s tex=$EDITOR
 alias -s txt=$EDITOR
 alias -s git="git clone"
+
+unset GIT_EXPAND
