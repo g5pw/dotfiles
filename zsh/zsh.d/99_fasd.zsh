@@ -1,5 +1,5 @@
 #Load fasd
-fasd_cache="$HOME/.fasd-init-zsh"
+fasd_cache="$ZDOTDIR/cache/fasd-init-zsh"
 if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
     fasd --init auto >| "$fasd_cache"
 fi
