@@ -27,12 +27,20 @@ alias grep='grep --colour'
 alias h='history'
 alias heroku="heroku-1.9"
 alias lsipfw="sudo ipfw -atN list"
-alias l.='ls -A'
-alias l='ls'
-alias ll.='ls -al'
-alias ll='ls -l'
-alias llusb="system_profiler SPUSBDataType"
-alias ls='ls -hF --color=auto'
+if type exa &> /dev/null; then
+    alias l.='exa -a'
+    alias l='exa'
+    alias ll.='exa -al --git'
+    alias ll='exa -l --git'
+    alias ls='exa -hF --color=auto'
+else
+    alias l.='ls -A'
+    alias l='ls'
+    alias ll.='ls -al'
+    alias ll='ls -l'
+    alias ls='ls -hF --color=auto'
+fi
+alias lsusb="system_profiler SPUSBDataType"
 alias lscom="python -m serial.tools.list_ports"
 alias lswifi='/System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -s | sort -rnk 3'
 alias lstty='print -l /dev/tty[AU]*'
