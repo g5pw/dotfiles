@@ -580,6 +580,15 @@ augroup vim
     au BufWinEnter *.txt if &ft == 'help' | wincmd L | endif
 augroup END
 " }}}
+" Return to last edit position when opening files (You want this!) {{{
+augroup last_pos
+    autocmd!
+    autocmd BufReadPost *
+		\ if line("'\"") > 0 && line("'\"") <= line("$") |
+		\   exe "normal! g`\"" |
+		\ endif
+augroup END
+" }}}
 " VCS {{{
 augroup vcs
     au!
@@ -606,15 +615,6 @@ augroup misc
 
     " Exit paste mode when exiting insert
     autocmd InsertLeave * set nopaste
-augroup END
-" }}}
-" Return to last edit position when opening files (You want this!) {{{
-augroup last_pos
-    au!
-    autocmd BufReadPost *
-		\ if &ft !~ 'git\|svn\|hg' && line("'\"") > 0 && line("'\"") <= line("$") |
-		\   exe "normal! g`\"" |
-		\ endif
 augroup END
 " }}}
 " Autocmds end }}}
