@@ -595,9 +595,7 @@ augroup vcs
     " Check spelling in VCS commit messages
     autocmd FileType svn,gitcommit setlocal spell noshowmatch
     " Disable jump to last known position
-    autocmd FileType svn,gitcommit augroup last_pos
-		\ au!
-		\ augroup END
+    autocmd FileType svn,gitcommit autocmd! last_pos BufReadPost
     autocmd FileType gitcommit nnoremap <leader>d :DiffGitCached<CR>40<c-w>+<c-w><up>
 augroup END
 " }}}
