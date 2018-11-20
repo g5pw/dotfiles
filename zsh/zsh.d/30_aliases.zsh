@@ -40,8 +40,8 @@ else
     alias ll='ls -l'
     alias ls='ls -hF --color=auto'
 fi
-alias lsusb="system_profiler SPUSBDataType"
-alias lscom="python -m serial.tools.list_ports"
+alias llusb="system_profiler SPUSBDataType"
+alias lscom="python3 -m serial.tools.list_ports"
 alias lswifi='/System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -s | sort -rnk 3'
 alias lstty='print -l /dev/tty[AU]*'
 alias less=$PAGER
