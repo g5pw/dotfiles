@@ -111,7 +111,8 @@ set fillchars=diff:⣿,vert:│,fold:-
 set autowriteall
 set autoread
 
-set lazyredraw          " redraw only when we need to."
+set lazyredraw          " redraw only when we need to.
+set noshowmode          " Don't show mode text
 
 set virtualedit=block,onemore
 
@@ -254,23 +255,27 @@ let g:SingleCompile_silentcompileifshowquickfix = 1
 " vim-airline {{{
 let g:airline_powerline_fonts = 1
 let g:airline_mode_map = {
-    \ '__' : '-',
-    \ 'n'  : 'N',
-    \ 'i'  : 'I',
-    \ 'R'  : 'R',
-    \ 'c'  : 'C',
-    \ 'v'  : 'V',
-    \ 'V'  : 'V',
-    \ '' : 'V',
-    \ 's'  : 'S',
-    \ 'S'  : 'S',
-    \ '' : 'S',
-    \ }
+	    \ '__' : '-',
+	    \ 'c'  : 'C',
+	    \ 'i'  : 'I',
+	    \ 'ic' : 'I',
+	    \ 'ix' : 'I',
+	    \ 'n'  : 'N',
+	    \ 'ni' : 'N',
+	    \ 'no' : 'N',
+	    \ 'R'  : 'R',
+	    \ 'Rv' : 'R',
+	    \ 's'  : 'S',
+	    \ 'S'  : 'S',
+	    \ '' : 'S',
+	    \ 't'  : 'T',
+	    \ 'v'  : 'V',
+	    \ 'V'  : 'V',
+	    \ '' : 'V',
+	    \ }
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.whitespace = 'Ξ'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
@@ -353,7 +358,7 @@ let g:vimfiler_tree_opened_icon = '▾'
 let g:vimfiler_tree_closed_icon = '▸'
 let g:vimfiler_marked_file_icon = '✓'
 " }}}
-let g:better_whitespace_filetypes_blacklist = ['unite', 'startify']
+let g:better_whitespace_filetypes_blacklist = ['unite']
 " Enable space error highlighting for portfiles {{{
 let g:portfile_highlight_space_errors=1
 " }}}
