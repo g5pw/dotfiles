@@ -22,13 +22,6 @@ deluxe_append_to_path "$HOME/.local/bin"
 
 unset -f deluxe_append_to_path
 
-#add ROOT to python path
-if [ -n "$PYTHONPATH" ]; then
-	export PYTHONPATH="$PYTHONPATH:/opt/local/lib/root/"
-else
-	export PYTHONPATH="/opt/local/lib/root/"
-fi
-
 # Python init file
 if [ -f ~/.pythonrc ]; then
 	export PYTHONSTARTUP="$HOME/.pythonrc"
