@@ -108,11 +108,10 @@ This function should only modify configuration layer settings."
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(
-                                      gitlab
                                       color-theme-sanityinc-tomorrow
                                       evil-terminal-cursor-changer
-                                      helm-gitlab
                                       dracula-theme
+                                      forge
                                       )
 
    ;; A list of packages that cannot be updated.
@@ -539,10 +538,6 @@ before packages are loaded."
   (spacemacs/set-leader-keys-for-minor-mode 'org-beamer-mode "ep" 'org-beamer-export-to-pdf)
   (spacemacs/set-leader-keys-for-minor-mode 'org-beamer-mode "eo" '(lambda () (interactive) (org-open-file (org-beamer-export-to-pdf))))
   (spacemacs/set-leader-keys-for-minor-mode 'org-beamer-mode "se" 'org-beamer-select-environment)
-
-  (spacemacs/set-leader-keys
-    "gi" 'helm-gitlab-issues
-    "gp" 'helm-gitlab-projects)
 
   (setq calendar-week-start-day 1)
 
