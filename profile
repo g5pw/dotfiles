@@ -9,7 +9,7 @@ export FCEDIT=$EDITOR
 export LESSCHARSET='utf-8' ## charset for pager
 #Less syntax coloring
 export LESSOPEN="| src-hilite-lesspipe.sh %s"
-export LESS='-ReiJW'
+export LESS='-RFeiJW'
 
 deluxe_append_to_path() {
 	[[ -d $1 ]] && export PATH="$1:${PATH}"
