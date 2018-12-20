@@ -41,7 +41,10 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
      ;;
      ;; languages
+     ansible
      c-c++
+     cmake
+     csv
      emacs-lisp
      haskell
      html
@@ -563,5 +566,8 @@ before packages are loaded."
     (require 'evil-terminal-cursor-changer)
     (evil-terminal-cursor-changer-activate)
     )
+
+  (setq ffip-use-rust-fd t)
+
   (load-file "~/.spacemacs.secret.el")
 )
