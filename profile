@@ -27,7 +27,8 @@ if [ -f ~/.pythonrc ]; then
 	export PYTHONSTARTUP="$HOME/.pythonrc"
 fi
 
-gpg-connect-agent /bye
+gpg-connect-agent /bye >/dev/null 2>&1
+
 if [[ -z $XDG_RUNTIME_DIR ]]; then
     export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
 else
