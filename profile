@@ -11,7 +11,16 @@ export LESSCHARSET='utf-8' ## charset for pager
 export LESSOPEN="| src-hilite-lesspipe.sh %s"
 export LESS='-ReiJW'
 
-export PATH="$HOME/.cabal/bin:$HOME/.go/bin:$HOME/bin:$PATH"
+deluxe_append_to_path() {
+	[[ -d $1 ]] && export PATH="$1:${PATH}"
+}
+
+deluxe_append_to_path "$HOME/.cabal/bin"
+deluxe_append_to_path "$HOME/.go/bin"
+deluxe_append_to_path "$HOME/.cargo/bin"
+deluxe_append_to_path "$HOME/.local/bin"
+
+unset -f deluxe_append_to_path
 
 #add ROOT to python path
 if [ -n "$PYTHONPATH" ]; then
