@@ -11,6 +11,15 @@ export LESSCHARSET='utf-8' ## charset for pager
 export LESSOPEN="| src-hilite-lesspipe.sh %s"
 export LESS='-RFeiJW'
 
+#custom exports for coloured less
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;47;34m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
+
 deluxe_append_to_path() {
 	[[ -d $1 ]] && export PATH="$1:${PATH}"
 }
