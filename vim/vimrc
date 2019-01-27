@@ -619,6 +619,8 @@ augroup misc
     " Exit paste mode when exiting insert
     autocmd InsertLeave * set nopaste
 augroup END
+
+au BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
 " }}}
 " Autocmds end }}}
 " Visual stuff {{{
