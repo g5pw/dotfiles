@@ -2,7 +2,6 @@
 if type exec_scmb_expand_args &> /dev/null; then
     GIT_EXPAND='exec_scmb_expand_args '
 fi
-alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport'
 alias c='clear'
 alias calc='nocorrect noglob calc'
 alias cat='bat'
@@ -26,7 +25,6 @@ alias gdh='git diff HEAD~.. --'
 alias grep='grep --colour'
 alias h='history'
 alias heroku="heroku-1.9"
-alias lsipfw="sudo ipfw -atN list"
 if type exa &> /dev/null; then
     alias l.='exa -a'
     alias l='exa'
@@ -40,9 +38,7 @@ else
     alias ll='ls -l'
     alias ls='ls -hF --color=auto'
 fi
-alias llusb="system_profiler SPUSBDataType"
 alias lscom="python3 -m serial.tools.list_ports"
-alias lswifi='/System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -s | sort -rnk 3'
 alias lstty='print -l /dev/tty[AU]*'
 alias less=$PAGER
 alias zless=$PAGER
@@ -67,11 +63,6 @@ alias vim="$GIT_EXPAND$EDITOR"
 alias ta="tmux attach-session -t"
 alias tn="tmux new-session -s"
 
-if which port &> /dev/null; then
-    alias psy="(cd /opt/local/var/macports/sources/github.com/macports/macports-ports && git pull && portindex)"
-    alias pi='portindex'
-    alias p='noglob port-wrapper'
-fi
 # TaskWarrior aliases
 if which task &> /dev/null; then
     alias tw='nocorrect noglob task'
