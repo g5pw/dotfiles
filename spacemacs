@@ -111,6 +111,7 @@ This function should only modify configuration layer settings."
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(
+                                      org-sticky-header
                                       color-theme-sanityinc-tomorrow
                                       evil-terminal-cursor-changer
                                       dracula-theme
@@ -558,6 +559,8 @@ before packages are loaded."
    org-latex-packages-alist '(("" "siunitx" t))
    org-refile-targets (quote ((nil :maxlevel . 2)
                               (org-agenda-files :maxlevel . 2))))
+
+  (add-hook 'org-mode-hook 'org-sticky-header-mode)
 
   (define-key evil-normal-state-map "~" 'evil-invert-case)
   (define-key evil-visual-state-map "~" 'evil-invert-case)
