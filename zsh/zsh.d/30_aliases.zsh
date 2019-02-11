@@ -86,10 +86,11 @@ alias w="ansiweather"
 alias y='tree'
 
 # Git aliases
-alias gcop='git checkout --patch'
-alias grsp='git reset --patch --'
-alias gpst='git push --tags'
-alias grbm='git rebase --autostash origin/master'
+alias gcf="${GIT_EXPAND}git commit --fixup"
+alias gcop="${GIT_EXPAND}git checkout --patch"
+alias grsp="${GIT_EXPAND}git reset --patch --"
+alias gpst="${GIT_EXPAND}git push --tags"
+alias grbm="${GIT_EXPAND}git rebase --autostash origin/master"
 
 ## global aliases, this is not good but it's useful
 alias -g G='|noglob grep'
