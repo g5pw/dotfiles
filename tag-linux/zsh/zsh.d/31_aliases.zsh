@@ -1,0 +1,1 @@
+alias systemctl='nocorrect systemctl'
