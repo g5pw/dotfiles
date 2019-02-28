@@ -572,5 +572,7 @@ before packages are loaded."
 
   (setq ffip-use-rust-fd t)
 
+  (setq vc-follow-symlinks t)
+
   (load-file "~/.spacemacs.secret.el")
 )
