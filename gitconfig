@@ -56,15 +56,21 @@
 [rebase]
 	autoStash = true
 	autoSquash = true
+[pull]
+	rebase = true
 [color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
+	oldNormal = 105 bold
+	oldHighlight = 147 bold 60
+	newNormal = 186 bold
+	newHighlight = 186 bold 136
 [color "diff"]
-	meta = yellow
+	meta = 33
 	frag = magenta bold
 	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+	old = 147 bold
+	new = 186 bold
+	whitespace = 231 reverse
+[sequence]
+	editor = interactive-rebase-tool
+[diff-so-fancy]
+	stripLeadingSymbols = false
