@@ -572,6 +572,9 @@ before packages are loaded."
     )
 
   (setq ffip-use-rust-fd t)
+  (eval-after-load "forge"
+    '(progn (add-to-list 'forge-alist
+                    '("git-ssh.mittelab.org" "git.mittelab.org/api/v4" "git.mittelab.org" forge-gitlab-repository))))
 
   (setq vc-follow-symlinks t)
 
