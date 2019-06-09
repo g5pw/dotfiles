@@ -546,6 +546,9 @@ before packages are loaded."
   (setq calendar-week-start-day 1)
 
   (setq
+   org-cycle-separator-lines 0
+   org-catch-invisible-edits 'show-and-error
+   org-list-indent-offset 1
    org-agenda-start-on-weekday 1
    org-bullets-bullet-list '("■" "◆" "✦" "✸" "✱")
    org-ellipsis " ⤵ "
