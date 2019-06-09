@@ -2,3 +2,6 @@ source ~/.vim/vimrc
 
 set surround
 set multiple-cursors
+
+nmap <space>fs :w<cr>
+nmap <space>bd :q<cr>
