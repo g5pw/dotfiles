@@ -193,8 +193,10 @@ set colorcolumn=80
 
 "Enable mouse support in terminal
 set mouse=a
+" nvim-only settings
 if !has('nvim')
     set ttymouse=xterm2
+    set inccommand=nosplit
 endif
 
 "Always use cscope
@@ -489,6 +491,9 @@ nnoremap <silent><leader>ge :Extradite<CR>
 nnoremap U :<CR>
 " Quickly edit the vimrc file
 nnoremap <silent> <leader>ve :e $MYVIMRC<CR>
+
+" Ex-mode is useless!
+nnoremap Q @@
 
 " f7 toggles spelling on/off
 nnoremap <F7> :setlocal spell! spell?<CR>
