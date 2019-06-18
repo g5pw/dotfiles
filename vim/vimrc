@@ -189,6 +189,12 @@ set showbreak=↪
 set wrap
 set textwidth=80
 set formatoptions=qrn1
+
+" Correctly join lines with comments
+if v:version > 703 || v:version == 703 && has('patch541')
+  set formatoptions+=j
+endif
+
 set colorcolumn=80
 
 "Enable mouse support in terminal
