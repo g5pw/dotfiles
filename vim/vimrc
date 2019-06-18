@@ -224,8 +224,8 @@ set timeoutlen=300
 " Plugin settings {{{
 let g:vinarise_enable_auto_detect = 1
 " ALE {{{
-let g:ale_sign_error = '💣'
-let g:ale_sign_warning = '⚠ '
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '▲'
 " }}}
 " Incsearch {{{
 map /  <Plug>(incsearch-forward)
