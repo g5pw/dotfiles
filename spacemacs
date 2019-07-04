@@ -42,7 +42,11 @@ This function should only modify configuration layer settings."
      ;;
      ;; languages
      ansible
-     c-c++
+     (c-c++ :variables
+            c-c++-adopt-subprojects t
+            c-c++-adopt-subprojects t
+            c-c++-backend 'lsp-ccls
+            c-c++-lsp-sem-highlight-rainbow t)
      cmake
      csv
      emacs-lisp
@@ -62,7 +66,9 @@ This function should only modify configuration layer settings."
                org-plantuml-jar-path "/usr/share/plantuml/lib/plantuml.jar"
                plantuml-jar-path "/usr/share/plantuml/lib/plantuml.jar")
      php
-     python
+     (python :variables
+             python-backend 'lsp
+             python-fill-column 99)
      ruby
      rust
      shell-scripts
@@ -73,6 +79,7 @@ This function should only modify configuration layer settings."
      (auto-completion :variables
                       auto-completion-complete-with-key-sequence "jk")
      cscope
+     dap
      dash
      fasd
      (git :variables
@@ -98,6 +105,7 @@ This function should only modify configuration layer settings."
             shell-default-height 30
             shell-default-position 'bottom)
      syntax-checking
+     systemd
      version-control
 
      ;; vim-like
