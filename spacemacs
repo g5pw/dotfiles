@@ -81,6 +81,7 @@ This function should only modify configuration layer settings."
      cscope
      dap
      dash
+     docker
      fasd
      (git :variables
           git-gutter-use-fringe t
