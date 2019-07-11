@@ -1,5 +1,5 @@
 # Load zsh-autosuggestions
-[ -d $ZDOTDIR/zsh-autosuggestions ] || exit 255
+[ -d $ZDOTDIR/zsh-autosuggestions ] || return 255
 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
 export ZSH_AUTOSUGGEST_USE_ASYNC='yes'

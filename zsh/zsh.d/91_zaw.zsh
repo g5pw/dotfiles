@@ -1,5 +1,5 @@
 # Load ZAW
-[ -d $ZDOTDIR/zaw/ ] || exit 255
+[ -d $ZDOTDIR/zaw/ ] || return 255
 
 source $ZDOTDIR/zaw/zaw.zsh
 zstyle ':filter-select:highlight' matched   fg=yellow,standout
