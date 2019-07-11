@@ -645,6 +645,13 @@ if has("gui_running")
     set rtp+=/opt/local/share/vim/vimfiles
 endif
 
+" Highlight 'ugly' code {{{
+" Highlight lines longer than 120 chars
+match ErrorMsg '\%>120v.\+'
+" Highlight trailing spaces
+match ErrorMsg '\s\+$'
+" }}}
+
 if &t_Co >= 256 || has("gui_running")
     colorscheme dracula
     set background=dark
