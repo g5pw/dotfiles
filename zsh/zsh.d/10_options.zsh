@@ -1,6 +1,6 @@
 setopt ALWAYS_TO_END
 setopt AUTO_CD
-setopt AUTO_NAME_DIRS
+unsetopt AUTO_NAME_DIRS
 setopt AUTO_PUSHD
 setopt AUTO_RESUME
 setopt CDABLEVARS
