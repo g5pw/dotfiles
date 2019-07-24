@@ -10,12 +10,12 @@
 [submodule "zsh/zsh-autosuggestions"]
 	path = zsh/zsh-autosuggestions
 	url = git://github.com/zsh-users/zsh-autosuggestions
-[submodule "zsh/spaceship-prompt"]
-	path = zsh/spaceship-prompt
-	url = https://github.com/denysdovhan/spaceship-prompt.git
 [submodule "zsh/forgit"]
 	path = zsh/forgit
 	url = git@github.com:wfxr/forgit.git
 [submodule "zsh/fast-syntax-highlighting"]
 	path = zsh/fast-syntax-highlighting
 	url = https://github.com/zdharma/fast-syntax-highlighting
+[submodule "zsh/powerlevel10k"]
+	path = zsh/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
