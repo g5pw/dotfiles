@@ -33,3 +33,7 @@ bind generic P !git push
 bind generic p !git pull
 bind generic U !git add -A
 bind generic W !git wtf
+
+# Colors
+color cursor 159 24 bold
+color title-blur 245 default
