@@ -1,3 +1,4 @@
+forgit_log=gli
 forgit_diff=gdi
 forgit_add=gai
 forgit_stash_show=gssi
