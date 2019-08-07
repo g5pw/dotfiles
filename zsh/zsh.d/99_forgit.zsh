@@ -6,4 +6,5 @@ FZF_DEFAULT_OPTS="
 --bind='ctrl-f:preview-page-down,ctrl-e:preview-down'
 --bind='ctrl-b:preview-page-up,ctrl-y:preview-up'
 "
-source $ZDOTDIR/forgit/forgit.plugin.zsh
+
+zplugin light 'wfxr/forgit'

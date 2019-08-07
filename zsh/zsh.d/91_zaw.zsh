@@ -1,7 +1,6 @@
 # Load ZAW
-[ -d $ZDOTDIR/zaw/ ] || return 255
+zplugin load 'zsh-users/zaw'
 
-source $ZDOTDIR/zaw/zaw.zsh
 zstyle ':filter-select:highlight' matched   fg=yellow,standout
 zstyle ':filter-select:highlight' title     fg=cyan,underline
 zstyle ':filter-select' max-lines -10       # use $LINES - 10 for filter-select

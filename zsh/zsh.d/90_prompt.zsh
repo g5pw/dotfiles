@@ -12,8 +12,7 @@ function zle-keymap-select {
 
 zle -N zle-keymap-select
 
-
-source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
+zplugin load romkatv/powerlevel10k
 
 # Config for Powerlevel10k with lean prompt style. Doesn't require a Powerline font.
 # The color scheme is suitable for dark terminal background.

@@ -1,8 +1,6 @@
 # fish-like history search
-[ -d $ZDOTDIR/zsh-history-substring-search/ ] || return 255
+zplugin light 'zsh-users/zsh-history-substring-search'
 
-
-source $ZDOTDIR/zsh-history-substring-search/zsh-history-substring-search.zsh
 export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=214,bold'
 
 # bind UP and DOWN arrow keys

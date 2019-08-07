@@ -1,2 +1,2 @@
 EXCLUDES="tmp vim-addons cache *_history* zcompdump *.zwc"
-SYMLINK_DIRS="zsh-* zaw fast-syntax-highlighting forgit powerlevel10k pentadactyl"
+SYMLINK_DIRS="zplugin pentadactyl"
