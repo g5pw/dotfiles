@@ -1,6 +1,8 @@
 autoload -U compinit && compinit
 zmodload -i zsh/complist
 
+zplugin light zsh-users/zsh-completions
+
 # Completion options
 zstyle ':completion:*' completer _expand _complete _approximate:-one _ignored \
 				_correct _approximate:-many _prefix _history

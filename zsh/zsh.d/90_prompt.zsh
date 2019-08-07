@@ -12,7 +12,8 @@ function zle-keymap-select {
 
 zle -N zle-keymap-select
 
-zplugin load romkatv/powerlevel10k
+zplugin ice wait'!' lucid atload'_p9k_precmd' nocd
+zplugin light romkatv/powerlevel10k
 
 # Config for Powerlevel10k with lean prompt style. Doesn't require a Powerline font.
 # The color scheme is suitable for dark terminal background.

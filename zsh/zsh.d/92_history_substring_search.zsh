@@ -10,3 +10,5 @@ bindkey "\e[B" history-substring-search-down
 # bind k and j for VI mode
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
+
+zplugin load zdharma/history-search-multi-word
