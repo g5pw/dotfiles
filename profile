@@ -29,6 +29,10 @@ deluxe_append_to_path "$HOME/.go/bin"
 deluxe_append_to_path "$HOME/.cargo/bin"
 deluxe_append_to_path "$HOME/.local/bin"
 
+# Use GNU utils if possible
+deluxe_append_to_path /opt/local/libexec/gnubin
+deluxe_append_to_path /opt/local/libexec/perl5.12
+
 unset -f deluxe_append_to_path
 
 # Python init file
