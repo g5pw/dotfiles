@@ -121,11 +121,11 @@ This function should only modify configuration layer settings."
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(
+                                      dokuwiki-mode
                                       color-theme-sanityinc-tomorrow
                                       evil-terminal-cursor-changer
                                       dracula-theme
-                                      nord-theme
-                                      nimbus-theme
+                                      doom-themes
                                       dts-mode
                                       ssh-deploy
                                       )
@@ -257,10 +257,11 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(nimbus
-                         nord
-                         dracula
-                         leuven)
+   dotspacemacs-themes '(doom-city-lights
+                         doom-nord
+                         nimbus
+                         leuven
+                         )
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The
