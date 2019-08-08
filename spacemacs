@@ -124,7 +124,10 @@ This function should only modify configuration layer settings."
                                       color-theme-sanityinc-tomorrow
                                       evil-terminal-cursor-changer
                                       dracula-theme
-                                      forge
+                                      nord-theme
+                                      nimbus-theme
+                                      dts-mode
+                                      ssh-deploy
                                       )
 
    ;; A list of packages that cannot be updated.
@@ -249,10 +252,10 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(dracula
-                         tangotango
-                         leuven
-                         solarized-dark)
+   dotspacemacs-themes '(nimbus
+                         nord
+                         dracula
+                         leuven)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The
@@ -586,6 +589,11 @@ before packages are loaded."
                     '("git-ssh.mittelab.org" "git.mittelab.org/api/v4" "git.mittelab.org" forge-gitlab-repository))))
 
   (setq vc-follow-symlinks t)
+
+  (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
+  (define-key evil-visual-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
+  (define-key evil-normal-state-map (kbd "C-x") 'evil-numbers/dec-at-pt)
+  (define-key evil-visual-state-map (kbd "C-x") 'evil-numbers/dec-at-pt)
 
   (load-file "~/.spacemacs.secret.el")
 )
