@@ -20,20 +20,21 @@ export LESS_TERMCAP_so=$'\E[01;47;34m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
-deluxe_append_to_path() {
+deluxe_prepend_to_path() {
 	[[ -d $1 ]] && export PATH="$1:${PATH}"
 }
 
-deluxe_append_to_path "$HOME/.cabal/bin"
-deluxe_append_to_path "$HOME/.go/bin"
-deluxe_append_to_path "$HOME/.cargo/bin"
-deluxe_append_to_path "$HOME/.local/bin"
+deluxe_prepend_to_path "$HOME/.cabal/bin"
+deluxe_prepend_to_path "$HOME/.cargo/bin"
+deluxe_prepend_to_path "$HOME/.go/bin"
+
+deluxe_prepend_to_path "$HOME/.local/bin"
 
 # Use GNU utils if possible
-deluxe_append_to_path /opt/local/libexec/gnubin
-deluxe_append_to_path /opt/local/libexec/perl5.12
+deluxe_prepend_to_path /opt/local/libexec/gnubin
+deluxe_prepend_to_path /opt/local/libexec/perl5.12
 
-unset -f deluxe_append_to_path
+unset -f deluxe_prepend_to_path
 
 # Python init file
 if [ -f ~/.pythonrc ]; then
