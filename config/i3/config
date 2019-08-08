@@ -10,12 +10,12 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-set $Locker i3lock
+set $Locker i3lock-fancy
 set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:Iosevka 9
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -32,7 +32,8 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
+bindsym $mod+Shift+Return exec fman
 
 # kill focused window
 bindsym $mod+Shift+c kill
@@ -42,7 +43,8 @@ bindsym $mod+Shift+c kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+p exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+p exec --no-startup-id albert show
+bindsym $mod+t exec --no-startup-id tmux-open
 
 # change focus
 bindsym $mod+h focus left
@@ -78,7 +80,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+u focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -110,13 +112,34 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym Control+$mod+Left workspace prev
 bindsym Control+$mod+Right workspace next
 
-# reload the configuration file
-bindsym $mod+Shift+q reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym --whole-window $mod+button8 workspace prev
+bindsym --whole-window $mod+button9 workspace next
 
+bindsym Control+Alt+h workspace prev
+bindsym Control+Alt+l workspace next
+bindsym Control+Alt+k workspace prev
+bindsym Control+Alt+j workspace next
+
+bindsym $mod+g mode "goto"
+
+# reload the configuration file
+bindsym $mod+Shift+q restart
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r reload
+
+bindsym $mod+z move workspace to output right
+
+# Quickly go to workspace
+mode "goto" {
+        bindsym h workspace prev
+        bindsym l workspace next
+        bindsym k workspace prev
+        bindsym j workspace next
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -143,10 +166,10 @@ mode "resize" {
 }
 
 mode "$mode_system" {
-    bindsym l exec --no-startup-id $Locker, mode "default"
-    bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym l exec       --no-startup-id $Locker, mode "default"
+    bindsym e exec       --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec       --no-startup-id $Locker && systemctl suspend -i, mode "default"
+    bindsym r exec       --no-startup-id systemctl reboot -i, mode "default"
     bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
     # back to normal: Enter or Escape
@@ -156,6 +179,7 @@ mode "$mode_system" {
 
 bindsym $mod+Pause mode "$mode_system"
 
+bindsym $mod+m exec --no-startup-id launch_vm
 
 bindsym $mod+r mode "resize"
 bindsym $mod+x [urgent=latest] focus
@@ -165,7 +189,7 @@ bindsym $mod+x [urgent=latest] focus
 bar {
         mode hide
         status_command i3status
-        tray_output CRT1
+        tray_output DVI-0
         position top
         colors {
             background #282A36
@@ -183,8 +207,23 @@ new_window pixel 1
 
 #Enable floating windows
 for_window[class="Zeal"] floating enable, border normal
+for_window[class="copyq"] floating enable, border normal
+for_window[class="^jetbrains-toolbox$"] floating enable, border normal
 
-exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/g5pw/.config/i3/workspace-1.json'"
-exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/g5pw/.config/i3/workspace-2.json'"
-exec --no-startup-id "i3-msg 'workspace 3; append_layout /home/g5pw/.config/i3/workspace-3.json'"
-exec --no-startup-id "i3-msg 'workspace 9; append_layout /home/g5pw/.config/i3/workspace-9.json'"
+exec_always ~/.config/i3/per-workspace-layout.pl
+
+exec --no-startup-id ~/.xprofile
+
+exec --no-startup-id /usr/bin/zeal
+exec --no-startup-id /usr/bin/copyq
+exec --no-startup-id /usr/bin/nextcloud --background
+exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
+
+exec --no-startup-id i3-msg 'exec /usr/bin/emacs'
+exec --no-startup-id i3-msg 'exec /usr/bin/firefox'
+exec --no-startup-id i3-msg 'exec /usr/bin/thunderbird'
+
+assign [class="Emacs"] 1
+assign [class="Firefox"] 3
+assign [class="^jetbrains-"] 8
+assign [class="Thunderbird"] 9
