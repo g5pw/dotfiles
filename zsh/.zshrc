@@ -19,3 +19,5 @@ if [[ $TERM == xterm-termite ]]; then
     source /etc/profile.d/vte-2.91.sh
     __vte_osc7
 fi
+
+source ~/.config/broot/launcher/bash/br

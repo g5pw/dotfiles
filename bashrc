@@ -61,3 +61,5 @@ fi
 [ -s "/Users/g5pw/.scm_breeze/scm_breeze.sh" ] && source "/Users/g5pw/.scm_breeze/scm_breeze.sh"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+source ~/.config/broot/launcher/bash/br
