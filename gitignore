@@ -17,6 +17,7 @@ xcuserdata
 # Exclude IDE config dirs
 .idea/
 .vscode/
+.projectile
 
 # Generated files
 VersionX-revision.h
@@ -53,5 +54,8 @@ tags
 TAGS
 GPATH
 GRTAGS
-GTAGS
-cscope.out
+.ac-php-conf.json
+
+# caches
+.mypy_cache/
+.ccls-cache/
