@@ -23,5 +23,5 @@ function v {
 function z {
     [ $# -gt 0 ] && fasd -f -e ${EDITOR} "$*" && return
     local file
-    file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && vi "${file}" || return 1
+    dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
 }
