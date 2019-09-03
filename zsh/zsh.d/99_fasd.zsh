@@ -21,7 +21,10 @@ function v {
 
 # z cd to recent dir or fzf if no args
 function z {
-    [ $# -gt 0 ] && fasd -f -e ${EDITOR} "$*" && return
-    local file
+    [ $# -gt 0 ] && cd $(fasd -e 'printf %s' -d "$*") && return
+    local dir
     dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
 }
+
+zplugin load andrewferrier/fzf-z
+FZFZ_RECENT_DIRS_TOOL=fasd
