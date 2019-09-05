@@ -1,6 +1,5 @@
-if [[ -r $ZDOTDIR/.dircolors ]]; then
-    eval $( dircolors -b $ZDOTDIR/.dircolors )
-fi
+zplugin ice atclone"dircolors -b LS_COLORS > c.zsh" atpull'%atclone' pick"c.zsh"
+zplugin load trapd00r/LS_COLORS
 
 # Less Colors for Man Pages
 export LESS_TERMCAP_mb=$'\e[01;31m'       # begin blinking
