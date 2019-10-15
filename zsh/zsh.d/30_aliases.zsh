@@ -90,6 +90,7 @@ alias gcop="${GIT_EXPAND}git checkout --patch"
 alias grsp="${GIT_EXPAND}git reset --patch --"
 alias gpst="${GIT_EXPAND}git push --tags"
 alias grbm="${GIT_EXPAND}git rebase --autostash origin/master"
+alias gpsf="${GIT_EXPAND}git push --force-with-lease"
 
 ## global aliases, this is not good but it's useful
 alias -g G='|noglob grep'
