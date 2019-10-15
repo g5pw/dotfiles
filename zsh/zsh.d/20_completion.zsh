@@ -2,6 +2,7 @@ autoload -U compinit && compinit
 zmodload -i zsh/complist
 
 zplugin light zsh-users/zsh-completions
+zplugin light greymd/docker-zsh-completion
 
 # Completion options
 zstyle ':completion:*' completer _expand _complete _approximate:-one _ignored \
