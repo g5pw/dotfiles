@@ -273,8 +273,8 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-colorize-cursor-according-to-state t
 
    ;; Default font, or prioritized list of fonts.
-   dotspacemacs-default-font '("Hack"
-                               :size 12
+   dotspacemacs-default-font '("Iosevka"
+                               :size 13
                                :weight normal
                                :width normal)
 
