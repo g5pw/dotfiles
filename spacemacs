@@ -127,6 +127,8 @@ This function should only modify configuration layer settings."
                                       doom-themes
                                       dts-mode
                                       ssh-deploy
+                                      org-super-agenda
+                                      org-ql
                                       org-sidebar
                                       )
 
@@ -587,6 +589,15 @@ before packages are loaded."
    org-latex-packages-alist '(("" "siunitx" t))
    org-refile-targets (quote ((nil :maxlevel . 2)
                               (org-agenda-files :maxlevel . 2))))
+
+  (setq org-super-agenda-groups
+         '((:name "Next actions"  ; Optionally specify section name
+                  :time-grid t  ; Items that appear on the time grid
+                  :todo "NEXT")  ; Items that have this TODO keyword
+           (:name "test"
+                   :deadline "today")
+           (:name "Important"
+                  :priority "A")))
 
   (define-key evil-normal-state-map "~" 'evil-invert-case)
   (define-key evil-visual-state-map "~" 'evil-invert-case)
