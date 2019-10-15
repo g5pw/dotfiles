@@ -127,6 +127,7 @@ This function should only modify configuration layer settings."
                                       doom-themes
                                       dts-mode
                                       ssh-deploy
+                                      org-sidebar
                                       )
 
    ;; A list of packages that cannot be updated.
@@ -562,6 +563,7 @@ before packages are loaded."
 
   ;; Set keys
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "v" 'org-toggle-latex-fragment)
+  (spacemacs/set-leader-keys-for-major-mode 'org-mode "S" 'org-sidebar)
   (spacemacs/set-leader-keys-for-minor-mode 'org-beamer-mode "ep" 'org-beamer-export-to-pdf)
   (spacemacs/set-leader-keys-for-minor-mode 'org-beamer-mode "eo" '(lambda () (interactive) (org-open-file (org-beamer-export-to-pdf))))
   (spacemacs/set-leader-keys-for-minor-mode 'org-beamer-mode "se" 'org-beamer-select-environment)
