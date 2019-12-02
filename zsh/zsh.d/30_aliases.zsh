@@ -4,7 +4,7 @@ if type exec_scmb_expand_args &> /dev/null; then
 fi
 alias c='clear'
 alias calc='nocorrect noglob calc'
-alias cat='bat'
+alias cat='${GIT_EXPAND}bat'
 alias cdiff='colordiff'
 alias cf="${GIT_EXPAND}clang-format -i"
 alias cp='nocorrect cp -i'
@@ -44,14 +44,13 @@ alias lscom="python3 -m serial.tools.list_ports"
 alias lstty='print -l /dev/tty[AU]*'
 alias less=$PAGER
 alias zless=$PAGER
-alias n='nnn'
 alias man='nocorrect man'
 alias mkdir='nocorrect mkdir'
 alias mv='nocorrect mv -i'
 alias msp430-cgdb='cgdb -d msp430-gdb'
 alias myip='curl ifconfig.me/ip'
-alias n='nnn'
-alias o='open'
+alias n='${GIT_EXPAND}nnn'
+alias o='${GIT_EXPAND}open'
 alias octave='octave -q'
 alias pstree='pstree -g'
 alias rgr='ranger'
@@ -62,6 +61,7 @@ alias u='uptime'
 alias vi="$GIT_EXPAND$EDITOR"
 alias view="$GIT_EXPAND$EDITOR -R"
 alias vim="$GIT_EXPAND$EDITOR"
+alias t="${GIT_EXPAND}tig"
 alias ta="tmux attach-session -t"
 alias tn="tmux new-session -s"
 
