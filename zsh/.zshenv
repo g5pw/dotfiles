@@ -46,3 +46,5 @@ done < $HOME/.named_dirs
 
 #load my function and more completions
 fpath=($ZDOTDIR/functions $ZDOTDIR/zsh-completions/src $fpath)
+
+export PIP_REQUIRE_VIRTUALENV=true
