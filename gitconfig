@@ -3,7 +3,7 @@
 [user]
     email = a2piratesoft@gmail.com
     name = Aljaž \"g5pw\" Srebrnič
-    signingkey = 0xE140E1EEA54EE677
+    signingkey = 0x84C9DBC8F265A116
 [core]
     excludesfile = ~/.gitignore
     quotepath = false
