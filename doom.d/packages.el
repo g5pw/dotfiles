@@ -13,3 +13,7 @@
 (package! org-super-agenda)
 (package! org-ql)
 (package! org-sidebar)
+
+;; Tools
+(package! magit-lfs)
+(package! magit-todo)
