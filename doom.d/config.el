@@ -12,6 +12,10 @@
 
 (setq doom-font (font-spec :family "Iosevka" :size 13))
 
+(setq doom-localleader-key ",")
+
+(setq display-line-numbers-type 'visual)
+
 (setq ibuffer-group-buffers-by "projects")
 
 (setq ispell-dictionary "italiano")
