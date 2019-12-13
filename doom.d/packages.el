@@ -16,4 +16,4 @@
 
 ;; Tools
 (package! magit-lfs)
-(package! magit-todo)
+(package! magit-todos)
