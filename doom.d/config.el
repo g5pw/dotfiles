@@ -90,6 +90,13 @@
   :config
   (map! :mode org-mode :leader :desc "Toggle sidebar" :nve "tS" #'org-sidebar-toggle))
 
+(use-package! magit-todos
+  :after magit
+  :init
+  (setq magit-todos-mode t)
+  :config
+  (map! :leader :desc "Search TODOs keywords" :nve "st" #'ivy-magit-todos))
+
 ;; Set keys
 
 ; tildeop
