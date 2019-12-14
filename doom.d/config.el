@@ -100,6 +100,20 @@
 
 (map! :n "-" 'dired-jump)
 
+(map! :mode prog-mode :desc "Open header file" :localleader :nve "f" #'ff-find-other-file)
+
+(map! :mode with-editor-mode
+      :desc "Confirm commit" :localleader :nve "," #'with-editor-finish
+      :desc "Abort commit"   :localleader :nve "." #'with-editor-cancel)
+
+(unmap! :map doom-leader-workspace-map
+  :nvime "TAB"
+  :nvime "`")
+
+(map! :leader :prefix "TAB"
+      :desc "Switch to last workspace" "TAB" #'+workspace/other
+      :desc "Display tab bar"          "`"   #'+workspace/display)
+
 (after! forge
   '(add-to-list 'forge-alist
                 '("git-ssh.mittelab.org" "git.mittelab.org/api/v4" "git.mittelab.org" forge-gitlab-repository)))
