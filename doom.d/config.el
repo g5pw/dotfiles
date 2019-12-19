@@ -100,10 +100,10 @@
 ;; Set keys
 
 ; tildeop
-(map! :nv "~" 'evil-invert-case)
 
-(map! :nv "C-a" 'evil-numbers/inc-at-pt)
-(map! :nv "C-x" 'evil-numbers/dec-at-pt)
+(map! :nv "~" 'evil-invert-case
+      :nv "C-a" 'evil-numbers/inc-at-pt
+      :nv "C-x" 'evil-numbers/dec-at-pt)
 
 (map! :n "-" 'dired-jump)
 
