@@ -100,6 +100,9 @@
 ;; Set keys
 
 ; tildeop
+(map! :leader
+      :nve "fP" 'doom/find-file-in-private-config
+      :nve "fp" '+ivy/projectile-find-file)
 
 (map! :nv "~" 'evil-invert-case
       :nv "C-a" 'evil-numbers/inc-at-pt
