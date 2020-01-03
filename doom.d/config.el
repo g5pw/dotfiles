@@ -90,9 +90,8 @@
 
 (use-package! magit-todos
   :after magit
-  :init
-  (setq magit-todos-mode t)
   :config
+  (magit-todos-mode)
   (map! :leader :desc "Search TODOs keywords" :nve "st" #'ivy-magit-todos))
 
 ;; Set keys
