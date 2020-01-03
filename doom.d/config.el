@@ -74,8 +74,6 @@
         '((:name "Next actions"  ; Optionally specify section name
                  :time-grid t  ; Items that appear on the time grid
                  :todo "NEXT")  ; Items that have this TODO keyword
-          (:name "test"
-                 :deadline "today")
           (:name "Important"
                  :priority "A")))
   :config
