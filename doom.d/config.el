@@ -12,6 +12,8 @@
 
 (setq doom-font (font-spec :family "Iosevka" :size 13))
 
+(setq doom-theme 'doom-moonlight)
+
 (setq doom-localleader-key ",")
 
 (setq display-line-numbers-type 'visual)
