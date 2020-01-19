@@ -30,12 +30,9 @@
   (setq TeX-global-PDF-mode t
         TeX-auto-save t
         TeX-parse-self t
-        TeX-view-program-list '(("Skim" "/usr/bin/open -a Skim.app %o"))
-        TeX-view-program-selection '((output-pdf "Skim"))
-        TeX-source-correlate-mode t))
-
-;(add-hook! org-mode
-;           '(setcdr (assoc "\\.pdf\\'" org-file-apps) "open -a Skim %s"))
+        TeX-source-correlate-mode t)
+  (add-to-list 'TeX-view-program-selection
+             '(output-pdf "Zathura")))
 
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
@@ -49,6 +46,7 @@
         :desc "Export to PDF" :n "e p" #'org-beamer-export-to-pdf
         :desc "Export to PDF and open" :n "e o" #'(lambda () (interactive) (org-open-file (org-beamer-export-to-pdf)))
         :desc "Select environment" :n "s e" #'org-beamer-select-environment)
+  (add-to-list 'org-file-apps '("\\.pdf" . "zathura %s"))
   (setq org-cycle-separator-lines 0
         org-catch-invisible-edits 'show-and-error
         org-list-indent-offset 1
