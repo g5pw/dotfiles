@@ -93,6 +93,7 @@ alias gdc='git diff --cached'
 alias grsp='git reset --patch --'
 alias gpst='git push --tags'
 alias grbm='git rebase --autostash origin/master'
+alias gpsf='git push'
 alias gpsf='git push --force-with-lease'
 alias grbi='git rebase --interactive'
 
