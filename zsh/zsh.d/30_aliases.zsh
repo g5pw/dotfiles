@@ -22,7 +22,6 @@ alias find='noglob find'
 alias fd='noglob fd'
 alias j='jobs'
 alias JUSTFUCKINGDOIT='sudo -p "Oh, come on... alright, gimme your password:" $(fc -ln -1)'
-alias gdh='git diff HEAD~.. --'
 alias grep='grep --colour'
 alias gp='gopass'
 alias h='history'
@@ -85,12 +84,17 @@ alias w="ansiweather"
 alias y='tree'
 
 # Git aliases
-alias gcf="${GIT_EXPAND}git commit --fixup"
-alias gcop="${GIT_EXPAND}git checkout --patch"
-alias grsp="${GIT_EXPAND}git reset --patch --"
-alias gpst="${GIT_EXPAND}git push --tags"
-alias grbm="${GIT_EXPAND}git rebase --autostash origin/master"
-alias gpsf="${GIT_EXPAND}git push --force-with-lease"
+alias gap='git add --patch'
+alias gc='git commit'
+alias gcm='git commit --amend'
+alias gcf='git commit --fixup'
+alias gcop='git checkout --patch'
+alias gdc='git diff --cached'
+alias grsp='git reset --patch --'
+alias gpst='git push --tags'
+alias grbm='git rebase --autostash origin/master'
+alias gpsf='git push --force-with-lease'
+alias grbi='git rebase --interactive'
 
 ## global aliases, this is not good but it's useful
 alias -g G='|noglob grep'
