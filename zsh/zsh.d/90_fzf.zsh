@@ -1,6 +1,10 @@
 alias pw="fzf --preview 'bat --color \"always\" {}'"
 # add support for ctrl+o to open selected file in VS Code
-export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(emacsclient -nw {})+abort'"
+export FZF_DEFAULT_OPTS="
+--bind='ctrl-o:execute(emacsclient -nw {})+abort'
+--bind='ctrl-f:preview-page-down,ctrl-e:preview-down'
+--bind='ctrl-b:preview-page-up,ctrl-y:preview-up'
+"
 
 # Use ~~ as the trigger sequence instead of the default **
 export FZF_COMPLETION_TRIGGER='~~'
