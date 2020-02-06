@@ -9,4 +9,4 @@ export FZF_DEFAULT_OPTS="
 --bind='ctrl-b:preview-page-up,ctrl-y:preview-up'
 "
 
-zplugin load wfxr/forgit
+zinit load wfxr/forgit

@@ -12,5 +12,5 @@ function zle-keymap-select {
 
 zle -N zle-keymap-select
 
-zplugin ice wait'!' lucid atload'_p9k_precmd' nocd
-zplugin light romkatv/powerlevel10k
+zinit ice wait'!' lucid atload'_p9k_precmd' nocd
+zinit load romkatv/powerlevel10k

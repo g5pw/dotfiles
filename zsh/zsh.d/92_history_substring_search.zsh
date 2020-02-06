@@ -1,5 +1,5 @@
 # fish-like history search
-zplugin light zsh-users/zsh-history-substring-search
+zinit load zsh-users/zsh-history-substring-search
 
 export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=214,bold'
 
