@@ -25,7 +25,6 @@ alias JUSTFUCKINGDOIT='sudo -p "Oh, come on... alright, gimme your password:" $(
 alias grep='grep --colour'
 alias gp='gopass'
 alias h='history'
-alias heroku="heroku-1.9"
 if type exa &> /dev/null; then
     alias l.='exa -a'
     alias l='exa'
