@@ -83,26 +83,6 @@ alias wchat="weechat"
 alias w="ansiweather"
 alias y='tree'
 
-# Git aliases
-# alias g='git'
-# alias gap='git add --patch'
-# alias gb='git branch'
-# alias gc='git commit'
-# alias gcm='git commit --amend'
-# alias gcf='git commit --fixup'
-# alias gcop='git checkout --patch'
-# alias gdc='git diff --cached'
-# alias gf='git fetch'
-# alias gpst='git push --tags'
-# alias grbm='git rebase --autostash origin/master'
-# alias gpsf='git push'
-# alias gpsf='git push --force-with-lease'
-# alias grbi='git rebase --interactive'
-# alias grbc='git rebase --continue'
-# alias grba='git rebase --abort'
-# alias grsp='git reset --patch --'
-# alias gss='git stash'
-
 ## global aliases, this is not good but it's useful
 alias -g G='|noglob grep'
 alias -g H='|head'
