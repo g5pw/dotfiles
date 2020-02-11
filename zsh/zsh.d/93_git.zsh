@@ -2,6 +2,7 @@
 
 alias gaa='git add -A'
 alias ga='git add'
+alias gshp='git am --show-current-patch'
 alias gap='git add -p'
 alias gasha='git stash apply'
 alias gash='git stash'
@@ -64,7 +65,7 @@ alias gsb='git show-branch'
 alias gsh='git show'
 alias gsm='git show --summary'
 alias gss='git stash'
-alias gst='git status'
+alias gssp='git stash pop'
 alias gt='git tag'
 alias gh='git_help_aliases'
 
