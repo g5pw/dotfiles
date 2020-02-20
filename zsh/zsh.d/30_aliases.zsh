@@ -25,19 +25,21 @@ alias JUSTFUCKINGDOIT='sudo -p "Oh, come on... alright, gimme your password:" $(
 alias grep='grep --colour'
 alias gp='gopass'
 alias h='history'
-if type exa &> /dev/null; then
+
+alias l='ls'
+alias l.='ls -a'
+alias ll.='ls -al'
+alias ll='ls -l'
+if type lsd &> /dev/null; then
+    alias ls='lsd -hF --color=auto'
+elif type exa &> /dev/null; then
     alias l.='exa -a'
     alias l='exa'
     alias ll.='exa -al --git'
     alias ll='exa -l --git'
     alias ls='exa -hF --color=auto'
-else
-    alias l.='ls -A'
-    alias l='ls'
-    alias ll.='ls -al'
-    alias ll='ls -l'
-    alias ls='ls -hF --color=auto'
 fi
+
 alias lscom="python3 -m serial.tools.list_ports"
 alias lstty='print -l /dev/tty[AU]*'
 alias less=$PAGER
