@@ -1,9 +1,23 @@
-set surround
-set multiple-cursors
+let mapleader=","
 
-nmap <space>fs :w<cr>
-nmap <space>bd :q<cr>
+nmap <Space>fs :w<cr>
+nmap <Space>bd :q<cr>
 
 nnoremap go :action OverrideMethods<cr>
 nnoremap gr :action Refactorings.QuickListPopupAction<cr>
+
+" Vim-like commands
+set visualbell
+set sidescrolloff=5
+set scrolloff=5
+set hlsearch
+
+" IdeaVIM Options
+set idearefactormode="keep"
 set ideajoin
+set ideastatusicon="disabled"
+
+" IdeaVIM extensions
+set commentary
+set easymotion
+set surround
