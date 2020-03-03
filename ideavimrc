@@ -1,11 +1,5 @@
 let mapleader=","
 
-nmap <Space>fs :w<cr>
-nmap <Space>bd :q<cr>
-
-nnoremap go :action OverrideMethods<cr>
-nnoremap gr :action Refactorings.QuickListPopupAction<cr>
-
 " Vim-like commands
 set visualbell
 set sidescrolloff=5
@@ -21,3 +15,11 @@ set ideastatusicon="disabled"
 set commentary
 set easymotion
 set surround
+
+noremap <Space>fs :w<cr>
+noremap <Space>bd :q<cr>
+
+noremap <Space>mo :action OverrideMethods<cr>
+noremap <Space>r :action Refactorings.QuickListPopupAction<cr>
+noremap <Space>f :action FindUsagesMenuGroup<cr>
+noremap <Space>s :action osmedile.intellij.stringmanip.SwitchCasePopup<cr>
