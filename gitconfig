@@ -71,3 +71,16 @@
 	editor = interactive-rebase-tool
 [diff-so-fancy]
 	stripLeadingSymbols = false
+
+[interactive-rebase-tool]
+    autoSelectNext = true
+    inputMoveDown = j
+    inputMoveUp = k
+    inputMoveLeft = h
+    inputMoveRight = l
+    inputMoveUpStep = c-b
+    inputMoveDownStep = c-f
+
+    inputMoveSelectionUp = K
+    inputMoveSelectionDown = J
+    inputToggleVisualMode = V
