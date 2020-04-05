@@ -286,7 +286,7 @@ let g:fzf_preview_lines_command = 'bat --color=always --style=grid --theme=ansi-
 " Command to be executed after file list creation
 let g:fzf_preview_filelist_postprocess_command = 'gxargs -d "\n" exa --color=always'
 
-let g:fzf_preview_use_dev_icons = 0
+let g:fzf_preview_use_dev_icons = 1
 " }}}
 " SingleCompile {{{
 let g:SingleCompile_showquickfixiferror = 1
