@@ -36,7 +36,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'jceb/vim-orgmode'
 " }}}
 " Utilities {{{
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'mhinz/vim-signify'
 Plug 'lambdalisue/suda.vim'
 Plug 'vim-airline/vim-airline'
