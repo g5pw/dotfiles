@@ -5,70 +5,48 @@ call plug#begin('~/.vim/plugged')
 " Text {{{
 Plug 'sirver/UltiSnips' | Plug 'honza/vim-snippets'
 Plug 'tpope/vim-repeat'
-Plug 'vim-scripts/matchit.zip'
-Plug 'mbbill/undotree'
+Plug 'andymass/vim-matchup'
+Plug 'simnalamburt/vim-mundo'
 Plug 'kana/vim-smartinput'
-Plug 'triglav/vim-visual-increment'
-Plug 'tpope/vim-commentary'
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'tyru/caw.vim'
+"Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-abolish'
-Plug 'gcmt/wildfire.vim'
-Plug 'Chiel92/vim-autoformat'
-Plug 'ntpeters/vim-better-whitespace'
 " }}}
 " Movement {{{
-" Plug 'EasyMotion'
+Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-unimpaired'
-Plug 'haya14busa/incsearch.vim' | Plug 'haya14busa/incsearch-fuzzy.vim'
 " }}}
 " File System/Integration {{{
-Plug 'Shougo/vimfiler.vim'
+Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' } | Plug 'kristijanhusak/defx-git' | Plug 'kristijanhusak/defx-icons'
 Plug 'tpope/vim-fugitive'
-Plug 'int3/vim-extradite'
+Plug 'rhysd/committia.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'majutsushi/tagbar'
-Plug 'tpope/vim-vinegar'
-Plug 'keith/investigate.vim'
+Plug 'voldikss/vim-floaterm'
+set  runtimepath+=/opt/local/share/fzf/vim/
+Plug 'yuki-ycino/fzf-preview.vim'
+Plug 'ryanoasis/vim-devicons'
 "}}}
 " Language support {{{
 Plug 'xuhdev/SingleCompile' , {'on': ['SCCompile', 'SCCompileRun', 'SCCCompileRunAsync']}
-" Plug 'cern_root'
-" Plug 'vim-css3-syntax'
-" Plug 'skammer/vim-css-color')
-" Plug 'vim-dokuwiki'
-Plug 'jvirtanen/vim-octave', {'for': 'octave'}
-" Plug 'vim-clojure-static'
-Plug 'lukerandall/haskellmode-vim', {'for': 'haskell'}
 Plug 'tpope/vim-ragtag', {'for': 'html'}
 Plug 'mattn/emmet-vim', {'for': 'html'}
 Plug 'lervag/vimtex', {'for': 'tex'}
 Plug 'fmoralesc/vim-pinpoint'
+Plug 'sheerun/vim-polyglot'
+Plug 'jceb/vim-orgmode'
 " }}}
 " Utilities {{{
-Plug 'inside/vim-search-pulse'
 Plug 'w0rp/ale'
-Plug 'tpope/vim-eunuch'
-Plug 'jfelchner/vitality.vim'
-Plug 'sjl/splice.vim'
 Plug 'mhinz/vim-signify'
-Plug 'Shougo/vimproc'
-Plug 'Shougo/unite.vim' | Plug 'Shougo/unite-outline' | Plug 'Shougo/unite-help'
-Plug 'Shougo/neomru.vim'
 Plug 'lambdalisue/suda.vim'
 Plug 'vim-airline/vim-airline'
-Plug 'chrisbra/vim-diff-enhanced'
-Plug 'Shougo/vinarise.vim'
 " }}}
 " Themes {{{
-Plug 'altercation/vim-colors-solarized'
 Plug 'dracula/vim'
+Plug 'tyrannicaltoucan/vim-deep-space'
 Plug 'edkolev/tmuxline.vim'
 " }}}
 " TextObjects {{{
-Plug 'coderifous/textobj-word-column.vim'
-Plug 'rbonvall/vim-textobj-latex'
-Plug 'wellle/targets.vim'
 Plug 'kana/vim-textobj-user' | Plug 'glts/vim-textobj-comment' | Plug 'kana/vim-textobj-diff' | Plug 'kana/vim-textobj-function' | Plug 'kana/vim-textobj-line' | Plug 'kana/vim-textobj-underscore'
 " }}}
 call plug#end()
@@ -222,35 +200,93 @@ set relativenumber
 set timeoutlen=300
 " }}}
 " Plugin settings {{{
-let g:vinarise_enable_auto_detect = 1
 " ALE {{{
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '▲'
 " }}}
-" Incsearch {{{
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-let g:incsearch#auto_nohlsearch = 1
-map n  <Plug>(incsearch-nohl-n)
-map N  <Plug>(incsearch-nohl-N)
-map *  <Plug>(incsearch-nohl-*)
-map #  <Plug>(incsearch-nohl-#)
-map g* <Plug>(incsearch-nohl-g*)
-map g# <Plug>(incsearch-nohl-g#)
-
-function! s:config_fuzzyall(...) abort
-  return extend(copy({
-  \   'converters': [
-  \     incsearch#config#fuzzy#converter(),
-  \     incsearch#config#fuzzyspell#converter()
-  \   ],
-  \ }), get(a:, 1, {}))
+" defx {{{
+nnoremap <silent> - :Defx `expand('%:p:h')`<cr>
+autocmd FileType defx call s:defx_my_settings()
+function! s:defx_my_settings() abort
+    " Define mappings
+    nnoremap <silent><buffer><expr> <CR>
+		\ defx#do_action('open')
+    nnoremap <silent><buffer><expr> c
+		\ defx#do_action('copy')
+    nnoremap <silent><buffer><expr> m
+		\ defx#do_action('move')
+    nnoremap <silent><buffer><expr> p
+		\ defx#do_action('paste')
+    nnoremap <silent><buffer><expr> l
+		\ defx#do_action('open')
+    nnoremap <silent><buffer><expr> E
+		\ defx#do_action('open', 'vsplit')
+    nnoremap <silent><buffer><expr> P
+		\ defx#do_action('open', 'pedit')
+    nnoremap <silent><buffer><expr> o
+		\ defx#do_action('open_or_close_tree')
+    nnoremap <silent><buffer><expr> K
+		\ defx#do_action('new_directory')
+    nnoremap <silent><buffer><expr> N
+		\ defx#do_action('new_file')
+    nnoremap <silent><buffer><expr> M
+		\ defx#do_action('new_multiple_files')
+    nnoremap <silent><buffer><expr> C
+		\ defx#do_action('toggle_columns',
+		\                'mark:indent:icon:filename:type:size:time')
+    nnoremap <silent><buffer><expr> S
+		\ defx#do_action('toggle_sort', 'time')
+    nnoremap <silent><buffer><expr> d
+		\ defx#do_action('remove')
+    nnoremap <silent><buffer><expr> r
+		\ defx#do_action('rename')
+    nnoremap <silent><buffer><expr> !
+		\ defx#do_action('execute_command')
+    nnoremap <silent><buffer><expr> x
+		\ defx#do_action('execute_system')
+    nnoremap <silent><buffer><expr> yy
+		\ defx#do_action('yank_path')
+    nnoremap <silent><buffer><expr> .
+		\ defx#do_action('toggle_ignored_files')
+    nnoremap <silent><buffer><expr> ;
+		\ defx#do_action('repeat')
+    nnoremap <silent><buffer><expr> h
+		\ defx#do_action('cd', ['..'])
+    nnoremap <silent><buffer><expr> ~
+		\ defx#do_action('cd')
+    nnoremap <silent><buffer><expr> q
+		\ defx#do_action('quit')
+    nnoremap <silent><buffer><expr> <Space>
+		\ defx#do_action('toggle_select') . 'j'
+    nnoremap <silent><buffer><expr> *
+		\ defx#do_action('toggle_select_all')
+    nnoremap <silent><buffer><expr> j
+		\ line('.') == line('$') ? 'gg' : 'j'
+    nnoremap <silent><buffer><expr> k
+		\ line('.') == 1 ? 'G' : 'k'
+    nnoremap <silent><buffer><expr> <C-l>
+		\ defx#do_action('redraw')
+    nnoremap <silent><buffer><expr> <C-g>
+		\ defx#do_action('print')
+    nnoremap <silent><buffer><expr> cd
+		\ defx#do_action('change_vim_cwd')
 endfunction
+" }}}
+" fzf-preview {{{
+" Commands used for fzf preview.
+" The file name selected by fzf becomes {}
+let g:fzf_preview_command = 'bat --color=always --style=full {-1}'
 
-noremap <silent><expr> z/ incsearch#go(<SID>config_fuzzyall())
-noremap <silent><expr> z? incsearch#go(<SID>config_fuzzyall({'command': '?'}))
-noremap <silent><expr> zg? incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
+" Commands used to get the file list from project
+let g:fzf_preview_filelist_command = 'rg --files --hidden --follow --no-messages -g \!"* *"'
+
+" Commands used for current file lines
+let g:fzf_preview_lines_command = 'bat --color=always --style=grid --theme=ansi-dark --plain'
+
+" Command to be executed after file list creation
+let g:fzf_preview_filelist_postprocess_command = 'gxargs -d "\n" exa --color=always'
+
+let g:fzf_preview_use_dev_icons = 0
 " }}}
 " SingleCompile {{{
 let g:SingleCompile_showquickfixiferror = 1
@@ -298,73 +334,12 @@ let g:LatexBox_split_width = 20
 " VCSCommand {{{
 let VCSCommandMapPrefix = '<Leader>v'
 " }}}
-" Haskell dirs {{{
-let g:haddock_browser = "elinks"
-let g:haddock_docdir = "/opt/local/share/doc/ghc/html/"
-" }}}
-" VimRoom {{{
-let g:vimroom_sidebar_height = 5
-let g:vimroom_width = 100
-" }}}
-" Unite stuff {{{
-let g:unite_data_directory = expand('~/.vim/tmp/unite')
-let g:unite_winheight = 20
-let g:unite_source_grep_command = 'ag'
-let g:unite_source_grep_default_opts = '--nocolor --noheading'
-let g:unite_source_grep_recursive_opt = ''
-let g:unite_enable_start_insert = 1
-let g:unite_enable_short_source_names = 1
-let g:unite_prompt = '» '
-" Enable yank history collection
-let g:unite_source_history_yank_enable = 1
-" Use the fuzzy matcher for everything
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-" Use the rank sorter for everything
-call unite#filters#sorter_default#use(['sorter_rank'])
-" }}}
-" UltiSnips settings {{{
-let g:UltiSnipsExpandTrigger = '<c-l>'
-let g:UltiSnipsJumpForwardTrigger = '<c-j>'
-let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
-let g:UltiSnipsListSnippets = '<c-h>'
-" }}}
-" YouCompleteMe settings {{{
-let g:ycm_key_invoke_completion = '<C-\>'
-let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
-let g:ycm_extra_conf_globlist = ['~/Documents/Projects/*', '~/.vim/ycm_extra_conf.py']
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_collect_identifiers_from_tags_files  = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_semantic_triggers = {
-    \	'tex' : [ '{', '\' ],
-    \ }
-" }}}
-" Enable Doxygen auto-load {{{
-let g:load_doxygen_syntax=1
-" }}}
 " Signify options {{{
 let g:signify_vcs_list = [ 'git', 'svn', 'hg']
 let g:signify_mapping_next_hunk = '<leader>gj'
 let g:signify_mapping_prev_hunk = '<leader>gk'
 let g:signify_mapping_toggle_highlight = '<leader>gh'
 " }}}
-" Tagbar options and maps {{{
-let tagbar_autoclose = 1
-let tagbar_autofocus = 1
-let g:tagbar_singleclick = 1
-" }}}
-" VimFiler settings {{{
-let g:vimfiler_as_default_explorer=1
-let g:vimfiler_data_directory = expand('~/.vim/tmp/vimfiler/')
-let g:vimfiler_quick_look_command = 'qlmanage -p'
-let g:vimfiler_ignore_pattern = '\(^\.\|.py[oc]$\)'
-" VimFiler icons
-let g:vimfiler_tree_leaf_icon = ' '
-let g:vimfiler_tree_opened_icon = '▾'
-let g:vimfiler_tree_closed_icon = '▸'
-let g:vimfiler_marked_file_icon = '✓'
-" }}}
-let g:better_whitespace_filetypes_blacklist = ['unite']
 " Enable space error highlighting for portfiles {{{
 let g:portfile_highlight_space_errors=1
 " }}}
@@ -377,17 +352,29 @@ nmap S <Plug>(easymotion-sn)
 xmap S <Plug>(easymotion-sn)
 omap Z <Plug>(easymotion-sn)
 " }}}
-let g:extradite_showhash=1
-" VimWiki {{{
-let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki', 'path_html': '~/Sites/vimwiki'}]
+" committia {{{
+let g:committia_hooks = {}
+function! g:committia_hooks.edit_open(info)
+    " Additional settings
+    setlocal spell
+
+    " If no commit message, start with insert mode
+    if a:info.vcs ==# 'git' && getline(1) ==# ''
+        startinsert
+    endif
+
+    " Scroll the diff window from insert mode
+    " Map <C-n> and <C-p>
+    imap <buffer><C-n> <Plug>(committia-scroll-diff-down-half)
+    imap <buffer><C-p> <Plug>(committia-scroll-diff-up-half)
+endfunction
 " }}}
 " }}}
 " Mappings {{{
 " Spacemacs-like mappings {{{
 nnoremap <leader>fs :w<CR>
 nnoremap <leader>bd :bd<CR>
-nnoremap <silent> <leader>ff :<C-u>Unite
-      \ -buffer-name=files buffer file_mru bookmark file_rec/async<CR>
+nnoremap <silent> <leader>ff :FzfPreviewDirectoryFiles<cr>
 " }}}
 
 " SingleCompile {{{
@@ -395,77 +382,11 @@ noremap <leader>c :SCCompile<CR>
 noremap <leader>cr :SCCompileRun<CR>
 " }}}
 
-noremap <F3> :Autoformat<CR>
 " Made D behave
 nnoremap D d$
 
 " highlight last inserted text
 nmap gV `[v`]
-
-" Unite mappings {{{
-
-" General fuzzy search
-nnoremap <silent> u<space> :<C-u>Unite
-      \ -buffer-name=files buffer file_mru bookmark file_rec/async<CR>
-
-" Quick registers
-nnoremap <silent> ur :<C-u>Unite -buffer-name=register register<CR>
-
-" Quick buffer and mru
-nnoremap <silent> uu :<C-u>Unite -quick-match -buffer-name=buffers buffer file_mru<CR>
-
-" Quick yank history
-nnoremap <silent> uy :<C-u>Unite -buffer-name=yanks history/yank<CR>
-
-" Quick outline
-nnoremap <silent> uo :<C-u>Unite -buffer-name=outline -vertical outline<CR>
-
-" Quick sessions (projects)
-nnoremap <silent> up :<C-u>Unite -buffer-name=sessions session<CR>
-
-" Quick sources
-nnoremap <silent> ua :<C-u>Unite -buffer-name=sources source<CR>
-
-" Quickly switch lcd
-nnoremap <silent> ud
-      \ :<C-u>Unite -buffer-name=change-cwd -default-action=lcd directory_mru<CR>
-
-" Quick file search
-nnoremap <silent> uf :<C-u>Unite -buffer-name=files file_rec/async file/new<CR>
-
-" Quick grep from cwd
-nnoremap <silent> ug :<C-u>Unite -buffer-name=grep grep:.<CR>
-
-" Quick grep from current word
-nnoremap <silent> uG :<C-u>UniteWithCursorWord -buffer-name=grep -default-action=above -auto-preview grep:. <CR>
-
-" Quick help
-nnoremap <silent> uh :<C-u>Unite -buffer-name=help help<CR>
-
-" Quick line using the word under cursor
-nnoremap <silent> ul :<C-u>UniteWithCursorWord -buffer-name=search_file line<CR>
-
-" Quick MRU search
-nnoremap <silent> um :<C-u>Unite -buffer-name=mru file_mru<CR>
-
-" Quick find
-nnoremap <silent> un :<C-u>Unite -buffer-name=find find:.<CR>
-
-" Quick commands
-nnoremap <silent> uc :<C-u>Unite -buffer-name=commands command<CR>
-
-" Quick bookmarks
-nnoremap <silent> ub :<C-u>Unite -buffer-name=bookmarks bookmark<CR>
-
-" Fuzzy search from current buffer
-" nnoremap <silent> ub :<C-u>UniteWithBufferDir
-" \ -buffer-name=files -prompt=%\ buffer file_mru bookmark file<CR>
-
-" Quick commands
-nnoremap <silent> u; :<C-u>Unite -buffer-name=history history/command command<CR>
-"}}}
-" YouCompleteMe mappings
-nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " Boxes mappings
 vnoremap gcb :!boxes -s 80 -a c<CR>
@@ -474,9 +395,6 @@ vnoremap gcb :!boxes -s 80 -a c<CR>
 nnoremap <Leader>. :TagbarToggle<CR>
 " Parse file with astyle
 nnoremap <silent> <Leader>as :%!astyle<CR>
-
-" VimFiler mappings
-nnoremap <leader>cd :<C-u>:VimFilerBufferDir -buffer-name=explorer -toggle<CR>`
 
 " Changes mappings
 nnoremap <silent><leader>r :ToggleChangeView<CR>
@@ -491,8 +409,6 @@ nnoremap <silent><leader>gp :Git push<cr>
 nnoremap <silent><leader>gr :Gremove<cr>
 nnoremap <silent><leader>gs :Gstatus<cr>
 nnoremap <silent><leader>gw :Gwrite<cr>
-" Extradite options
-nnoremap <silent><leader>ge :Extradite<CR>
 " UndoTree maps
 nnoremap U :<CR>
 " Quickly edit the vimrc file
@@ -603,16 +519,6 @@ augroup last_pos
 		\ endif
 augroup END
 " }}}
-" VCS {{{
-augroup vcs
-    au!
-    " Check spelling in VCS commit messages
-    autocmd FileType svn,gitcommit setlocal spell noshowmatch
-    " Disable jump to last known position
-    autocmd FileType svn,gitcommit autocmd! last_pos BufReadPost
-    autocmd FileType gitcommit nnoremap <leader>d :DiffGitCached<CR>40<c-w>+<c-w><up>
-augroup END
-" }}}
 " Misc {{{
 augroup misc
     au!
@@ -640,7 +546,10 @@ endif
 
 if has("gui_running")
     set ttyfast
-    set guifont="Hack:h11"
+    set guifont="Iosevka:h11"
+endif
+
+if has("gui_running") || has("nvim")
     " MacVim runtime path fix
     set rtp+=/opt/local/share/vim/vimfiles
 endif
@@ -653,7 +562,7 @@ match ErrorMsg '\s\+$'
 " }}}
 
 if &t_Co >= 256 || has("gui_running")
-    colorscheme dracula
+    colorscheme deep-space
     set background=dark
 
     let g:doxygen_enhanced_color=1
@@ -662,8 +571,9 @@ if &t_Co >= 256 || has("gui_running")
     if exists("+termguicolors")
 	set termguicolors
     endif
+    let g:deepspace_italics=1
     let macvim_skip_colorscheme = 1
-    let g:airline_theme = 'dracula'
+    let g:airline_theme = 'deep_space'
 endif
 " }}}
 " Custom functions {{{
@@ -685,4 +595,51 @@ function! GoyoAfter()
 endfunction
 
 let g:goyo_callbacks = [function('GoyoBefore'), function('GoyoAfter')]
+" }}}
+" Veonim config {{{
+if exists('veonim')
+    " extensions for web dev
+    let g:vscode_extensions = [
+		\'vscode.typescript-language-features',
+		\'vscode.css-language-features',
+		\'vscode.html-language-features',
+		\]
+
+    " multiple nvim instances
+    nno <silent> <c-t>c :Veonim vim-create<cr>
+    nno <silent> <c-g> :Veonim vim-switch<cr>
+    nno <silent> <c-t>, :Veonim vim-rename<cr>
+
+    " workspace functions
+    nno <silent> ,f :Veonim files<cr>
+    nno <silent> ,e :Veonim explorer<cr>
+    nno <silent> ,b :Veonim buffers<cr>
+    nno <silent> ,d :Veonim change-dir<cr>
+    "or with a starting dir: nno <silent> ,d :Veonim change-dir ~/proj<cr>
+
+    " searching text
+    nno <silent> <space>fw :Veonim grep-word<cr>
+    vno <silent> <space>fw :Veonim grep-selection<cr>
+    nno <silent> <space>fa :Veonim grep<cr>
+    nno <silent> <space>ff :Veonim grep-resume<cr>
+    nno <silent> <space>fb :Veonim buffer-search<cr>
+
+    " language features
+    nno <silent> sr :Veonim rename<cr>
+    nno <silent> sd :Veonim definition<cr>
+    nno <silent> si :Veonim implementation<cr>
+    nno <silent> st :Veonim type-definition<cr>
+    nno <silent> sf :Veonim references<cr>
+    nno <silent> sh :Veonim hover<cr>
+    nno <silent> sl :Veonim symbols<cr>
+    nno <silent> so :Veonim workspace-symbols<cr>
+    nno <silent> sq :Veonim code-action<cr>
+    nno <silent> sk :Veonim highlight<cr>
+    nno <silent> sK :Veonim highlight-clear<cr>
+    nno <silent> ,n :Veonim next-usage<cr>
+    nno <silent> ,p :Veonim prev-usage<cr>
+    nno <silent> sp :Veonim show-problem<cr>
+    nno <silent> <c-n> :Veonim next-problem<cr>
+    nno <silent> <c-p> :Veonim prev-problem<cr>
+endif
 " }}}
