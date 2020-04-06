@@ -271,6 +271,17 @@ function! s:defx_my_settings() abort
     nnoremap <silent><buffer><expr> cd
 		\ defx#do_action('change_vim_cwd')
 endfunction
+" Add icon
+call defx#custom#column('icon', {
+      \ 'directory_icon': '▸',
+      \ 'opened_icon': '▾',
+      \ })
+" Set appearance
+call defx#custom#option('_', {
+      \ 'show_ignored_files': 0,
+      \ 'buffer_name': 'defxplorer',
+      \ 'columns': 'icon:indent:icons:filename',
+      \ })
 " }}}
 " fzf-preview {{{
 " Commands used for fzf preview.
