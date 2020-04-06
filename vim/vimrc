@@ -298,6 +298,8 @@ let g:fzf_preview_lines_command = 'bat --color=always --style=grid --theme=ansi-
 let g:fzf_preview_filelist_postprocess_command = 'gxargs -d "\n" exa --color=always'
 
 let g:fzf_preview_use_dev_icons = 1
+
+let g:fzf_preview_preview_key_bindings = 'ctrl-f:page-down,ctrl-b:page-up,ctrl-d:half-page-down,ctrl-u:half-page-up,shift-ctrl-f:preview-page-down,shift-ctrl-u:preview-page-up,?:toggle-preview'
 " }}}
 " SingleCompile {{{
 let g:SingleCompile_showquickfixiferror = 1
