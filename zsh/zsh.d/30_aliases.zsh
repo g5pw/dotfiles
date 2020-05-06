@@ -1,6 +1,9 @@
 ## aliases ####
-if type exec_scmb_expand_args &> /dev/null; then
-    GIT_EXPAND='exec_scmb_expand_args '
+if type scmpuff &> /dev/null; then
+    scm_expand () {
+	eval $(scmpuff expand -- "$@")
+    }
+    GIT_EXPAND='scm_expand '
 fi
 alias c='clear'
 alias calc='nocorrect noglob calc'
