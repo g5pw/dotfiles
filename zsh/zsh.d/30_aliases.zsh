@@ -1,5 +1,5 @@
 ## aliases ####
-if type scmpuff &> /dev/null; then
+if whence scmpuff &> /dev/null; then
     scm_expand () {
 	eval $(scmpuff expand -- "$@")
     }

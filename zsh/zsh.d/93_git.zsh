@@ -11,6 +11,7 @@ alias gashp='git stash pop'
 alias gau='git add -u'
 alias gba='git branch -a'
 alias gbd='git branch -d'
+alias gbr='git branch -r'
 alias gbD='git branch -D'
 alias gb='git branch -vv'
 alias gbl='git blame'
@@ -76,11 +77,6 @@ function git_help_aliases() {
     	alias | grep git | tr '=' '\t' | tr -d "'" | grep "$1"
     fi
 }
-
-zinit ice from"gh-r" as"program" pick"scmpuff_*/scmpuff" atload'eval "$(scmpuff init -s -a=false)"'
-zinit load mroth/scmpuff
-
-alias gs="scmpuff_status"
 
 export forgit_log=gli
 export forgit_diff=gdi
