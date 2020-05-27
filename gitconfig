@@ -41,12 +41,8 @@
 [mergetool "splice"]
     cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
     trustExitCode = true
-
 [interactive]
     diffFilter = delta --color-only
-
-[include]
-    path = "~/.gitconfig.private"
 [diff]
     tool = icdiff
 [difftool]
@@ -74,7 +70,6 @@
 	editor = interactive-rebase-tool
 [diff-so-fancy]
 	stripLeadingSymbols = false
-
 [interactive-rebase-tool]
     autoSelectNext = true
     inputMoveDown = j
@@ -87,3 +82,5 @@
     inputMoveSelectionUp = K
     inputMoveSelectionDown = J
     inputToggleVisualMode = V
+[include]
+    path = "~/.gitconfig.private"
