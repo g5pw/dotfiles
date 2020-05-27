@@ -125,6 +125,10 @@
   '(add-to-list 'forge-alist
                 '("git-ssh.mittelab.org" "git.mittelab.org/api/v4" "git.mittelab.org" forge-gitlab-repository)))
 
+(after! dired
+  (map! :map dired-mode-map
+        :nv "h" 'dired-up-directory
+        :nv "l" 'dired-find-file))
 ;; source: https://github.com/alphapapa/unpackaged.el#smerge-mode
 (use-package! smerge-mode
   :after hydra
