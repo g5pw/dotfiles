@@ -95,12 +95,6 @@
   (map! :leader :desc "Search TODOs keywords" :nve "st" #'ivy-magit-todos))
 
 ;; Set keys
-
-; tildeop
-(map! :leader
-      :nve "fP" 'doom/find-file-in-private-config
-      :nve "fp" '+ivy/projectile-find-file)
-
 (map! :nv "~" 'evil-invert-case
       :nv "C-a" 'evil-numbers/inc-at-pt
       :nv "C-x" 'evil-numbers/dec-at-pt)
@@ -113,9 +107,6 @@
       :desc "Confirm commit" :localleader :nve "," #'with-editor-finish
       :desc "Abort commit"   :localleader :nve "." #'with-editor-cancel)
 
-(unmap! :map doom-leader-workspace-map
-  :nvime "TAB"
-  :nvime "`")
 
 (map! :leader :prefix "TAB"
       :desc "Switch to last workspace" "TAB" #'+workspace/other
