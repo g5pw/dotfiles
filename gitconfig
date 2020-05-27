@@ -8,7 +8,7 @@
     excludesfile = ~/.gitignore
     quotepath = false
     whitespace = trailing-space,space-before-tab
-    pager = diff-so-fancy | less --tabs=4 -RFX
+    pager = emojify | delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
 [color]
     ui = auto
 [format]
@@ -41,6 +41,9 @@
 [mergetool "splice"]
     cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
     trustExitCode = true
+
+[interactive]
+    diffFilter = delta --color-only
 
 [include]
     path = "~/.gitconfig.private"
