@@ -33,14 +33,12 @@ alias l='ls'
 alias l.='ls -a'
 alias ll.='ls -al'
 alias ll='ls -l'
-if type lsd &> /dev/null; then
+if type exa &> /dev/null; then
+    alias ll.='ls -al --git'
+    alias ll='ls -l --git'
+    alias ls='exa -hF --icons --color=auto'
+elif type lsd &> /dev/null; then
     alias ls='lsd -hF --color=auto'
-elif type exa &> /dev/null; then
-    alias l.='exa -a'
-    alias l='exa'
-    alias ll.='exa -al --git'
-    alias ll='exa -l --git'
-    alias ls='exa -hF --color=auto'
 fi
 
 alias lscom="python3 -m serial.tools.list_ports"
