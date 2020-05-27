@@ -16,3 +16,6 @@ zle -N zle-keymap-select
 
 zinit ice wait'!' lucid atload'_p9k_precmd' nocd
 zinit load romkatv/powerlevel10k
+
+
+zinit light ajeetdsouza/zoxide
