@@ -64,6 +64,10 @@
         org-refile-targets (quote ((nil :maxlevel . 2)
                                    (org-agenda-files :maxlevel . 2)))))
 
+(map! :map flyspell-mouse-map
+      "RET"    nil
+      [return] nil)
+
 (after! evil-org
   (remove-hook 'org-tab-first-hook #'+org-cycle-only-current-subtree-h))
 
