@@ -51,7 +51,7 @@
         org-catch-invisible-edits 'show-and-error
         org-list-indent-offset 1
         org-agenda-start-on-weekday 1
-        org-bullets-bullet-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷" "☷" "☷" "☷")
+        org-superstar-headline-bullets-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷" "☷" "☷" "☷")
         org-ellipsis "↴"
         org-return-follows-link t
         org-enforce-todo-dependencies t
