@@ -111,6 +111,8 @@
       :desc "Confirm commit" :localleader :nve "," #'with-editor-finish
       :desc "Abort commit"   :localleader :nve "." #'with-editor-cancel)
 
+(map! :map ivy-minibuffer-map
+      "M-RET" #'ivy-immediate-done)
 
 (map! :leader :prefix "TAB"
       :desc "Switch to last workspace" "TAB" #'+workspace/other
