@@ -1,6 +1,6 @@
-source $ZDOTDIR/zplugin/zplugin.zsh
+source $ZDOTDIR/zinit/zinit.zsh
 
-module_path+=( "$ZDOTDIR/zplugin/zmodules/Src" )
+module_path+=( "$ZDOTDIR/zinit/zmodules/Src" )
 zmodload zdharma/zplugin
 
 # Include files from zsh.d directory

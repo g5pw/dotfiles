@@ -5,5 +5,5 @@
 	path = zsh/zplug
 	url = https://github.com/zplug/zplug
 [submodule "zsh/zplugin"]
-	path = zsh/zplugin
+	path = zsh/zinit
 	url = https://github.com/zdharma/zplugin.git
