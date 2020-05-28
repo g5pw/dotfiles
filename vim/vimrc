@@ -378,6 +378,9 @@ function! g:committia_hooks.edit_open(info)
         startinsert
     endif
 
+    nmap ,, :wq<cr>
+    nmap ,. :cq<cr>
+
     " Scroll the diff window from insert mode
     " Map <C-n> and <C-p>
     imap <buffer><C-n> <Plug>(committia-scroll-diff-down-half)
