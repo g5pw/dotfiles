@@ -6,8 +6,6 @@ transplant=
 progress=
 graphlog=
 gpg=
-hgsubversion=
-hggit=
 [ui]
 username=Aljaž "g5pw" Srebrnič <a2piratesoft@gmail.com>
 
