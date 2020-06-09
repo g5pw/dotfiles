@@ -16,6 +16,8 @@ set commentary
 set easymotion
 set surround
 
+set tildeop
+
 noremap <Space>fs :w<cr>
 noremap <Space>bd :q<cr>
 
