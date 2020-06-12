@@ -41,11 +41,13 @@
 (setq calendar-week-start-day 1)
 
 (after! org
-  (map! :mode org-mode :localleader :desc "Toggle fragment preview" :n "V" #'org-toggle-latex-fragment)
-  (map! :mode org-beamer-mode :localleader
+  (map! :mode org-mode :localleader
+        :desc "Toggle fragment preview" :n "V" #'org-toggle-latex-fragment
         :desc "Export to PDF" :n "P" #'org-beamer-export-to-pdf
-        :desc "Export to PDF and open" :n "O" #'(lambda () (interactive) (org-open-file (org-beamer-export-to-pdf)))
+        :desc "Export to PDF and open" :n "O" #'(lambda () (interactive) (org-open-file (org-beamer-export-to-pdf))))
+  (map! :mode org-beamer-mode :localleader
         :desc "Select environment" :n "E" #'org-beamer-select-environment)
+  (map! :desc "Org Agenda" :leader "A" #'org-agenda-list)
   (add-to-list 'org-file-apps '("\\.pdf" . "zathura %s"))
   (setq org-cycle-separator-lines 0
         org-catch-invisible-edits 'show-and-error
