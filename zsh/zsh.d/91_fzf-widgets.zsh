@@ -56,5 +56,28 @@ fzf-insert-git-sha() {
     __fzf::widget::insert
 }
 
+fzf-fixup-commit() {
+    if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    __fzf::widget::print 'fzf-git-checkout-branch: Not a git repository'
+    return 1
+    fi
+
+    cmd="git show --color=always {2}"
+
+    __fzf::widget::init 'git commit --fixup' || return 1
+
+    git log --graph --color=always --format='%C(auto)%h%d %s %C(black)%C(bold)%cr' | \
+    __fzf::widget::select $FZF_WIDGET_OPTS[git-checkout-branch] +s +m \
+	--ansi \
+	--tiebreak=index \
+	--preview=$cmd | \
+    cut -d' ' -f 2 | \
+    __fzf::widget::insert
+
+    __fzf::widget::exec
+}
+
 zle -N fzf-insert-git-sha
-bindkey "${fzf_widgets_prefix}l"  fzf-insert-git-sha
+zle -N fzf-fixup-commit
+bindkey "${fzf_widgets_prefix}gl"  fzf-insert-git-sha
+bindkey "${fzf_widgets_prefix}gf"  fzf-fixup-commit
