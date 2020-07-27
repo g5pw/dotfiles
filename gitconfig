@@ -88,4 +88,4 @@
 [delta "default"]
     syntax-theme = Monokai Extended
     plus-style = syntax "#c08000"
-    minus-style = normal "#8000b5"
+    minus-style = normal "#7000a4"
