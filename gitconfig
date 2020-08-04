@@ -8,7 +8,7 @@
     excludesfile = ~/.gitignore
     quotepath = false
     whitespace = trailing-space,space-before-tab
-    pager = emojify | delta --dark --preset default
+    pager = emojify | delta
 [color]
     ui = auto
 [format]
@@ -85,7 +85,13 @@
 [include]
     path = "~/.gitconfig.private"
 
+[delta]
+    dark = true
+    features = default
+
 [delta "default"]
-    syntax-theme = Monokai Extended
-    plus-style = syntax "#c08000"
-    minus-style = normal "#7000a4"
+    syntax-theme = Monokai Extended Bright
+    plus-style = syntax "#666600"
+    plus-emph-style = syntax "#888800"
+    minus-style = normal "#6000b5"
+    minus-emph-style = normal "#6033b5"
