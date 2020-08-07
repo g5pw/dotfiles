@@ -21,19 +21,14 @@ Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' } | Plug 'kristijanhusak
 Plug 'tpope/vim-fugitive'
 Plug 'rhysd/committia.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'voldikss/vim-floaterm'
-set  runtimepath+=/opt/local/share/fzf/vim/
-Plug 'yuki-ycino/fzf-preview.vim'
-Plug 'ryanoasis/vim-devicons'
 "}}}
 " Language support {{{
 Plug 'xuhdev/SingleCompile' , {'on': ['SCCompile', 'SCCompileRun', 'SCCCompileRunAsync']}
 Plug 'tpope/vim-ragtag', {'for': 'html'}
 Plug 'mattn/emmet-vim', {'for': 'html'}
 Plug 'lervag/vimtex', {'for': 'tex'}
-Plug 'fmoralesc/vim-pinpoint'
 Plug 'sheerun/vim-polyglot'
-Plug 'jceb/vim-orgmode'
+Plug 'jceb/vim-orgmode', {'for': 'org'}
 " }}}
 " Utilities {{{
 Plug 'dense-analysis/ale'
@@ -41,10 +36,18 @@ Plug 'mhinz/vim-signify'
 Plug 'lambdalisue/suda.vim'
 Plug 'vim-airline/vim-airline'
 " }}}
+" UI {{{
 " Themes {{{
 Plug 'dracula/vim'
 Plug 'tyrannicaltoucan/vim-deep-space'
 Plug 'edkolev/tmuxline.vim'
+" }}}
+" Visual improvements {{{
+Plug 'voldikss/vim-floaterm'
+set  runtimepath+=/opt/local/share/fzf/vim/
+Plug 'yuki-ycino/fzf-preview.vim'
+Plug 'ryanoasis/vim-devicons'
+" }}}
 " }}}
 " TextObjects {{{
 Plug 'kana/vim-textobj-user' | Plug 'glts/vim-textobj-comment' | Plug 'kana/vim-textobj-diff' | Plug 'kana/vim-textobj-function' | Plug 'kana/vim-textobj-line' | Plug 'kana/vim-textobj-underscore'
