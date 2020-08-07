@@ -18,6 +18,7 @@ Plug 'tpope/vim-unimpaired'
 " }}}
 " File System/Integration {{{
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' } | Plug 'kristijanhusak/defx-git' | Plug 'kristijanhusak/defx-icons'
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
 Plug 'tpope/vim-fugitive'
 Plug 'rhysd/committia.vim'
 Plug 'editorconfig/editorconfig-vim'
