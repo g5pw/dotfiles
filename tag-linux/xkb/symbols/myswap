@@ -1,0 +1,4 @@
+partial alphanumeric_keys
+xkb_symbols "swap_tilde_lessthan" {
+    replace key <LSGT> { [ grave, asciitilde, dead_grave, dead_tilde ] };
+};

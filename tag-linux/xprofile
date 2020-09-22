@@ -1,0 +1,13 @@
+#!/bin/sh
+
+[ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
+
+mouse="Kensington      Kensington Expert Mouse"
+
+# Set correct buttons
+xinput set-button-map "$mouse" 1 8 3 4 5 6 7 9 2
+
+[ -r ~/.fehbg ] && sh ~/.fehbg
+
+/usr/bin/xset r rate 200 30
+/usr/bin/xkbcomp -I$HOME/.xkb/ $HOME/.xkb/keymap/mykbd $DISPLAY
