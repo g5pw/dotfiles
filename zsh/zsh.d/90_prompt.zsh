@@ -15,3 +15,6 @@ function zle-keymap-select {
 zle -N zle-keymap-select
 
 zinit light ajeetdsouza/zoxide
+
+zinit ice autoload'#manydots-magic'
+zinit load knu/zsh-manydots-magic

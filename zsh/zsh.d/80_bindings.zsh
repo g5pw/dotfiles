@@ -22,17 +22,6 @@ bindkey '^Z'   predict-toggle
 zstyle ':predict' verbose true
 zstyle ':predict' cursor key
 
-# Rationalize dot in CD command
-rationalise-dot() {
-  if [[ $LBUFFER = *.. ]]; then
-    LBUFFER+=/..
-  else
-    LBUFFER+=.
-  fi
-}
-zle -N rationalise-dot
-bindkey . rationalise-dot
-
 # run command line as user root via sudo:
 function sudo-command-line () {
     [[ -z $BUFFER ]] && zle up-history
