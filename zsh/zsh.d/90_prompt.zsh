@@ -16,5 +16,12 @@ zle -N zle-keymap-select
 
 zinit light ajeetdsouza/zoxide
 
+zinit ice trackbinds bindmap'\e[1\;6D -> ^j; \e[1\;6C -> ^k' pick'dircycle.zsh'
+zinit load michaelxmcbride/zsh-dircycle
+
 zinit ice autoload'#manydots-magic'
 zinit load knu/zsh-manydots-magic
+
+zinit ice pick'autopair.zsh' nocompletions \
+    atload'bindkey "^H" backward-kill-word; ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(autopair-insert)'
+zinit load hlissner/zsh-autopair
