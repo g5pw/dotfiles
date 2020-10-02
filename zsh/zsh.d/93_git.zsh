@@ -85,5 +85,5 @@ export forgit_restore=gci
 export FORGIT_COPY_CMD="xclip -i -selection clipboard"
 zinit load wfxr/forgit
 
-zinit ice from"gh-r" as"program" bpick"*x86_64*linux-gnu*" pick"delta*/delta"
+zinit ice from"gh-r" as"program" pick"delta*/delta"
 zinit light dandavison/delta

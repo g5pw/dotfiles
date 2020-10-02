@@ -22,6 +22,5 @@ zinit load michaelxmcbride/zsh-dircycle
 zinit ice autoload'#manydots-magic'
 zinit load knu/zsh-manydots-magic
 
-zinit ice pick'autopair.zsh' nocompletions \
-    atload'bindkey "^H" backward-kill-word; ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(autopair-insert)'
+zinit ice pick'autopair.zsh' nocompletions
 zinit load hlissner/zsh-autopair
