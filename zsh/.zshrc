@@ -29,3 +29,5 @@ autoload -U zargs
 
 source ~/.config/broot/launcher/bash/br
 
+zinit ice from"gh-r" as"program" pick"mdcat*/mdcat"
+zinit light lunaryorn/mdcat
