@@ -16,7 +16,7 @@ zle -N zle-keymap-select
 
 zinit light ajeetdsouza/zoxide
 
-zinit ice trackbinds bindmap'\e[1\;6D -> ^j; \e[1\;6C -> ^k' pick'dircycle.zsh'
+zinit ice trackbinds bindmap'\e[1\;6D -> \\e[1\;5A; \e[1\;6C -> \\e[1\;5B' pick'dircycle.zsh'
 zinit load michaelxmcbride/zsh-dircycle
 
 zinit ice autoload'#manydots-magic'
