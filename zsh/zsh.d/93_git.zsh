@@ -29,6 +29,8 @@ alias gcob='git checkout -b'
 alias gco='git checkout'
 alias gcop='git checkout --patch'
 alias gcp='git cherry-pick'
+alias gcpc='git cherry-pick --continue'
+alias gcpa='git cherry-pick --abort'
 alias gcv='git commit --verbose'
 alias gdc='git diff --cached --'
 alias gd='git diff --'
@@ -82,8 +84,20 @@ export forgit_diff=gdi
 export forgit_add=gai
 export forgit_stash_show=gssi
 export forgit_restore=gci
+export forgit_cherry_pick=gcpi
+
 export FORGIT_COPY_CMD="xclip -i -selection clipboard"
 zinit load wfxr/forgit
+
+FORGIT_STASH_FZF_OPTS='
+--bind="ctrl-shift-d:reload(git stash drop $(cut -d: -f1 <<<{}) 1>/dev/null && git stash list)"
+'
+FORGIT_LOG_FZF_OPTS='
+--bind="ctrl-e:execute(echo {} |grep -Eo [a-f0-9]+ |head -1 |xargs git show |vim -)"
+'
+FORGIT_ADD_FZF_OPTS='
+--bind="ctrl-t:execute(git add --patch {3} < /dev/tty > /dev/tty 2>&1)"
+'
 
 zinit ice from"gh-r" as"program" pick"delta*/delta"
 zinit light dandavison/delta
