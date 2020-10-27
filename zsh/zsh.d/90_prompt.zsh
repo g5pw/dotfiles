@@ -20,7 +20,7 @@ zinit ice trackbinds bindmap'\e[1\;6D -> \\e[1\;5A; \e[1\;6C -> \\e[1\;5B' pick'
 zinit load michaelxmcbride/zsh-dircycle
 
 zinit ice autoload'#manydots-magic'
-zinit load knu/zsh-manydots-magic
+zinit light knu/zsh-manydots-magic
 
 zinit ice pick'autopair.zsh' nocompletions
-zinit load hlissner/zsh-autopair
+zinit light hlissner/zsh-autopair
