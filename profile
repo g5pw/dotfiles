@@ -28,6 +28,7 @@ deluxe_prepend_to_path() {
 deluxe_prepend_to_path "$HOME/.cabal/bin"
 deluxe_prepend_to_path "$HOME/.cargo/bin"
 deluxe_prepend_to_path "$HOME/.go/bin"
+deluxe_prepend_to_path "$HOME/.npm-global/bin"
 
 deluxe_prepend_to_path "$HOME/.local/bin"
 
