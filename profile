@@ -21,7 +21,8 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
 deluxe_prepend_to_path() {
-	[[ -d $1 ]] && export PATH="$1:${PATH}"
+    [ -d "$1" ] || return 255
+    [[ ":$PATH:" != *":$1:"* ]] && PATH="$1:${PATH}"
 }
 
 deluxe_prepend_to_path "$HOME/.cabal/bin"
