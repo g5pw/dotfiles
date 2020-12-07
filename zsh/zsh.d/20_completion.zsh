@@ -1,9 +1,6 @@
 autoload -U compinit && compinit
 zmodload -i zsh/complist
 
-zinit load zsh-users/zsh-completions
-zinit load greymd/docker-zsh-completion
-
 # Completion options
 zstyle ':completion:*' completer _expand _complete _approximate:-one _ignored \
 				_correct _approximate:-many _prefix _history
@@ -114,3 +111,9 @@ zstyle ':completion:*:-command-:*:(commands|builtins|reserved-words-aliases)' gr
 
 # Separate matches into groups
 zstyle ':completion:*:matches' group 'yes'
+
+zinit wait lucid light-mode for \
+	zsh-users/zsh-completions \
+	as"completion" \
+		OMZ::plugins/docker/_docker \
+		OMZ::plugins/composer/composer.plugin.zsh

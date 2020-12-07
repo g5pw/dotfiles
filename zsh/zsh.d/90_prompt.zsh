@@ -14,13 +14,8 @@ function zle-keymap-select {
 
 zle -N zle-keymap-select
 
-zinit light ajeetdsouza/zoxide
-
-zinit ice trackbinds bindmap'\e[1\;6D -> \\e[1\;5A; \e[1\;6C -> \\e[1\;5B' pick'dircycle.zsh'
-zinit load michaelxmcbride/zsh-dircycle
-
-zinit ice autoload'#manydots-magic'
-zinit light knu/zsh-manydots-magic
-
-zinit ice pick'autopair.zsh' nocompletions
-zinit light hlissner/zsh-autopair
+zinit wait lucid for \
+    ajeetdsouza/zoxide \
+    pick"manydots-magic" compile"manydots-magic" knu/zsh-manydots-magic \
+    trackbinds bindmap'\e[1\;6D -> \\e[1\;5A; \e[1\;6C -> \\e[1\;5B' pick'dircycle.zsh' michaelxmcbride/zsh-dircycle \
+    pick'autopair.zsh' nocompletions hlissner/zsh-autopair
