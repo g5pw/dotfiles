@@ -35,6 +35,7 @@ deluxe_prepend_to_path "$HOME/.local/bin"
 # Use GNU utils if possible
 deluxe_prepend_to_path /opt/local/libexec/gnubin
 deluxe_prepend_to_path /opt/local/libexec/perl5.12
+deluxe_prepend_to_path "$HOME/.emacs.d/bin"
 
 unset -f deluxe_prepend_to_path
 
