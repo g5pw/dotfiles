@@ -62,7 +62,7 @@
                                       "|"
                                       "DONE(d)" "DELEGATED(l)" "CANCELED(c)"))
         org-latex-create-formula-image-program 'dvipng
-        org-latex-packages-alist '(("" "siunitx" t))
+        org-latex-packages-alist '(("binary-units" "siunitx" t))
         org-refile-targets (quote ((nil :maxlevel . 2)
                                    (org-agenda-files :maxlevel . 2)))))
 
