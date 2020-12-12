@@ -113,7 +113,10 @@ zstyle ':completion:*:-command-:*:(commands|builtins|reserved-words-aliases)' gr
 zstyle ':completion:*:matches' group 'yes'
 
 zinit wait lucid light-mode for \
+	OMZP::kubectl \
 	zsh-users/zsh-completions \
 	as"completion" \
-		OMZ::plugins/docker/_docker \
-		OMZ::plugins/composer/composer.plugin.zsh
+		OMZP::docker/_docker \
+		OMZP::composer/composer.plugin.zsh
+
+which kubectl &>/dev/null && source <(kubectl completion zsh)
