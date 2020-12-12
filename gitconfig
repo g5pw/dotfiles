@@ -1,7 +1,7 @@
 [init]
     templatedir = ~/.git-template
 [user]
-    email = a2piratesoft@gmail.com
+    email = me@g5pw.me
     name = Aljaž \"g5pw\" Srebrnič
     signingkey = 0x84C9DBC8F265A116
 [core]
@@ -95,3 +95,8 @@
     plus-emph-style = syntax "#888800"
     minus-style = normal "#6000b5"
     minus-emph-style = normal "#6033b5"
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
