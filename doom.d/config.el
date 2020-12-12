@@ -38,6 +38,7 @@
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("/views/.*\\.php\\'" . web-mode))
 
+; Starts week on Monday
 (setq calendar-week-start-day 1)
 
 (after! org
@@ -47,12 +48,11 @@
         :desc "Export to PDF and open" :n "O" #'(lambda () (interactive) (org-open-file (org-beamer-export-to-pdf))))
   (map! :mode org-beamer-mode :localleader
         :desc "Select environment" :n "E" #'org-beamer-select-environment)
-  (map! :desc "Org Agenda" :leader "A" #'org-agenda-list)
   (add-to-list 'org-file-apps '("\\.pdf" . "zathura %s"))
   (setq org-cycle-separator-lines 0
         org-catch-invisible-edits 'show-and-error
         org-list-indent-offset 1
-        org-agenda-start-on-weekday 1
+        org-list-demote-modify-bullet '(("+" . "-") ("-" . "+") ("*" . "+"))
         org-superstar-headline-bullets-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷" "☷" "☷" "☷")
         org-ellipsis "↴"
         org-return-follows-link t
@@ -66,16 +66,21 @@
         org-refile-targets (quote ((nil :maxlevel . 2)
                                    (org-agenda-files :maxlevel . 2)))))
 
-(map! :map flyspell-mouse-map
-      "RET"    nil
-      [return] nil)
-
 (after! evil-org
   (remove-hook 'org-tab-first-hook #'+org-cycle-only-current-subtree-h))
 
 (use-package! org-super-agenda
   :after org-agenda
   :init
+  (map! :desc "Org Agenda" :leader "A" #'org-agenda-list)
+  (setq org-agenda-skip-scheduled-if-done t
+        org-agenda-skip-deadline-if-done t
+        org-agenda-include-deadlines t
+        org-agenda-block-separator nil
+        org-agenda-compact-blocks t
+        org-agenda-start-day nil ;; i.e. today
+        org-agenda-span 2
+        org-agenda-start-on-weekday 1)
   (setq org-super-agenda-groups
         '((:name "Next actions"  ; Optionally specify section name
                  :time-grid t  ; Items that appear on the time grid
@@ -101,11 +106,11 @@
   (map! :leader :desc "Search TODOs keywords" :nve "st" #'ivy-magit-todos))
 
 ;; Set keys
-(map! :nv "~" 'evil-invert-case
-      :nv "C-a" 'evil-numbers/inc-at-pt
-      :nv "C-x" 'evil-numbers/dec-at-pt)
+(map! :nv "~" #'evil-invert-case
+      :nv "C-a" #'evil-numbers/inc-at-pt
+      :nv "C-x" #'evil-numbers/dec-at-pt)
 
-(map! :n "-" 'dired-jump)
+(map! :n "-" #'dired-jump)
 
 (map! :mode prog-mode :desc "Open header file" :localleader :nve "f" #'ff-find-other-file)
 
