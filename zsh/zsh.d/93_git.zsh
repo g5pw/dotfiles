@@ -85,6 +85,7 @@ export forgit_add=gai
 export forgit_stash_show=gssi
 export forgit_restore=gci
 export forgit_cherry_pick=gcpi
+export forgit_rebase=gri
 
 export FORGIT_COPY_CMD="xclip -i -selection clipboard"
 zinit load wfxr/forgit
