@@ -17,3 +17,6 @@
 ;; Tools
 (package! magit-lfs)
 (package! magit-todos)
+
+(when (package! org)
+  (package! ox-ssh))

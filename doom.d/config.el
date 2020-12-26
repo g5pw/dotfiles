@@ -138,6 +138,18 @@
   (map! :map dired-mode-map
         :nv "h" 'dired-up-directory
         :nv "l" 'dired-find-file))
+(use-package! ox-ssh 
+	      :ensure t
+	      :after org
+              :config
+              (setq org-ssh-header "IgnoreUnknown AddKeysToAgent,UseKeychain
+Match host * exec \"gpg-connect-agent UPDATESTARTUPTTY /bye\"
+
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+"))
+
 ;; source: https://github.com/alphapapa/unpackaged.el#smerge-mode
 (use-package! smerge-mode
   :after hydra
