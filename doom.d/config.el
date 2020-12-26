@@ -18,12 +18,14 @@
 
 (setq display-line-numbers-type 'visual)
 
-(setq ibuffer-group-buffers-by "projects")
+(after! ibuffer
+  (setq ibuffer-group-buffers-by "projects"))
 
 (setq ispell-dictionary "italiano")
 
 ; Lets me type special combining characters
-(setq mac-right-option-modifier nil)
+(if IS-MAC
+    (setq mac-right-option-modifier nil))
 
 (after! tex
   (setq-default TeX-master nil)
