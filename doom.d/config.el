@@ -51,7 +51,8 @@
   (map! :mode org-beamer-mode :localleader
         :desc "Select environment" :n "E" #'org-beamer-select-environment)
   (add-to-list 'org-file-apps '("\\.pdf" . "zathura %s"))
-  (setq org-cycle-separator-lines 0
+  (setq org-archive-location "./archive/%s::"
+        org-cycle-separator-lines 0
         org-catch-invisible-edits 'show-and-error
         org-list-indent-offset 1
         org-list-demote-modify-bullet '(("+" . "-") ("-" . "+") ("*" . "+"))
