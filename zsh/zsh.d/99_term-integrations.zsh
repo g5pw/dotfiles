@@ -10,6 +10,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # Kitty
 which kitty &>/dev/null && kitty + complete setup zsh | source /dev/stdin
 
+# emacs-vterm
 vterm_printf(){
     if [ -n "$TMUX" ]; then
         # Tell tmux to pass the escape sequences through
