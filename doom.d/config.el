@@ -138,6 +138,10 @@
   (map! :map dired-mode-map
         :nv "h" 'dired-up-directory
         :nv "l" 'dired-find-file))
+
+(use-package! gitlab-ci-mode
+  :mode "\\.gitlab-ci\\.yml$")
+
 (use-package! ox-ssh 
 	      :ensure t
 	      :after org

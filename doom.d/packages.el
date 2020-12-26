@@ -6,9 +6,7 @@
 ;; (package! another-package :recipe (:host github :repo "username/repo"))
 ;; (package! builtin-package :disable t)
 
-
 (package! evil-terminal-cursor-changer)
-(package! platformio-mode)
 
 (package! org-super-agenda)
 (package! org-ql)
@@ -17,6 +15,13 @@
 ;; Tools
 (package! magit-lfs)
 (package! magit-todos)
+
+;; Languages
+(package! json-navigator)
+(package! platformio-mode)
+(package! dokuwiki-mode)
+
+(package! gitlab-ci-mode)
 
 (when (package! org)
   (package! ox-ssh))
