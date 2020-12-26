@@ -128,6 +128,8 @@
       :desc "Switch to last workspace" "TAB" #'+workspace/other
       :desc "Display tab bar"          "`"   #'+workspace/display)
 
+(map! :desc "Minimize/suspend frame" :leader :nv "qm" #'suspend-frame)
+
 (after! forge
   '(add-to-list 'forge-alist
                 '("git-ssh.mittelab.org" "git.mittelab.org/api/v4" "git.mittelab.org" forge-gitlab-repository)))
