@@ -5,9 +5,20 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source $ZDOTDIR/zinit/zinit.zsh
+if [[ ! -d $ZDOTDIR/.zinit/bin ]]; then
+  printf "zinit not found. install? [Y/n] "
+  if read -q response; then
+    curl -L https://github.com/zdharma/zinit/raw/master/doc/install.sh | sh
+    source $ZDOTDIR/.zinit/bin/zinit.zsh
+    zinit module build
+  else
+    return
+  fi
+fi
 
-module_path+=( "$ZDOTDIR/zinit/zmodules/Src" )
+source $ZDOTDIR/.zinit/bin/zinit.zsh
+
+module_path+=( "$ZDOTDIR/.zinit/bin/zmodules/Src" )
 zmodload zdharma/zplugin
 
 zinit ice depth=1; zinit light romkatv/powerlevel10k

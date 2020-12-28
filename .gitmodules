@@ -1,9 +1,0 @@
-[submodule "zplug"]
-	path = zplug
-	url = https://github.com/zplug/zplug
-[submodule "zsh/zplug"]
-	path = zsh/zplug
-	url = https://github.com/zplug/zplug
-[submodule "zsh/zplugin"]
-	path = zsh/zinit
-	url = https://github.com/zdharma/zplugin.git
