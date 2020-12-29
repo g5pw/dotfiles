@@ -43,13 +43,14 @@
 ; Starts week on Monday
 (setq calendar-week-start-day 1)
 
+
 (after! org
+  (map! :map org-beamer-mode-map :localleader
+        :desc "Export to PDF" :n "P" #'org-beamer-export-to-pdf
+        :desc "Select environment" :n "sE" #'org-beamer-select-environment)
   (map! :mode org-mode :localleader
         :desc "Toggle fragment preview" :n "V" #'org-toggle-latex-fragment
-        :desc "Export to PDF" :n "P" #'org-beamer-export-to-pdf
         :desc "Export to PDF and open" :n "O" #'(lambda () (interactive) (org-open-file (org-beamer-export-to-pdf))))
-  (map! :mode org-beamer-mode :localleader
-        :desc "Select environment" :n "E" #'org-beamer-select-environment)
   (add-to-list 'org-file-apps '("\\.pdf" . "zathura %s"))
   (setq org-archive-location "./archive/%s::"
         org-cycle-separator-lines 0
