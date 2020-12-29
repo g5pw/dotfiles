@@ -9,3 +9,5 @@ zinit load zdharma/history-search-multi-word
 
 # Python
 zinit light andydecleyre/zpy
+
+zinit light b4b4r07/emoji-cli
