@@ -1,23 +1,31 @@
-if [[ ! -d $ZDOTDIR/.zinit/bin ]]; then
-  printf "zinit not found. install? [Y/n] "
-  if read -q response; then
-    curl -L https://github.com/zdharma/zinit/raw/master/doc/install.sh | sh
-    source $ZDOTDIR/.zinit/bin/zinit.zsh
-    zinit module build
-  else
-    return
-  fi
-fi
-
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+if [[ ! -f ${ZDOTDIR:-$HOME}/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    command mkdir -p "${ZDOTDIR:-$HOME}/.zinit" && command chmod g-rwX "${ZDOTDIR:-$HOME}/.zinit"
+    command git clone https://github.com/zdharma/zinit "${ZDOTDIR:-$HOME}/.zinit/bin" && \\
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \\
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
 
 source $ZDOTDIR/.zinit/bin/zinit.zsh
 
 module_path+=( "$ZDOTDIR/.zinit/bin/zmodules/Src" )
 zmodload zdharma/zplugin
+
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+#
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zinit-zsh/z-a-rust \
+    zinit-zsh/z-a-as-monitor \
+    zinit-zsh/z-a-patch-dl \
+    zinit-zsh/z-a-bin-gem-node
+
 
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
