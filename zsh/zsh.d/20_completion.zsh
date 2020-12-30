@@ -117,6 +117,5 @@ zinit wait lucid light-mode for \
 	zsh-users/zsh-completions \
 	as"completion" \
 		OMZP::docker/_docker \
+		OMZP::kubectl \
 		OMZP::composer/composer.plugin.zsh
-
-which kubectl &>/dev/null && source <(kubectl completion zsh)
