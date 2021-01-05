@@ -18,15 +18,18 @@ set surround
 
 set tildeop
 
-noremap <Space>fs :w<cr>
+noremap <silent> <Space>fs :w<cr>
 noremap <Space>bd :q<cr>
 
 noremap <silent> <Space>r :action Refactorings.QuickListPopupAction<cr>
 noremap <silent> <Space>gh :action CIDR.Lang.SwitchHeaderSource<cr>
 noremap <silent> <Space>fu :action FindUsagesMenuGroup<cr>
-noremap <silent> <Space>fo :action OverrideMethods<cr>
-noremap <silent> <Space>fi :action ImplementMethods<cr>
-noremap <silent> <Space>fs :action ChangeSignature<cr>
-noremap <silent> <Space>fr :action RenameElement<cr>
-noremap <silent> <Space>sm :action osmedile.intellij.stringmanip.SwitchCasePopup<cr>
+noremap <silent> <Space>fc :action GotoClass<cr>
+noremap <silent> <Space>ff :action GotoFile<cr>
+noremap <silent> <Space>fr :action GotoFile<cr>
+noremap <silent> <Space>cmo :action OverrideMethods<cr>
+noremap <silent> <Space>cmi :action ImplementMethods<cr>
+noremap <silent> <Space>cs :action ChangeSignature<cr>
+noremap <silent> <Space>cr :action RenameElement<cr>
+noremap <silent> <Space>cc :action osmedile.intellij.stringmanip.SwitchCasePopup<cr>
 noremap <silent> <Space>sc :nohlsearch<cr>
