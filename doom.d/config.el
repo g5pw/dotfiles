@@ -52,19 +52,20 @@
         :desc "Toggle fragment preview" :n "V" #'org-toggle-latex-fragment
         :desc "Export to PDF and open" :n "O" #'(lambda () (interactive) (org-open-file (org-beamer-export-to-pdf))))
   (add-to-list 'org-file-apps '("\\.pdf" . "zathura %s"))
-  (setq org-archive-location "./archive/%s::"
+  (setq org-archive-location "./archive/%s_archive::"
         org-cycle-separator-lines 0
         org-catch-invisible-edits 'show-and-error
         org-list-indent-offset 1
         org-list-demote-modify-bullet '(("+" . "-") ("-" . "+") ("*" . "+"))
         org-superstar-headline-bullets-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷" "☷" "☷" "☷")
+        org-startup-folded 'content
         org-ellipsis "↴"
         org-return-follows-link t
         org-enforce-todo-dependencies t
         org-enforce-todo-checkbox-dependencies t
         org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "STARTED(s)" "WAITING(w)"
                                       "|"
-                                      "DONE(d)" "DELEGATED(l)" "CANCELED(c)"))
+                                      "DONE(d)" "DELEGATED(l)" "CANCELED(c)" "DEFERRED(f)"))
         org-latex-create-formula-image-program 'dvipng
         org-latex-packages-alist '(("binary-units" "siunitx" t))
         org-refile-targets (quote ((nil :maxlevel . 2)
