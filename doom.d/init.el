@@ -170,9 +170,11 @@
         ;;+hugo            ; use Emacs for hugo blogging
         +journal
         +jupyter         ; ipython/jupyter support for babel
+        ;;+noter
         +pandoc          ; export-with-pandoc support
         +pomodoro        ; be fruitful with the tomato technique
         +present        ; using org-mode for presentations
+        +pretty
         ;+roam
         )
        ;;perl              ; write code no one else can comprehend
