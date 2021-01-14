@@ -10,12 +10,12 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-set $Locker i3lock-fancy
+set $Locker i3lock
 set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Iosevka 9
+font pango:Iosevka Fixed SS09 9
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -32,18 +32,21 @@ font pango:Iosevka 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 bindsym $mod+Shift+Return exec fman
 
 # kill focused window
-bindsym $mod+Shift+c kill
+bindsym $mod+q kill
+
+bindsym $mod+n nop kitti3
 
 # start dmenu (a program launcher)
 # bindsym $mod+p exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+p exec --no-startup-id albert show
+bindsym $mod+p exec --no-startup-id ulauncher-toggle
+#bindsym $mod+p exec --no-startup-id rofi -show run
 bindsym $mod+t exec --no-startup-id tmux-open
 
 # change focus
@@ -123,9 +126,9 @@ bindsym Control+Alt+j workspace next
 bindsym $mod+g mode "goto"
 
 # reload the configuration file
-bindsym $mod+Shift+q restart
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+q restart
 
 bindsym $mod+z move workspace to output right
 
@@ -189,7 +192,7 @@ bindsym $mod+x [urgent=latest] focus
 bar {
         mode hide
         status_command i3status
-        tray_output DVI-0
+        tray_output DVI-D-0
         position top
         colors {
             background #282A36
@@ -210,20 +213,18 @@ for_window[class="Zeal"] floating enable, border normal
 for_window[class="copyq"] floating enable, border normal
 for_window[class="^jetbrains-toolbox$"] floating enable, border normal
 
-exec_always ~/.config/i3/per-workspace-layout.pl
-
-exec --no-startup-id ~/.xprofile
-
-exec --no-startup-id /usr/bin/zeal
-exec --no-startup-id /usr/bin/copyq
-exec --no-startup-id /usr/bin/nextcloud --background
-exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
-
-exec --no-startup-id i3-msg 'exec /usr/bin/emacs'
-exec --no-startup-id i3-msg 'exec /usr/bin/firefox'
-exec --no-startup-id i3-msg 'exec /usr/bin/thunderbird'
-
 assign [class="Emacs"] 1
 assign [class="Firefox"] 3
-assign [class="^jetbrains-"] 8
-assign [class="Thunderbird"] 9
+assign [class="^jetbrains-"window_type="normal"] 8
+assign [class="Thunderbird"] 10
+
+exec_always --no-startup-id ~/.xprofile
+exec_always --no-startup-id kitti3 -p bottom
+
+exec_always ~/.config/i3/scripts/gnome-keyring.sh
+
+# i3-gnome stuff
+exec --no-startup-id /usr/lib/gsd-xsettings
+exec_always --no-startup-id gnome-power-manager
+exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
+exec --no-startup-id gnome-flashback
