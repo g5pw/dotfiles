@@ -11,7 +11,7 @@ export PROMPT_EOL_MARK='%K{red} %k'
 zinit wait lucid for \
     ajeetdsouza/zoxide \
     pick"manydots-magic" compile"manydots-magic" knu/zsh-manydots-magic \
-    trackbinds bindmap'\e[1\;6D -> \\e[1\;5A; \e[1\;6C -> \\e[1\;5B' pick'dircycle.zsh' michaelxmcbride/zsh-dircycle \
+    OMZP::dircycle/dircycle.plugin.zsh \
     pick'autopair.zsh' nocompletions hlissner/zsh-autopair
 
 # fish-like history search
@@ -25,3 +25,6 @@ bindkey "\e[B" history-substring-search-down
 # bind k and j for VI mode
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
+
+bindkey "\e[1;5A" insert-cycledleft
+bindkey "\e[1;5B" insert-cycledright
