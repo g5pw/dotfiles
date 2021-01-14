@@ -8,12 +8,6 @@ export ZCALCPROMPT="$FX[bold]$FG[208]%1v$FX[no-bold]$FG[111] ⫸ $FX[reset] "
 
 export PROMPT_EOL_MARK='%K{red} %k'
 
-function zle-keymap-select {
-    zle reset-prompt
-}
-
-zle -N zle-keymap-select
-
 zinit wait lucid for \
     ajeetdsouza/zoxide \
     pick"manydots-magic" compile"manydots-magic" knu/zsh-manydots-magic \
