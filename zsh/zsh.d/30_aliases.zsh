@@ -62,8 +62,6 @@ alias vi="$GIT_EXPAND$EDITOR"
 alias view="$GIT_EXPAND$EDITOR -R"
 alias vim="$GIT_EXPAND$EDITOR"
 alias t="${GIT_EXPAND}tig"
-alias ta="tmux attach-session -t"
-alias tn="tmux new-session -s"
 
 # TaskWarrior aliases
 if which task &> /dev/null; then
