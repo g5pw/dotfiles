@@ -91,7 +91,7 @@ export FORGIT_COPY_CMD="xclip -i -selection clipboard"
 zinit load wfxr/forgit
 
 FORGIT_STASH_FZF_OPTS='
---bind="ctrl-shift-d:reload(git stash drop $(cut -d: -f1 <<<{}) 1>/dev/null && git stash list)"
+--bind="ctrl-alt-d:reload(git stash drop $(cut -d: -f1 <<<{}) 1>/dev/null && git stash list)"
 '
 FORGIT_LOG_FZF_OPTS='
 --bind="ctrl-e:execute(echo {} |grep -Eo [a-f0-9]+ |head -1 |xargs git show |vim -)"
