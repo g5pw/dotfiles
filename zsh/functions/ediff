@@ -1,0 +1,15 @@
+#!/usr/bin/env zsh
+
+function ediff() {
+    if [ -z $1 ] || [ -z $2 ]; then
+    	echo "Usage: $0 <file|dir> <file|dir>"
+    	exit 255
+    fi
+
+    if [ -d $1 ] && [ -d $2 ]; then
+    	 emacsclient -a '' -u --eval "(ediff-directories \"$1\" \"$2\")"
+     else
+    	 emacsclient -a '' -u --eval "(ediff-files \"$1\" \"$2\")"
+    fi
+
+}
