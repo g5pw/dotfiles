@@ -69,7 +69,7 @@ alias gsm='git show --summary'
 alias gss='git stash'
 alias gssp='git stash pop'
 alias gt='git tag'
-alias gh='git_help_aliases'
+alias ghelp='git_help_aliases'
 
 function git_help_aliases() {
     if [ -z $1 ]; then
@@ -99,6 +99,10 @@ FORGIT_LOG_FZF_OPTS='
 FORGIT_ADD_FZF_OPTS='
 --bind="ctrl-t:execute(git add --patch {3} < /dev/tty > /dev/tty 2>&1)"
 '
+
+if type gh &>/dev/null; then
+		gh completion -s zsh > $ZDOTDIR/functions/_gh
+fi
 
 zinit ice from"gh-r" as"program" pick"delta*/delta"
 zinit light dandavison/delta
