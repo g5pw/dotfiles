@@ -286,7 +286,7 @@ call defx#custom#column('icon', {
       \ })
 " Set appearance
 call defx#custom#option('_', {
-      \ 'show_ignored_files': 0,
+      \ 'ignored_files': '.git,*.zwc,*.pyc,*.o',
       \ 'buffer_name': 'defxplorer',
       \ 'columns': 'icon:indent:icons:filename',
       \ })
