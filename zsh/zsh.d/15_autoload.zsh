@@ -39,18 +39,6 @@ zle -N incremental-complete-word
 autoload -U insert-files
 zle -N insert-files
 
-## This set of functions implements a sort of magic history searching.
-## After predict-on, typing characters causes the editor to look backward
-## in the history for the first line beginning with what you have typed so
-## far.  After predict-off, editing returns to normal for the line found.
-## In fact, you often don't even need to use predict-off, because if the
-## line doesn't match something in the history, adding a key performs
-## standard completion - though editing in the middle is liable to delete
-## the rest of the line.
-autoload -U predict-on
-zle -N predict-on
-zle -N predict-off
-
 # Enable Ctrl-x-e to edit command line
 autoload -U edit-command-line
 # # Vi style:
