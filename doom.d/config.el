@@ -98,6 +98,26 @@
 (use-package! evil-terminal-cursor-changer
   :unless window-system
   :config (evil-terminal-cursor-changer-activate))
+(use-package! org-projectile
+  :config
+  (map! :leader :desc "Add project todo" :nve "pT" #'org-projectile-project-todo-completing-read)
+  (org-projectile-per-project)
+  (setq org-projectile-per-project-filepath "project.org"
+        org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
+  (push (org-projectile-project-todo-entry) org-capture-templates))
+
+(use-package! org-ql
+  :config
+  (map! :leader :desc "org-ql search" :nve "oaq" #'org-ql-search
+        :leader :desc "org-ql views" :nve "oaw" #'org-ql-view)
+  (setq org-ql-views '(("Current projects" :buffer-files org-directory :query
+                        (and
+                         (todo "STARTED")
+                         (category "PROJECT")))
+                       ("Project ideas" :buffer-files org-org-directory :query
+                        (and
+                         (todo "IDEA")
+                         (category "PROJECT"))))))
 
 (use-package! org-sidebar
   :after org

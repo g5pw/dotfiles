@@ -11,6 +11,7 @@
 (package! org-super-agenda)
 (package! org-ql)
 (package! org-sidebar)
+(package! org-projectile)
 
 ;; Tools
 (package! magit-lfs)
