@@ -1,7 +1,6 @@
 #!/usr/bin/env zsh
 
 alias gaa='git add -A'
-alias ga='git add'
 alias gshp='git am --show-current-patch'
 alias gap='git add -p'
 alias gasha='git stash apply'
@@ -81,14 +80,15 @@ function git_help_aliases() {
 
 export forgit_log=gli
 export forgit_diff=gdi
-export forgit_add=gai
+export forgit_add=ga
 export forgit_stash_show=gssi
 export forgit_restore=gci
 export forgit_cherry_pick=gcpi
 export forgit_rebase=gri
 
 export FORGIT_COPY_CMD="xclip -i -selection clipboard"
-zinit load wfxr/forgit
+zinit ice patch"$HOME/.zsh/_patches/remove-git-status.patch"
+zinit light wfxr/forgit
 
 FORGIT_STASH_FZF_OPTS='
 --bind="ctrl-alt-d:reload(git stash drop $(cut -d: -f1 <<<{}) 1>/dev/null && git stash list)"
@@ -97,7 +97,7 @@ FORGIT_LOG_FZF_OPTS='
 --bind="ctrl-e:execute(echo {} |grep -Eo [a-f0-9]+ |head -1 |xargs git show |vim -)"
 '
 FORGIT_ADD_FZF_OPTS='
---bind="ctrl-t:execute(git add --patch {3} < /dev/tty > /dev/tty 2>&1)"
+--bind="ctrl-p:execute(git add --patch {3} < /dev/tty > /dev/tty 2>&1)"
 '
 
 if type gh &>/dev/null; then

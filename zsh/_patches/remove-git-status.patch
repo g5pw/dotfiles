@@ -1,0 +1,13 @@
+diff --git a/forgit.plugin.zsh b/forgit.plugin.zsh
+index 057d142..7ad25ff 100644
+--- a/forgit.plugin.zsh
++++ b/forgit.plugin.zsh
+@@ -57,7 +57,7 @@ forgit::diff() {
+ forgit::add() {
+     forgit::inside_work_tree || return 1
+     # Add files if passed as arguments
+-    [[ $# -ne 0 ]] && git add "$@" && git status -su && return
++    [[ $# -ne 0 ]] && git add "$@" && return
+ 
+     local changed unmerged untracked files opts preview extract
+     changed=$(git config --get-color color.status.changed red)
