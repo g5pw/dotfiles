@@ -57,7 +57,6 @@ alias grb='git rebase'
 alias grbi='git rebase --interactive'
 alias gr='git remote -v'
 alias grm='git rm'
-alias grs='git reset --'
 alias grsh='git reset --hard'
 alias grsl='git reset HEAD~'
 alias grsp='git reset --patch --'
@@ -69,6 +68,10 @@ alias gss='git stash'
 alias gssp='git stash pop'
 alias gt='git tag'
 alias ghelp='git_help_aliases'
+
+function grs() {
+		git reset -q -- "$@" && scmpuff_status
+}
 
 function git_help_aliases() {
     if [ -z $1 ]; then
