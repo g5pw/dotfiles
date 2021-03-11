@@ -51,5 +51,7 @@ function rand() { exec $RANDOM % $1; }
 # Useful command similar to xargs
 autoload -U zargs
 
+zinit ice as'command' lucid wait'1'
+zinit snippet https://github.com/thanks4opensource/buck50/raw/master/build/buck50.py
 
 source ~/.config/broot/launcher/bash/br
