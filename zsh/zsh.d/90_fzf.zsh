@@ -4,6 +4,7 @@ export FZF_DEFAULT_OPTS="
 --bind='ctrl-o:execute(emacsclient -nw {})+abort'
 --bind='ctrl-f:preview-page-down,ctrl-e:preview-down'
 --bind='ctrl-b:preview-page-up,ctrl-y:preview-up'
+--bind='ctrl-p:page-up,ctrl-n:page-down'
 "
 
 # Use ~~ as the trigger sequence instead of the default **

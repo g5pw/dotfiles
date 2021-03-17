@@ -12,7 +12,7 @@ alias gba='git branch -a'
 alias gbd='git branch -d'
 alias gbr='git branch -r'
 alias gbD='git branch -D'
-alias gb='git branch -vv'
+alias gb='git brunch'
 alias gbl='git blame'
 alias gbm='git branch -m'
 alias gca='git_commit_all'
@@ -81,7 +81,7 @@ function git_help_aliases() {
     fi
 }
 
-export forgit_log=gli
+export forgit_log=gl
 export forgit_diff=gdi
 export forgit_add=ga
 export forgit_stash_show=gssi
@@ -107,5 +107,8 @@ if type gh &>/dev/null; then
 		gh completion -s zsh > $ZDOTDIR/functions/_gh
 fi
 
-zinit ice from"gh-r" as"program" pick"delta*/delta"
-zinit light dandavison/delta
+zinit lucid from"gh-r" as"program" for \
+    pick"delta*/delta" dandavison/delta \
+    mv'git-brunch-* -> git-brunch' andys8/git-brunch \
+    extrawurst/gitui
+
