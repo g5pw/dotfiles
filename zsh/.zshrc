@@ -10,14 +10,17 @@ if [[ ! -f ${ZDOTDIR:-$HOME}/.zinit/bin/zinit.zsh ]]; then
         print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
 
-source $ZDOTDIR/.zinit/bin/zinit.zsh
+declare -A ZINIT
+ZINIT[BIN_DIR]="$ZDOTDIR/zinit/bin"
+ZINIT[HOME_DIR]="$ZDOTDIR/zinit"
+source $ZDOTDIR/zinit/bin/zinit.zsh
 
-module_path+=( "$ZDOTDIR/.zinit/bin/zmodules/Src" )
+module_path+=( "$ZDOTDIR/zinit/bin/zmodules/Src" )
 zmodload zdharma/zplugin
 
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
-#
+
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
 zinit light-mode for \
