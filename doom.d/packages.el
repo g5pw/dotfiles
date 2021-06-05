@@ -26,3 +26,6 @@
 
 (when (package! org)
   (package! ox-ssh))
+
+(package! tree-sitter)
+(package! tree-sitter-langs)

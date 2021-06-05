@@ -176,6 +176,11 @@ Host *
   UseKeychain yes
 "))
 
+(use-package! tree-sitter
+  :config
+  (require 'tree-sitter-langs)
+  (global-tree-sitter-mode)
+  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
 ;; source: https://github.com/alphapapa/unpackaged.el#smerge-mode
 (use-package! smerge-mode
   :after hydra
