@@ -12,7 +12,7 @@ alias gba='git branch -a'
 alias gbd='git branch -d'
 alias gbr='git branch -r'
 alias gbD='git branch -D'
-alias gb='git brunch'
+alias gb='git_brunch_or_branch'
 alias gbl='git blame'
 alias gbm='git branch -m'
 alias gca='git_commit_all'
@@ -78,6 +78,14 @@ function git_help_aliases() {
 	alias | grep git | tr '=' '\t' | tr -d "'"
     else
     	alias | grep git | tr '=' '\t' | tr -d "'" | grep "$1"
+    fi
+}
+
+function git_brunch_or_branch() {
+    if [[ ${#@} -gt 0 ]]; then
+        git branch "$@"
+    else
+        git brunch
     fi
 }
 
