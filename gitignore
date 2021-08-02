@@ -48,13 +48,22 @@ Backup[ ]of[ ]*.numbers/
 
 # Binary files
 *.pyc
+/venv
 
 # Source code tag databases
 tags
 TAGS
+GTAGS
 GPATH
 GRTAGS
 .ac-php-conf.json
+/*.tags
+
+
+# Vagrant boxes
+.vagrant/
+
+/cmake-build-*/
 
 # caches
 .mypy_cache/
