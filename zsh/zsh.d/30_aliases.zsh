@@ -62,6 +62,7 @@ alias vi="$GIT_EXPAND$EDITOR"
 alias view="$GIT_EXPAND$EDITOR -R"
 alias vim="$GIT_EXPAND$EDITOR"
 alias t="${GIT_EXPAND}tig"
+alias youtube-dl="noglob youtube-dl"
 
 # TaskWarrior aliases
 if which task &> /dev/null; then
