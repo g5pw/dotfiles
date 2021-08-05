@@ -2,17 +2,18 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-if [[ ! -f ${ZDOTDIR:-$HOME}/.zinit/bin/zinit.zsh ]]; then
+declare -A ZINIT
+ZINIT[BIN_DIR]="$ZDOTDIR/zinit/bin"
+ZINIT[HOME_DIR]="$ZDOTDIR/zinit"
+
+if [[ ! -f ${ZINIT[BIN_DIR]}/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
-    command mkdir -p "${ZDOTDIR:-$HOME}/.zinit" && command chmod g-rwX "${ZDOTDIR:-$HOME}/.zinit"
-    command git clone https://github.com/zdharma/zinit "${ZDOTDIR:-$HOME}/.zinit/bin" && \\
+    command mkdir -p "${ZINIT[HOME_DIR]}" && command chmod g-rwX "${ZINIT[HOME_DIR]}"
+    command git clone https://github.com/zdharma/zinit "${ZINIT[BIN_DIR]}" && \\
         print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \\
         print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
 
-declare -A ZINIT
-ZINIT[BIN_DIR]="$ZDOTDIR/zinit/bin"
-ZINIT[HOME_DIR]="$ZDOTDIR/zinit"
 source $ZDOTDIR/zinit/bin/zinit.zsh
 
 module_path+=( "$ZDOTDIR/zinit/bin/zmodules/Src" )
