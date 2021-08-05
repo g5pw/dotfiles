@@ -84,7 +84,7 @@ function git_help_aliases() {
 }
 
 function git_brunch_or_branch() {
-    if [[ ${#@} -gt 0 ]]; then
+    if [[ $# -ne 0 ]]; then
         git branch "$@"
     else
         git brunch
