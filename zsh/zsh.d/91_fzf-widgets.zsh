@@ -9,7 +9,7 @@ FZF_WIDGET_OPTS[git-checkout-branch]="--preview=git log --oneline --graph --colo
 FZF_WIDGET_OPTS[git-delete-branch]="--preview=git log --oneline --graph --color --decorate=short {1}"
 
 
-fzf-insert-git-sha() {
+fzf-git-insert-git-sha() {
     if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
     __fzf::widget::print 'fzf-git-checkout-branch: Not a git repository'
     return 1
@@ -27,9 +27,9 @@ fzf-insert-git-sha() {
     cut -d' ' -f 2 | \
     __fzf::widget::insert
 }
-zle -N fzf-insert-git-sha
+zle -N fzf-git-insert-git-sha
 
-fzf-fixup-commit() {
+fzf-git-fixup-commit() {
     if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
     __fzf::widget::print 'fzf-git-checkout-branch: Not a git repository'
     return 1
@@ -49,7 +49,7 @@ fzf-fixup-commit() {
 
     __fzf::widget::exec
 }
-zle -N fzf-fixup-commit
+zle -N fzf-git-fixup-commit
 
 local fzf_widgets_prefix="^e"
 
@@ -66,17 +66,17 @@ bindkey "^xd" fzf-insert-directory
 bindkey "^xn" fzf-insert-named-directory
 
 ## Git
-bindkey "${fzf_widgets_prefix}g"  fzf-select-git-widget
+#bindkey "${fzf_widgets_prefix}g"  fzf-select-git-widget
 bindkey "${fzf_widgets_prefix}ga" fzf-git-add-files
 bindkey "${fzf_widgets_prefix}gc" fzf-git-change-repository
-bindkey "${fzf_widgets_prefix}gl"  fzf-insert-git-sha
-bindkey "${fzf_widgets_prefix}gf"  fzf-fixup-commit
+bindkey "${fzf_widgets_prefix}gl" fzf-git-insert-git-sha
+bindkey "${fzf_widgets_prefix}gf" fzf-git-fixup-commit
 bindkey "${fzf_widgets_prefix}b"  fzf-git-checkout-branch
 
 # GitHub
-bindkey "${fzf_widgets_prefix}h"  fzf-select-github-widget
-bindkey "${fzf_widgets_prefix}hs" fzf-github-show-issue
-bindkey "${fzf_widgets_prefix}hc" fzf-github-close-issue
+#bindkey "${fzf_widgets_prefix}h"  fzf-select-github-widget
+#bindkey "${fzf_widgets_prefix}hs" fzf-github-show-issue
+#bindkey "${fzf_widgets_prefix}hc" fzf-github-close-issue
 
 ## Docker
 bindkey "${fzf_widgets_prefix}d"  fzf-select-docker-widget
