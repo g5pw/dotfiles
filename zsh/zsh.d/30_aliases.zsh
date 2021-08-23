@@ -65,6 +65,9 @@ alias t="${GIT_EXPAND}tig"
 alias youtube-dl="noglob youtube-dl"
 alias usql="noglob usql"
 alias uq="usql"
+alias ww="wormhole"
+alias wwpaste="ww receive"
+alias wwcopy="ww send --text -"
 
 # TaskWarrior aliases
 if which task &> /dev/null; then
