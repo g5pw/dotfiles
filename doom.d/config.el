@@ -55,6 +55,9 @@
   (map! :mode org-mode :localleader
         :desc "Toggle fragment preview" :n "V" #'org-toggle-latex-fragment
         :desc "Export to PDF and open" :n "O" #'(lambda () (interactive) (org-open-file (org-beamer-export-to-pdf))))
+  (map! :leader :prefix ("O" . "Org mode")
+        :desc "TODOs" :nve "t" #'org-todo-list
+        :desc "Search" :nve "s" #'org-search-view)
   (add-to-list 'org-file-apps '("\\.pdf" . "zathura %s"))
   (setq org-archive-location "./archive/%s_archive::"
         org-cycle-separator-lines 0
@@ -112,8 +115,9 @@
 
 (use-package! org-ql
   :config
-  (map! :leader :desc "org-ql search" :nve "oaq" #'org-ql-search
-        :leader :desc "org-ql views" :nve "oaw" #'org-ql-view)
+  (map! :leader :prefix "O"
+        :desc "org-ql search" :nve "q" #'org-ql-search
+        :desc "org-ql views" :nve "w" #'org-ql-view))
   (setq org-ql-views '(("Current projects" :buffer-files org-directory :query
                         (and
                          (todo "STARTED")
