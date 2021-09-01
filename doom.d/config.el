@@ -100,6 +100,7 @@
           (:name "Important"
                  :priority "A")))
   :config
+  (setq org-super-agenda-header-map (copy-keymap evil-normal-state-map))
   (org-super-agenda-mode))
 
 (use-package! evil-terminal-cursor-changer
