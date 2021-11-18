@@ -9,7 +9,7 @@ ZINIT[HOME_DIR]="$ZDOTDIR/zinit"
 if [[ ! -f ${ZINIT[BIN_DIR]}/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
     command mkdir -p "${ZINIT[HOME_DIR]}" && command chmod g-rwX "${ZINIT[HOME_DIR]}"
-    command git clone https://github.com/zdharma/zinit "${ZINIT[BIN_DIR]}" && \\
+    command git clone https://github.com/zdharma-continuum/zinit "${ZINIT[BIN_DIR]}" && \\
         print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \\
         print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
@@ -25,10 +25,10 @@ autoload -Uz _zinit
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
 zinit light-mode for \
-    zinit-zsh/z-a-rust \
-    zinit-zsh/z-a-as-monitor \
-    zinit-zsh/z-a-patch-dl \
-    zinit-zsh/z-a-bin-gem-node
+    zdharma-continuum/z-a-rust \
+    zdharma-continuum/z-a-as-monitor \
+    zdharma-continuum/z-a-patch-dl \
+    zdharma-continuum/z-a-bin-gem-node
 
 
 zinit ice depth=1; zinit light romkatv/powerlevel10k
