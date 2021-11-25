@@ -116,6 +116,11 @@ FORGIT_ADD_FZF_OPTS='
 --bind="ctrl-p:execute(git add --patch {3} < /dev/tty > /dev/tty 2>&1)"
 '
 
+FORGIT_DIFF_FZF_OPTS='
+--bind="ctrl-a:execute(git add {2})"
+--bind="ctrl-p:execute(git add --patch {2} < /dev/tty > /dev/tty 2>&1)"
+'
+
 if type gh &>/dev/null; then
 		gh completion -s zsh > $ZDOTDIR/functions/_gh
 fi
