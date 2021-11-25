@@ -189,6 +189,12 @@ Host *
   UseKeychain yes
 "))
 
+(use-package! ssh-tunnels
+  :config
+  (map! :leader :prefix ("os" . "ssh-tunnel")
+        :desc "Kill SSH tunnel" "k" #'ssh-tunnels-kill-tunnel
+        :desc "Run SSH tunnel"  "r" #'ssh-tunnels-run-tunnel))
+
 (use-package! tree-sitter
   :config
   (require 'tree-sitter-langs)

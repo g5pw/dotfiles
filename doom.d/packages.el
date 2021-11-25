@@ -30,3 +30,5 @@
 
 (package! tree-sitter)
 (package! tree-sitter-langs)
+
+(package! ssh-tunnels :recipe (:host github :repo "death/ssh-tunnels"))
