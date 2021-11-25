@@ -16,6 +16,7 @@
 ;; Tools
 (package! magit-lfs)
 (package! magit-todos)
+(package! magit-delta)
 
 ;; Languages
 (package! json-navigator)

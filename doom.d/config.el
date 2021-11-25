@@ -139,6 +139,10 @@
   (magit-todos-mode)
   (map! :leader :desc "Search TODOs keywords" :nve "st" #'ivy-magit-todos))
 
+(use-package! magit-delta
+  :after magit
+  :hook (magit-mode . magit-delta-mode))
+
 ;; Set keys
 (map! :nv "~" #'evil-invert-case
       :nv "C-a" #'evil-numbers/inc-at-pt
