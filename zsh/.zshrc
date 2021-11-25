@@ -42,7 +42,10 @@ prompt_my_docker_context () {
 	p10k segment -i '' -f blue -t "$docker_context"
     fi
 }
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS+=my_docker_context
+# enable only if docker context works
+if docker context show &>/dev/null; then
+    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS+=my_docker_context
+fi
 
 # Include files from zsh.d directory
 for file in $ZDOTDIR/zsh.d/*.zsh; do
