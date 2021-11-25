@@ -2,8 +2,4 @@
 ## credit to: derf0
 ## print a table with all 256 color codes
 
-for i in {0..255}; {
-	printf " %s%-3s" $'\e[38;5;'${i}m ${i}
-	(( (i+1) % (COLUMNS/4) < 1 )) && echo
-}
-echo
+for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
