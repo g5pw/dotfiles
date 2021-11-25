@@ -118,7 +118,7 @@
   :config
   (map! :leader :prefix "O"
         :desc "org-ql search" :nve "q" #'org-ql-search
-        :desc "org-ql views" :nve "w" #'org-ql-view))
+        :desc "org-ql views" :nve "w" #'org-ql-view)
   (setq org-ql-views '(("Current projects" :buffer-files org-directory :query
                         (and
                          (todo "STARTED")
