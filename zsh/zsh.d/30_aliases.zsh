@@ -57,6 +57,7 @@ alias rgr='ranger'
 alias rm="${GIT_EXPAND}nocorrect command rm -i"
 alias rgrep='grep -r'
 alias servethis='python -m http.server'
+alias tug='nocorrect noglob tug'
 alias u='uptime'
 alias vi="$GIT_EXPAND$EDITOR"
 alias view="$GIT_EXPAND$EDITOR -R"
