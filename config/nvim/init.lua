@@ -20,6 +20,8 @@ require('packer').startup(function()
   use 'rhysd/committia.vim' -- Nice UI for git commit
   use 'tpope/vim-commentary' -- "gc" to comment visual regions/lines
   use 'ludovicchabant/vim-gutentags' -- Automatic tags management
+  -- Operators
+  use 'machakann/vim-sandwich' -- bigger, better vim-surround
   -- UI to select things (files, grep results, open buffers...)
   use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
   use 'joshdick/onedark.vim' -- Theme inspired by Atom
