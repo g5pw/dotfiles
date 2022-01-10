@@ -125,7 +125,7 @@ if type gh &>/dev/null; then
 		gh completion -s zsh > $ZDOTDIR/functions/_gh
 fi
 
-zinit lucid from"gh-r" as"program" for \
+zinit wait"1" from"gh-r" as"program" lucid for \
     pick"delta*/delta" dandavison/delta \
     mv'git-brunch-* -> git-brunch' andys8/git-brunch \
     extrawurst/gitui
