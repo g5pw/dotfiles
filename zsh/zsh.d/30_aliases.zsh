@@ -1,16 +1,13 @@
 ## aliases ####
 if whence scmpuff &> /dev/null; then
-    scm_expand () {
-	eval $(scmpuff expand -- "$@")
-    }
-    GIT_EXPAND='scm_expand '
+    GIT_EXPAND='scmpuff exec -- '
 fi
 alias c='clear'
 alias calc='nocorrect noglob calc'
 alias cat="${GIT_EXPAND}bat"
 alias cdiff='colordiff'
 alias cf="${GIT_EXPAND}clang-format -i"
-alias cp="${GIT_EXPAND}nocorrect command cp -i"
+alias cp="nocorrect ${GIT_EXPAND} cp -i"
 alias ds='dirs'
 alias dsv='dirs -v'
 alias dsc='dirs -c'
@@ -47,14 +44,14 @@ alias less=$PAGER
 alias zless=$PAGER
 alias man='nocorrect man'
 alias mkdir='nocorrect mkdir'
-alias mv="${GIT_EXPAND}nocorrect command mv -i"
+alias mv="nocorrect ${GIT_EXPAND} mv -i"
 alias myip='curl ifconfig.me/ip'
 alias n='${GIT_EXPAND}nnn'
 alias o='${GIT_EXPAND}open'
 alias octave='octave -q'
 alias pstree='pstree -g'
 alias rgr='ranger'
-alias rm="${GIT_EXPAND}nocorrect command rm -i"
+alias rm="nocorrect ${GIT_EXPAND} rm -i"
 alias rgrep='grep -r'
 alias servethis='python -m http.server'
 alias tug='nocorrect noglob tug'
@@ -62,7 +59,7 @@ alias u='uptime'
 alias vi="$GIT_EXPAND$EDITOR"
 alias view="$GIT_EXPAND$EDITOR -R"
 alias vim="$GIT_EXPAND$EDITOR"
-alias t="${GIT_EXPAND}tig"
+alias t="${GIT_EXPAND} tig"
 alias youtube-dl="noglob youtube-dl"
 alias usql="noglob usql"
 alias uq="usql"
