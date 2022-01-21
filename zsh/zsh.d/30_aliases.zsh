@@ -44,6 +44,7 @@ alias less=$PAGER
 alias zless=$PAGER
 alias man='nocorrect man'
 alias mkdir='nocorrect mkdir'
+alias mg='emacsclient -nw -c --eval '"'"'(progn (let ((display-buffer-alist `(("^\\*magit: " display-buffer-same-window) ,display-buffer-alist))) (magit-status)) (delete-other-windows))'"' "
 alias mv="nocorrect ${GIT_EXPAND} mv -i"
 alias myip='curl ifconfig.me/ip'
 alias n='${GIT_EXPAND}nnn'
