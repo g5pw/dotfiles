@@ -75,6 +75,9 @@ vim.o.termguicolors = true
 vim.g.onedark_terminal_italics = 2
 vim.cmd [[colorscheme onedark]]
 
+vim.o.expandtab = true
+vim.o.shiftwidth = 4
+
 --Set statusbar
 vim.g.lightline = {
   colorscheme = 'onedark',
@@ -314,3 +317,6 @@ vim.g.committia_hooks = {
     end
   end
 }
+
+vim.api.nvim_set_keymap("n", "[q", "<cmd>:cprev<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "]q", "<cmd>:cnext<CR>", {noremap = true, silent = true})
