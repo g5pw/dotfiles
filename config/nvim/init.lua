@@ -40,6 +40,7 @@ require('packer').startup(function()
   use 'hrsh7th/cmp-nvim-lsp'
   use 'saadparwaiz1/cmp_luasnip'
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
+  use {'kevinhwang91/nvim-bqf', ft = 'qf'}
   use {
 	  'phaazon/hop.nvim',
 	  branch = 'v1', -- optional but strongly recommended
