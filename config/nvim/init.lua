@@ -24,6 +24,7 @@ require('packer').startup(function()
   use 'machakann/vim-sandwich' -- bigger, better vim-surround
   -- UI to select things (files, grep results, open buffers...)
   use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+  use { "nvim-telescope/telescope-file-browser.nvim" }
   use 'joshdick/onedark.vim' -- Theme inspired by Atom
   use 'itchyny/lightline.vim' -- Fancier statusline
   -- Add indentation guides even on blank lines
@@ -149,6 +150,10 @@ require('telescope').setup {
     },
   },
 }
+
+require("telescope").load_extension "file_browser"
+vim.api.nvim_set_keymap('n', '-', [[:Telescope file_browser path=%:p:h<CR>]], {noremap = true, silent = true })
+
 --Add leader shortcuts
 vim.api.nvim_set_keymap('n', '<leader><space>', [[<cmd>lua require('telescope.builtin').buffers()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>ff', [[<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>]], { noremap = true, silent = true })
@@ -162,7 +167,6 @@ vim.api.nvim_set_keymap('n', '<leader>?', [[<cmd>lua require('telescope.builtin'
 vim.api.nvim_set_keymap('n', '<leader>fs', [[<cmd>:w<CR>]], { noremap = true })
 
 
-vim.api.nvim_set_keymap('n', '-', [[<cmd>lua require('telescope.builtin').file_browser {cwd = vim.fn.expand("%:p:h")}<CR>]], {noremap = true, silent = true })
 
 -- Treesitter configuration
 -- Parsers must be installed manually via :TSInstall
