@@ -8,4 +8,5 @@ zinit wait"2" from"gh-r" as"program" lucid for \
   bcicen/ctop \
   from"gh" mrowa44/emojify \
   mgdm/htmlq \
-  afnanenayet/diffsitter
+  pick'diffsitter*/*diffsitter' afnanenayet/diffsitter \
+  PaulJuliusMartinez/jless
