@@ -27,7 +27,7 @@
 [rerere]
     enabled = true
 [push]
-    default = simple
+    default = current
 [difftool]
     prompt = false
 [merge]
