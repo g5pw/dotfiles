@@ -45,6 +45,7 @@
     diffFilter = delta --color-only
 [diff]
     tool = icdiff
+    colorMoved = default
 [difftool]
     prompt = false
 [difftool "icdiff"]
@@ -87,6 +88,8 @@
 
 [delta]
     dark = true
+    navigate = true
+    line-numbers = true
     features = default
 
 [delta "default"]
