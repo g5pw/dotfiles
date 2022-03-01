@@ -12,9 +12,9 @@ set ideajoin
 set ideastatusicon="disabled"
 
 " IdeaVIM extensions
-set commentary
-set easymotion
-set surround
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'machakann/vim-highlightedyank'
 
 set tildeop
 
