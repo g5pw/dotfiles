@@ -1,6 +1,8 @@
 let mapleader=","
 
 " Vim-like commands
+set nu
+set relativenumber
 set visualbell
 set sidescrolloff=5
 set scrolloff=5
