@@ -23,15 +23,15 @@ set tildeop
 noremap <silent> <Space>fs :w<cr>
 noremap <Space>bd :q<cr>
 
-noremap <silent> <Space>r :action Refactorings.QuickListPopupAction<cr>
-noremap <silent> <Space>gh :action CIDR.Lang.SwitchHeaderSource<cr>
-noremap <silent> <Space>fu :action FindUsagesMenuGroup<cr>
-noremap <silent> <Space>fc :action GotoClass<cr>
-noremap <silent> <Space>ff :action GotoFile<cr>
-noremap <silent> <Space>fr :action GotoFile<cr>
-noremap <silent> <Space>cmo :action OverrideMethods<cr>
-noremap <silent> <Space>cmi :action ImplementMethods<cr>
-noremap <silent> <Space>cs :action ChangeSignature<cr>
-noremap <silent> <Space>cr :action RenameElement<cr>
-noremap <silent> <Space>cc :action osmedile.intellij.stringmanip.SwitchCasePopup<cr>
+map <silent> <Space>r <Action>(Refactorings.QuickListPopupAction)
+map <silent> <Space>gh <Action>(CIDR.Lang.SwitchHeaderSource)
+map <silent> <Space>fu <Action>(FindUsagesMenuGroup)
+map <silent> <Space>fc <Action>(GotoClass)
+map <silent> <Space>ff <Action>(GotoFile)
+map <silent> <Space>fr <Action>(GotoFile)
+map <silent> <Space>cmo <Action>(OverrideMethods)
+map <silent> <Space>cmi <Action>(ImplementMethods)
+map <silent> <Space>cs <Action>(ChangeSignature)
+map <silent> <Space>cr <Action>(RenameElement)
+map <silent> <Space>cc <Action>(osmedile.intellij.stringmanip.SwitchCasePopup)
 noremap <silent> <Space>sc :nohlsearch<cr>
