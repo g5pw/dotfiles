@@ -24,14 +24,22 @@ noremap <silent> <Space>fs :w<cr>
 noremap <Space>bd :q<cr>
 
 map <silent> <Space>r <Action>(Refactorings.QuickListPopupAction)
-map <silent> <Space>gh <Action>(CIDR.Lang.SwitchHeaderSource)
+
+vmap <silent> <Space>gh <Action>(Vcs.ShowHistoryForBlock)
+map <silent> <Space>gra <Action>(Git.Rebase.Abort)
+map <silent> <Space>grc <Action>(Git.Rebase.Continue)
+map <silent> <Space>gra <Action>(Git.Rebase.Skip)
+
 map <silent> <Space>fu <Action>(FindUsagesMenuGroup)
 map <silent> <Space>fc <Action>(GotoClass)
 map <silent> <Space>ff <Action>(GotoFile)
 map <silent> <Space>fr <Action>(GotoFile)
+
 map <silent> <Space>cmo <Action>(OverrideMethods)
 map <silent> <Space>cmi <Action>(ImplementMethods)
 map <silent> <Space>cs <Action>(ChangeSignature)
 map <silent> <Space>cr <Action>(RenameElement)
 map <silent> <Space>cc <Action>(osmedile.intellij.stringmanip.SwitchCasePopup)
-noremap <silent> <Space>sc :nohlsearch<cr>
+map <silent> <Space>sc :nohlsearch<cr>
+
+map <silent> <Leader>gh <Action>(CIDR.Lang.SwitchHeaderSource)
