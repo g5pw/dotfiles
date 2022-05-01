@@ -29,6 +29,7 @@
 
 ; Lets me type special combining characters
 (if IS-MAC
+    (undefine-key! doom-leader-open-map "l" "L")  ; I don't have LaunchBar
     (setq mac-right-option-modifier nil))
 
 (after! tex
