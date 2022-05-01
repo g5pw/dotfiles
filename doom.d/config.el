@@ -54,7 +54,6 @@
         :desc "Export to PDF" :n "P" #'org-beamer-export-to-pdf
         :desc "Select environment" :n "sE" #'org-beamer-select-environment)
   (map! :mode org-mode :localleader
-        :desc "Toggle fragment preview" :n "V" #'org-toggle-latex-fragment
         :desc "Export to PDF and open" :n "O" #'(lambda () (interactive) (org-open-file (org-beamer-export-to-pdf))))
   (map! :leader :prefix ("O" . "Org mode")
         :desc "TODOs" :nve "t" #'org-todo-list
