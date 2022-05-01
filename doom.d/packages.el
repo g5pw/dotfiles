@@ -26,6 +26,7 @@
 (package! gitlab-ci-mode)
 
 (when (package! org)
+  (package! doct)
   (package! ox-ssh))
 
 (package! tree-sitter)

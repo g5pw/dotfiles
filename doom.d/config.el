@@ -81,6 +81,26 @@
 (after! evil-org
   (remove-hook 'org-tab-first-hook #'+org-cycle-only-current-subtree-h))
 
+(use-package! doct
+  :after org
+  :config
+  (setq org-capture-templates
+        (doct '(("TODO (personal)" :keys "t"
+                 :file "inbox.org"
+                 :prepend t
+                 :template ("* TODO %?\n%i\n%a"))
+                ("Note (personal)" :keys "n"
+                 :file "notes.org"
+                 :headline "Inbox"
+                 :prepend t
+                 :template ("* %?\n%i\n%a"))
+                ("Habit" :keys "h"
+                 :file "habits.org"
+                 :headline "Inbox"
+                 :prepend t
+                 :template ("* %?\n%i\n%a"))
+                ))))
+
 (use-package! org-super-agenda
   :after org-agenda
   :init
@@ -109,7 +129,8 @@
   (org-projectile-per-project)
   (setq org-projectile-per-project-filepath "project.org"
         org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
-  (add-to-list 'org-capture-templates (org-projectile-project-todo-entry :capture-character "P") t))
+  (add-to-list 'org-capture-templates (org-projectile-project-todo-entry) t)
+  )
 
 (use-package! org-ql
   :config
