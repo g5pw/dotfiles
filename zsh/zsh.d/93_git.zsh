@@ -113,7 +113,6 @@ export forgit_rebase=gri
 export forgit_fixup=gfi
 
 export FORGIT_COPY_CMD="xclip -i -selection clipboard"
-zinit ice patch"$HOME/.zsh/_patches/remove-git-status.patch"
 zinit light wfxr/forgit
 
 FORGIT_STASH_FZF_OPTS='
