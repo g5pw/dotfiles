@@ -99,10 +99,18 @@ function git_brunch_or_branch() {
 export forgit_log=gl
 export forgit_diff=gdi
 export forgit_add=ga
+export forgit_reset_head=grh
+export forgit_ignore=gi
+export forgit_checkout_file=gcf
+export forgit_checkout_branch=gcb
+export forgit_checkout_tag=gct
+export forgit_checkout_commit=gcoi
+export forgit_revert_commit=grc
+export forgit_clean=gci
 export forgit_stash_show=gssi
-export forgit_restore=gci
 export forgit_cherry_pick=gcpi
 export forgit_rebase=gri
+export forgit_fixup=gfi
 
 export FORGIT_COPY_CMD="xclip -i -selection clipboard"
 zinit ice patch"$HOME/.zsh/_patches/remove-git-status.patch"
