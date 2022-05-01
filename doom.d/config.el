@@ -191,14 +191,14 @@
 (use-package! gitlab-ci-mode
   :mode "\\.gitlab-ci\\.yml$")
 
-(use-package! ox-ssh 
-	      :ensure t
+(use-package! ox-ssh
 	      :after org
               :config
-              (setq org-ssh-header "IgnoreUnknown AddKeysToAgent,UseKeychain
+              (setq org-ssh-header "
 Match host * exec \"gpg-connect-agent UPDATESTARTUPTTY /bye\"
 
 Host *
+  IgnoreUnknown AddKeysToAgent,UseKeychain
   AddKeysToAgent yes
   UseKeychain yes
 "))
