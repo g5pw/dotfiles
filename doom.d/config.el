@@ -103,9 +103,6 @@
   (setq org-super-agenda-header-map (copy-keymap evil-normal-state-map))
   (org-super-agenda-mode))
 
-(use-package! evil-terminal-cursor-changer
-  :unless window-system
-  :config (evil-terminal-cursor-changer-activate))
 (use-package! org-projectile
   :config
   (map! :leader :desc "Add project todo" :nve "pT" #'org-projectile-project-todo-completing-read)
