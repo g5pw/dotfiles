@@ -136,6 +136,7 @@ fi
 
 zinit wait"1" from"gh-r" as"program" lucid for \
     pick"delta*/delta" dandavison/delta \
+    mkchoi212/fac \
     mv'git-brunch-* -> git-brunch' andys8/git-brunch \
-    extrawurst/gitui
-
+    extrawurst/gitui \
+    jesseduffield/lazygit

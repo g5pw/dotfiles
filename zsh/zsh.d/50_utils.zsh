@@ -9,4 +9,7 @@ zinit wait"2" from"gh-r" as"program" lucid for \
   from"gh" mrowa44/emojify \
   mgdm/htmlq \
   pick'diffsitter*/*diffsitter' afnanenayet/diffsitter \
-  PaulJuliusMartinez/jless
+  PaulJuliusMartinez/jless \
+  brocode/fblog \
+  mv'gfold-* -> gfold' nickgerace/gfold \
+  dprint/dprint
