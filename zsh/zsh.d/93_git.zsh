@@ -134,6 +134,10 @@ if type gh &>/dev/null; then
 		gh completion -s zsh > $ZDOTDIR/functions/_gh
 fi
 
+alias lg=lazygit
+alias t="tig"
+alias tig="${GIT_EXPAND} tig"
+
 zinit wait"1" from"gh-r" as"program" lucid for \
     pick"delta*/delta" dandavison/delta \
     mkchoi212/fac \
