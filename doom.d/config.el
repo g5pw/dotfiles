@@ -158,8 +158,11 @@
   (map! :leader :desc "Search TODOs keywords" :nve "st" #'ivy-magit-todos))
 
 (use-package! magit-delta
-  :after magit
-  :hook (magit-mode . magit-delta-mode))
+  :hook (magit-mode . magit-delta-mode)
+  :config
+  (add-to-list 'magit-delta-delta-args "magit")
+  (add-to-list 'magit-delta-delta-args "--features")
+  )
 
 ;; Set keys
 (map! :nv "~" #'evil-invert-case
