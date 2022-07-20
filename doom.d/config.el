@@ -212,12 +212,6 @@ Host *
         :desc "Kill SSH tunnel" "k" #'ssh-tunnels-kill-tunnel
         :desc "Run SSH tunnel"  "r" #'ssh-tunnels-run-tunnel))
 
-(use-package! tree-sitter
-  :config
-  (require 'tree-sitter-langs)
-  (global-tree-sitter-mode)
-  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
-
 ;; (use-package! ox-awesomecv
 ;; 	      :after org)
 
