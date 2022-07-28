@@ -12,7 +12,6 @@ alias gba='git branch -a'
 alias gbd='git branch -d'
 alias gbr='git branch -r'
 alias gbD='git branch -D'
-alias gb='git_brunch_or_branch'
 alias gbl='git blame'
 alias gbm='git branch -m'
 alias gca='git_commit_all'
@@ -102,7 +101,7 @@ export forgit_add=ga
 export forgit_reset_head=grh
 export forgit_ignore=gi
 export forgit_checkout_file=gcf
-export forgit_checkout_branch=gcb
+export forgit_checkout_branch=gb
 export forgit_checkout_tag=gct
 export forgit_checkout_commit=gcoi
 export forgit_revert_commit=grc
@@ -144,3 +143,5 @@ zinit wait"1" from"gh-r" as"program" lucid for \
     mv'git-brunch-* -> git-brunch' andys8/git-brunch \
     extrawurst/gitui \
     jesseduffield/lazygit
+
+alias gbv='git_brunch_or_branch'
