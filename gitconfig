@@ -96,6 +96,9 @@
     plus-emph-style = syntax "#888800"
     minus-style = normal "#6000b5"
     minus-emph-style = normal "#6033b5"
+    line-numbers-plus-style = "#777722"
+    line-numbers-minus-style = "#8000d8"
+    line-numbers-zero-style = "#999999"
     features = default
 
 [delta "default"]
