@@ -20,7 +20,6 @@ Plug 'machakann/vim-highlightedyank'
 
 set tildeop
 
-noremap <silent> <Space>fs :w<cr>
 noremap <Space>bd :q<cr>
 
 map <silent> <Space>r <Action>(Refactorings.QuickListPopupAction)
@@ -30,10 +29,9 @@ map <silent> <Space>gra <Action>(Git.Rebase.Abort)
 map <silent> <Space>grc <Action>(Git.Rebase.Continue)
 map <silent> <Space>gra <Action>(Git.Rebase.Skip)
 
-map <silent> <Space>fu <Action>(FindUsagesMenuGroup)
-map <silent> <Space>fc <Action>(GotoClass)
 map <silent> <Space>ff <Action>(GotoFile)
-map <silent> <Space>fr <Action>(GotoFile)
+map <silent> <Space>fr <Action>(RecentChangedFiles)
+map <silent> <Space>fs :w<cr>
 
 map <silent> <Space>cmo <Action>(OverrideMethods)
 map <silent> <Space>cmi <Action>(ImplementMethods)
@@ -42,4 +40,9 @@ map <silent> <Space>cr <Action>(RenameElement)
 map <silent> <Space>cc <Action>(osmedile.intellij.stringmanip.SwitchCasePopup)
 map <silent> <Space>sc :nohlsearch<cr>
 
-map <silent> <Leader>gh <Action>(CIDR.Lang.SwitchHeaderSource)
+map <silent> <Leader>h <Action>(CIDR.Lang.SwitchHeaderSource)
+map <silent> <Leader>r <Action>(Refactorings.QuickListPopupAction)
+map <silent> <Leader>rs <Action>(ChangeSignature)
+map <silent> <Leader>gf <Action>(FileStructurePopup)
+map <silent> <Leader>gc <Action>(GotoClass)
+map <silent> <Leader>gu <Action>(FindUsages)
