@@ -14,10 +14,10 @@ if [[ ! -f ${ZINIT[BIN_DIR]}/zinit.zsh ]]; then
         print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
 
-source $ZDOTDIR/zinit/bin/zinit.zsh
+source ${ZINIT[BIN_DIR]}/zinit.zsh
 
-module_path+=( "$ZDOTDIR/zinit/bin/zmodules/Src" )
-zmodload zdharma/zplugin
+module_path+=( "${ZINIT[HOME_DIR]}/module/Src" )
+zmodload zdharma_continuum/zinit
 
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
