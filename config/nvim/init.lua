@@ -49,6 +49,12 @@ require('packer').startup(function()
 		  require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
 	  end
   }
+  use {
+      "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+      config = function()
+          require("lsp_lines").setup()
+      end,
+  }
 end)
 
 --Set highlight on search
@@ -339,3 +345,8 @@ vim.api.nvim_set_keymap('o', 'F', "<cmd>lua require'hop'.hint_char1({ direction 
 vim.api.nvim_set_keymap('', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
 vim.api.nvim_set_keymap('', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
 -- }}}
+
+-- Disable virtual_text since it's redundant due to lsp_lines.
+vim.diagnostic.config({
+  virtual_text = false,
+})
