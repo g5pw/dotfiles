@@ -86,6 +86,38 @@ require('packer').startup(function()
           require("lsp_lines").setup()
       end,
   }
+  use {
+    "nvim-neorg/neorg",
+    run = ":Neorg sync-parsers",
+    tag = "*",
+    config = function()
+        require('neorg').setup {
+            load = {
+                ["core.defaults"] = {},
+                ["core.norg.concealer"] = {},
+                ["core.norg.completion"] = {
+                    config = {
+                        engine = "nvim-cmp",
+                    },
+                },
+                ["core.norg.dirman"] = {
+                    config = {
+                        workspaces  = {
+                            default = "~/norg/default",
+                            gtd = "~/norg/gtd",
+                        },
+                    }
+                },
+                ["core.gtd.base"] = {
+                    config = {
+                        workspace = "gtd"
+                    }
+                },
+            }
+        }
+    end,
+    requires = {'nvim-lua/plenary.nvim', 'nvim-treesitter/nvim-treesitter'},
+  }
 end)
 
 --Set highlight on search
