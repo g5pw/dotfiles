@@ -363,7 +363,7 @@ vim.o.completeopt = 'menuone,noselect'
 vim.g.committia_hooks = {
   edit_open = function(info)
     vim.opt_local.spell = true
-    vim.opt_local.spelllang = "it"
+    vim.opt_local.spelllang = "en"
     local num_bytes = vim.api.nvim_buf_get_lines(0, 0, 1, false)[1]
 
     if #num_bytes == 0 then
