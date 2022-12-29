@@ -1,54 +1,50 @@
--- Install packer
-local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
 
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  vim.fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "--single-branch",
+    "https://github.com/folke/lazy.nvim.git",
+    lazypath,
+  })
 end
+vim.opt.runtimepath:prepend(lazypath)
 
-vim.cmd [[
-  augroup Packer
-    autocmd!
-    autocmd BufWritePost init.lua PackerCompile
-  augroup end
-]]
+vim.g.mapleader = " "
 
-local use = require('packer').use
-require('packer').startup(function()
-  use 'wbthomason/packer.nvim' -- Package manager
-  use 'tpope/vim-fugitive' -- Git commands in nvim
-  use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
-  use 'rhysd/committia.vim' -- Nice UI for git commit
-  use 'tpope/vim-commentary' -- "gc" to comment visual regions/lines
-  use 'ludovicchabant/vim-gutentags' -- Automatic tags management
+require("lazy").setup({
+  'tpope/vim-fugitive',
+  'rhysd/committia.vim', -- Nice UI for git commit
+  'tpope/vim-commentary', -- "gc" to comment visual regions/lines
   -- Operators
-  use 'machakann/vim-sandwich' -- bigger, better vim-surround
+  'machakann/vim-sandwich', -- bigger, better vim-surround
   -- UI to select things (files, grep results, open buffers...)
-  use { 
+  {
       'nvim-telescope/telescope.nvim',
-      requires = { 'nvim-lua/plenary.nvim' },
-      config = function()
-          require('telescope').setup {
-              defaults = {
-                  mappings = {
-                      i = {
-                          ['<C-u>'] = false,
-                          ['<C-d>'] = false,
-                      },
+      dependencies = { 'nvim-lua/plenary.nvim' },
+      config = {
+          defaults = {
+              mappings = {
+                  i = {
+                      ['<C-u>'] = false,
+                      ['<C-d>'] = false,
                   },
               },
-          }
-      end
-  }
-  use { "nvim-telescope/telescope-file-browser.nvim" }
-  use 'joshdick/onedark.vim' -- Theme inspired by Atom
-  use 'itchyny/lightline.vim' -- Fancier statusline
+          },
+      }
+  },
+  "nvim-telescope/telescope-file-browser.nvim" ,
+  'joshdick/onedark.vim', -- Theme inspired by Atom
+  'folke/tokyonight.nvim',
   -- Add indentation guides even on blank lines
-  use 'lukas-reineke/indent-blankline.nvim'
+  'lukas-reineke/indent-blankline.nvim',
   -- Add git related info in the signs columns and popups
-  use { 'lewis6991/gitsigns.nvim',
-  requires = { 'nvim-lua/plenary.nvim' },
-  config = function()
-      require('gitsigns').setup {
+  {
+      'lewis6991/gitsigns.nvim',
+      dependencies = { 'nvim-lua/plenary.nvim' },
+      config = {
           signs = {
               add = { hl = 'GitGutterAdd', text = '+' },
               change = { hl = 'GitGutterChange', text = '~' },
@@ -57,68 +53,140 @@ require('packer').startup(function()
               changedelete = { hl = 'GitGutterChange', text = '~' },
           },
       }
-  end
-  }
+  },
   -- Highlight, edit, and navigate code using a fast incremental parsing library
-  use {
+  {
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  }
+    build = ':TSUpdate'
+  },
   -- Additional textobjects for treesitter
-  use 'nvim-treesitter/nvim-treesitter-textobjects'
-  use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
-  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'saadparwaiz1/cmp_luasnip'
-  use 'L3MON4D3/LuaSnip' -- Snippets plugin
-  use {'kevinhwang91/nvim-bqf', ft = 'qf'}
-  use {
-	  'phaazon/hop.nvim',
-	  branch = 'v2', -- optional but strongly recommended
-	  config = function()
-		  -- you can configure Hop the way you like here; see :h hop-config
-		  require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-	  end
-  }
-  use {
-      "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+  'nvim-treesitter/nvim-treesitter-textobjects',
+  'neovim/nvim-lspconfig', -- Collection of configurations for built-in LSP client
+  {
+      'L3MON4D3/LuaSnip', -- Snippets plugin
+      version = "v1.*",
+  },
+  {
+      "hrsh7th/nvim-cmp",  -- Autocompletion plugin
+      -- load cmp on InsertEnter
+      event = "InsertEnter",
+      -- these dependencies will only be loaded when cmp loads
+      -- dependencies are always lazy-loaded unless specified otherwise
+      dependencies = {
+          "hrsh7th/cmp-nvim-lsp",
+          "hrsh7th/cmp-buffer",
+      },
       config = function()
-          require("lsp_lines").setup()
-      end,
-  }
-  use {
+          -- luasnip setup
+          local luasnip = require 'luasnip'
+
+          -- nvim-cmp setup
+          local cmp = require 'cmp'
+          cmp.setup {
+              snippet = {
+                  expand = function(args)
+                      luasnip.lsp_expand(args.body)
+                  end,
+              },
+              mapping = {
+                  ['<C-p>'] = cmp.mapping.select_prev_item(),
+                  ['<C-n>'] = cmp.mapping.select_next_item(),
+                  ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+                  ['<C-f>'] = cmp.mapping.scroll_docs(4),
+                  ['<C-Space>'] = cmp.mapping.complete(),
+                  ['<C-e>'] = cmp.mapping.close(),
+                  ['<CR>'] = cmp.mapping.confirm {
+                      behavior = cmp.ConfirmBehavior.Replace,
+                      select = true,
+                  },
+                  ['<Tab>'] = function(fallback)
+                      if cmp.visible() then
+                          cmp.select_next_item()
+                      elseif luasnip.expand_or_jumpable() then
+                          luasnip.expand_or_jump()
+                      else
+                          fallback()
+                      end
+                  end,
+                  ['<S-Tab>'] = function(fallback)
+                      if cmp.visible() then
+                          cmp.select_prev_item()
+                      elseif luasnip.jumpable(-1) then
+                          luasnip.jump(-1)
+                      else
+                          fallback()
+                      end
+                  end,
+              },
+              sources = {
+                  { name = 'nvim_lsp' },
+                  { name = 'luasnip' },
+              },
+          }
+      end
+  },
+  'saadparwaiz1/cmp_luasnip',
+  {
+      'stevearc/dressing.nvim',
+      config = true,
+  },
+  'Einenlum/yaml-revealer',
+  {
+      'kevinhwang91/nvim-bqf',
+      ft = 'qf'
+  },
+  'simrat39/symbols-outline.nvim',
+  {
+      'phaazon/hop.nvim',
+      version = 'v2', -- optional but strongly recommended
+      config = { keys = 'etovxqpdygfblzhckisuran' }
+  },
+  {
+      'LnL7/vim-nix',
+      ft = 'nix'
+  },
+  {
+      url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+      config = true,
+  },
+  {
     "nvim-neorg/neorg",
-    run = ":Neorg sync-parsers",
-    tag = "*",
-    config = function()
-        require('neorg').setup {
-            load = {
-                ["core.defaults"] = {},
-                ["core.norg.concealer"] = {},
-                ["core.norg.completion"] = {
-                    config = {
-                        engine = "nvim-cmp",
-                    },
-                },
-                ["core.norg.dirman"] = {
-                    config = {
-                        workspaces  = {
-                            default = "~/norg/default",
-                            gtd = "~/norg/gtd",
-                        },
+    build = ":Neorg sync-parsers",
+    version = "*",
+    dependencies = {'nvim-lua/plenary.nvim', 'nvim-treesitter/nvim-treesitter', 'nvim-neorg/neorg-telescope'},
+    config = {
+        load = {
+            ["core.defaults"] = {},
+            -- ["core.gtd.base"] = {  -- https://github.com/nvim-neorg/neorg/issues/695
+            --     config = {
+            --         workspace = "gtd"
+            --     }
+            -- },
+            ["core.norg.completion"] = { config = { engine = "nvim-cmp" }},
+            ["core.norg.concealer"] = {},
+            ["core.norg.dirman"] = {
+                config = {
+                    workspaces = {
+                        gtd = "~/Documents/norg/gtd",
+                        default = "~/Documents/norg/default",
                     }
-                },
-                ["core.gtd.base"] = {
-                    config = {
-                        workspace = "gtd"
-                    }
-                },
-            }
+                }
+            },
+            ["core.integrations.telescope"] = {},
         }
-    end,
-    requires = {'nvim-lua/plenary.nvim', 'nvim-treesitter/nvim-treesitter'},
-  }
-end)
+    }
+  },
+  {
+      'nvim-lualine/lualine.nvim',
+      dependencies = { 'kyazdani42/nvim-web-devicons', lazy = true },
+      config = {
+          theme = 'tokyonight',
+          sections = {
+              lualine_a = { { 'mode', fmt = function(str) return str:sub(1,1) end } },
+          }
+      }
+  },
+})
 
 --Set highlight on search
 vim.o.hlsearch = true
@@ -146,30 +214,10 @@ vim.wo.signcolumn = 'yes'
 --Set colorscheme (order is important here)
 vim.o.termguicolors = true
 vim.g.onedark_terminal_italics = 2
-vim.cmd [[colorscheme onedark]]
+vim.cmd[[colorscheme tokyonight]]
 
 vim.o.expandtab = true
 vim.o.shiftwidth = 4
-
---Set statusbar
-vim.g.lightline = {
-  colorscheme = 'onedark',
-  active = { left = { { 'mode', 'paste' }, { 'gitbranch', 'readonly', 'filename', 'modified' } } },
-  component_function = { gitbranch = 'fugitive#head' },
-  mode_map = {
-	n = 'N',
-	i = 'I',
-	R = 'R',
-	v = 'V',
-	V = 'VL',
-	["<C-v>"] = 'VB',
-	c = 'C',
-	s = 'S',
-	S = 'SL',
-	["<C-s>"] = 'SB',
-	t= 'T',
-  },
-}
 
 --Remap space as leader key
 vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
@@ -310,52 +358,6 @@ end
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
--- luasnip setup
-local luasnip = require 'luasnip'
-
--- nvim-cmp setup
-local cmp = require 'cmp'
-cmp.setup {
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
-  },
-  mapping = {
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
-    ['<C-n>'] = cmp.mapping.select_next_item(),
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.close(),
-    ['<CR>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    },
-    ['<Tab>'] = function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end,
-    ['<S-Tab>'] = function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end,
-  },
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-  },
-}
 
 -- committia setup
 vim.g.committia_hooks = {
