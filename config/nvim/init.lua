@@ -177,6 +177,26 @@ require("lazy").setup({
     }
   },
   {
+      'williamboman/mason.nvim',
+      config = {
+          ui = {
+              icons = {
+                  package_installed = "✓",
+                  package_pending = "➜",
+                  package_uninstalled = "✗"
+              }
+          }
+      },
+  },
+  {
+      'stevearc/overseer.nvim',
+      config = true
+  },
+  {
+      'windwp/nvim-autopairs',
+      config = true
+  },
+  {
       'nvim-lualine/lualine.nvim',
       dependencies = { 'kyazdani42/nvim-web-devicons', lazy = true },
       config = {
@@ -185,6 +205,22 @@ require("lazy").setup({
               lualine_a = { { 'mode', fmt = function(str) return str:sub(1,1) end } },
           }
       }
+  },
+  {
+      'jose-elias-alvarez/null-ls.nvim',
+      config = function()
+          local null_ls = require("null-ls")
+
+          null_ls.setup({
+              sources = {
+                  null_ls.builtins.code_actions.gitsigns,
+                  null_ls.builtins.formatting.stylua,
+                  null_ls.builtins.completion.spell,
+                  null_ls.builtins.code_actions.statix,
+                  null_ls.builtins.diagnostics.ansiblelint,
+              },
+          })
+      end
   },
 })
 
