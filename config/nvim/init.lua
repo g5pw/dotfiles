@@ -372,8 +372,8 @@ vim.g.committia_hooks = {
   end
 }
 
-vim.api.nvim_set_keymap("n", "[q", "<cmd>:cprev<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "]q", "<cmd>:cnext<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "[q", "<cmd>:cprev<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "]b", "<cmd>:bnext<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "[b", "<cmd>:bprev<CR>", {noremap = true, silent = true})
 
