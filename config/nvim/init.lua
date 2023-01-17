@@ -229,6 +229,10 @@ require("lazy").setup({
       end,
       requires = { "nvim-lua/plenary.nvim" },
   },
+  {
+      "chrisgrieser/nvim-various-textobjs",
+      config = { useDefaultKeymaps = true }
+  },
 })
 
 --Set highlight on search
