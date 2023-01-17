@@ -226,7 +226,8 @@ require("lazy").setup({
                   null_ls.builtins.diagnostics.ansiblelint,
               },
           })
-      end
+      end,
+      requires = { "nvim-lua/plenary.nvim" },
   },
 })
 
