@@ -61,6 +61,24 @@ require("lazy").setup({
   },
   -- Additional textobjects for treesitter
   'nvim-treesitter/nvim-treesitter-textobjects',
+  {
+      'williamboman/mason.nvim',
+      config = {
+          ui = {
+              icons = {
+                  package_installed = "✓",
+                  package_pending = "➜",
+                  package_uninstalled = "✗"
+              }
+          }
+      },
+  },
+  {
+    'williamboman/mason-lspconfig.nvim',
+    config = {
+        ensure_installed = { "sumneko_lua", "rust_analyzer", "pyright" },
+    }
+  },
   'neovim/nvim-lspconfig', -- Collection of configurations for built-in LSP client
   {
       'L3MON4D3/LuaSnip', -- Snippets plugin
@@ -175,18 +193,6 @@ require("lazy").setup({
             ["core.integrations.telescope"] = {},
         }
     }
-  },
-  {
-      'williamboman/mason.nvim',
-      config = {
-          ui = {
-              icons = {
-                  package_installed = "✓",
-                  package_pending = "➜",
-                  package_uninstalled = "✗"
-              }
-          }
-      },
   },
   {
       'stevearc/overseer.nvim',
