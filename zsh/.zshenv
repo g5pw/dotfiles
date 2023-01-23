@@ -36,9 +36,6 @@ limit -s
 # This are characters that separates words
 export WORDCHARS='*?-[]~=/&;!#$%^(){}<>'
 
-# set go PATH
-export GOPATH="$HOME/.go"
-
 # Important dirs
 while read name dir; do
     hash -d $name=${(e)dir}
