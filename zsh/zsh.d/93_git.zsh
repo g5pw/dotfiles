@@ -97,7 +97,7 @@ function git_brunch_or_branch() {
 
 export forgit_log=gl
 export forgit_diff=gdi
-export forgit_add=ga
+export forgit_add=gai
 export forgit_reset_head=grh
 export forgit_ignore=gi
 export forgit_checkout_file=gcf
@@ -132,6 +132,14 @@ FORGIT_DIFF_FZF_OPTS='
 if type gh &>/dev/null; then
 		gh completion -s zsh > $ZDOTDIR/functions/_gh
 fi
+
+function ga() {
+    if [ "$#" -ne 0 ]; then
+        git add "$@"
+    else
+        forgit::add
+    fi
+}
 
 alias lg=lazygit
 alias t="tig"
