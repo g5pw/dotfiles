@@ -300,6 +300,14 @@ require("lazy").setup({
       "chrisgrieser/nvim-various-textobjs",
       config = { useDefaultKeymaps = true }
   },
+  {
+    "akinsho/toggleterm.nvim",
+    version = '*',
+    config = {
+      direction = 'float',
+      open_mapping = "<leader>t"
+    },
+  },
 })
 
 --Set highlight on search
