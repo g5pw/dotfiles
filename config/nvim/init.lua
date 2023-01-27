@@ -305,7 +305,8 @@ require("lazy").setup({
     version = '*',
     config = {
       direction = 'float',
-      open_mapping = "<leader>t"
+      open_mapping = "<leader>t",
+      insert_mappings = false,
     },
   },
 })
