@@ -19,7 +19,11 @@ require("lazy").setup({
   'rhysd/committia.vim', -- Nice UI for git commit
   'tpope/vim-commentary', -- "gc" to comment visual regions/lines
   -- Operators
-  'machakann/vim-sandwich', -- bigger, better vim-surround
+  {
+    'kylechui/nvim-surround',
+    version = "*",
+    config = true,
+  },
   -- UI to select things (files, grep results, open buffers...)
   {
       'nvim-telescope/telescope.nvim',
