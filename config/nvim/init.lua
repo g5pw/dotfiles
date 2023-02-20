@@ -226,6 +226,14 @@ require("lazy").setup({
           }
       end
   },
+  {
+    'stevearc/aerial.nvim',
+    config = function() 
+      require('aerial').setup()
+      require('telescope').load_extension('aerial')
+      require('nap').nap("o", "AerialNext", "AerialPrev", "Next outline symbol", "Previous outline symbol")
+    end,
+  },
   'saadparwaiz1/cmp_luasnip',
   {
       'stevearc/dressing.nvim',
@@ -283,11 +291,12 @@ require("lazy").setup({
   },
   {
       'nvim-lualine/lualine.nvim',
-      dependencies = { 'kyazdani42/nvim-web-devicons', lazy = true },
+      dependencies = { {'kyazdani42/nvim-web-devicons', lazy = true }, 'stevearc/aerial.nvim'},
       config = {
           theme = 'auto',
           sections = {
               lualine_a = { { 'mode', fmt = function(str) return str:sub(1,1) end } },
+              lualine_c = { "filename", "aerial" },
           }
       }
   },
