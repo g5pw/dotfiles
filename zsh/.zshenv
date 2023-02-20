@@ -42,6 +42,6 @@ while read name dir; do
 done < $HOME/.named_dirs
 
 #load my function and more completions
-fpath=($ZDOTDIR/functions $ZDOTDIR/zsh-completions/src $fpath)
+fpath=($ZDOTDIR/functions $fpath)
 
 export PIP_REQUIRE_VIRTUALENV=true
