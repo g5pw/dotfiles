@@ -16,6 +16,10 @@ vim.g.mapleader = " "
 
 require("lazy").setup({
   'tpope/vim-fugitive',
+  {
+    'liangxianzhe/nap.nvim',
+    config = true,
+  },
   'rhysd/committia.vim', -- Nice UI for git commit
   'tpope/vim-commentary', -- "gc" to comment visual regions/lines
   -- Operators
@@ -284,8 +288,9 @@ require("lazy").setup({
       config = true
   },
   {
-      'windwp/nvim-autopairs',
-      config = true
+    'altermo/ultimate-autopair.nvim',
+    event = {'InsertEnter','CmdlineEnter'},
+    config = true,
   },
   {
       'nvim-lualine/lualine.nvim',
@@ -326,6 +331,29 @@ require("lazy").setup({
       open_mapping = "<leader>t",
       insert_mappings = false,
     },
+  },
+  'RaafatTurki/hex.nvim',
+  {
+    'stevearc/oil.nvim',
+    config = {
+      columns = {
+        "icon",
+        "permissions",
+        "size"
+      },
+      keymaps = {
+        ["h"] = "actions.parent",
+        ["l"] = "actions.select",
+        ["q"] = "actions.close",
+      },
+    },
+    keys = {
+      {"-", function() require("oil").open_float() end, desc = "Open parent directory" },
+    },
+  },
+  {
+    '/IndianBoy42/tree-sitter-just',
+    config = true,
   },
 })
 
