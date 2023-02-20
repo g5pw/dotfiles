@@ -56,15 +56,6 @@ require("lazy").setup({
       end
   },
   {
-    "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = { 'nvim-telescope/telescope.nvim' },
-    config = function()
-        require('telescope').load_extension "file_browser"
-
-        vim.keymap.set('n', '-', [[:Telescope file_browser path=%:p:h<CR>]], { silent = true })
-    end
-  },
-  {
     'uloco/bluloco.nvim',
     lazy = false,
     priority = 1000,
