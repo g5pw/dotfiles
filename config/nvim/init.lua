@@ -80,15 +80,10 @@ require("lazy").setup({
   {
       'lewis6991/gitsigns.nvim',
       dependencies = { 'nvim-lua/plenary.nvim' },
-      config = {
-          signs = {
-              add = { hl = 'GitGutterAdd', text = '+' },
-              change = { hl = 'GitGutterChange', text = '~' },
-              delete = { hl = 'GitGutterDelete', text = '_' },
-              topdelete = { hl = 'GitGutterDelete', text = '‾' },
-              changedelete = { hl = 'GitGutterChange', text = '~' },
-          },
-      }
+      config = function()
+        require('gitsigns').setup()
+        require('nap').nap('c', "Gitsigns next_hunk", "Gitsigns prev_hunk", "Next diff", "Previous diff")
+      end,
   },
   -- Highlight, edit, and navigate code using a fast incremental parsing library
   {
