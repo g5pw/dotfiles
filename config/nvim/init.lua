@@ -60,8 +60,13 @@ require("lazy").setup({
         vim.keymap.set('n', '-', [[:Telescope file_browser path=%:p:h<CR>]], { silent = true })
     end
   },
-  'joshdick/onedark.vim', -- Theme inspired by Atom
-  'folke/tokyonight.nvim',
+  {
+    'uloco/bluloco.nvim',
+    lazy = false,
+    priority = 1000,
+    dependencies = { 'rktjmp/lush.nvim' },
+    config = true,
+  },
   -- Add indentation guides even on blank lines
   'lukas-reineke/indent-blankline.nvim',
   -- Add git related info in the signs columns and popups
@@ -277,7 +282,7 @@ require("lazy").setup({
       'nvim-lualine/lualine.nvim',
       dependencies = { 'kyazdani42/nvim-web-devicons', lazy = true },
       config = {
-          theme = 'tokyonight',
+          theme = 'auto',
           sections = {
               lualine_a = { { 'mode', fmt = function(str) return str:sub(1,1) end } },
           }
@@ -341,7 +346,7 @@ vim.wo.signcolumn = 'yes'
 --Set colorscheme (order is important here)
 vim.o.termguicolors = true
 vim.g.onedark_terminal_italics = 2
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd[[colorscheme bluloco-dark]]
 
 vim.o.expandtab = true
 vim.o.shiftwidth = 4
