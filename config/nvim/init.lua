@@ -257,7 +257,12 @@ require("lazy").setup({
     "nvim-neorg/neorg",
     build = ":Neorg sync-parsers",
     version = "*",
-    dependencies = {'nvim-lua/plenary.nvim', 'nvim-treesitter/nvim-treesitter', 'nvim-neorg/neorg-telescope'},
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-treesitter/nvim-treesitter',
+      'nvim-neorg/neorg-telescope',
+      "folke/zen-mode.nvim",
+    },
     config = {
         load = {
             ["core.defaults"] = {},
@@ -277,6 +282,11 @@ require("lazy").setup({
                 }
             },
             ["core.integrations.telescope"] = {},
+            ["core.presenter"] = {
+              config = {
+                zen_mode = "zen-mode",
+              },
+            },
         }
     }
   },
