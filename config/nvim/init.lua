@@ -161,7 +161,7 @@ require("lazy").setup({
   {
     'williamboman/mason-lspconfig.nvim',
     config = {
-        ensure_installed = { "sumneko_lua", "rust_analyzer", "ruff_lsp" },
+        ensure_installed = { "lua_ls", "rust_analyzer", "ruff_lsp" },
     }
   },
   'neovim/nvim-lspconfig', -- Collection of configurations for built-in LSP client
