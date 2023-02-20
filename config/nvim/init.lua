@@ -68,7 +68,16 @@ require("lazy").setup({
     config = true,
   },
   -- Add indentation guides even on blank lines
-  'lukas-reineke/indent-blankline.nvim',
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    config = {
+      filetype_exclude = { 'help', 'packer' },
+      buftype_exclude = { 'terminal', 'nofile' },
+      show_trailing_blankline_indent = false,
+      show_current_context = true,
+      show_current_context_start = true,
+    },
+  },
   -- Add git related info in the signs columns and popups
   {
       'lewis6991/gitsigns.nvim',
@@ -370,13 +379,6 @@ vim.cmd [[
 
 -- Y yank until the end of line  (note: this is now a default on master)
 vim.keymap.set('n', 'Y', 'y$')
-
---Map blankline
-vim.g.indent_blankline_char = '┊'
-vim.g.indent_blankline_filetype_exclude = { 'help', 'packer' }
-vim.g.indent_blankline_buftype_exclude = { 'terminal', 'nofile' }
-vim.g.indent_blankline_char_highlight = 'LineNr'
-vim.g.indent_blankline_show_trailing_blankline_indent = false
 
 vim.keymap.set('n', '<leader>fs', "<cmd>:w<CR>")
 
