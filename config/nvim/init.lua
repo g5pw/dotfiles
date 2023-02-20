@@ -18,7 +18,10 @@ require("lazy").setup({
   'tpope/vim-fugitive',
   {
     'liangxianzhe/nap.nvim',
-    config = true,
+    config = {
+      next_prefix = ']',
+      prev_prefix = '[',
+    },
   },
   'rhysd/committia.vim', -- Nice UI for git commit
   'tpope/vim-commentary', -- "gc" to comment visual regions/lines
@@ -456,11 +459,6 @@ vim.g.committia_hooks = {
     end
   end
 }
-
-vim.keymap.set("n", "]q", "<cmd>:cnext<CR>", { silent = true})
-vim.keymap.set("n", "[q", "<cmd>:cprev<CR>", { silent = true})
-vim.keymap.set("n", "]b", "<cmd>:bnext<CR>", { silent = true})
-vim.keymap.set("n", "[b", "<cmd>:bprev<CR>", { silent = true})
 
 -- Disable virtual_text since it's redundant due to lsp_lines.
 vim.diagnostic.config({
