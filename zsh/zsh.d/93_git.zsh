@@ -114,17 +114,17 @@ export forgit_fixup=gfi
 export FORGIT_COPY_CMD="xclip -i -selection clipboard"
 zinit light wfxr/forgit
 
-FORGIT_STASH_FZF_OPTS='
+export FORGIT_STASH_FZF_OPTS='
 --bind="ctrl-alt-d:reload(git stash drop $(cut -d: -f1 <<<{}) 1>/dev/null && git stash list)"
 '
-FORGIT_LOG_FZF_OPTS='
+export FORGIT_LOG_FZF_OPTS='
 --bind="ctrl-e:execute(echo {} |grep -Eo [a-f0-9]+ |head -1 |xargs git show |vim -)"
 '
-FORGIT_ADD_FZF_OPTS='
+export FORGIT_ADD_FZF_OPTS='
 --bind="ctrl-p:execute(git add --patch {3} < /dev/tty > /dev/tty 2>&1)"
 '
 
-FORGIT_DIFF_FZF_OPTS='
+export FORGIT_DIFF_FZF_OPTS='
 --bind="ctrl-a:execute(git add {2})"
 --bind="ctrl-p:execute(git add --patch {2} < /dev/tty > /dev/tty 2>&1)"
 '
