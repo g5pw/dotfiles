@@ -373,13 +373,17 @@ require("lazy").setup({
       config = function()
           local null_ls = require("null-ls")
 
+          -- check https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
           null_ls.setup({
               sources = {
                   null_ls.builtins.code_actions.gitsigns,
-                  null_ls.builtins.formatting.stylua,
-                  null_ls.builtins.completion.spell,
                   null_ls.builtins.code_actions.statix,
+                  null_ls.builtins.completion.luasnip,
                   null_ls.builtins.diagnostics.ansiblelint,
+                  null_ls.builtins.diagnostics.commitlint,
+                  null_ls.builtins.diagnostics.pylama,
+                  null_ls.builtins.diagnostics.statix,
+                  null_ls.builtins.formatting.stylua,
               },
           })
       end,
