@@ -286,7 +286,7 @@ require("lazy").setup({
   },
   {
     'stevearc/aerial.nvim',
-    config = function() 
+    config = function()
       require('aerial').setup()
       require('telescope').load_extension('aerial')
       require('nap').nap("o", "AerialNext", "AerialPrev", "Next outline symbol", "Previous outline symbol")
