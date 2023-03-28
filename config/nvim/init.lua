@@ -25,7 +25,22 @@ require("lazy").setup({
       prev_prefix = '[',
     },
   },
-  'rhysd/committia.vim', -- Nice UI for git commit
+  {
+    'rhysd/committia.vim', -- Nice UI for git commit
+    config = function()
+      vim.g.committia_hooks = {
+        edit_open = function()
+          vim.opt_local.spell = true
+          vim.opt_local.spelllang = "en"
+          local num_bytes = vim.api.nvim_buf_get_lines(0, 0, 1, false)[1]
+
+          if #num_bytes == 0 then
+            vim.cmd('startinsert')
+          end
+        end
+      }
+    end
+  },
   'tpope/vim-commentary', -- "gc" to comment visual regions/lines
   -- Operators
   {
@@ -496,19 +511,6 @@ vim.keymap.set('n', '<leader>fs', "<cmd>:w<CR>")
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
-
--- committia setup
-vim.g.committia_hooks = {
-  edit_open = function(info)
-    vim.opt_local.spell = true
-    vim.opt_local.spelllang = "en"
-    local num_bytes = vim.api.nvim_buf_get_lines(0, 0, 1, false)[1]
-
-    if #num_bytes == 0 then
-      vim.cmd('startinsert')
-    end
-  end
-}
 
 -- Disable virtual_text since it's redundant due to lsp_lines.
 vim.diagnostic.config({
