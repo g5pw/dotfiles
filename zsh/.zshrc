@@ -36,17 +36,6 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 # To customize prompt, run `p10k configure` or edit ~/.zsh/.p10k.zsh.
 [[ ! -f ~/.zsh/.p10k.zsh ]] || source ~/.zsh/.p10k.zsh
 
-prompt_my_docker_context () {
-    local docker_context=$(docker context show)
-    if [ "$docker_context" != "default" ]; then
-	p10k segment -i '' -f blue -t "$docker_context"
-    fi
-}
-# enable only if docker context works
-if docker context show &>/dev/null; then
-    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS+=my_docker_context
-fi
-
 # Include files from zsh.d directory
 for file in $ZDOTDIR/zsh.d/*.zsh; do
     source $file

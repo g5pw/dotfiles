@@ -28,3 +28,10 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 bindkey "^J" insert-cycledleft
 bindkey "^K" insert-cycledright
+
+prompt_my_docker_context () {
+    local docker_context=$(docker context show)
+    if [ "$docker_context" != "default" ]; then
+	p10k segment -i '' -f blue -t "$docker_context"
+    fi
+}
