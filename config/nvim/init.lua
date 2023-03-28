@@ -430,6 +430,7 @@ require("lazy").setup({
         ["h"] = "actions.parent",
         ["l"] = "actions.select",
         ["q"] = "actions.close",
+        ["<esc>"] = "actions.close",
       },
     },
     keys = {
