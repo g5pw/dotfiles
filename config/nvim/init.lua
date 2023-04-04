@@ -395,8 +395,6 @@ require("lazy").setup({
                   null_ls.builtins.code_actions.statix,
                   null_ls.builtins.completion.luasnip,
                   null_ls.builtins.diagnostics.ansiblelint,
-                  null_ls.builtins.diagnostics.commitlint,
-                  null_ls.builtins.diagnostics.pylama,
                   null_ls.builtins.diagnostics.statix,
                   null_ls.builtins.formatting.stylua,
               },
