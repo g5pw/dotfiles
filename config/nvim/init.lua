@@ -400,7 +400,7 @@ require("lazy").setup({
               },
           })
       end,
-      requires = { "nvim-lua/plenary.nvim" },
+      dependencies = { "nvim-lua/plenary.nvim" },
   },
   {
       "chrisgrieser/nvim-various-textobjs",
