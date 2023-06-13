@@ -20,7 +20,7 @@ require("lazy").setup({
   'tpope/vim-fugitive',
   {
     'liangxianzhe/nap.nvim',
-    config = {
+    opts = {
       next_prefix = ']',
       prev_prefix = '[',
     },
@@ -85,7 +85,7 @@ require("lazy").setup({
   -- Add indentation guides even on blank lines
   {
     'lukas-reineke/indent-blankline.nvim',
-    config = {
+    opts = {
       filetype_exclude = { 'help', 'packer' },
       buftype_exclude = { 'terminal', 'nofile' },
       show_trailing_blankline_indent = false,
@@ -163,7 +163,7 @@ require("lazy").setup({
   'nvim-treesitter/nvim-treesitter-textobjects',
   {
       'williamboman/mason.nvim',
-      config = {
+      opts = {
           ui = {
               icons = {
                   package_installed = "✓",
@@ -178,7 +178,7 @@ require("lazy").setup({
     dependencies = {
       'williamboman/mason.nvim',
     },
-    config = {
+    opts = {
         ensure_installed = lsp_servers,
     }
   },
@@ -336,7 +336,7 @@ require("lazy").setup({
       'nvim-neorg/neorg-telescope',
       "folke/zen-mode.nvim",
     },
-    config = {
+    opts = {
         load = {
             ["core.defaults"] = {},
             -- ["core.gtd.base"] = {  -- https://github.com/nvim-neorg/neorg/issues/695
@@ -375,7 +375,7 @@ require("lazy").setup({
   {
       'nvim-lualine/lualine.nvim',
       dependencies = { {'kyazdani42/nvim-web-devicons', lazy = true }, 'stevearc/aerial.nvim'},
-      config = {
+      opts = {
           theme = 'auto',
           sections = {
               lualine_a = { { 'mode', fmt = function(str) return str:sub(1,1) end } },
@@ -404,12 +404,12 @@ require("lazy").setup({
   },
   {
       "chrisgrieser/nvim-various-textobjs",
-      config = { useDefaultKeymaps = true }
+      opts = { useDefaultKeymaps = true }
   },
   {
     "akinsho/toggleterm.nvim",
     version = '*',
-    config = {
+    opts = {
       direction = 'float',
       open_mapping = "<leader>ot",
       insert_mappings = false,
@@ -418,7 +418,7 @@ require("lazy").setup({
   'RaafatTurki/hex.nvim',
   {
     'stevearc/oil.nvim',
-    config = {
+    opts = {
       columns = {
         "icon",
         "permissions",
@@ -441,7 +441,7 @@ require("lazy").setup({
   },
   {
     'simrat39/rust-tools.nvim',
-    config = {
+    opts = {
       server = {
         on_attach = function(_, bufnr)
                 -- Hover actions
