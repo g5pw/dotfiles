@@ -99,7 +99,7 @@ require("lazy").setup({
       dependencies = { 'nvim-lua/plenary.nvim' },
       config = function()
         require('gitsigns').setup()
-        require('nap').nap('c', "Gitsigns next_hunk", "Gitsigns prev_hunk", "Next diff", "Previous diff")
+        require("nap").operator('h', require("nap").gitsigns())
       end,
   },
   -- Highlight, edit, and navigate code using a fast incremental parsing library
@@ -188,7 +188,6 @@ require("lazy").setup({
       'williamboman/mason-lspconfig.nvim',
     },
     config = function()
-      require('nap').nap('d', 'vim.lsp.diagnostic.goto_prev', 'vim.lsp.diagnostic.goto_next')
       local on_attach = function(_, bufnr)
         vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -304,7 +303,7 @@ require("lazy").setup({
     config = function()
       require('aerial').setup()
       require('telescope').load_extension('aerial')
-      require('nap').nap("o", "AerialNext", "AerialPrev", "Next outline symbol", "Previous outline symbol")
+      require("nap").operator('o', require("nap").aerial())
     end,
   },
   'saadparwaiz1/cmp_luasnip',
