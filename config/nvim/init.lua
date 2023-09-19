@@ -1,3 +1,4 @@
+-- vim: sw=2
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -39,7 +40,14 @@ require("lazy").setup({
 			}
 		end,
 	},
-	"tpope/vim-commentary", -- "gc" to comment visual regions/lines
+	{
+		"echasnovski/mini.nvim",
+		version = "*",
+		config = function()
+			require("mini.ai").setup()
+			require("mini.comment").setup()
+		end,
+	},
 	-- Operators
 	{
 		"kylechui/nvim-surround",
@@ -332,7 +340,7 @@ require("lazy").setup({
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-treesitter/nvim-treesitter",
-			"nvim-neorg/neorg-telescope",
+			-- 'nvim-neorg/neorg-telescope',
 			"folke/zen-mode.nvim",
 		},
 		opts = {
@@ -353,7 +361,7 @@ require("lazy").setup({
 						},
 					},
 				},
-				["core.integrations.telescope"] = {},
+				-- ["core.integrations.telescope"] = {},
 				["core.presenter"] = {
 					config = {
 						zen_mode = "zen-mode",
@@ -373,7 +381,7 @@ require("lazy").setup({
 	},
 	{
 		"nvim-lualine/lualine.nvim",
-		dependencies = { { "kyazdani42/nvim-web-devicons", lazy = true }, "stevearc/aerial.nvim" },
+		dependencies = { { "nvim-tree/nvim-web-devicons", lazy = true }, "stevearc/aerial.nvim" },
 		opts = {
 			theme = "auto",
 			sections = {
@@ -388,23 +396,13 @@ require("lazy").setup({
 		},
 	},
 	{
-		"jose-elias-alvarez/null-ls.nvim",
-		config = function()
-			local null_ls = require("null-ls")
-
-			-- check https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
-			null_ls.setup({
-				sources = {
-					null_ls.builtins.code_actions.gitsigns,
-					null_ls.builtins.code_actions.statix,
-					null_ls.builtins.completion.luasnip,
-					null_ls.builtins.diagnostics.ansiblelint,
-					null_ls.builtins.diagnostics.statix,
-					null_ls.builtins.formatting.stylua,
-				},
-			})
-		end,
-		dependencies = { "nvim-lua/plenary.nvim" },
+		"folke/trouble.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		},
 	},
 	{
 		"chrisgrieser/nvim-various-textobjs",
@@ -420,6 +418,41 @@ require("lazy").setup({
 		},
 	},
 	"RaafatTurki/hex.nvim",
+	{
+		"FeiyouG/commander.nvim",
+		dependencies = { "nvim-telescope/telescope.nvim" },
+		keys = {
+			{
+				"<leader>p",
+				function()
+					require("commander").show()
+				end,
+				mode = "n",
+				desc = "Open commander prompt",
+			},
+		},
+		opts = {
+			components = {
+				"DESC",
+				"KEYS",
+				"CAT",
+			},
+			sort_by = {
+				"DESC",
+				"KEYS",
+				"CAT",
+				"CMD",
+			},
+			integration = {
+				telescope = {
+					enable = true,
+				},
+				lazy = {
+					enable = true,
+				},
+			},
+		},
+	},
 	{
 		"stevearc/oil.nvim",
 		opts = {
@@ -444,6 +477,17 @@ require("lazy").setup({
 				desc = "Open parent directory",
 			},
 		},
+	},
+	{
+		"stevearc/conform.nvim",
+		opts = {
+                        nix = { "nixfmt" },
+                        c = { "clang_format" },
+                        cpp = { "clang_format" },
+			lua = { "stylua" },
+			-- Conform will run multiple formatters sequentially
+			python = { "ruff", "black" },
+                },
 	},
 	{
 		"/IndianBoy42/tree-sitter-just",
