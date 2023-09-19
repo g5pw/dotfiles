@@ -16,7 +16,6 @@ vim.g.mapleader = " "
 local lsp_servers = { "clangd", "lua_ls", "ruff_lsp" }
 
 require("lazy").setup({
-	"tpope/vim-fugitive",
 	{
 		"liangxianzhe/nap.nvim",
 		opts = {
@@ -325,10 +324,6 @@ require("lazy").setup({
 	{
 		"LnL7/vim-nix",
 		ft = "nix",
-	},
-	{
-		url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-		config = true,
 	},
 	{
 		"nvim-neorg/neorg",
