@@ -100,6 +100,7 @@ alias -g US='|sort -u'
 alias -g W='|wc -l'
 alias -g C='|colout -T ${XDG_CONFIG_HOME:-~/.config}/colout/themes/'
 alias -g P='|peco|'
+alias -g HLP='--help | bat --plain --language=help'
 
 # Suffix aliases
 alias -s tex=$EDITOR
