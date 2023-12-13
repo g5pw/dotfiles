@@ -86,11 +86,13 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"uloco/bluloco.nvim",
-		lazy = false,
-		priority = 1000,
-		dependencies = { "rktjmp/lush.nvim" },
-		config = true,
+		"oxfist/night-owl.nvim",
+		lazy = false, -- make sure we load this during startup if it is your main colorscheme
+		priority = 1000, -- make sure to load this before all the other start plugins
+		config = function()
+			-- load the colorscheme here
+			vim.cmd.colorscheme("night-owl")
+		end,
 	},
 	-- Add indentation guides even on blank lines
 	{
@@ -543,8 +545,6 @@ vim.wo.signcolumn = "yes"
 
 --Set colorscheme (order is important here)
 vim.o.termguicolors = true
-vim.g.onedark_terminal_italics = 2
-vim.cmd([[colorscheme bluloco-dark]])
 
 vim.o.expandtab = true
 vim.o.shiftwidth = 4
