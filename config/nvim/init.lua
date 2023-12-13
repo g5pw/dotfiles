@@ -72,7 +72,7 @@ require("lazy").setup({
 
 			vim.keymap.set("n", "<leader><space>", require("telescope.builtin").buffers, { silent = true })
 			vim.keymap.set("n", "<leader>ff", function()
-				require("telescope.builtin").find_files({ previewer = false })
+				require("telescope.builtin").find_files({ previewer = true })
 			end, { silent = true })
 			vim.keymap.set("n", "<leader>sb", require("telescope.builtin").current_buffer_fuzzy_find, { silent = true })
 			vim.keymap.set("n", "<leader>sh", require("telescope.builtin").help_tags, { silent = true })
