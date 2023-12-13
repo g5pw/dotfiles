@@ -108,7 +108,10 @@ require("lazy").setup({
 	-- Add git related info in the signs columns and popups
 	{
 		"lewis6991/gitsigns.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"liangxianzhe/nap.nvim",
+		},
 		config = function()
 			require("gitsigns").setup()
 			require("nap").operator("h", require("nap").gitsigns())
@@ -198,6 +201,7 @@ require("lazy").setup({
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			"williamboman/mason-lspconfig.nvim",
+			"liangxianzhe/nap.nvim",
 		},
 		config = function()
 			local on_attach = function(_, bufnr)
@@ -314,6 +318,9 @@ require("lazy").setup({
 	},
 	{
 		"stevearc/aerial.nvim",
+		dependencies = {
+			"liangxianzhe/nap.nvim",
+		},
 		config = function()
 			require("aerial").setup()
 			require("telescope").load_extension("aerial")
