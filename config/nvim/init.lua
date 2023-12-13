@@ -330,7 +330,17 @@ require("lazy").setup({
 		"kevinhwang91/nvim-bqf",
 		ft = "qf",
 	},
-	"simrat39/symbols-outline.nvim",
+	{
+		"hedyhli/outline.nvim",
+		lazy = true,
+		cmd = { "Outline", "OutlineOpen" },
+		keys = { -- Example mapping to toggle outline
+			{ "<leader>o", "<cmd>Outline<CR>", desc = "Toggle outline" },
+		},
+		opts = {
+			-- Your setup opts here
+		},
+	},
 	{
 		"LnL7/vim-nix",
 		ft = "nix",
@@ -483,40 +493,22 @@ require("lazy").setup({
 	{
 		"stevearc/conform.nvim",
 		opts = {
-                        nix = { "nixfmt" },
-                        c = { "clang_format" },
-                        cpp = { "clang_format" },
+			nix = { "nixfmt" },
+			c = { "clang_format" },
+			cpp = { "clang_format" },
 			lua = { "stylua" },
 			-- Conform will run multiple formatters sequentially
 			python = { "ruff", "black" },
-                },
+		},
 	},
 	{
 		"/IndianBoy42/tree-sitter-just",
 		config = true,
 	},
 	{
-		"simrat39/rust-tools.nvim",
-		opts = {
-			server = {
-				on_attach = function(_, bufnr)
-					-- Hover actions
-					vim.keymap.set(
-						"n",
-						"<C-space>",
-						require("rust-tools").hover_actions.hover_actions,
-						{ buffer = bufnr }
-					)
-					-- Code action groups
-					vim.keymap.set(
-						"n",
-						"<Leader>a",
-						require("rust-tools").code_action_group.code_action_group,
-						{ buffer = bufnr }
-					)
-				end,
-			},
-		},
+		"mrcjkb/rustaceanvim",
+		version = "^3", -- Recommended
+		ft = { "rust" },
 	},
 })
 
