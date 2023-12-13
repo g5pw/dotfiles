@@ -391,7 +391,23 @@ require("lazy").setup({
 	},
 	{
 		"stevearc/overseer.nvim",
-		config = true,
+		config = {
+			strategy = "toggleterm",
+		},
+		keys = {
+			{
+				"<leader>Or",
+				"<cmd>OverseerRun<cr>",
+				mode = "n",
+				desc = "Run Overseer task",
+			},
+			{
+				"<leader>Ot",
+				"<cmd>OverseerToggle<cr>",
+				mode = "n",
+				desc = "Show all Overseer tasks",
+			},
+		},
 	},
 	{
 		"altermo/ultimate-autopair.nvim",
@@ -400,7 +416,11 @@ require("lazy").setup({
 	},
 	{
 		"nvim-lualine/lualine.nvim",
-		dependencies = { { "nvim-tree/nvim-web-devicons", lazy = true }, "stevearc/aerial.nvim" },
+		dependencies = {
+			{ "nvim-tree/nvim-web-devicons", lazy = true },
+			"stevearc/aerial.nvim",
+			"stevearc/overseer.nvim",
+		},
 		opts = {
 			theme = "auto",
 			sections = {
@@ -411,6 +431,7 @@ require("lazy").setup({
 					end,
 				} },
 				lualine_c = { "filename", "aerial" },
+				lualine_x = { "overseer" },
 			},
 		},
 	},
