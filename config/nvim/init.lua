@@ -189,6 +189,10 @@ require("lazy").setup({
 		},
 	},
 	{
+		"roobert/tabtree.nvim",
+		config = true,
+	},
+	{
 		"williamboman/mason-lspconfig.nvim",
 		dependencies = {
 			"williamboman/mason.nvim",
