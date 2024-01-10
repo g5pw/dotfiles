@@ -50,3 +50,4 @@ autoload -U zargs
 zinit ice as'command' lucid wait'1'
 zinit snippet https://github.com/thanks4opensource/buck50/raw/master/build/buck50.py
 
+fortune -as | cowsay -nf $(cowsay -l | sed -e 1d -e 's/ /\n/g' | shuf -n1)
