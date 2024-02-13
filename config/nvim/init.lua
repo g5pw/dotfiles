@@ -395,7 +395,7 @@ require("lazy").setup({
 	},
 	{
 		"stevearc/overseer.nvim",
-		config = {
+		opts = {
 			strategy = "toggleterm",
 		},
 		keys = {
