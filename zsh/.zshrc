@@ -16,4 +16,11 @@ autoload -U zargs
 zinit ice as'command' lucid wait'1'
 zinit snippet https://github.com/thanks4opensource/buck50/raw/master/build/buck50.py
 
+# Important dirs
+if [ -r $HOME/.named_dirs ]; then
+    while read name dir; do
+        hash -d $name=${(e)dir}
+    done < $HOME/.named_dirs
+fi
+
 fortune -as | cowsay -nf $(cowsay -l | sed -e 1d -e 's/ /\n/g' | shuf -n1)

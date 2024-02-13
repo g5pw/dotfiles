@@ -36,11 +36,6 @@ limit -s
 # This are characters that separates words
 export WORDCHARS='*?-[]~=/&;!#$%^(){}<>'
 
-# Important dirs
-while read name dir; do
-    hash -d $name=${(e)dir}
-done < $HOME/.named_dirs
-
 #load my function and more completions
 fpath=($ZDOTDIR/functions $fpath)
 
