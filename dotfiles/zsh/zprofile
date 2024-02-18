@@ -1,0 +1,11 @@
+# Include user profile
+if [ -f $HOME/.profile ]; then
+    source $HOME/.profile
+fi
+
+# enable extended glob
+setopt extended_glob
+
+# Added by Toolbox App
+export PATH="$PATH:/Users/g5pw/Library/Application Support/JetBrains/Toolbox/scripts"
+

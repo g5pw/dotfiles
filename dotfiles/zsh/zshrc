@@ -1,0 +1,27 @@
+fortune -as | cowsay -n --random | lolcat
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# Include files from zsh.d directory
+for file in $ZDOTDIR/zsh.d/*.zsh; do
+    source $file
+done
+
+# Useful command similar to xargs
+autoload -U zargs
+
+#autoload -zU port-wrapper port-cd
+
+# Important dirs
+if [ -r $HOME/.named_dirs ]; then
+    while read name dir; do
+        hash -d $name=${(e)dir}
+    done < $HOME/.named_dirs
+fi
+
+eval "$(direnv hook zsh)"

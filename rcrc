@@ -1,2 +1,0 @@
-EXCLUDES="tmp vim-addons cache *_history* zcompdump *.zwc"
-SYMLINK_DIRS="pentadactyl"

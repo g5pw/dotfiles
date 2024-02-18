@@ -1,0 +1,128 @@
+[init]
+    templatedir = ~/.git-template
+    defaultBranch = main
+[user]
+    email = me@g5pw.me
+    name = Aljaž \"g5pw\" Srebrnič
+    signingkey = 0x84C9DBC8F265A116
+[core]
+    excludesfile = ~/.gitignore
+    quotepath = false
+    whitespace = trailing-space,space-before-tab
+    pager = delta
+    autocrlf = input
+[color]
+    ui = auto
+[format]
+    pretty = full
+[alias]
+    d = diff
+    wd = diff --color-words
+    logs = log --stat -C
+    ci = commit
+    st = status
+    co = checkout
+    lc = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+    unstage = reset HEAD --
+[advice]
+    statusHints = false
+    detachedHead = false
+[rerere]
+    enabled = true
+[push]
+    default = current
+[difftool]
+    prompt = false
+[difftool "icdiff"]
+    cmd = icdiff --line-numbers $LOCAL $REMOTE
+[difftool "difft"]
+    cmd = difft "$LOCAL" "$REMOTE"
+[merge]
+    tool = splice
+    ff = only
+    conflictstyle = zdiff3
+
+# Mergetools here
+[mergetool]
+    prompt = false
+[mergetool "splice"]
+    cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
+    trustExitCode = true
+[interactive]
+    diffFilter = delta --color-only
+[diff]
+    tool = icdiff
+    colorMoved = default
+    submodule = log
+[rebase]
+    autoStash = true
+    autoSquash = true
+[color "diff-highlight"]
+    oldNormal = 105 bold
+    oldHighlight = 147 bold 60
+    newNormal = 186 bold
+    newHighlight = 186 bold 136
+[color "diff"]
+    meta = 33
+    frag = magenta bold
+    commit = yellow bold
+    old = 147 bold
+    new = 186 bold
+    whitespace = 231 reverse
+[sequence]
+    editor = interactive-rebase-tool
+[diff-so-fancy]
+    stripLeadingSymbols = false
+[interactive-rebase-tool]
+    autoSelectNext = true
+    inputMoveDown = j
+    inputMoveUp = k
+    inputMoveLeft = h
+    inputMoveRight = l
+    inputMoveStepDown = Control+f
+    inputMoveStepUp = Control+b
+
+    inputMoveSelectionUp = K
+    inputMoveSelectionDown = J
+    inputToggleVisualMode = V
+    inputUndo = u
+    inputRedo = Control+r
+[include]
+    path = "~/.gitconfig.private"
+
+[delta]
+    dark = true
+    navigate = true
+    syntax-theme = Monokai Extended Bright
+    plus-style = syntax "#666600"
+    plus-emph-style = syntax "#888800"
+    minus-style = normal "#6000b5"
+    minus-emph-style = normal "#6033b5"
+    line-numbers-plus-style = "#777722"
+    line-numbers-minus-style = "#8000d8"
+    line-numbers-zero-style = "#999999"
+    features = decorations
+
+[delta "default"]
+    line-numbers = true
+
+[delta "magit"]
+    line-numbers = false
+
+[filter "lfs"]
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
+[github]
+    user = g5pw
+[gitlab]
+    user = g5pw
+[gitlab "git.mittelab.org"]
+    user = g5pw
+[gitlab "git.mittelab.org/api/v4"]
+    user = g5pw
+[branch]
+    sort = -committerdate
+[tag]
+    sort = taggerdate
