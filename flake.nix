@@ -240,8 +240,9 @@
         # }}}
         glow # Markdown renderer
         # rust {{{
-        rustup
         bacon
+        cargo-generate
+        rustup
         # }}}
         # go {{{
         delve
@@ -304,6 +305,7 @@
 
         yubikey-manager
         yubikey-personalization
+        openpgp-card-tools
 
         # pdfpc # marked as broken
         emacs29-macport
