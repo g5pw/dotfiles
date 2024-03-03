@@ -48,12 +48,12 @@
 
   # Left prompt segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-    # context                 # user@host
+    yazi
+    xplr
     nix_shell
     dir                       # current directory
     vcs                       # git status
-    # command_execution_time  # previous command duration
-    # virtualenv              # python virtual environment
+    virtualenv              # python virtual environment
     prompt_char               # prompt symbol
   )
 
@@ -63,6 +63,7 @@
     virtualenv                # python virtual environment
     context                   # user@host
     time                      # current time
+    battery
   )
 
   # Basic style options that define the overall prompt look.
