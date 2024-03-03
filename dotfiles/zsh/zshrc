@@ -8,8 +8,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Include files from zsh.d directory
-for file in $ZDOTDIR/zsh.d/*.zsh; do
-    source $file
+for f in $ZDOTDIR/zsh.d/*.zsh; do
+    source $f
 done
 
 # Useful command similar to xargs
