@@ -36,18 +36,3 @@ prompt_my_docker_context () {
 }
 
 eval "$(zoxide init zsh)"
-
-prompt_nix_shell () {
-  if [[ -n ${IN_NIX_SHELL} && ${IN_NIX_SHELL} != "0" ]] || [[ ${IN_NIX_RUN} && ${IN_NIX_RUN} != "0" ]]; then
-    if [[ -n ${IN_WHICH_NIX_SHELL} ]] then
-      NIX_SHELL_NAME=": ${IN_WHICH_NIX_SHELL}"
-    fi
-    if [[ -n ${IN_NIX_SHELL} && ${IN_NIX_SHELL} != "0" ]]; then
-      NAME="shell"
-    else
-      NAME="run"
-    fi
-    p10k segment -i $'\uf313' -f '033' -t "${NAME}${NIX_SHELL_NAME}"
-  fi
-}
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS+=nix_shell
