@@ -29,7 +29,7 @@
         coreutils
         diffutils
         findutils
-        #inetutils
+        inetutils
         moreutils
         patchutils
         # }}}
@@ -94,7 +94,7 @@
         eza
         fd
         ripgrep
-        #ripgrep-all fails testing
+        ripgrep-all
         viddy
         # }}}
 
@@ -134,8 +134,7 @@
         minicom
         stm32flash
         openocd
-        stlink
-        #gcc-arm-embedded
+        # stlink
         tio
         # }}}
 
@@ -165,10 +164,9 @@
         fblog
         gvproxy # needed for podman-machine
         iperf
-        #ipv6calc # unsupported
         jless
         htop
-        # gping # unsupported
+        gping
         mosh
         mtr
         nmap
@@ -176,7 +174,7 @@
         podman
         pwgen
         sipcalc
-        #shelldap # unsupported
+        shelldap
         speedtest-rs
         socat
         solo2-cli
@@ -203,7 +201,7 @@
         git-interactive-rebase-tool
         git-bug
         git-cliff
-        # git-brunch marked as broken
+        git-brunch
         git-extras
         git-filter-repo
         git-latexdiff
@@ -308,7 +306,7 @@
         emacs29-macport
         pinentry_mac
         qalculate-gtk
-        #zathura
+        zathura
         ];
 
       # Auto upgrade nix package and the daemon service.
