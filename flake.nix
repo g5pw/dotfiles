@@ -72,8 +72,6 @@
         diceware
         docker-credential-helpers
         gopass
-        git-credential-gopass
-        git-credential-1password
         gnupg
         gpg-tui
         # }}}
@@ -117,7 +115,6 @@
         sqlite-utils
         tmux
         tree
-        turbogit
         usql
         unixtools.watch
         watchexec
