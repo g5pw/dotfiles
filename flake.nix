@@ -135,6 +135,7 @@
         minicom
         stm32flash
         openocd
+        pulseview
         # stlink
         tio
         # }}}
@@ -182,6 +183,7 @@
         sops
         trippy
         websocat
+        wireshark
         # dbcli tools {{{
         mycli
         litecli
