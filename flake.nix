@@ -30,6 +30,7 @@
         diffutils
         findutils
         inetutils
+        cyme
         moreutils
         patchutils
         # }}}
