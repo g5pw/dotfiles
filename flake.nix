@@ -29,7 +29,7 @@
         coreutils
         diffutils
         findutils
-        inetutils
+        #inetutils
         cyme
         moreutils
         patchutils
