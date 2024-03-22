@@ -306,7 +306,7 @@
         openpgp-card-tools
 
         # pdfpc # marked as broken
-        emacs29-macport
+        emacs-macport
         pinentry_mac
         qalculate-gtk
         zathura
