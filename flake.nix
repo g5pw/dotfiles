@@ -44,7 +44,7 @@
         # Productivity {{{
         # Spelling {{{
         enchant
-        (hunspellWithDicts (with pkgs.hunspellDicts; [ it-it en-us sl ]))
+        (hunspellWithDicts (with pkgs.hunspellDicts; [ it_IT en_US ]))
         (aspellWithDicts (d: [ d.it d.en d.en-computers d.en-science ]))
         # }}}
         bottom
