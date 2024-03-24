@@ -109,6 +109,7 @@
         highlight
         lesspipe
         mprocs
+        navi
         qrencode
         redis
         skim
@@ -194,6 +195,7 @@
         # Development tools {{{
         ast-grep
         difftastic
+        diffsitter
         delta
         dprint
         #gdb
