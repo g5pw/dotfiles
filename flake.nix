@@ -308,6 +308,7 @@
         openpgp-card-tools
 
         # pdfpc # marked as broken
+        inkscape
         emacs-macport
         pinentry_mac
         qalculate-gtk
