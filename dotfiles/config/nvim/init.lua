@@ -352,43 +352,6 @@ require("lazy").setup({
 		ft = "nix",
 	},
 	{
-		"nvim-neorg/neorg",
-		build = ":Neorg sync-parsers",
-		version = "*",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-treesitter/nvim-treesitter",
-			-- 'nvim-neorg/neorg-telescope',
-			"folke/zen-mode.nvim",
-		},
-		opts = {
-			load = {
-				["core.defaults"] = {},
-				-- ["core.gtd.base"] = {  -- https://github.com/nvim-neorg/neorg/issues/695
-				--     config = {
-				--         workspace = "gtd"
-				--     }
-				-- },
-				["core.completion"] = { config = { engine = "nvim-cmp" } },
-				["core.concealer"] = {},
-				["core.dirman"] = {
-					config = {
-						workspaces = {
-							gtd = "~/Documents/norg/gtd",
-							default = "~/Documents/norg/default",
-						},
-					},
-				},
-				-- ["core.integrations.telescope"] = {},
-				["core.presenter"] = {
-					config = {
-						zen_mode = "zen-mode",
-					},
-				},
-			},
-		},
-	},
-	{
 		"stevearc/overseer.nvim",
 		opts = {
 			strategy = "toggleterm",
