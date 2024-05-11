@@ -5,7 +5,7 @@ if [[ $TERM == xterm-termite ]]; then
 fi
 
 # iTerm2
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+test -e "${ZDOTDIR}/.iterm2_shell_integration.zsh" && source "${ZDOTDIR}/.iterm2_shell_integration.zsh"
 
 # Kitty
 which kitty &>/dev/null && kitty + complete setup zsh | source /dev/stdin
