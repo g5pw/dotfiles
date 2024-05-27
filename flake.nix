@@ -137,6 +137,8 @@
         stm32flash
         openocd
         pulseview
+        platformio
+        (proxmark3.override {withGeneric = true;})
         # stlink
         tio
         # }}}
@@ -157,7 +159,7 @@
         # }}}
 
         # Sysadmin tools {{{
-        bettercap
+        angle-grinder
         colima
         docker
         docker-compose
@@ -165,7 +167,6 @@
         dogdns
         dstp
         fblog
-        gvproxy # needed for podman-machine
         iperf
         jless
         htop
