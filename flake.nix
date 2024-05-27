@@ -288,6 +288,12 @@
         ruff
         rye
         # }}}
+        # typst {{{
+        typst
+        typstfmt
+        typst-lsp
+        typst-live
+        # }}}
         # zig {{{
         # zig
         # zls
