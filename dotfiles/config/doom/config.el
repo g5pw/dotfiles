@@ -13,7 +13,7 @@
 
 (setq doom-font (font-spec :family "MonaspiceAr Nerd Font" :size 13))
 
-(setq doom-theme 'doom-vibrant)
+(setq doom-theme 'doom-palenight)
 
 (setq doom-localleader-key ",")
 
