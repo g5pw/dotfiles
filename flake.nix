@@ -303,7 +303,7 @@
         tectonic
         typst
         stylua
-        nixfmt
+        nixfmt-rfc-style
         # }}}
 
         # Language servers {{{
