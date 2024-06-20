@@ -45,6 +45,8 @@ require("lazy").setup({
 		version = "*",
 		config = function()
 			require("mini.ai").setup()
+			require("mini.diff").setup()
+			require("mini.git").setup()
 			require("mini.comment").setup()
 		end,
 	},
