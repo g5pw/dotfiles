@@ -55,10 +55,11 @@
         bottom
         broot
         d2
+        dust
         funzzy
         libqalculate
+        erdtree
         mdcat
-        ncdu
         nodePackages.mermaid-cli
         numbat
         pandoc
