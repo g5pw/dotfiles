@@ -72,6 +72,7 @@ alias gsm='git show --summary'
 alias gss='git stash'
 alias gssp='git stash pop'
 alias gt='git tag'
+alias gu='git unstage'
 alias ghelp='git_help_aliases'
 alias gwip='git add -A && git commit -m "WIP"'
 
