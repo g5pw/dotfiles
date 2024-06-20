@@ -143,7 +143,7 @@
         dtc
         esptool
         espup
-        minicom
+        glasgow
         stm32flash
         openocd
         pulseview
