@@ -92,6 +92,8 @@
     ".bash_profile".source = dotfiles/bash_profile;
     ".bashrc".source = dotfiles/bashrc;
 
+    ".config/erdtree/.erdtree.toml".source = dotfiles/config/erdtree.toml;
+
     # zsh {{{
     ".config/zsh/.p10k.zsh".source = dotfiles/zsh/p10k.zsh;
 
