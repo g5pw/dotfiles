@@ -21,8 +21,10 @@
        ;;layout            ; auie,ctsrnm is the superior home row
 
        :completion
-       (company           ; the ultimate code completion backend
-        +childframe)
+       ;;company           ; the ultimate code completion backend
+       (corfu              ; complete with cap(f), cape and a flying feather!
+        +icons
+        +orderless)
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
        ;;ivy               ; a search engine for love and life
@@ -36,7 +38,6 @@
        ;;doom-quit         ; DOOM quit-message prompts when you quit Emacs
        ;;(emoji +unicode)  ; 🙂
        hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
-       hydra
        indent-guides     ; highlighted indent columns
        ligatures         ; ligatures and symbols to make your code pretty again
        ;; minimap           ; show a map of the code on the side
@@ -86,7 +87,7 @@
 
        :checkers
        syntax              ; tasing you for every semicolon you forget
-       (spell +enchant)   ; tasing you for misspelling mispelling
+       (spell +hunspell)   ; tasing you for misspelling mispelling
        ;;grammar           ; tasing grammar mistake every you make
 
        :tools
@@ -99,7 +100,6 @@
        editorconfig      ; let someone else argue about tabs vs spaces
        ;;ein               ; tame Jupyter notebooks with emacs
        (eval +overlay)     ; run code, run (also, repls)
-       ;;gist              ; interacting with github gists
        (lookup           ; navigate your code and its documentation
         +docsets)        ; ...or in Dash docsets locally
        (lsp               ; M-x vscode
@@ -110,15 +110,13 @@
        ;;pass              ; password manager for nerds
        pdf               ; pdf enhancements
        ;;prodigy           ; FIXME managing external services & code builders
-       ;;rgb               ; creating color strings
-       ;;taskrunner        ; taskrunner for all your projects
        ;;terraform         ; infrastructure as code
        ;;tmux              ; an API for interacting with tmux
        tree-sitter       ; syntax and parsing, sitting in a tree...
        upload            ; map local to remote projects via ssh/ftp
 
        :os
-       (:if IS-MAC macos)  ; improve compatibility with macOS
+       (:if (featurep :system 'macos) macos)  ; improve compatibility with macOS
        ;;tty               ; improve the terminal Emacs experience
 
        :lang
@@ -191,7 +189,6 @@
        ;;purescript        ; javascript, but functional
        (python            ; beautiful is better than ugly
         +lsp
-        +poetry
         +pyright
         +tree-sitter)
        ;;qt                ; the 'cutest' gui framework ever
@@ -216,8 +213,8 @@
         +lsp)
        (yaml              ; JSON, but readable
         +lsp)
-       (zig               ; C, but simpler
-        +tree-sitter)
+       ;;(zig               ; C, but simpler
+       ;; +tree-sitter)
 
        :email
        ;;(mu4e +org +gmail)
@@ -230,7 +227,6 @@
        ;;everywhere        ; *leave* Emacs!? You must be joking
        ;;irc               ; how neckbeards socialize
        ;;(rss +org)        ; emacs as an RSS reader
-       ;;twitter           ; twitter client https://twitter.com/vnought
 
        :config
        ;;literate
