@@ -15,7 +15,6 @@
 
 ;; Tools
 (package! magit-lfs)
-(package! magit-todos)
 (package! magit-delta)
 
 ;; Languages
@@ -30,8 +29,6 @@
   (package! doct)
   (package! ox-ssh)
   (package! ox-moderncv :recipe (:host github :repo "Titan-C/org-cv")))
-
-(package! macports)
 
 (package! sql-indent)
 
