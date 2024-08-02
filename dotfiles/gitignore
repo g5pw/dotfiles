@@ -46,10 +46,6 @@ Backup[ ]of[ ]*.pages/
 Backup[ ]of[ ]*.key/
 Backup[ ]of[ ]*.numbers/
 
-# Binary files
-*.pyc
-/venv
-
 # Source code tag databases
 tags
 TAGS
@@ -65,6 +61,18 @@ GRTAGS
 
 /cmake-build-*/
 
+# Python {{{
 # caches
 .mypy_cache/
 .ccls-cache/
+
+# Binary files
+*.pyc
+
+# Virtual envs
+/.venv
+/venv
+
+# Build files
+*.egg-info/
+# }}}
