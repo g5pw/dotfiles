@@ -19,7 +19,10 @@
 
 (setq display-line-numbers-type 'visual)
 
-(setq ispell-dictionary "italiano")
+(add-hook 'spell-fu-mode-hook
+  (lambda ()
+    (spell-fu-dictionary-add (spell-fu-get-ispell-dictionary "it"))
+    (spell-fu-dictionary-add (spell-fu-get-ispell-dictionary "en_US"))))
 
 ; Lets me type special combining characters
 (if IS-MAC
