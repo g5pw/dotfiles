@@ -7,14 +7,11 @@
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
-    superfile.url = "github:MHNightCat/superfile";
-    superfile.inputs.nixpkgs.follows = "nixpkgs";
-
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, superfile, home-manager }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
   let
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
@@ -64,6 +61,7 @@
         numbat
         pandoc
         pdfgrep
+        procs
         pv
         skim
         wiki-tui
@@ -72,9 +70,7 @@
         # }}}
 
         # File Managers {{{
-        xplr
         yazi
-        superfile.packages.aarch64-darwin.default
         # }}}
 
         # Security/Encryption {{{
@@ -252,6 +248,9 @@
         glow # Markdown renderer
         # rust {{{
         bacon
+        irust
+        cargo-expand
+        cargo-show-asm
         cargo-generate
         rustup
         # }}}
@@ -276,12 +275,9 @@
               pyserial
               requests
               black
-              isort
-              nose
               pipx
               pylint
               pyflakes
-              pytest
             ];
           python-with-my-packages = python3.withPackages my-python-packages;
         in python-with-my-packages)
