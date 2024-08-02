@@ -1,2 +1,0 @@
-EXCLUDES="tmp vim-addons cache *_history* zcompdump *.zwc project.org"
-SYMLINK_DIRS="nix-darwin zinit pentadactyl hammerspoon"

@@ -50,25 +50,25 @@
     ".orpierc".source = dotfiles/orpierc;
 
 
-    ".config/nvim/init.lua".source = dotfiles/config/nvim/init.lua;
-    ".config/nvim/plugin/lastplace.lua".source = dotfiles/config/nvim/plugin/lastplace.lua;
+    ".config/nvim/init.lua".source = dotfiles/nvim/init.lua;
+    ".config/nvim/plugin/lastplace.lua".source = dotfiles/nvim/plugin/lastplace.lua;
 
-    ".config/wezterm/wezterm.lua".source = dotfiles/config/wezterm/wezterm.lua;
+    ".config/wezterm/wezterm.lua".source = dotfiles/wezterm/wezterm.lua;
 
-    ".config/gitui/theme.ron".source = dotfiles/config/gitui/theme.ron;
-    ".config/gitui/key_bindings.ron".source = dotfiles/config/gitui/key_bindings.ron;
+    ".config/gitui/theme.ron".source = dotfiles/gitui/theme.ron;
+    ".config/gitui/key_bindings.ron".source = dotfiles/gitui/key_bindings.ron;
 
-    ".config/doom/packages.el".source = dotfiles/config/doom/packages.el;
-    ".config/doom/config.el".source = dotfiles/config/doom/config.el;
-    ".config/doom/init.el".source = dotfiles/config/doom/init.el;
-    ".config/doom/hydras.el".source = dotfiles/config/doom/hydras.el;
+    ".config/doom/packages.el".source = dotfiles/doom/packages.el;
+    ".config/doom/config.el".source = dotfiles/doom/config.el;
+    ".config/doom/init.el".source = dotfiles/doom/init.el;
+    ".config/doom/hydras.el".source = dotfiles/doom/hydras.el;
 
-    ".config/bat/config".source = dotfiles/config/bat/config;
+    ".config/bat/config".source = dotfiles/bat/config;
 
-    ".config/kitty/nord.conf".source = dotfiles/config/kitty/nord.conf;
-    ".config/kitty/kitty.conf".source = dotfiles/config/kitty/kitty.conf;
+    ".config/kitty/nord.conf".source = dotfiles/kitty/nord.conf;
+    ".config/kitty/kitty.conf".source = dotfiles/kitty/kitty.conf;
 
-    ".config/helix/config.toml".source = dotfiles/config/helix/config.toml;
+    ".config/helix/config.toml".source = dotfiles/helix/config.toml;
 
     ".tmux.conf".source = dotfiles/tmux.conf;
     ".digrc".source = dotfiles/digrc;
@@ -79,7 +79,6 @@
     ".octaverc".source = dotfiles/octaverc;
     ".iftoprc".source = dotfiles/iftoprc;
     ".inputrc".source = dotfiles/inputrc;
-    ".latexmkrc".source = dotfiles/latexmkrc;
     ".psqlrc".source = dotfiles/psqlrc;
     ".ideavimrc".source = dotfiles/ideavimrc;
 
@@ -92,7 +91,7 @@
     ".bash_profile".source = dotfiles/bash_profile;
     ".bashrc".source = dotfiles/bashrc;
 
-    ".config/erdtree/.erdtree.toml".source = dotfiles/config/erdtree.toml;
+    ".config/erdtree/.erdtree.toml".source = dotfiles/erdtree.toml;
 
     # zsh {{{
     ".config/zsh/.p10k.zsh".source = dotfiles/zsh/p10k.zsh;
@@ -146,7 +145,7 @@
     ".config/zsh/zsh.d/21_compdefs.zsh".source = dotfiles/zsh/zsh.d/21_compdefs.zsh;
     ".config/zsh/zsh.d/25_scmpuff.zsh".source = dotfiles/zsh/zsh.d/25_scmpuff.zsh;
     ".config/zsh/zsh.d/30_aliases.zsh".source = dotfiles/zsh/zsh.d/30_aliases.zsh;
-    ".config/zsh/zsh.d/31_aliases.zsh".source = dotfiles/tag-mac/zsh/zsh.d/31_aliases.zsh;
+    ".config/zsh/zsh.d/31_aliases.zsh".source = dotfiles/zsh/zsh.d/31_aliases_mac.zsh;
     ".config/zsh/zsh.d/50_plugin.zsh".source = dotfiles/zsh/zsh.d/50_plugin.zsh;
     ".config/zsh/zsh.d/50_utils.zsh".source = dotfiles/zsh/zsh.d/50_utils.zsh;
     ".config/zsh/zsh.d/80_bindings.zsh".source = dotfiles/zsh/zsh.d/80_bindings.zsh;
