@@ -108,14 +108,12 @@
     ".config/zsh/functions/_mdfind".source = dotfiles/zsh/functions/_mdfind;
     ".config/zsh/functions/_mdls".source = dotfiles/zsh/functions/_mdls;
     ".config/zsh/functions/_mdutil".source = dotfiles/zsh/functions/_mdutil;
-    ".config/zsh/functions/_poetry".source = dotfiles/zsh/functions/_poetry;
     ".config/zsh/functions/_whichf".source = dotfiles/zsh/functions/_whichf;
     ".config/zsh/functions/_xattr".source = dotfiles/zsh/functions/_xattr;
     ".config/zsh/functions/acronym".source = dotfiles/zsh/functions/acronym;
     ".config/zsh/functions/alert".source = dotfiles/zsh/functions/alert;
     ".config/zsh/functions/aping".source = dotfiles/zsh/functions/aping;
     ".config/zsh/functions/bat_status".source = dotfiles/zsh/functions/bat_status;
-    ".config/zsh/functions/battery".source = dotfiles/zsh/functions/battery;
     ".config/zsh/functions/box".source = dotfiles/zsh/functions/box;
     ".config/zsh/functions/checksum".source = dotfiles/zsh/functions/checksum;
     ".config/zsh/functions/colortable".source = dotfiles/zsh/functions/colortable;
@@ -131,8 +129,6 @@
     ".config/zsh/functions/rtab".source = dotfiles/zsh/functions/rtab;
     ".config/zsh/functions/spectrum".source = dotfiles/zsh/functions/spectrum;
     ".config/zsh/functions/src".source = dotfiles/zsh/functions/src;
-    ".config/zsh/functions/trac-get".source = dotfiles/zsh/functions/trac-get;
-    ".config/zsh/functions/trac-patch".source = dotfiles/zsh/functions/trac-patch;
     ".config/zsh/functions/whichf".source = dotfiles/zsh/functions/whichf;
 
     ".config/zsh/zsh.d/00_zinit.zsh".source = dotfiles/zsh/zsh.d/00_zinit.zsh;
