@@ -88,20 +88,20 @@ require("lazy").setup({
 		end,
 	},
         {
-            "scottmckendry/cyberdream.nvim",
-            lazy = false,
-            priority = 1000,
-            config = function()
-                require("cyberdream").setup({
-                    -- Recommended - see "Configuring" below for more config options
-                    transparent = true,
-                    italic_comments = true,
-                    hide_fillchars = true,
-                    borderless_telescope = true,
-                    terminal_colors = true,
-                })
-                vim.cmd("colorscheme cyberdream") -- set the colorscheme
-            end,
+        "0xstepit/flow.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+        config = function()
+            require("flow").setup{
+                transparent = false, -- Set transparent background.
+                fluo_color = "pink", --  Fluo color: pink, yellow, orange, or green.
+                mode = "normal", -- Intensity of the palette: normal, bright, desaturate, or dark. Notice that dark is ugly!
+                aggressive_spell = false, -- Display colors for spell check.
+            }
+
+            vim.cmd("colorscheme flow")
+        end,
         },
 	-- Add indentation guides even on blank lines
 	{
@@ -501,13 +501,13 @@ require("lazy").setup({
 		},
 	},
 	{
-		"/IndianBoy42/tree-sitter-just",
+		"IndianBoy42/tree-sitter-just",
 		config = true,
 	},
 	{
 		"mrcjkb/rustaceanvim",
-		version = "^3", -- Recommended
-		ft = { "rust" },
+		version = "^5", -- Recommended
+		lazy = false, -- This plugin is already lazy
 	},
 })
 
