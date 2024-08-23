@@ -178,7 +178,6 @@
         htop
         gping
         mosh
-        mtr
         nmap
         openssh
         podman

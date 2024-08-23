@@ -23,6 +23,7 @@ alias fd='noglob fd'
 alias j='jobs'
 alias JUSTFUCKINGDOIT='sudo -p "Oh, come on... alright, gimme your password:" $(fc -ln -1)'
 alias grep='grep --colour'
+alias mtr='trip'
 alias gp='gopass'
 alias h='history'
 alias t="${GIT_EXPAND} gitui"
