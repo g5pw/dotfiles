@@ -325,8 +325,6 @@
         pinentry_mac
         qalculate-gtk
         zathura
-
-        karabiner-elements
         ];
 
       # Auto upgrade nix package and the daemon service.
