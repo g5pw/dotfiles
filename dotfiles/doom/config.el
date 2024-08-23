@@ -251,3 +251,7 @@ Host github.com gitlab.com git.mittelab.org
 (use-package! sql-indent
   :after sql)
 
+(use-package! edraw-org
+              :after org
+              :config
+              (edraw-org-setup-default))

@@ -28,7 +28,9 @@
 (when (package! org)
   (package! doct)
   (package! ox-ssh)
-  (package! ox-moderncv :recipe (:host github :repo "Titan-C/org-cv")))
+  (package! ox-moderncv :recipe (:host github :repo "Titan-C/org-cv"))
+  (package! edraw-org :recipe (:host github :repo "misohena/el-easydraw"))
+)
 
 (package! sql-indent)
 
