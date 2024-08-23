@@ -213,12 +213,6 @@ Host github.com gitlab.com git.mittelab.org
   IdentityAgent /Users/g5pw/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
 "))
 
-(use-package! ssh-tunnels
-  :config
-  (map! :leader :prefix ("os" . "ssh-tunnel")
-        :desc "Kill SSH tunnel" "k" #'ssh-tunnels-kill-tunnel
-        :desc "Run SSH tunnel"  "r" #'ssh-tunnels-run-tunnel))
-
 ;; (use-package! ox-awesomecv
 ;; 	      :after org)
 
@@ -257,12 +251,3 @@ Host github.com gitlab.com git.mittelab.org
 (use-package! sql-indent
   :after sql)
 
-(use-package auto-virtualenv
-  :ensure t
-  :init
-  (use-package pyvenv
-    :ensure t)
-  :config
-  (add-hook 'python-mode-hook 'auto-virtualenv-set-virtualenv)
-  (add-hook 'projectile-after-switch-project-hook 'auto-virtualenv-set-virtualenv)  ;; If using projectile
-  )

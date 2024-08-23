@@ -32,10 +32,6 @@
 
 (package! sql-indent)
 
-(package! ssh-tunnels :recipe (:host github :repo "death/ssh-tunnels"))
-
 (package! mermaid-mode)
 (package! ob-mermaid)
 
-(package! auto-virtualenv)
-(package! pyenv)
