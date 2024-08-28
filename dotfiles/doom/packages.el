@@ -37,3 +37,5 @@
 (package! mermaid-mode)
 (package! ob-mermaid)
 
+(package! typst-ts-mode
+  :recipe (:type git :host sourcehut :repo "meow_king/typst-ts-mode" :files (:defaults "*.el")))

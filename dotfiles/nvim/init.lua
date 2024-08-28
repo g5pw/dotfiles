@@ -509,6 +509,11 @@ require("lazy").setup({
 		version = "^5", -- Recommended
 		lazy = false, -- This plugin is already lazy
 	},
+        {
+                'kaarmu/typst.vim',
+                ft = 'typst',
+                lazy=false,
+        },
 })
 
 --Set highlight on search
