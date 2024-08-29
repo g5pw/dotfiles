@@ -274,7 +274,6 @@
               pyserial
               requests
               black
-              pipx
               pylint
               pyflakes
             ];
@@ -282,7 +281,7 @@
         in python-with-my-packages)
         mypy
         ruff
-        rye
+        uv
         # }}}
         # typst {{{
         typst
