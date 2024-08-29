@@ -293,12 +293,10 @@
         # zig
         # zls
         # }}}
-        nodePackages.js-beautify
-        nodePackages.stylelint
         tectonic
-        typst
         stylua
         nixfmt-rfc-style
+        sqlfluff
         # }}}
 
         # Language servers {{{
