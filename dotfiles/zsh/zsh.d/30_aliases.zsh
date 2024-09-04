@@ -26,7 +26,8 @@ alias mtr='trip'
 alias grep='rg -uuu'
 alias gp='gopass'
 alias h='history'
-alias t="${GIT_EXPAND} gitui"
+alias tig="${GIT_EXPAND} gitui"
+alias t="tig"
 
 alias l='ls'
 alias l.='ls -a'
