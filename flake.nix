@@ -102,7 +102,8 @@
         fd
         ripgrep
         ripgrep-all
-        viddy
+        viddy  # A modern watch command. Time machine and pager etc.
+        sd
         # }}}
 
         # Misc {{{
@@ -314,6 +315,7 @@
         pinentry_mac
         qalculate-gtk
         zathura
+        gimp
         ];
 
       # Auto upgrade nix package and the daemon service.
