@@ -75,4 +75,7 @@ GRTAGS
 
 # Build files
 *.egg-info/
+
+# Emacs aucTeX
+.auctex-auto/
 # }}}
