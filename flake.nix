@@ -107,24 +107,18 @@
 
         # Misc {{{
         direnv
-        dos2unix
         fzf
         gawk
         gnused
-        grc
         highlight
         lesspipe
         mprocs
         navi
         qrencode
-        redis
         skim
         sourceHighlight
         sqlite-utils
-        tmux
-        tree
         usql
-        unixtools.watch
         watchexec
         wget
         xh
@@ -226,7 +220,6 @@
         doxygen
         editorconfig-core-c
         pre-commit
-        rtags
         scmpuff
         shellcheck
         shfmt
@@ -241,7 +234,6 @@
         # Languages {{{
         tree-sitter
         # Javascript {{{
-        bun
         nodejs
         # }}}
         glow # Markdown renderer
