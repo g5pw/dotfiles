@@ -70,7 +70,6 @@
 
     ".config/helix/config.toml".source = dotfiles/helix/config.toml;
 
-    ".tmux.conf".source = dotfiles/tmux.conf;
     ".digrc".source = dotfiles/digrc;
     ".gdbinit".source = dotfiles/gdbinit;
     ".Xresources".source = dotfiles/Xresources;
@@ -150,7 +149,6 @@
     ".config/zsh/zsh.d/91_autosuggestions.zsh".source = dotfiles/zsh/zsh.d/91_autosuggestions.zsh;
     ".config/zsh/zsh.d/91_fzf-widgets.zsh".source = dotfiles/zsh/zsh.d/91_fzf-widgets.zsh;
     ".config/zsh/zsh.d/93_git.zsh".source = dotfiles/zsh/zsh.d/93_git.zsh;
-    ".config/zsh/zsh.d/97_tmux.zsh".source = dotfiles/zsh/zsh.d/97_tmux.zsh;
     ".config/zsh/zsh.d/99_term-integrations.zsh".source = dotfiles/zsh/zsh.d/99_term-integrations.zsh;
     ".config/zsh/zsh.d/99_cleanup.zsh".source = dotfiles/zsh/zsh.d/99_cleanup.zsh;
     # }}}
