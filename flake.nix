@@ -127,15 +127,12 @@
         # }}}
 
         # Embedded tools {{{
-        avrdude
         binwalk
         dfu-util
         dfu-programmer
-        dtc
         esptool
         espup
         glasgow
-        stm32flash
         openocd
         pulseview
         platformio
