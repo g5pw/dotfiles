@@ -200,6 +200,7 @@
         git-filter-repo
         git-latexdiff
         git-lfs
+        gitu
         gitui
         hexyl
         lazygit

@@ -39,7 +39,6 @@ alias gdw='git diff --word-diff'
 alias gfa='git fetch --all'
 alias gf='git fetch'
 alias gfr='git fetch && git rebase'
-alias g='git'
 alias gla='git log --graph --pretty="format:\%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --branches'
 alias glg='git log --graph --max-count=5'
 alias gl='git log --graph --pretty="format:\%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
@@ -95,6 +94,15 @@ function git_brunch_or_branch() {
         git brunch
     fi
 }
+
+function git_or_gitu() {
+    if [[ $# -ne 0 ]]; then
+        git "$@"
+    else
+        gitu
+    fi
+}
+alias g=git_or_gitu
 
 export forgit_log=gl
 export forgit_diff=gdi
