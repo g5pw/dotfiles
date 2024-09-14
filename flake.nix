@@ -226,6 +226,7 @@
         # }}}
         # Markdown {{{
         glow # Markdown renderer
+        presenterm
         # }}}
         # rust {{{
         bacon
@@ -272,9 +273,15 @@
         typst-live
         # }}}
         tectonic
-        stylua
+        # }}}
+
+        # Formatters {{{
+        dockfmt
         nixfmt-rfc-style
+        rstfmt
+        shfmt
         sqlfluff
+        stylua
         # }}}
 
         # Language servers {{{
@@ -282,6 +289,7 @@
         yaml-language-server
         sqls
         terraform-ls
+        texlab
         statix
         # }}}
 
@@ -293,12 +301,13 @@
         openpgp-card-tools
 
         # pdfpc # marked as broken
-        inkscape
         emacs-macport
+        gimp
+        inkscape
         pinentry_mac
         qalculate-gtk
+        sioyek
         zathura
-        gimp
         ];
 
       # Auto upgrade nix package and the daemon service.
