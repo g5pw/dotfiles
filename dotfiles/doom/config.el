@@ -34,9 +34,7 @@
   (setq TeX-global-PDF-mode t
         TeX-auto-save t
         TeX-parse-self t
-        TeX-source-correlate-mode t)
-  (add-to-list 'TeX-view-program-selection
-             '(output-pdf "Zathura")))
+        TeX-source-correlate-mode t))
 
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
@@ -60,7 +58,7 @@
                                                                    (directory-files-recursively org-directory "\\.org\\'"))))
         :desc "TODOs" :nve "t" #'org-todo-list
         :desc "Search" :nve "s" #'org-search-view)
-  (add-to-list 'org-file-apps '("\\.pdf" . "zathura %s"))
+  (add-to-list 'org-file-apps '("\\.pdf" . "sioyek %s"))
   (setq org-archive-location "./archive/%s_archive::"
         org-cycle-separator-lines 0
         org-fold-catch-invisible-edits 'smart
@@ -103,7 +101,9 @@
   (let ((tex-list (assoc "TeX" TeX-command-list))
       (latex-list (assoc "LaTeX" TeX-command-list)))
   (setf (cadr tex-list) "%(tex)"
-        (cadr latex-list) "%l")))
+        (cadr latex-list) "%l"))
+  (setq TeX-view-program-list '(("Sioyek" "sioyek --page=%(outpage) %o")))
+  (setq TeX-view-program-selection '((output-pdf "Sioyek"))))
 
 (after! evil-org
   (remove-hook 'org-tab-first-hook #'+org-cycle-only-current-subtree-h))
