@@ -145,7 +145,6 @@ function ga() {
 alias lg=lazygit
 
 zinit wait"1" from"gh-r" as"program" lucid for \
-    mkchoi212/fac \
-    mv'git-brunch-* -> git-brunch' andys8/git-brunch \
+    mkchoi212/fac
 
 alias gbv='git_brunch_or_branch'
