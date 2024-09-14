@@ -53,7 +53,6 @@
     nix_shell
     dir                       # current directory
     vcs                       # git status
-    virtualenv              # python virtual environment
     prompt_char               # prompt symbol
   )
 
