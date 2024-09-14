@@ -102,8 +102,12 @@
       (latex-list (assoc "LaTeX" TeX-command-list)))
   (setf (cadr tex-list) "%(tex)"
         (cadr latex-list) "%l"))
-  (setq TeX-view-program-list '(("Sioyek" "sioyek --page=%(outpage) %o")))
-  (setq TeX-view-program-selection '((output-pdf "Sioyek"))))
+  (add-to-list 'TeX-view-program-list '(("Sioyek" "sioyek --page=%(outpage) %o")))
+  (letf! (defun prepend-to-list (list-var value &optional append)
+         (set list-var (delete value (symbol-value list-var)))
+         (add-to-list list-var value append))
+    (prepend-to-list 'TeX-view-program-selection '((output-pdf "Sioyek"))))
+  )
 
 (after! evil-org
   (remove-hook 'org-tab-first-hook #'+org-cycle-only-current-subtree-h))
