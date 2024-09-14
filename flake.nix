@@ -23,7 +23,6 @@
         zellij
 
         # Editors {{{
-        helix
         neovim
         # }}}
 
@@ -65,7 +64,6 @@
         pv
         skim
         wiki-tui
-        wormhole-william
         yt-dlp
         # }}}
 
@@ -111,12 +109,9 @@
         fzf
         gawk
         gnused
-        highlight
-        lesspipe
         mprocs
         navi
         qrencode
-        skim
         sourceHighlight
         sqlite-utils
         usql
@@ -142,8 +137,6 @@
         # }}}
 
         # DevOps {{{
-        ansible
-        ansible-lint
         ctop
         dive
         lazydocker
@@ -202,8 +195,6 @@
         glab
         gitFull
         git-interactive-rebase-tool
-        git-bug
-        git-cliff
         git-brunch
         git-extras
         git-filter-repo
@@ -216,11 +207,9 @@
         clang-tools
         cmake
         doxygen
-        editorconfig-core-c
         pre-commit
         scmpuff
         shellcheck
-        shfmt
         wiggle
         just
         # }}}
@@ -234,7 +223,9 @@
         # Javascript {{{
         nodejs
         # }}}
+        # Markdown {{{
         glow # Markdown renderer
+        # }}}
         # rust {{{
         bacon
         irust
@@ -279,10 +270,6 @@
         typst-lsp
         typst-live
         # }}}
-        # zig {{{
-        # zig
-        # zls
-        # }}}
         tectonic
         stylua
         nixfmt-rfc-style
@@ -290,8 +277,6 @@
         # }}}
 
         # Language servers {{{
-        ccls
-        # cmake-language-server broken
         nodePackages.bash-language-server
         yaml-language-server
         sqls
