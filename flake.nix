@@ -304,6 +304,7 @@
         emacs-macport
         gimp
         inkscape
+        neovide
         pinentry_mac
         qalculate-gtk
         sioyek
