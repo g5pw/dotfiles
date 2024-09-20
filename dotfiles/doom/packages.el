@@ -30,6 +30,7 @@
   (package! ox-ssh)
   (package! ox-moderncv :recipe (:host github :repo "Titan-C/org-cv"))
   (package! edraw-org :recipe (:host github :repo "misohena/el-easydraw"))
+  (package! ox-typst :recipe (:host github :repo "jmpunkt/ox-typst"))
 )
 
 (package! sql-indent)

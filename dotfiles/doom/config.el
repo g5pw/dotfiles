@@ -174,6 +174,8 @@
   (add-to-list 'magit-delta-delta-args "--features")
   )
 
+(use-package! ox-typst :after org)
+
 ;; Set keys
 (map! :nv "~" #'evil-invert-case
       :nv "C-a" #'evil-numbers/inc-at-pt
