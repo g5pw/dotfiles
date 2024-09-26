@@ -87,22 +87,22 @@ require("lazy").setup({
 			vim.keymap.set("n", "<leader>?", require("telescope.builtin").oldfiles, { silent = true })
 		end,
 	},
-        {
-        "0xstepit/flow.nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {},
-        config = function()
-            require("flow").setup{
-                transparent = false, -- Set transparent background.
-                fluo_color = "pink", --  Fluo color: pink, yellow, orange, or green.
-                mode = "normal", -- Intensity of the palette: normal, bright, desaturate, or dark. Notice that dark is ugly!
-                aggressive_spell = false, -- Display colors for spell check.
-            }
+	{
+		"0xstepit/flow.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+		config = function()
+			require("flow").setup({
+				transparent = false, -- Set transparent background.
+				fluo_color = "pink", --  Fluo color: pink, yellow, orange, or green.
+				mode = "normal", -- Intensity of the palette: normal, bright, desaturate, or dark. Notice that dark is ugly!
+				aggressive_spell = false, -- Display colors for spell check.
+			})
 
-            vim.cmd("colorscheme flow")
-        end,
-        },
+			vim.cmd("colorscheme flow")
+		end,
+	},
 	-- Add indentation guides even on blank lines
 	{
 		"lukas-reineke/indent-blankline.nvim",
@@ -509,11 +509,11 @@ require("lazy").setup({
 		version = "^5", -- Recommended
 		lazy = false, -- This plugin is already lazy
 	},
-        {
-                'kaarmu/typst.vim',
-                ft = 'typst',
-                lazy=false,
-        },
+	{
+		"kaarmu/typst.vim",
+		ft = "typst",
+		lazy = false,
+	},
 })
 
 --Set highlight on search
