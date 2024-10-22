@@ -17,6 +17,7 @@ vim.g.mapleader = " "
 local lsp_servers = { "clangd", "lua_ls", "ruff_lsp" }
 
 require("lazy").setup({
+        { "actionshrimp/direnv.nvim", opts = {} },
 	{
 		"nvimdev/dashboard-nvim",
 		event = "VimEnter",
@@ -88,7 +89,6 @@ require("lazy").setup({
 		config = function()
 			require("mini.ai").setup()
 			require("mini.diff").setup()
-			require("mini.git").setup()
 			require("mini.comment").setup()
 		end,
 	},
@@ -151,6 +151,18 @@ require("lazy").setup({
 		main = "ibl",
 		opts = {},
 	},
+        {
+            "NeogitOrg/neogit",
+            dependencies = {
+                "nvim-lua/plenary.nvim",
+                "sindrets/diffview.nvim",
+                "nvim-telescope/telescope.nvim",
+            },
+            config = true,
+            keys = {
+                {"<leader>gg", "<cmd>Neogit<cr>", desc = "Neogit"},
+            }
+        },
 	-- Add git related info in the signs columns and popups
 	{
 		"lewis6991/gitsigns.nvim",
