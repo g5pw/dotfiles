@@ -210,6 +210,7 @@
         doxygen
         pre-commit
         scmpuff
+        srgn
         shellcheck
         wiggle
         just
