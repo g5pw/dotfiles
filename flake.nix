@@ -152,9 +152,7 @@
         # Sysadmin tools {{{
         angle-grinder
         colima
-        docker
-        docker-compose
-        docker-credential-helpers
+        docker-client
         dogdns
         dstp
         fblog
@@ -310,6 +308,7 @@
         qalculate-gtk
         sioyek
         zathura
+        lagrange
         ];
 
       # Auto upgrade nix package and the daemon service.
