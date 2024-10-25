@@ -319,6 +319,9 @@
       nix.settings.experimental-features = "nix-command flakes";
 
       nix.settings.trusted-substituters = ["https://devenv.cachix.org"];
+      nix.settings.trusted-public-keys = [
+        "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
+      ];
 
       # Create /etc/zshrc that loads the nix-darwin environment.
 
@@ -340,7 +343,7 @@
 
       # Used for backwards compatibility, please read the changelog before changing.
       # $ darwin-rebuild changelog
-      system.stateVersion = 4;
+      system.stateVersion = 5;
 
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
