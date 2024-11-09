@@ -49,12 +49,9 @@
         (aspellWithDicts (d: [ d.it d.en d.en-computers d.en-science ]))
         # }}}
         bottom
-        broot
         d2
         dust
-        funzzy
         libqalculate
-        erdtree
         mdcat
         nodePackages.mermaid-cli
         numbat
@@ -68,6 +65,9 @@
         # }}}
 
         # File Managers {{{
+        broot
+        erdtree
+        xplr
         yazi
         # }}}
 
@@ -98,6 +98,7 @@
         bat
         eza
         fd
+        funzzy
         ripgrep
         ripgrep-all
         viddy  # A modern watch command. Time machine and pager etc.
