@@ -86,9 +86,9 @@
 
     ".tclshrc".source = dotfiles/tclshrc;
 
-    ".bash_aliases".source = dotfiles/bash_aliases;
-    ".bash_profile".source = dotfiles/bash_profile;
-    ".bashrc".source = dotfiles/bashrc;
+    ".bash_aliases".source = dotfiles/bash/aliases;
+    ".bash_profile".source = dotfiles/bash/profile;
+    ".bashrc".source = dotfiles/bash/rc;
 
     ".config/erdtree/.erdtree.toml".source = dotfiles/erdtree.toml;
 
