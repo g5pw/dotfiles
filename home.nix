@@ -95,62 +95,18 @@
     # zsh {{{
     ".config/zsh/.p10k.zsh".source = dotfiles/zsh/p10k.zsh;
 
-    ".config/zsh/.zprofile".source = dotfiles/zsh/zprofile;
-    ".config/zsh/.zshenv".source = dotfiles/zsh/zshenv;
-    ".config/zsh/.zshrc".source = dotfiles/zsh/zshrc;
-
+    ".config/zsh/.zprofile".source = dotfiles/zsh/profile;
+    ".config/zsh/.zshenv".source = dotfiles/zsh/env;
+    ".config/zsh/.zshrc".source = dotfiles/zsh/rc;
     ".config/zsh/_patches/remove-git-status.patch".source = dotfiles/zsh/_patches/remove-git-status.patch;
-    ".config/zsh/functions/_defaults".source = dotfiles/zsh/functions/_defaults;
-    ".config/zsh/functions/_hdiutil".source = dotfiles/zsh/functions/_hdiutil;
-    ".config/zsh/functions/_launchctl".source = dotfiles/zsh/functions/_launchctl;
-    ".config/zsh/functions/_mdattr".source = dotfiles/zsh/functions/_mdattr;
-    ".config/zsh/functions/_mdfind".source = dotfiles/zsh/functions/_mdfind;
-    ".config/zsh/functions/_mdls".source = dotfiles/zsh/functions/_mdls;
-    ".config/zsh/functions/_mdutil".source = dotfiles/zsh/functions/_mdutil;
-    ".config/zsh/functions/_whichf".source = dotfiles/zsh/functions/_whichf;
-    ".config/zsh/functions/_xattr".source = dotfiles/zsh/functions/_xattr;
-    ".config/zsh/functions/acronym".source = dotfiles/zsh/functions/acronym;
-    ".config/zsh/functions/alert".source = dotfiles/zsh/functions/alert;
-    ".config/zsh/functions/aping".source = dotfiles/zsh/functions/aping;
-    ".config/zsh/functions/bat_status".source = dotfiles/zsh/functions/bat_status;
-    ".config/zsh/functions/box".source = dotfiles/zsh/functions/box;
-    ".config/zsh/functions/checksum".source = dotfiles/zsh/functions/checksum;
-    ".config/zsh/functions/colortable".source = dotfiles/zsh/functions/colortable;
-    ".config/zsh/functions/ediff".source = dotfiles/zsh/functions/ediff;
-    ".config/zsh/functions/edit_function".source = dotfiles/zsh/functions/edit_function;
-    ".config/zsh/functions/fliptable".source = dotfiles/zsh/functions/fliptable;
-    ".config/zsh/functions/mcd".source = dotfiles/zsh/functions/mcd;
-    ".config/zsh/functions/mdattr".source = dotfiles/zsh/functions/mdattr;
-    ".config/zsh/functions/named_dirs".source = dotfiles/zsh/functions/named_dirs;
-    ".config/zsh/functions/pomo".source = dotfiles/zsh/functions/pomo;
-    ".config/zsh/functions/readme".source = dotfiles/zsh/functions/readme;
-    ".config/zsh/functions/reload".source = dotfiles/zsh/functions/reload;
-    ".config/zsh/functions/rtab".source = dotfiles/zsh/functions/rtab;
-    ".config/zsh/functions/spectrum".source = dotfiles/zsh/functions/spectrum;
-    ".config/zsh/functions/src".source = dotfiles/zsh/functions/src;
-    ".config/zsh/functions/whichf".source = dotfiles/zsh/functions/whichf;
-
-    ".config/zsh/zsh.d/00_zinit.zsh".source = dotfiles/zsh/zsh.d/00_zinit.zsh;
-    ".config/zsh/zsh.d/01_prompt.zsh".source = dotfiles/zsh/zsh.d/01_prompt.zsh;
-    ".config/zsh/zsh.d/10_options.zsh".source = dotfiles/zsh/zsh.d/10_options.zsh;
-    ".config/zsh/zsh.d/11_ls_colors_256.zsh".source = dotfiles/zsh/zsh.d/11_ls_colors_256.zsh;
-    ".config/zsh/zsh.d/15_autoload.zsh".source = dotfiles/zsh/zsh.d/15_autoload.zsh;
-    ".config/zsh/zsh.d/19_hosts.zsh".source = dotfiles/zsh/zsh.d/19_hosts.zsh;
-    ".config/zsh/zsh.d/20_completion.zsh".source = dotfiles/zsh/zsh.d/20_completion.zsh;
-    ".config/zsh/zsh.d/21_compdefs.zsh".source = dotfiles/zsh/zsh.d/21_compdefs.zsh;
-    ".config/zsh/zsh.d/25_scmpuff.zsh".source = dotfiles/zsh/zsh.d/25_scmpuff.zsh;
-    ".config/zsh/zsh.d/30_aliases.zsh".source = dotfiles/zsh/zsh.d/30_aliases.zsh;
-    ".config/zsh/zsh.d/31_aliases.zsh".source = dotfiles/zsh/zsh.d/31_aliases_mac.zsh;
-    ".config/zsh/zsh.d/50_plugin.zsh".source = dotfiles/zsh/zsh.d/50_plugin.zsh;
-    ".config/zsh/zsh.d/50_utils.zsh".source = dotfiles/zsh/zsh.d/50_utils.zsh;
-    ".config/zsh/zsh.d/80_bindings.zsh".source = dotfiles/zsh/zsh.d/80_bindings.zsh;
-    ".config/zsh/zsh.d/90_fzf.zsh".source = dotfiles/zsh/zsh.d/90_fzf.zsh;
-    ".config/zsh/zsh.d/90_prompt.zsh".source = dotfiles/zsh/zsh.d/90_prompt.zsh;
-    ".config/zsh/zsh.d/91_autosuggestions.zsh".source = dotfiles/zsh/zsh.d/91_autosuggestions.zsh;
-    ".config/zsh/zsh.d/91_fzf-widgets.zsh".source = dotfiles/zsh/zsh.d/91_fzf-widgets.zsh;
-    ".config/zsh/zsh.d/93_git.zsh".source = dotfiles/zsh/zsh.d/93_git.zsh;
-    ".config/zsh/zsh.d/99_term-integrations.zsh".source = dotfiles/zsh/zsh.d/99_term-integrations.zsh;
-    ".config/zsh/zsh.d/99_cleanup.zsh".source = dotfiles/zsh/zsh.d/99_cleanup.zsh;
+    ".config/zsh/functions/" = {
+      source = dotfiles/zsh/functions;
+      recursive = true;
+    };
+    ".config/zsh/zsh.d/" = {
+      source = dotfiles/zsh/zsh.d;
+      recursive = true;
+    };
     # }}}
 
     # gnupg {{{
