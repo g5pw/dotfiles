@@ -81,8 +81,8 @@
     ".psqlrc".source = dotfiles/psqlrc;
     ".ideavimrc".source = dotfiles/ideavimrc;
 
-    ".gitconfig".source = dotfiles/gitconfig;
-    ".gitignore".source = dotfiles/gitignore;
+    ".gitconfig".source = dotfiles/git/config;
+    ".gitignore".source = dotfiles/git/ignore;
 
     ".tclshrc".source = dotfiles/tclshrc;
 
