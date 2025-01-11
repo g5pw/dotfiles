@@ -14,8 +14,7 @@ vim.opt.runtimepath:prepend(lazypath)
 
 vim.g.mapleader = " "
 
-local lsp_servers = { "clangd", "lua_ls", "ruff_lsp" }
-
+local lsp_servers = { "clangd", "lua_ls", "ruff", "rust_analyzer" }
 require("lazy").setup({
         { "actionshrimp/direnv.nvim", opts = {} },
 	{
@@ -114,7 +113,7 @@ require("lazy").setup({
 				},
 			})
 
-			vim.keymap.set("n", "<leader><space>", require("telescope.builtin").buffers, { silent = true })
+			vim.keymap.set("n", "<leader>,", require("telescope.builtin").buffers, { silent = true })
 			vim.keymap.set("n", "<leader>ff", function()
 				require("telescope.builtin").find_files({ previewer = true })
 			end, { silent = true })
@@ -144,12 +143,6 @@ require("lazy").setup({
 
 			vim.cmd("colorscheme flow")
 		end,
-	},
-	-- Add indentation guides even on blank lines
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		main = "ibl",
-		opts = {},
 	},
         {
             "NeogitOrg/neogit",
@@ -181,6 +174,7 @@ require("lazy").setup({
 		build = ":TSUpdate",
 		config = function()
 			require("nvim-treesitter.configs").setup({
+                                ensure_installed = { "c", "lua", "vim", "python", "rust" },
 				highlight = {
 					enable = true, -- false will disable the whole extension
 				},
@@ -264,39 +258,38 @@ require("lazy").setup({
 		dependencies = {
 			"williamboman/mason-lspconfig.nvim",
 			"liangxianzhe/nap.nvim",
+                        'saghen/blink.cmp',
 		},
 		config = function()
+                        local lspconfig = require('lspconfig')
 			local on_attach = function(_, bufnr)
 				vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
-				local opts = { noremap = true, silent = true, buffer = bufnr }
-				vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-				vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-				vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-				vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-				vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-				vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts)
-				vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts)
+				local key_opts = { noremap = true, silent = true, buffer = bufnr }
+				vim.keymap.set("n", "gD", vim.lsp.buf.declaration, key_opts)
+				vim.keymap.set("n", "gd", vim.lsp.buf.definition, key_opts)
+				vim.keymap.set("n", "K", vim.lsp.buf.hover, key_opts)
+				vim.keymap.set("n", "gi", vim.lsp.buf.implementation, key_opts)
+				vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, key_opts)
+				vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, key_opts)
+				vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, key_opts)
 				vim.keymap.set("n", "<leader>wl", function()
 					print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-				end, opts)
-				vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
-				vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-				vim.keymap.set({"v", "n"}, "<leader>ca", vim.lsp.buf.code_action, opts)
-				vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+				end, key_opts)
+				vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, key_opts)
+				vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, key_opts)
+				vim.keymap.set({"v", "n"}, "<leader>ca", vim.lsp.buf.code_action, key_opts)
+				vim.keymap.set("n", "gr", vim.lsp.buf.references, key_opts)
 				vim.keymap.set("n", "<leader>so", function()
 					require("telescope.builtin").lsp_document_symbols()
-				end, opts)
+				end, key_opts)
 				vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 			end
 
-			local opts = { noremap = true, silent = true }
-			vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)
-			vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, opts)
-			vim.keymap.set("n", "<leader>E", vim.diagnostic.show, opts)
-
-			-- nvim-cmp supports additional completion capabilities
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			local key_opts = { noremap = true, silent = true }
+			vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, key_opts)
+			vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, key_opts)
+			vim.keymap.set("n", "<leader>E", vim.diagnostic.show, key_opts)
 
 			-- Enable the following language servers
 			for _, lsp in ipairs(lsp_servers) do
@@ -306,10 +299,10 @@ require("lazy").setup({
 						Lua = { diagnostics = { globals = { "vim" } } },
 					}
 				end
-				require("lspconfig")[lsp].setup({
+				lspconfig[lsp].setup({
 					settings = settings,
 					on_attach = on_attach,
-					capabilities = capabilities,
+					capabilities = require('blink.cmp').get_lsp_capabilities(),
 				})
 			end
 		end,
@@ -318,65 +311,54 @@ require("lazy").setup({
 		"L3MON4D3/LuaSnip", -- Snippets plugin
 		version = "v1.*",
 	},
-	{
-		"hrsh7th/nvim-cmp", -- Autocompletion plugin
-		-- load cmp on InsertEnter
-		event = "InsertEnter",
-		-- these dependencies will only be loaded when cmp loads
-		-- dependencies are always lazy-loaded unless specified otherwise
-		dependencies = {
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-buffer",
-		},
-		config = function()
-			-- luasnip setup
-			local luasnip = require("luasnip")
+        {
+                'saghen/blink.cmp',
+                -- optional: provides snippets for the snippet source
+                dependencies = {
+                    'rafamadriz/friendly-snippets',
+                    'mikavilpas/blink-ripgrep.nvim',
+                },
 
-			-- nvim-cmp setup
-			local cmp = require("cmp")
-			cmp.setup({
-				snippet = {
-					expand = function(args)
-						luasnip.lsp_expand(args.body)
-					end,
-				},
-				mapping = {
-					["<C-p>"] = cmp.mapping.select_prev_item(),
-					["<C-n>"] = cmp.mapping.select_next_item(),
-					["<C-d>"] = cmp.mapping.scroll_docs(-4),
-					["<C-f>"] = cmp.mapping.scroll_docs(4),
-					["<C-Space>"] = cmp.mapping.complete(),
-					["<C-e>"] = cmp.mapping.close(),
-					["<CR>"] = cmp.mapping.confirm({
-						behavior = cmp.ConfirmBehavior.Replace,
-						select = true,
-					}),
-					["<Tab>"] = function(fallback)
-						if cmp.visible() then
-							cmp.select_next_item()
-						elseif luasnip.expand_or_jumpable() then
-							luasnip.expand_or_jump()
-						else
-							fallback()
-						end
-					end,
-					["<S-Tab>"] = function(fallback)
-						if cmp.visible() then
-							cmp.select_prev_item()
-						elseif luasnip.jumpable(-1) then
-							luasnip.jump(-1)
-						else
-							fallback()
-						end
-					end,
-				},
-				sources = {
-					{ name = "nvim_lsp" },
-					{ name = "luasnip" },
-				},
-			})
-		end,
-	},
+                -- use a release tag to download pre-built binaries
+                version = '*',
+                -- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
+                -- build = 'cargo build --release',
+                -- If you use nix, you can build from source using latest nightly rust with:
+                -- build = 'nix run .#build-plugin',
+
+                ---@module 'blink.cmp'
+                ---@type blink.cmp.Config
+                opts = {
+                        -- 'default' for mappings similar to built-in completion
+                        -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
+                        -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
+                        -- See the full "keymap" documentation for information on defining your own keymap.
+                        keymap = { preset = 'super-tab' },
+
+                        appearance = {
+                            -- Sets the fallback highlight groups to nvim-cmp's highlight groups
+                            -- Useful for when your theme doesn't support blink.cmp
+                            -- Will be removed in a future release
+                            use_nvim_cmp_as_default = true,
+                            -- Set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
+                            -- Adjusts spacing to ensure icons are aligned
+                            nerd_font_variant = 'mono'
+                        },
+
+                        -- Default list of enabled providers defined so that you can extend it
+                        -- elsewhere in your config, without redefining it, due to `opts_extend`
+                        sources = {
+                                default = { 'lsp', 'path', 'snippets', 'buffer', 'ripgrep' },
+                                providers = {
+                                        ripgrep = {
+                                                module = "blink-ripgrep",
+                                                name = "Ripgrep",
+                                        },
+                                },
+                        },
+                },
+                opts_extend = { "sources.default" }
+        },
 	{
 		"stevearc/aerial.nvim",
 		dependencies = {
@@ -388,7 +370,6 @@ require("lazy").setup({
 			require("nap").operator("o", require("nap").aerial())
 		end,
 	},
-	"saadparwaiz1/cmp_luasnip",
 	{
 		"stevearc/dressing.nvim",
 		config = true,
@@ -470,7 +451,7 @@ require("lazy").setup({
 	},
 	{
 		"chrisgrieser/nvim-various-textobjs",
-		opts = { useDefaultKeymaps = true },
+		opts = { keymaps = { useDefaults = true }},
 	},
 	{
 		"akinsho/toggleterm.nvim",
@@ -519,7 +500,9 @@ require("lazy").setup({
 	},
 	{
 		"stevearc/oil.nvim",
+                lazy = false,
 		opts = {
+                        default_file_explorer = true,
 			columns = {
 				"icon",
 				"permissions",
@@ -541,6 +524,7 @@ require("lazy").setup({
 				desc = "Open parent directory",
 			},
 		},
+                dependencies = { { "echasnovski/mini.icons", opts = {} } },
 	},
 	{
 		"stevearc/conform.nvim",
@@ -562,6 +546,13 @@ require("lazy").setup({
 		version = "^5", -- Recommended
 		lazy = false, -- This plugin is already lazy
 	},
+        {
+                'saecki/crates.nvim',
+                event = { "BufRead Cargo.toml" },
+                config = function()
+                    require('crates').setup()
+                end,
+        },
 	{
 		"kaarmu/typst.vim",
 		ft = "typst",
@@ -623,7 +614,5 @@ vim.keymap.set("n", "<leader>fs", "<cmd>:w<CR>")
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = "menuone,noselect"
 
--- Disable virtual_text since it's redundant due to lsp_lines.
-vim.diagnostic.config({
-	virtual_text = false,
-})
+vim.keymap.set("n", "<leader>w/", "<cmd>:vsplit<cr>")
+vim.keymap.set("n", "<leader>w-", "<cmd>:split<cr>")
