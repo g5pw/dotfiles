@@ -14,7 +14,7 @@ vim.opt.runtimepath:prepend(lazypath)
 
 vim.g.mapleader = " "
 
-local lsp_servers = { "clangd", "lua_ls", "ruff", "rust_analyzer" }
+local lsp_servers = { "clangd", "lua_ls", "ruff", }
 require("lazy").setup({
         { "actionshrimp/direnv.nvim", opts = {} },
 	{
@@ -656,3 +656,35 @@ vim.keymap.set("n", "<leader>w-", "<cmd>:split<cr>")
 
 vim.keymap.set("n", "<leader>bd", "<cmd>:bdelete<cr>")
 
+---@type rustaceanvim.Opts
+vim.g.rustaceanvim = {
+    ---@type rustaceanvim.tools.Opts
+    tools = {
+        -- ...
+    },
+    ---@type rustaceanvim.lsp.ClientOpts
+    server = {
+        on_attach = function(client, bufnr)
+            -- Set keybindings, etc. here.
+        end,
+        default_settings = {
+            -- rust-analyzer language server configuration
+            ['rust-analyzer'] = {
+                files = {
+                    excludeDirs = {
+                        ".cargo",
+                        ".direnv",
+                        ".devenv",
+                        ".git",
+                        "target",
+                    }
+                }
+            },
+        },
+        -- ...
+    },
+    ---@type rustaceanvim.dap.Opts
+    dap = {
+        -- ...
+    },
+}
