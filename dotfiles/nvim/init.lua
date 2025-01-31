@@ -129,6 +129,9 @@ require("lazy").setup({
 				require("telescope.builtin").tags({ only_current_buffer = true })
 			end, { silent = true })
 			vim.keymap.set("n", "<leader>?", require("telescope.builtin").oldfiles, { silent = true })
+
+			vim.keymap.set("n", "<leader>gl", require("telescope.builtin").git_commits, { silent = true })
+			vim.keymap.set("n", "<leader>gb", require("telescope.builtin").git_branches, { silent = true })
 		end,
 	},
 	{
@@ -609,13 +612,13 @@ vim.cmd([[
   augroup end
 ]])
 
--- Y yank until the end of line  (note: this is now a default on master)
-vim.keymap.set("n", "Y", "y$")
-
-vim.keymap.set("n", "<leader>fs", "<cmd>:w<CR>")
-
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = "menuone,noselect"
 
+vim.keymap.set("n", "<leader>fs", "<cmd>:w<CR>")
+
 vim.keymap.set("n", "<leader>w/", "<cmd>:vsplit<cr>")
 vim.keymap.set("n", "<leader>w-", "<cmd>:split<cr>")
+
+vim.keymap.set("n", "<leader>bd", "<cmd>:bdelete<cr>")
+
