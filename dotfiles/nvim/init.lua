@@ -156,7 +156,10 @@ require("lazy").setup({
                 "sindrets/diffview.nvim",
                 "nvim-telescope/telescope.nvim",
             },
-            config = true,
+            opts = {
+                disable_hint = true,
+                graph_style = "kitty",
+            },
             keys = {
                 {"<leader>gg", "<cmd>Neogit<cr>", desc = "Neogit"},
             }
