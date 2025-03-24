@@ -22,7 +22,7 @@ alias find='noglob find'
 alias fd='noglob fd'
 alias j='jobs'
 alias JUSTFUCKINGDOIT='sudo -p "Oh, come on... alright, gimme your password:" $(fc -ln -1)'
-alias mtr='trip'
+alias mtr='trip -u'
 alias nxu='nix flake update --flake ~nix'
 alias nxa='darwin-rebuild switch --flake ~nix'
 alias grep='rg -uuu'
@@ -52,15 +52,14 @@ alias mkdir='nocorrect mkdir'
 alias mg='emacsclient -nw -c --eval '"'"'(progn (let ((display-buffer-alist `(("^\\*magit: " display-buffer-same-window) ,display-buffer-alist))) (magit-status)) (delete-other-windows))'"' "
 alias mv="nocorrect ${GIT_EXPAND} mv -i"
 alias myip='curl ifconfig.me/ip'
-alias n='${GIT_EXPAND}nnn'
+alias n='numbat'
 alias o='${GIT_EXPAND}open'
-alias octave='octave -q'
-alias pstree='pstree -g'
-alias rgr='ranger'
 alias rm="nocorrect ${GIT_EXPAND} rm -i"
 alias rgrep='grep -r'
+alias s=ssh_or_sshs
 alias ser='tio $(command ls /dev/cu.* | sk)'
 alias servethis='python -m http.server'
+alias tree='erd'
 alias tug='nocorrect noglob tug'
 alias u='uptime'
 alias vi="$GIT_EXPAND$EDITOR"
@@ -88,9 +87,6 @@ alias zmv="zmv -wM"
 alias zcp="zmv -wC"
 alias zln="zmv -wL"
 
-alias wchat="weechat"
-alias w="ansiweather"
-alias y='tree'
 
 ## global aliases, this is not good but it's useful
 alias -g G='|noglob grep'
@@ -110,5 +106,13 @@ alias -g HLP='--help | bat --plain --language=help'
 alias -s tex=$EDITOR
 alias -s txt=$EDITOR
 alias -s git="git clone"
+
+function ssh_or_sshs() {
+    if [[ $# -ne 0 ]]; then
+        ssh "$@"
+    else
+        sshs
+    fi
+}
 
 #unset GIT_EXPAND
