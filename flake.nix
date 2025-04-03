@@ -7,15 +7,15 @@
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
+  outputs = inputs@{ self, nix-darwin, nixos-wsl, nixpkgs, home-manager }:
   let
-    configuration = { pkgs, ... }: {
-      # List packages installed in system profile. To search by name, run:
-      # $ nix-env -qaP | grep wget
+    config_common = { pkgs, ... }: {
       environment.systemPackages = with pkgs; [
         neo-cowsay
         lolcat
@@ -30,7 +30,6 @@
         coreutils
         diffutils
         findutils
-        #inetutils
         cyme
         moreutils
         patchutils
@@ -51,9 +50,8 @@
         bottom
         d2
         dust
-        libqalculate
         mdcat
-        nodePackages.mermaid-cli
+        mermaid-cli
         numbat
         pandoc
         pdfgrep
@@ -72,7 +70,7 @@
         # }}}
 
         # Security/Encryption {{{
-        _1password
+        _1password-cli
         age
         diceware
         docker-credential-helpers
@@ -112,8 +110,6 @@
         gnused
         mprocs
         navi
-        qrencode
-        sourceHighlight
         sqlite-utils
         usql
         watchexec
@@ -126,13 +122,12 @@
         binwalk
         dfu-util
         dfu-programmer
-        esptool
+        #esptool
         espup
-        glasgow
-        openocd
-        pulseview
-        platformio
-        (proxmark3.override {withGeneric = true;})
+        #glasgow
+        #openocd
+        #pulseview
+        #platformio
         # stlink
         tio
         # }}}
@@ -202,6 +197,7 @@
         gitu
         gitui
         hexyl
+	jujutsu
         lazygit
         clang-analyzer
         clang-tools
@@ -269,8 +265,8 @@
         # typst {{{
         typst
         typstfmt
-        typst-lsp
         typst-live
+        tinymist
         # }}}
         tectonic
         # }}}
@@ -299,22 +295,7 @@
         yubikey-manager
         yubikey-personalization
         openpgp-card-tools
-
-        # pdfpc # marked as broken
-        emacs-macport
-        gimp
-        inkscape
-        neovide
-        pinentry_mac
-        qalculate-gtk
-        sioyek
-        zathura
-        lagrange
-        ];
-
-      # Auto upgrade nix package and the daemon service.
-      services.nix-daemon.enable = true;
-      # nix.package = pkgs.nix;
+      ];
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
@@ -327,27 +308,48 @@
       # Create /etc/zshrc that loads the nix-darwin environment.
 
       programs.zsh.enable = true;
+      users.defaultUserShell = pkgs.zsh;
 
       environment.etc.zshenv.text = "
         export ZDOTDIR=$HOME/.config/zsh
       ";
 
       nixpkgs.config.allowUnfree = true;
+    };
+    config_darwin = { pkgs, ... }: {
+        environment.systemPackages = with pkgs; [
+          (proxmark3.override {withGeneric = true;})
 
-      # Set Git commit hash for darwin-version.
-      system.configurationRevision = self.rev or self.dirtyRev or null;
+          # pdfpc # marked as broken
+          emacs-macport
+          gimp
+          inkscape
+          neovide
+          pinentry_mac
+          qalculate-gtk
+          sioyek
+          zathura
+          lagrange
+        ];
 
-      # Configure Dock
-      system.defaults.dock.autohide = true;
-      system.defaults.dock.mru-spaces = false;
-      system.defaults.dock.orientation = "bottom";
+        # Auto upgrade nix package and the daemon service.
+        services.nix-daemon.enable = true;
+        # nix.package = pkgs.nix;
 
-      # Used for backwards compatibility, please read the changelog before changing.
-      # $ darwin-rebuild changelog
-      system.stateVersion = 5;
+        # Set Git commit hash for darwin-version.
+        system.configurationRevision = self.rev or self.dirtyRev or null;
 
-      # The platform the configuration will be used on.
-      nixpkgs.hostPlatform = "aarch64-darwin";
+        # Configure Dock
+        system.defaults.dock.autohide = true;
+        system.defaults.dock.mru-spaces = false;
+        system.defaults.dock.orientation = "bottom";
+
+        # Used for backwards compatibility, please read the changelog before changing.
+        # $ darwin-rebuild changelog
+        system.stateVersion = 5;
+
+        # The platform the configuration will be used on.
+        nixpkgs.hostPlatform = "aarch64-darwin";
     };
   in
   {
@@ -355,7 +357,9 @@
     # $ darwin-rebuild build --flake .#deepthought
     darwinConfigurations."deepthought" = nix-darwin.lib.darwinSystem {
       modules = [
-        configuration 
+        config_common
+	config_darwin
+
         home-manager.darwinModules.home-manager
         {
             home-manager.useGlobalPkgs = true;
@@ -369,7 +373,21 @@
       ];
     };
 
-    # Expose the package set, including overlays, for convenience.
-    darwinPackages = self.darwinConfigurations."deepthought".pkgs;
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        config_common
+	nixos-wsl.nixosModules.default {
+          system.stateVersion = "24.11";
+          wsl.enable = true;
+          wsl.defaultUser = "g5pw";
+	}
+        home-manager.nixosModules.home-manager {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+	  home-manager.users.g5pw = import ./home.nix;
+        }
+      ];
+    };
   };
 }
