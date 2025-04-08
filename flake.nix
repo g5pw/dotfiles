@@ -284,7 +284,7 @@
         # }}}
 
         # Language servers {{{
-        nodePackages.bash-language-server
+        bash-language-server
         yaml-language-server
         sqls
         terraform-ls
