@@ -354,6 +354,13 @@
         # The platform the configuration will be used on.
         nixpkgs.hostPlatform = "aarch64-darwin";
     };
+    config_nixos = { pkgs, ... }: {
+      environment.systemPackages = with pkgs; [
+        file
+        unzip
+        xdg-utils
+      ];
+    };
   in
   {
     # Build darwin flake using:
@@ -380,6 +387,7 @@
       system = "x86_64-linux";
       modules = [
         config_common
+        config_nixos
 	nixos-wsl.nixosModules.default {
           system.stateVersion = "24.11";
           wsl.enable = true;
