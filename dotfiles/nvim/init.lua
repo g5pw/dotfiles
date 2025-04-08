@@ -121,7 +121,7 @@ require("lazy").setup({
 			vim.keymap.set("n", "<leader>sb", require("telescope.builtin").current_buffer_fuzzy_find, { silent = true })
 			vim.keymap.set("n", "<leader>sh", require("telescope.builtin").help_tags, { silent = true })
 			vim.keymap.set("n", "<leader>st", require("telescope.builtin").tags, { silent = true })
-			vim.keymap.set("n", "<leader>sd", require("telescope.builtin").grep_string, { silent = true })
+			vim.keymap.set("n", "<leader>sd", function() require("telescope.builtin").grep_string({initial_mode = "normal"}) end, { silent = true })
 			vim.keymap.set("n", "<leader>sp", require("telescope.builtin").live_grep, { silent = true })
 			vim.keymap.set("n", "<leader>so", function()
 				require("telescope.builtin").tags({ only_current_buffer = true })
