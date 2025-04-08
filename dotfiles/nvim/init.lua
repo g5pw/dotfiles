@@ -148,6 +148,18 @@ require("lazy").setup({
 			vim.cmd("colorscheme flow")
 		end,
 	},
+	-- Add indentation guides even on blank lines
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+                ---@module "ibl"
+                ---@type ibl.config
+		opts = {
+                    exclude = {
+                        filetypes = {"dashboard"}
+                    },
+                },
+	},
         {
             "NeogitOrg/neogit",
             dependencies = {
