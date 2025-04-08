@@ -14,7 +14,6 @@ vim.opt.runtimepath:prepend(lazypath)
 
 vim.g.mapleader = " "
 
-local lsp_servers = { "clangd", "lua_ls", "ruff", }
 require("lazy").setup({
         { "actionshrimp/direnv.nvim", opts = {} },
 	{
@@ -237,84 +236,9 @@ require("lazy").setup({
 	-- Additional textobjects for treesitter
 	"nvim-treesitter/nvim-treesitter-textobjects",
 	{
-		"williamboman/mason.nvim",
-		opts = {
-			ui = {
-				icons = {
-					package_installed = "✓",
-					package_pending = "➜",
-					package_uninstalled = "✗",
-				},
-			},
-		},
-	},
-	{
 		"roobert/tabtree.nvim",
 		config = true,
 	},
-	{
-		"williamboman/mason-lspconfig.nvim",
-		dependencies = {
-			"williamboman/mason.nvim",
-		},
-		opts = {
-			ensure_installed = lsp_servers,
-		},
-	},
-	{
-		"neovim/nvim-lspconfig",
-		dependencies = {
-			"williamboman/mason-lspconfig.nvim",
-			"liangxianzhe/nap.nvim",
-                        'saghen/blink.cmp',
-		},
-		config = function()
-                        local lspconfig = require('lspconfig')
-			local on_attach = function(_, bufnr)
-				vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
-
-				local key_opts = { noremap = true, silent = true, buffer = bufnr }
-				vim.keymap.set("n", "gD", vim.lsp.buf.declaration, key_opts)
-				vim.keymap.set("n", "gd", vim.lsp.buf.definition, key_opts)
-				vim.keymap.set("n", "K", vim.lsp.buf.hover, key_opts)
-				vim.keymap.set("n", "gi", vim.lsp.buf.implementation, key_opts)
-				vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, key_opts)
-				vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, key_opts)
-				vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, key_opts)
-				vim.keymap.set("n", "<leader>wl", function()
-					print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-				end, key_opts)
-				vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, key_opts)
-				vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, key_opts)
-				vim.keymap.set({"v", "n"}, "<leader>ca", vim.lsp.buf.code_action, key_opts)
-				vim.keymap.set("n", "gr", vim.lsp.buf.references, key_opts)
-				vim.keymap.set("n", "<leader>so", function()
-					require("telescope.builtin").lsp_document_symbols()
-				end, key_opts)
-				vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
-			end
-
-			local key_opts = { noremap = true, silent = true }
-			vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, key_opts)
-			vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, key_opts)
-			vim.keymap.set("n", "<leader>E", vim.diagnostic.show, key_opts)
-
-			-- Enable the following language servers
-			for _, lsp in ipairs(lsp_servers) do
-				local settings = {}
-				if lsp == "lua_ls" then
-					settings = {
-						Lua = { diagnostics = { globals = { "vim" } } },
-					}
-				end
-				lspconfig[lsp].setup({
-					settings = settings,
-					on_attach = on_attach,
-					capabilities = require('blink.cmp').get_lsp_capabilities(),
-				})
-			end
-		end,
-	}, -- Collection of configurations for built-in LSP client
 	{
 		"L3MON4D3/LuaSnip", -- Snippets plugin
 		version = "v1.*",
@@ -690,3 +614,5 @@ vim.g.rustaceanvim = {
         -- ...
     },
 }
+
+vim.lsp.enable('luals')
