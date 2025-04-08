@@ -615,4 +615,4 @@ vim.g.rustaceanvim = {
     },
 }
 
-vim.lsp.enable('luals')
+vim.lsp.enable({'luals', 'clangd'})
