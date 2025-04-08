@@ -217,6 +217,10 @@
 
         # Languages {{{
         tree-sitter
+        # lua {{{
+        stylua
+        lua-language-server
+        # }}}
         # Javascript {{{
         nodejs
         # }}}
@@ -277,7 +281,6 @@
         rstfmt
         shfmt
         sqlfluff
-        stylua
         # }}}
 
         # Language servers {{{
