@@ -51,7 +51,14 @@
 
 
     ".config/nvim/init.lua".source = dotfiles/nvim/init.lua;
-    ".config/nvim/plugin/lastplace.lua".source = dotfiles/nvim/plugin/lastplace.lua;
+    ".config/nvim/plugin/" = {
+      source = dotfiles/nvim/plugin;
+      recursive = true;
+    } ;
+    ".config/nvim/lsp/" = {
+      source = dotfiles/nvim/lsp;
+      recursive = true;
+    };
 
     ".config/wezterm/wezterm.lua".source = dotfiles/wezterm/wezterm.lua;
 
