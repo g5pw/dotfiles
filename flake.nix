@@ -13,9 +13,14 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixos-wsl, nixpkgs, home-manager }:
-  let
-    config_common = { pkgs, ... }: {
+  outputs = inputs @ {
+    self,
+    nix-darwin,
+    nixos-wsl,
+    nixpkgs,
+    home-manager,
+  }: let
+    config_common = {pkgs, ...}: {
       environment.systemPackages = with pkgs; [
         neo-cowsay
         lolcat
@@ -72,8 +77,8 @@
 
         # Spelling {{{
         enchant
-        (hunspellWithDicts (with pkgs.hunspellDicts; [ it_IT en_US ]))
-        (aspellWithDicts (d: [ d.it d.en d.en-computers d.en-science ]))
+        (hunspellWithDicts (with pkgs.hunspellDicts; [it_IT en_US]))
+        (aspellWithDicts (d: [d.it d.en d.en-computers d.en-science]))
         # }}}
 
         # Data tools {{{
@@ -114,7 +119,7 @@
         funzzy
         ripgrep
         ripgrep-all
-        viddy  # A modern watch command. Time machine and pager etc.
+        viddy # A modern watch command. Time machine and pager etc.
         sd
         # }}}
 
@@ -197,7 +202,7 @@
         gitu
         gitui
         hexyl
-	jujutsu
+        jujutsu
         lazygit
         clang-analyzer
         clang-tools
@@ -261,7 +266,8 @@
               pyflakes
             ];
           python-with-my-packages = python3.withPackages my-python-packages;
-        in python-with-my-packages)
+        in
+          python-with-my-packages)
         mypy
         ruff
         uv
@@ -276,6 +282,7 @@
         # }}}
 
         # Formatters {{{
+        alejandra
         dockfmt
         nixfmt-rfc-style
         rstfmt
@@ -321,42 +328,42 @@
 
       nixpkgs.config.allowUnfree = true;
     };
-    config_darwin = { pkgs, ... }: {
-        environment.systemPackages = with pkgs; [
-          (proxmark3.override {withGeneric = true;})
+    config_darwin = {pkgs, ...}: {
+      environment.systemPackages = with pkgs; [
+        (proxmark3.override {withGeneric = true;})
 
-          # pdfpc # marked as broken
-          emacs-macport
-          gimp
-          inkscape
-          neovide
-          pinentry_mac
-          qalculate-gtk
-          sioyek
-          zathura
-          lagrange
-        ];
+        # pdfpc # marked as broken
+        emacs-macport
+        gimp
+        inkscape
+        neovide
+        pinentry_mac
+        qalculate-gtk
+        sioyek
+        zathura
+        lagrange
+      ];
 
-        # Auto upgrade nix package and the daemon service.
-        services.nix-daemon.enable = true;
-        # nix.package = pkgs.nix;
+      # Auto upgrade nix package and the daemon service.
+      services.nix-daemon.enable = true;
+      # nix.package = pkgs.nix;
 
-        # Set Git commit hash for darwin-version.
-        system.configurationRevision = self.rev or self.dirtyRev or null;
+      # Set Git commit hash for darwin-version.
+      system.configurationRevision = self.rev or self.dirtyRev or null;
 
-        # Configure Dock
-        system.defaults.dock.autohide = true;
-        system.defaults.dock.mru-spaces = false;
-        system.defaults.dock.orientation = "bottom";
+      # Configure Dock
+      system.defaults.dock.autohide = true;
+      system.defaults.dock.mru-spaces = false;
+      system.defaults.dock.orientation = "bottom";
 
-        # Used for backwards compatibility, please read the changelog before changing.
-        # $ darwin-rebuild changelog
-        system.stateVersion = 5;
+      # Used for backwards compatibility, please read the changelog before changing.
+      # $ darwin-rebuild changelog
+      system.stateVersion = 5;
 
-        # The platform the configuration will be used on.
-        nixpkgs.hostPlatform = "aarch64-darwin";
+      # The platform the configuration will be used on.
+      nixpkgs.hostPlatform = "aarch64-darwin";
     };
-    config_nixos = { pkgs, ... }: {
+    config_nixos = {pkgs, ...}: {
       environment.systemPackages = with pkgs; [
         file
         unzip
@@ -365,24 +372,23 @@
 
       time.timeZone = "Europe/Rome";
     };
-  in
-  {
+  in {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#deepthought
     darwinConfigurations."deepthought" = nix-darwin.lib.darwinSystem {
       modules = [
         config_common
-	config_darwin
+        config_darwin
 
         home-manager.darwinModules.home-manager
         {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.g5pw = import ./home.nix;
-            users.users.g5pw.home = "/Users/g5pw";
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.g5pw = import ./home.nix;
+          users.users.g5pw.home = "/Users/g5pw";
 
-            # Optionally, use home-manager.extraSpecialArgs to pass
-            # arguments to home.nix
+          # Optionally, use home-manager.extraSpecialArgs to pass
+          # arguments to home.nix
         }
       ];
     };
@@ -392,16 +398,18 @@
       modules = [
         config_common
         config_nixos
-	nixos-wsl.nixosModules.default {
+        nixos-wsl.nixosModules.default
+        {
           system.stateVersion = "24.11";
           wsl.enable = true;
           wsl.defaultUser = "g5pw";
-          i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" "it_IT.UTF-8/UTF-8" ];
-	}
-        home-manager.nixosModules.home-manager {
+          i18n.supportedLocales = ["en_US.UTF-8/UTF-8" "it_IT.UTF-8/UTF-8"];
+        }
+        home-manager.nixosModules.home-manager
+        {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-	  home-manager.users.g5pw = import ./home.nix;
+          home-manager.users.g5pw = import ./home.nix;
         }
       ];
     };
