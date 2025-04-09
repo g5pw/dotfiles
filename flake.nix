@@ -42,24 +42,52 @@
         # }}}
 
         # Productivity {{{
-        # Spelling {{{
-        enchant
-        (hunspellWithDicts (with pkgs.hunspellDicts; [ it_IT en_US ]))
-        (aspellWithDicts (d: [ d.it d.en d.en-computers d.en-science ]))
-        # }}}
         bottom
         d2
+        direnv
         dust
+        dysk
+        fzf
+        gawk
+        gnused
         mdcat
         mermaid-cli
+        mprocs
+        navi
         numbat
         pandoc
         pdfgrep
         procs
         pv
         skim
+        sqlite-utils
+        usql
+        watchexec
+        wget
         wiki-tui
+        xh
         yt-dlp
+        zoxide
+        # }}}
+
+        # Spelling {{{
+        enchant
+        (hunspellWithDicts (with pkgs.hunspellDicts; [ it_IT en_US ]))
+        (aspellWithDicts (d: [ d.it d.en d.en-computers d.en-science ]))
+        # }}}
+
+        # Data tools {{{
+        fq
+        fx
+        gron
+        htmlq
+        jaq
+        jc
+        jql
+        miller
+        visidata
+        xan
+        yq
         # }}}
 
         # File Managers {{{
@@ -79,19 +107,6 @@
         gpg-tui
         # }}}
 
-        # jq-like parsers {{{
-        fq
-        fx
-        gron
-        htmlq
-        jaq
-        jc
-        jql
-        miller
-        yq
-        zed
-        # }}}
-
         # coreutils replacements {{{
         bat
         eza
@@ -101,21 +116,6 @@
         ripgrep-all
         viddy  # A modern watch command. Time machine and pager etc.
         sd
-        # }}}
-
-        # Misc {{{
-        direnv
-        fzf
-        gawk
-        gnused
-        mprocs
-        navi
-        sqlite-utils
-        usql
-        watchexec
-        wget
-        xh
-        zoxide
         # }}}
 
         # Embedded tools {{{
@@ -291,6 +291,8 @@
         texlab
         statix
         # }}}
+
+        nchat
 
         nix-zsh-completions
         zsh-completions
