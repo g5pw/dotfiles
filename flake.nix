@@ -360,6 +360,8 @@
         unzip
         xdg-utils
       ];
+
+      time.timeZone = "Europe/Rome";
     };
   in
   {
