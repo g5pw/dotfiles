@@ -627,4 +627,4 @@ vim.g.rustaceanvim = {
     },
 }
 
-vim.lsp.enable({'luals', 'clangd'})
+vim.lsp.enable({'luals', 'clangd', 'cmake-language-server'})
