@@ -84,3 +84,4 @@ bindkey "${fzf_widgets_prefix}dc" fzf-docker-remove-containers
 bindkey "${fzf_widgets_prefix}di" fzf-docker-remove-images
 bindkey "${fzf_widgets_prefix}dv" fzf-docker-remove-volumes
 
+bindkey '^R' fzf-insert-history
