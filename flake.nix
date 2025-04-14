@@ -23,7 +23,7 @@
     config_common = {pkgs, ...}: {
       environment.systemPackages = with pkgs; [
         neo-cowsay
-        lolcat
+        dotacat
         fortune
         zellij
 
