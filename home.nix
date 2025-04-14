@@ -1,9 +1,9 @@
 # home.nix
-
-{ config, pkgs, ... }:
-
 {
-
+  config,
+  pkgs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
 
@@ -44,7 +44,6 @@
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
-    
 
     ".pythonrc".source = dotfiles/pythonrc;
     ".orpierc".source = dotfiles/orpierc;
@@ -143,5 +142,5 @@
 
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
-}
 
+}
