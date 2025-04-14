@@ -49,14 +49,8 @@
     ".pythonrc".source = dotfiles/pythonrc;
     ".orpierc".source = dotfiles/orpierc;
 
-
-    ".config/nvim/init.lua".source = dotfiles/nvim/init.lua;
-    ".config/nvim/plugin/" = {
-      source = dotfiles/nvim/plugin;
-      recursive = true;
-    } ;
-    ".config/nvim/lsp/" = {
-      source = dotfiles/nvim/lsp;
+    ".config/nvim/" = {
+      source = dotfiles/nvim;
       recursive = true;
     };
 
