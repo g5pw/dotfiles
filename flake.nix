@@ -49,7 +49,6 @@
         # Productivity {{{
         bottom
         d2
-        direnv
         dust
         dysk
         fzf
@@ -279,6 +278,7 @@
         tinymist
         # }}}
         tectonic
+        zig
         # }}}
 
         # Formatters {{{
@@ -300,6 +300,7 @@
         # }}}
 
         nchat
+        neovide
 
         nix-zsh-completions
         zsh-completions
@@ -336,7 +337,6 @@
         emacs-macport
         gimp
         inkscape
-        neovide
         pinentry_mac
         qalculate-gtk
         sioyek
@@ -366,6 +366,7 @@
     config_nixos = {pkgs, ...}: {
       environment.systemPackages = with pkgs; [
         file
+        distrobox
         unzip
         xdg-utils
       ];
