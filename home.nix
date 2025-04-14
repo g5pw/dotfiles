@@ -143,4 +143,5 @@
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
 
+  services.emacs.enable = true;
 }
