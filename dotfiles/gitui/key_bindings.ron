@@ -17,6 +17,7 @@
     
     popup_up: Some(( code: Char('p'), modifiers: "CONTROL")),
     popup_down: Some(( code: Char('n'), modifiers: "CONTROL")),
+    exit_popup: Some(( code: Char('q'), modifiers: "" )),
     page_up: Some(( code: Char('b'), modifiers: "CONTROL")),
     page_down: Some(( code: Char('f'), modifiers: "CONTROL")),
     home: Some(( code: Char('g'), modifiers: "")),
