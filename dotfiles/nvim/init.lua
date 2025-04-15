@@ -634,4 +634,4 @@ vim.o.foldtext = "v:lua.vim.treesitter.foldtext()"
 vim.o.foldlevelstart = 99
 vim.o.foldcolumn = "auto:2"
 
-vim.lsp.enable({'luals', 'clangd', 'cmake-language-server'})
+vim.lsp.enable({'luals', 'clangd', 'cmake-language-server', 'tinymist'})
