@@ -328,7 +328,6 @@
         enableSSHSupport = true;
       };
       programs.zsh.enable = true;
-      users.defaultUserShell = pkgs.zsh;
 
       environment.etc.zshenv.text = "
         export ZDOTDIR=$HOME/.config/zsh
@@ -379,6 +378,7 @@
         xdg-utils
       ];
 
+      users.defaultUserShell = pkgs.zsh;
     };
   in {
     # Build darwin flake using:
