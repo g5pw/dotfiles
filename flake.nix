@@ -54,7 +54,7 @@
         fzf
         gawk
         gnused
-        mdcat
+        kalker
         mermaid-cli
         mprocs
         navi
@@ -64,6 +64,9 @@
         procs
         pv
         skim
+        serie
+        sshs
+        tabview
         sqlite-utils
         usql
         watchexec
@@ -87,11 +90,11 @@
         htmlq
         jaq
         jc
+        jnv
         jql
         miller
         visidata
         xan
-        yq
         # }}}
 
         # File Managers {{{
@@ -151,6 +154,7 @@
 
         # Sysadmin tools {{{
         angle-grinder
+        btop
         colima
         docker-client
         dogdns
@@ -158,9 +162,7 @@
         fblog
         iperf
         jless
-        htop
         gping
-        mosh
         nmap
         openssh
         podman
@@ -183,10 +185,10 @@
 
         # Development tools {{{
         ast-grep
+        binsider
         difftastic
         diffsitter
         delta
-        dprint
         #gdb
         gh
         gfold
@@ -235,8 +237,6 @@
         # rust {{{
         bacon
         irust
-        cargo-expand
-        cargo-show-asm
         cargo-generate
         rustup
         # }}}
@@ -273,8 +273,7 @@
         # }}}
         # typst {{{
         typst
-        typstfmt
-        typst-live
+        typstyle
         tinymist
         # }}}
         tectonic
@@ -297,10 +296,12 @@
         terraform-ls
         texlab
         statix
+        ruff-lsp
         # }}}
 
         nchat
         neovide
+        iamb
 
         nix-zsh-completions
         zsh-completions
@@ -318,8 +319,14 @@
         "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
       ];
 
+      time.timeZone = "Europe/Rome";
+
       # Create /etc/zshrc that loads the nix-darwin environment.
 
+      programs.gnupg.agent = {
+        enable = true;
+        enableSSHSupport = true;
+      };
       programs.zsh.enable = true;
       users.defaultUserShell = pkgs.zsh;
 
@@ -334,18 +341,15 @@
         (proxmark3.override {withGeneric = true;})
 
         # pdfpc # marked as broken
-        emacs-macport
-        gimp
+        blueutil
+        #emacs
         inkscape
         pinentry_mac
-        qalculate-gtk
         sioyek
         zathura
         lagrange
       ];
 
-      # Auto upgrade nix package and the daemon service.
-      services.nix-daemon.enable = true;
       # nix.package = pkgs.nix;
 
       # Set Git commit hash for darwin-version.
@@ -360,6 +364,10 @@
       # $ darwin-rebuild changelog
       system.stateVersion = 5;
 
+      nix.enable = true;
+
+      ids.gids.nixbld = 30000;
+
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
     };
@@ -371,7 +379,6 @@
         xdg-utils
       ];
 
-      time.timeZone = "Europe/Rome";
     };
   in {
     # Build darwin flake using:
