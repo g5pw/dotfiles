@@ -12,12 +12,11 @@
               (height . 40)))))
 
 (setq doom-font (font-spec :family "MonaspiceAr Nerd Font" :size 13))
-
 (setq doom-theme 'doom-palenight)
-
 (setq doom-localleader-key ",")
 
 (setq display-line-numbers-type 'visual)
+
 
 (add-hook 'spell-fu-mode-hook
   (lambda ()
@@ -29,19 +28,27 @@
     (undefine-key! doom-leader-open-map "l" "L")  ; I don't have LaunchBar
     (setq mac-right-option-modifier nil))
 
-(after! tex
-  (setq-default TeX-master nil)
-  (setq TeX-global-PDF-mode t
-        TeX-auto-save t
-        TeX-parse-self t
-        TeX-source-correlate-mode t))
-
-(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("/views/.*\\.php\\'" . web-mode))
-
 ; Starts week on Monday
 (setq calendar-week-start-day 1)
+(setq org-archive-location "./archive/%s_archive::"
+      org-cycle-separator-lines 0
+      org-fold-catch-invisible-edits 'smart
+      org-list-indent-offset 1
+      org-list-demote-modify-bullet '(("+" . "-") ("-" . "+") ("*" . "+"))
+      org-superstar-headline-bullets-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷" "☷" "☷" "☷")
+      org-startup-folded 'content
+      org-ellipsis "↴"
+      org-return-follows-link t
+      org-enforce-todo-dependencies t
+      org-enforce-todo-checkbox-dependencies t
+      org-refile-targets (quote ((nil :maxlevel . 2)
+                                 (org-agenda-files :maxlevel . 2))))
+
+;; LaTeX Stuff
+(setq org-latex-pdf-process '("tectonic %f")
+      org-preview-latex-default-process 'dvipng
+      org-latex-packages-alist '(("binary-units" "siunitx" t)))
+
 
 (use-package! hcl-mode)
 
@@ -52,32 +59,15 @@
   (map! :mode org-mode :localleader
         :desc "Export to PDF and open" :n "O" #'(lambda () (interactive) (org-open-file (org-beamer-export-to-pdf))))
   (map! :leader :prefix ("O" . "Org mode")
+        :desc "Open inbox file" :nve "i" #'(lambda () (interactive)
+                                             (org-open-file (concat org-directory "inbox.org") t))
         :desc "Open file in agenda" :nve "f" #'(lambda () (interactive)
                                                  (find-file
                                                   (completing-read "Open org file: "
                                                                    (directory-files-recursively org-directory "\\.org\\'"))))
         :desc "TODOs" :nve "t" #'org-todo-list
         :desc "Search" :nve "s" #'org-search-view)
-  (add-to-list 'org-file-apps '("\\.pdf" . "sioyek %s"))
-  (setq org-archive-location "./archive/%s_archive::"
-        org-cycle-separator-lines 0
-        org-fold-catch-invisible-edits 'smart
-        org-list-indent-offset 1
-        org-list-demote-modify-bullet '(("+" . "-") ("-" . "+") ("*" . "+"))
-        org-superstar-headline-bullets-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷" "☷" "☷" "☷")
-        org-startup-folded 'content
-        org-ellipsis "↴"
-        org-return-follows-link t
-        org-enforce-todo-dependencies t
-        org-enforce-todo-checkbox-dependencies t
-        org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "STARTED(s)" "WAITING(w)"
-                                      "|"
-                                      "DONE(d)" "DELEGATED(l)" "CANCELED(c)" "DEFERRED(f)"))
-        org-latex-pdf-process '("tectonic %f")
-        org-preview-latex-default-process 'dvipng
-        org-latex-packages-alist '(("binary-units" "siunitx" t))
-        org-refile-targets (quote ((nil :maxlevel . 2)
-                                   (org-agenda-files :maxlevel . 2)))))
+  (add-to-list 'org-file-apps '("\\.pdf" . "sioyek %s")))
 
 (after! ox-latex
    (add-to-list 'org-latex-classes
@@ -87,6 +77,13 @@
                   ("\\section{%s}" . "\\section*{%s}")
                   ("\\subsection{%s}" . "\\subsection*{%s}")
                   ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))))
+
+(after! tex
+  (setq-default TeX-master nil)
+  (setq TeX-global-PDF-mode t
+        TeX-auto-save t
+        TeX-parse-self t
+        TeX-source-correlate-mode t))
 
 (after! latex
   (setq TeX-engine-alist '((default
@@ -114,23 +111,7 @@
 
 (use-package! doct
   :after org
-  :config
-  (setq org-capture-templates
-        (doct '(("TODO (personal)" :keys "t"
-                 :file "inbox.org"
-                 :prepend t
-                 :template ("* TODO %?\n%i\n%a"))
-                ("Note (personal)" :keys "n"
-                 :file "notes.org"
-                 :headline "Inbox"
-                 :prepend t
-                 :template ("* %?\n%i\n%a"))
-                ("Habit" :keys "h"
-                 :file "habits.org"
-                 :headline "Inbox"
-                 :prepend t
-                 :template ("* %?\n%i\n%a"))
-                ))))
+  :config)
 
 (use-package! org-super-agenda
   :after org-agenda
@@ -234,9 +215,6 @@ Host github.com gitlab.com git.mittelab.org
   IdentityAgent /Users/g5pw/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
 "))
 
-;; (use-package! ox-awesomecv
-;; 	      :after org)
-
 ;; source: https://github.com/alphapapa/unpackaged.el#smerge-mode
 (use-package! smerge-mode
   :after hydra
@@ -248,7 +226,6 @@ Host github.com gitlab.com git.mittelab.org
 
 (use-package! ox-moderncv
   :init (require 'ox-moderncv))
-;;(use-package! macports)
 
 (use-package! mermaid-mode
   :mode "\\.mmd\\'"
@@ -285,3 +262,6 @@ Host github.com gitlab.com git.mittelab.org
   ;; experimental settings (I'm the main dev, so I enable these)
   (typst-ts-mode-enable-raw-blocks-highlight t)
   (typst-ts-mode-highlight-raw-blocks-at-startup t))
+
+(use-package! uv-mode
+  :hook (python-mode . uv-mode-auto-activate-hook))
