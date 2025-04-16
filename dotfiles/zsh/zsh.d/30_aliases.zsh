@@ -20,6 +20,7 @@ alias en="${GIT_EXPAND}emacsclient -c -n -a ''"
 alias ec="${GIT_EXPAND}emacsclient -n -a ''"
 alias find='noglob find'
 alias fd='noglob fd'
+alias f='yazi'
 alias j='jobs'
 alias JUSTFUCKINGDOIT='sudo -p "Oh, come on... alright, gimme your password:" $(fc -ln -1)'
 alias mtr='trip -u'
