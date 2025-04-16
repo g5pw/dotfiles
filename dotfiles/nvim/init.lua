@@ -27,7 +27,7 @@ require("lazy").setup({
                        enable = false,
                       },
                       shortcut = {
-                        { 
+                        {
                           desc = '󰊳 Update',
                           group = '@property',
                           action = 'Lazy update',
@@ -130,6 +130,8 @@ require("lazy").setup({
 
 			vim.keymap.set("n", "<leader>gl", require("telescope.builtin").git_commits, { silent = true })
 			vim.keymap.set("n", "<leader>gb", require("telescope.builtin").git_branches, { silent = true })
+
+                        vim.keymap.set("n", "<leader>'", require("telescope.builtin").resume, {silent = true})
 		end,
 	},
 	{
@@ -245,6 +247,12 @@ require("lazy").setup({
 			})
 		end,
 	},
+        {
+            "folke/todo-comments.nvim",
+            dependencies = { "nvim-lua/plenary.nvim" },
+            opts = {
+            }
+        },
 	-- Additional textobjects for treesitter
 	"nvim-treesitter/nvim-treesitter-textobjects",
 	{
