@@ -1,3 +1,11 @@
+[column]
+    ui = auto
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
+[help]
+    autocorrect = prompt
 [init]
     templatedir = ~/.git-template
     defaultBranch = main
@@ -11,26 +19,28 @@
     whitespace = trailing-space,space-before-tab
     pager = delta
     autocrlf = input
+    fsmonitor = true
+    untrackedCache = true
 [color]
     ui = auto
 [format]
     pretty = full
 [alias]
-    d = diff
     wd = diff --color-words
     logs = log --stat -C
-    ci = commit
-    st = status
-    co = checkout
     lc = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
     unstage = reset HEAD --
+    gone = "!f() { git fetch --all --prune; git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D; }; f"
 [advice]
     statusHints = false
     detachedHead = false
 [rerere]
     enabled = true
+    autoupdate = true
 [push]
-    default = current
+    default = simple
+    autoSetupRemote = true
+    followTags = true
 [difftool]
     prompt = false
 [difftool "icdiff"]
@@ -55,12 +65,15 @@
 [interactive]
     diffFilter = delta --color-only
 [diff]
-    tool = icdiff
-    colorMoved = default
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
     submodule = log
 [rebase]
     autoStash = true
     autoSquash = true
+    updateRefs = true
 [color "diff-highlight"]
     oldNormal = 105 bold
     oldHighlight = 147 bold 60
@@ -129,4 +142,4 @@
 [branch]
     sort = -committerdate
 [tag]
-    sort = taggerdate
+    sort = version:refname
