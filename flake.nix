@@ -299,9 +299,12 @@
         ruff-lsp
         # }}}
 
+        cliflux
         nchat
+
         neovide
         iamb
+        imhex
 
         nix-zsh-completions
         zsh-completions
@@ -327,6 +330,12 @@
         enable = true;
         enableSSHSupport = true;
       };
+
+      fonts.packages = with pkgs; [
+        nerd-fonts.fira-code
+        nerd-fonts.monaspace
+      ];
+
       programs.zsh.enable = true;
 
       environment.etc.zshenv.text = "
