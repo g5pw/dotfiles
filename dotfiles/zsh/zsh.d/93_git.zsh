@@ -94,6 +94,7 @@ function git_brunch_or_branch() {
         git brunch
     fi
 }
+alias gbv='git_brunch_or_branch'
 
 function git_or_gitu() {
     if [[ $# -ne 0 ]]; then
@@ -138,10 +139,6 @@ export FORGIT_DIFF_FZF_OPTS='
 --bind="ctrl-p:execute(git add --patch {2} < /dev/tty > /dev/tty 2>&1)"
 '
 
-if type gh &>/dev/null; then
-		gh completion -s zsh > $ZDOTDIR/functions/_gh
-fi
-
 function ga() {
     if [ "$#" -ne 0 ]; then
         git add "$@"
@@ -152,7 +149,3 @@ function ga() {
 
 alias lg=lazygit
 
-zinit wait"1" from"gh-r" as"program" lucid for \
-    mkchoi212/fac
-
-alias gbv='git_brunch_or_branch'
