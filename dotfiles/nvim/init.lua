@@ -174,7 +174,8 @@ require("lazy").setup({
                 graph_style = "kitty",
             },
             keys = {
-                {"<leader>gg", "<cmd>Neogit<cr>", desc = "Neogit"},
+                {"<leader>gg", function() require('neogit').open() end, desc = "Neogit"},
+                {"<leader>gl", function() require('neogit').open({'log'}) end, desc = "Neogit log"},
             }
         },
 	-- Add git related info in the signs columns and popups
@@ -586,12 +587,25 @@ vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Highlight on yank
-vim.cmd([[
-  augroup YankHighlight
-    autocmd!
-    autocmd TextYankPost * silent! lua vim.hl.on_yank {higroup='Visual', timeout=300}
-  augroup end
-]])
+vim.api.nvim_create_autocmd({"TextYankPost"}, {
+    desc = "Briefly highlight yanked text",
+    callback = function()
+        vim.hl.on_yank {higroup='Visual', timeout=100}
+    end
+})
+
+vim.api.nvim_create_autocmd({"FileType"}, {
+    pattern = "help,lspinfo,qf,startuptime",
+    desc = "Quick exit for readonly windows",
+    callback = function()
+        vim.api.nvim_set_keymap(
+            "n",
+            "q",
+            "<cmd>close<CR>",
+            { noremap = true, silent = true }
+        )
+    end,
+})
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = "menuone,noselect"
