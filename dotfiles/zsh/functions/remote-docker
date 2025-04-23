@@ -1,8 +1,0 @@
-#!/usr/bin/env zsh
-
-remote-docker () {
-    [ -z $1 ] && echo "Usage: $0 <ssh_connection_spec>" 1>&2 && return -1
-    /bin/rm -f $TMPDIR/docker.sock
-    ssh -nNT -L $TMPDIR/docker.sock:/var/run/docker.sock $1 &
-    export DOCKER_HOST=unix://$TMPDIR/docker.sock
-}

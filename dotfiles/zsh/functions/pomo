@@ -1,5 +1,0 @@
-#!/usr/bin/env zsh -f
-function pomo {
-    task $1 start && utimer -c 25m && say "Pomodoro finished"
-    task $1 stop && utimer -c 5m && say "Break finished"
-}
