@@ -99,40 +99,33 @@ require("lazy").setup({
 	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
-		config = function()
-			require("telescope").setup({
-				defaults = {
-					mappings = {
-						i = {
-							["<C-u>"] = false,
-							["<C-d>"] = false,
-						},
-					},
-				},
-			})
+                opts = {
+                        defaults = {
+                                mappings = {
+                                        i = {
+                                                ["<C-u>"] = false,
+                                                ["<C-d>"] = false,
+                                        },
+                                },
+                        },
+                },
+                keys = {
+			{"<leader>,", function() require("telescope.builtin").buffers() end, { silent = true }},
+			{"<leader>ff", function() require("telescope.builtin").find_files({ previewer = true }) end, { silent = true }},
+			{"<leader>fr", function() require("telescope.builtin").oldfiles({ previewer = true }) end, { silent = true }},
+			{"<leader>sb", function() require("telescope.builtin").current_buffer_fuzzy_find() end, { silent = true }},
+			{"<leader>sh", function() require("telescope.builtin").help_tags() end, { silent = true }},
+			{"<leader>st", function() require("telescope.builtin").tags() end, { silent = true }},
+			{"<leader>sd", function() require("telescope.builtin").grep_string({initial_mode = "normal"}) end, { silent = true }},
+			{"<leader>sp", function() require("telescope.builtin").live_grep() end, { silent = true }},
+			{"<leader>so", function() require("telescope.builtin").tags({ only_current_buffer = true }) end, { silent = true }},
+			{"<leader>?", function() require("telescope.builtin").oldfiles() end, { silent = true }},
 
-			vim.keymap.set("n", "<leader>,", require("telescope.builtin").buffers, { silent = true })
-			vim.keymap.set("n", "<leader>ff", function()
-				require("telescope.builtin").find_files({ previewer = true })
-			end, { silent = true })
-			vim.keymap.set("n", "<leader>fr", function()
-				require("telescope.builtin").oldfiles({ previewer = true })
-			end, { silent = true })
-			vim.keymap.set("n", "<leader>sb", require("telescope.builtin").current_buffer_fuzzy_find, { silent = true })
-			vim.keymap.set("n", "<leader>sh", require("telescope.builtin").help_tags, { silent = true })
-			vim.keymap.set("n", "<leader>st", require("telescope.builtin").tags, { silent = true })
-			vim.keymap.set("n", "<leader>sd", function() require("telescope.builtin").grep_string({initial_mode = "normal"}) end, { silent = true })
-			vim.keymap.set("n", "<leader>sp", require("telescope.builtin").live_grep, { silent = true })
-			vim.keymap.set("n", "<leader>so", function()
-				require("telescope.builtin").tags({ only_current_buffer = true })
-			end, { silent = true })
-			vim.keymap.set("n", "<leader>?", require("telescope.builtin").oldfiles, { silent = true })
+			{"<leader>gl", function() require("telescope.builtin").git_commits() end, { silent = true }},
+			{"<leader>gb", function() require("telescope.builtin").git_branches() end, { silent = true }},
+                        {"<leader>'", function() require("telescope.builtin").resume() end, {silent = true}},
 
-			vim.keymap.set("n", "<leader>gl", require("telescope.builtin").git_commits, { silent = true })
-			vim.keymap.set("n", "<leader>gb", require("telescope.builtin").git_branches, { silent = true })
-
-                        vim.keymap.set("n", "<leader>'", require("telescope.builtin").resume, {silent = true})
-		end,
+                },
 	},
 	{
 		"0xstepit/flow.nvim",
@@ -147,7 +140,7 @@ require("lazy").setup({
 				aggressive_spell = false, -- Display colors for spell check.
 			})
 
-			vim.cmd("colorscheme flow")
+			vim.cmd.colorscheme("flow")
 		end,
 	},
 	-- Add indentation guides even on blank lines
