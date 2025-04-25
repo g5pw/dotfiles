@@ -11,9 +11,6 @@ autoload -U colors && colors
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
 
-# Can I haz 256 colors?
-autoload spectrum && spectrum
-
 # autoload calculator
 autoload -U zcalc
 
