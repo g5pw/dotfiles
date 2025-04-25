@@ -675,9 +675,6 @@ vim.g.rustaceanvim = {
     },
     ---@type rustaceanvim.lsp.ClientOpts
     server = {
-        on_attach = function(client, bufnr)
-            -- Set keybindings, etc. here.
-        end,
         default_settings = {
             -- rust-analyzer language server configuration
             ['rust-analyzer'] = {
