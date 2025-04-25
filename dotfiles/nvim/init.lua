@@ -645,10 +645,10 @@ vim.o.completeopt = "menuone,noselect"
 
 vim.keymap.set("n", "<leader>fs", "<cmd>:w<CR>")
 
-vim.keymap.set("n", "<leader>w/", "<cmd>:vsplit<cr>")
-vim.keymap.set("n", "<leader>w-", "<cmd>:split<cr>")
+vim.keymap.set("n", "<leader>w/", vim.cmd.vsplit)
+vim.keymap.set("n", "<leader>w-", vim.cmd.split)
 
-vim.keymap.set("n", "<leader>bd", "<cmd>:bdelete<cr>")
+vim.keymap.set("n", "<leader>bd", vim.cmd.bdelete, { desc = "Delete current buffer" })
 
 ---@type rustaceanvim.Opts
 vim.g.rustaceanvim = {
