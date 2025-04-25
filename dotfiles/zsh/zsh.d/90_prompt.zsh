@@ -15,7 +15,9 @@ zinit wait lucid for \
 
 # fish-like history search
 zinit load zsh-users/zsh-history-substring-search
-export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=214,bold'
+export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=214,bold' \
+       HISTORY_SUBSTRING_SEARCH_FUZZY=true \
+       HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_TIMEOUT=5
 
 # bind UP and DOWN arrow keys
 bindkey "\e[A" history-substring-search-up
