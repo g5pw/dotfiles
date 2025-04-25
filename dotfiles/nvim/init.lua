@@ -80,6 +80,30 @@ require("lazy").setup({
 			}
 		end,
 	},
+        {
+                "rgroli/other.nvim",
+                main = 'other-nvim',
+                opts = {
+                    mappings = {
+                        "c",
+                        "golang",
+                        "python",
+                        "rust",
+                    },
+                },
+                cmd = "Other",
+                keys = {
+                    {"<leader>ll", "<cmd>:Other<CR>", { noremap = true, silent = true }},
+                    {"<leader>ltn", "<cmd>:OtherTabNew<CR>", { noremap = true, silent = true }},
+                    {"<leader>lp", "<cmd>:OtherSplit<CR>", { noremap = true, silent = true }},
+                    {"<leader>lv", "<cmd>:OtherVSplit<CR>", { noremap = true, silent = true }},
+                    {"<leader>lc", "<cmd>:OtherClear<CR>", { noremap = true, silent = true }},
+
+                    -- Context specific bindings
+                    {"<leader>lt", "<cmd>:Other test<CR>", { noremap = true, silent = true }},
+                    {"<leader>ls", "<cmd>:Other scss<CR>", { noremap = true, silent = true }},
+                },
+        },
 	{
 		"echasnovski/mini.nvim",
 		version = "*",
