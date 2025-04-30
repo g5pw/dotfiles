@@ -279,7 +279,7 @@ require("lazy").setup({
 	},
 	{
 		"L3MON4D3/LuaSnip", -- Snippets plugin
-		version = "v1.*",
+		version = "v2.*",
 	},
         {
                 'saghen/blink.cmp',
