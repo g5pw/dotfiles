@@ -369,16 +369,31 @@ require("lazy").setup({
 		},
 		keys = {
 			{
+				"<leader>r.",
+				function()
+                                    local overseer = require("overseer")
+                                    local tasks = overseer.list_tasks({ recent_first = true })
+                                    if vim.tbl_isempty(tasks) then
+                                        vim.notify("No tasks found", vim.log.levels.WARN)
+                                    else
+                                        overseer.run_action(tasks[1], "restart")
+                                    end
+
+                                end,
+				mode = "n",
+				desc = "Run current/last overseer task",
+			},
+			{
 				"<leader>rr",
 				"<cmd>OverseerRun<cr>",
 				mode = "n",
-				desc = "Run Overseer task",
+				desc = "Run overseer task",
 			},
 			{
 				"<leader>rt",
 				"<cmd>OverseerToggle<cr>",
 				mode = "n",
-				desc = "Show all Overseer tasks",
+				desc = "Show all overseer tasks",
 			},
 		},
 	},
