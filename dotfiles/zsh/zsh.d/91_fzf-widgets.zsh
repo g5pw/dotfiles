@@ -51,6 +51,19 @@ fzf-git-fixup-commit() {
 }
 zle -N fzf-git-fixup-commit
 
+fzf-tio-open-port() {
+    __fzf::widget::init 'tio ' || return 1
+
+    fd 'tty(USB|ACM|S)\d+$' /dev | \
+    __fzf::widget::select $FZF_WIDGET_OPTS[tio-open-port] +s +m \
+	--ansi \
+	--tiebreak=index | \
+    __fzf::widget::insert
+
+    __fzf::widget::exec
+}
+zle -N fzf-tio-open-port
+
 local fzf_widgets_prefix="^e"
 
 # Map widgets to key
@@ -83,5 +96,9 @@ bindkey "${fzf_widgets_prefix}d"  fzf-select-docker-widget
 bindkey "${fzf_widgets_prefix}dc" fzf-docker-remove-containers
 bindkey "${fzf_widgets_prefix}di" fzf-docker-remove-images
 bindkey "${fzf_widgets_prefix}dv" fzf-docker-remove-volumes
+
+# Ports
+bindkey "${fzf_widgets_prefix}p"  fzf-tio-open-port
+
 
 bindkey '^R' fzf-insert-history
