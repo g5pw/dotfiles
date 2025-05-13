@@ -20,7 +20,7 @@ fzf-git-insert-git-sha() {
     __fzf::widget::init || return 1
 
     git log --graph --color=always --format='%C(auto)%h%d %s %C(black)%C(bold)%cr' | \
-    __fzf::widget::select $FZF_WIDGET_OPTS[git-checkout-branch] +s +m \
+    __fzf::widget::select $FZF_WIDGET_OPTS[git-insert-git-sha] +s +m \
 	--ansi \
 	--tiebreak=index \
 	--preview=$cmd | \
@@ -40,7 +40,7 @@ fzf-git-fixup-commit() {
     __fzf::widget::init 'git commit --fixup' || return 1
 
     git log --graph --color=always --format='%C(auto)%h%d %s %C(black)%C(bold)%cr' | \
-    __fzf::widget::select $FZF_WIDGET_OPTS[git-checkout-branch] +s +m \
+    __fzf::widget::select $FZF_WIDGET_OPTS[git-fixup-commit] +s +m \
 	--ansi \
 	--tiebreak=index \
 	--preview=$cmd | \
