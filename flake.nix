@@ -131,7 +131,7 @@
         dfu-programmer
         #esptool
         espup
-        #glasgow
+        glasgow
         #openocd
         #pulseview
         #platformio
@@ -296,7 +296,6 @@
         terraform-ls
         texlab
         statix
-        ruff-lsp
         # }}}
 
         cliflux
@@ -350,7 +349,6 @@
 
         # pdfpc # marked as broken
         blueutil
-        #emacs
         inkscape
         pinentry_mac
         sioyek
