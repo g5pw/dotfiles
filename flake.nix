@@ -424,6 +424,7 @@
           system.stateVersion = "24.11";
           wsl.enable = true;
           wsl.defaultUser = "g5pw";
+          wsl.usbip.enable = true;
           i18n.supportedLocales = ["en_US.UTF-8/UTF-8" "it_IT.UTF-8/UTF-8"];
         }
         home-manager.nixosModules.home-manager
