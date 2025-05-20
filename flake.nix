@@ -189,6 +189,7 @@
         difftastic
         diffsitter
         delta
+        devenv
         #gdb
         gh
         gfold
@@ -386,6 +387,11 @@
       ];
 
       users.defaultUserShell = pkgs.zsh;
+
+      nix.extraOptions = ''
+         extra-substituters = https://devenv.cachix.org
+         extra-trusted-public-keys =
+      '';
     };
   in {
     # Build darwin flake using:
