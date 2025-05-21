@@ -149,3 +149,5 @@ function ga() {
 
 alias lg=lazygit
 
+zinit ice as"program" pick"bin/git-fuzzy"
+zinit light bigH/git-fuzzy
