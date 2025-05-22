@@ -66,8 +66,9 @@
         skim
         serie
         sshs
-        tabview
         sqlite-utils
+        tabview
+        television
         usql
         watchexec
         wget
@@ -145,7 +146,7 @@
         lazydocker
         k0sctl
         kubectl
-        kube3d
+        kubectl-explore
         kubernetes-helm
         k9s
         oxker
