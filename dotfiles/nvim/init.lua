@@ -425,6 +425,9 @@ require("lazy").setup({
       require("telescope").load_extension("aerial")
       require("nap").operator("o", require("nap").aerial())
     end,
+    keys = { -- Example mapping to toggle outline
+      { "<leader>oo", "<cmd>AerialToggle<CR>", desc = "Toggle outline" },
+    },
   },
   {
     "stevearc/dressing.nvim",
@@ -434,17 +437,6 @@ require("lazy").setup({
   {
     "kevinhwang91/nvim-bqf",
     ft = "qf",
-  },
-  {
-    "hedyhli/outline.nvim",
-    lazy = true,
-    cmd = { "Outline", "OutlineOpen" },
-    keys = { -- Example mapping to toggle outline
-      { "<leader>o", "<cmd>Outline<CR>", desc = "Toggle outline" },
-    },
-    opts = {
-      -- Your setup opts here
-    },
   },
   {
     "LnL7/vim-nix",
