@@ -56,7 +56,6 @@ alias n='numbat'
 alias o='${GIT_EXPAND}open'
 alias rm="nocorrect ${GIT_EXPAND} rm -i"
 alias rgrep='grep -r'
-alias s=ssh_or_sshs
 alias ser='tio $(command ls /dev/cu.* | sk)'
 alias servethis='python -m http.server'
 alias tree='erd'
@@ -114,5 +113,6 @@ function ssh_or_sshs() {
         sshs
     fi
 }
+alias ssh=ssh_or_sshs
 
 #unset GIT_EXPAND
