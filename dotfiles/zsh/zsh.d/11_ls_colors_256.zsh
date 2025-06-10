@@ -1,7 +1,8 @@
-zinit ice atclone"dircolors -b LS_COLORS > clrs.zsh" \
-    atpull'%atclone' pick"clrs.zsh" nocompile'!' \
-    atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
-zinit light trapd00r/LS_COLORS
+zinit ice atclone'echo "export LS_COLORS=\"$(vivid*/vivid generate molokai)\"" > colors.zsh' \
+    atpull'%atclone' pick"colors.zsh" nocompile'!' \
+    atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”' \
+    from'gh-r'
+zinit light sharkdp/vivid
 
 # Less Colors for Man Pages
 export LESS_TERMCAP_mb=$'\e[01;31m'       # begin blinking
