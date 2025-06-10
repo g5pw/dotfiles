@@ -54,10 +54,11 @@ zle -N fzf-git-fixup-commit
 fzf-tio-open-port() {
     __fzf::widget::init 'tio ' || return 1
 
-    fd 'tty(USB|ACM|S)\d+$' /dev | \
+    tio --list | awk '{if ($0 == "") exit; else print}' | \
     __fzf::widget::select $FZF_WIDGET_OPTS[tio-open-port] +s +m \
 	--ansi \
 	--tiebreak=index | \
+    cut -d' ' -f 1 | \
     __fzf::widget::insert
 
     __fzf::widget::exec
