@@ -731,3 +731,5 @@ vim.o.foldtext = "v:lua.vim.treesitter.foldtext()"
 vim.o.foldlevelstart = 99
 
 vim.lsp.enable({ "luals", "clangd", "cmake-language-server", "tinymist" })
+
+vim.o.guifont = "MonaspiceAr Nerd Font:h10"
