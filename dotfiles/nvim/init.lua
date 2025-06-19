@@ -336,10 +336,6 @@ require("lazy").setup({
   -- Additional textobjects for treesitter
   "nvim-treesitter/nvim-treesitter-textobjects",
   {
-    "roobert/tabtree.nvim",
-    config = true,
-  },
-  {
     "L3MON4D3/LuaSnip", -- Snippets plugin
     version = "v2.*",
   },
