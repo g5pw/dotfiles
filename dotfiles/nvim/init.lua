@@ -270,6 +270,7 @@ require("lazy").setup({
       require("nap").operator("h", require("nap").gitsigns())
     end,
   },
+  'rhysd/conflict-marker.vim',
   -- Highlight, edit, and navigate code using a fast incremental parsing library
   {
     "nvim-treesitter/nvim-treesitter",
