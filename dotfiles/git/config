@@ -9,12 +9,8 @@
 [init]
     templatedir = ~/.git-template
     defaultBranch = main
-[user]
-    email = me@g5pw.me
-    name = Aljaž \"g5pw\" Srebrnič
-    signingkey = 0x84C9DBC8F265A116
 [core]
-    excludesfile = ~/.gitignore
+    excludesfile = ~/.config/git/ignore
     quotepath = false
     whitespace = trailing-space,space-before-tab
     pager = delta
@@ -144,3 +140,9 @@
     sort = -committerdate
 [tag]
     sort = version:refname
+
+[includeIf "gitdir:~/"]
+    path = ~/.config/git/personal
+
+[includeIf "gitdir:~/work/"]
+    path = ~/.config/git/work

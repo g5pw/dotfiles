@@ -9,7 +9,7 @@ export FCEDIT=$EDITOR
 export LESSCHARSET='utf-8' ## charset for pager
 #Less syntax coloring
 export LESSOPEN="|lesspipe.sh %s"
-export LESS='-RFeiJW'
+export LESS='-RFeiW'
 
 #custom exports for coloured less
 export LESS_TERMCAP_mb=$'\E[01;31m'
