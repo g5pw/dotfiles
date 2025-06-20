@@ -9,6 +9,9 @@
 
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
 
+    nixgl.url   = "github:nix-community/nixGL";
+    nixgl.inputs.nixpkgs.follows = "nixpkgs";
+
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -18,6 +21,7 @@
     nix-darwin,
     nixos-wsl,
     nixpkgs,
+    nixgl,
     home-manager,
   }: let
     config_common = {pkgs, ...}: {
@@ -315,6 +319,8 @@
         openpgp-card-tools
       ];
 
+      time.timeZone = "Europe/Rome";
+
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
 
@@ -323,25 +329,6 @@
         "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
       ];
 
-      time.timeZone = "Europe/Rome";
-
-      # Create /etc/zshrc that loads the nix-darwin environment.
-
-      programs.gnupg.agent = {
-        enable = true;
-        enableSSHSupport = true;
-      };
-
-      fonts.packages = with pkgs; [
-        nerd-fonts.fira-code
-        nerd-fonts.monaspace
-      ];
-
-      programs.zsh.enable = true;
-
-      environment.etc.zshenv.text = "
-        export ZDOTDIR=$HOME/.config/zsh
-      ";
 
       nixpkgs.config.allowUnfree = true;
     };
@@ -413,6 +400,18 @@
           # arguments to home.nix
         }
       ];
+    };
+
+    homeConfigurations."g5pw" = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages."x86_64-linux";
+
+      # Specify your home configuration modules here, for example,
+      # the path to your home.nix.
+      modules = [ ./home.nix ];
+
+      extraSpecialArgs = {
+        nixgl = nixgl;
+      };
     };
 
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
