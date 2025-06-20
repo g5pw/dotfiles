@@ -29,7 +29,7 @@ alias grep='rg -uuu'
 alias gp='gopass'
 alias h='history'
 alias tig="${GIT_EXPAND} gitui"
-alias t="tig"
+alias t="timew"
 
 alias l='ls'
 alias l.='ls -a'
