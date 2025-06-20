@@ -48,7 +48,7 @@
     ".pythonrc".source = dotfiles/pythonrc;
     ".orpierc".source = dotfiles/orpierc;
 
-    ".config/nvim/" = {
+    ".config/nvim" = {
       source = dotfiles/nvim;
       recursive = true;
     };
@@ -104,11 +104,11 @@
     ".config/zsh/.zshenv".source = dotfiles/zsh/env;
     ".config/zsh/.zshrc".source = dotfiles/zsh/rc;
     ".config/zsh/_patches/remove-git-status.patch".source = dotfiles/zsh/_patches/remove-git-status.patch;
-    ".config/zsh/functions/" = {
+    ".config/zsh/functions" = {
       source = dotfiles/zsh/functions;
       recursive = true;
     };
-    ".config/zsh/zsh.d/" = {
+    ".config/zsh/zsh.d" = {
       source = dotfiles/zsh/zsh.d;
       recursive = true;
     };
