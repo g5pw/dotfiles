@@ -92,6 +92,11 @@
 
     ".config/erdtree/.erdtree.toml".source = dotfiles/erdtree.toml;
 
+    ".config/sway" = {
+      source = dotfiles/sway;
+      recursive = true;
+    };
+
     # zsh {{{
     ".config/zsh/.p10k.zsh".source = dotfiles/zsh/p10k.zsh;
 
