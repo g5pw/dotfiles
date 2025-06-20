@@ -39,4 +39,6 @@ export WORDCHARS='*?-[]~=/&;!#$%^(){}<>'
 #load my function and more completions
 fpath=($ZDOTDIR/functions $fpath)
 
+fpath+=~/.nix-profile/share/zsh/site-functions/
+
 export PIP_REQUIRE_VIRTUALENV=true
