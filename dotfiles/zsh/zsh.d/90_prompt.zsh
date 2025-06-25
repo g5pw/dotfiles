@@ -37,13 +37,4 @@ prompt_my_docker_context () {
     fi
 }
 
-prompt_active_timewarrior_tag () {
-    if ! which timew; then
-        return
-    fi
-    if [ $(timew get dom.active) = "1" ]; then
-        p10k segment -f 69 -i '' -t "$(timew get dom.active.tag.1)"
-    fi
-}
-
 eval "$(zoxide init zsh)"

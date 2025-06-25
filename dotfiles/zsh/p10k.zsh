@@ -62,7 +62,7 @@
     virtualenv                # python virtual environment
     context                   # user@host
     time                      # current time
-    active_timewarrior_tag
+    timewarrior
     battery
   )
 
