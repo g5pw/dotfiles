@@ -17,7 +17,7 @@ set $right l
 # Recommends: foot
 set $term ghostty
 # Your preferred application launcher
-set $menu fuzzel
+set $menu anyrun
 
 ### Output configuration
 #
@@ -222,6 +222,7 @@ mode "power" {
     bindsym P exec systemctl poweroff, mode "default"
     bindsym R exec systemctl reboot, mode "default"
     bindsym S exec systemctl suspend, mode "default"
+    bindsym L exec killall -USR1 swayidle, mode "default"
     bindsym Escape mode "default"
     bindsym Return mode "default"
 }
