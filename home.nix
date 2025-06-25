@@ -73,6 +73,7 @@
     tabview
     television
     timewarrior
+    unar
     usql
     watchexec
     wget
@@ -215,6 +216,7 @@
     jujutsu
     koji
     lazygit
+    lazyjj
     clang-analyzer
     clang-tools
     cmake
@@ -318,15 +320,14 @@
     nchat
     # }}}
 
-    copyq
-    (config.lib.nixGL.wrap onagre)
+    anyrun
     (config.lib.nixGL.wrap ghostty)
     (config.lib.nixGL.wrap neovide)
     iamb
     (config.lib.nixGL.wrap imhex)
     zathura
     (config.lib.nixGL.wrap zeal-qt6)
-    (config.lib.nixGL.wrap qutebrowser)
+    #(config.lib.nixGL.wrap qutebrowser)
     pulseview
     xournalpp
 
