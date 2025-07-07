@@ -406,6 +406,8 @@
 
     ".config/git/config".source = dotfiles/git/config;
     ".config/git/ignore".source = dotfiles/git/ignore;
+    ".config/git/work".source = dotfiles/git/work;
+    ".config/git/personal".source = dotfiles/git/personal;
 
     ".tclshrc".source = dotfiles/tclshrc;
 
