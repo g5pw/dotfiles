@@ -151,3 +151,10 @@ alias lg=lazygit
 
 zinit ice as"program" pick"bin/git-fuzzy"
 zinit light bigH/git-fuzzy
+
+
+alias jd="jj diff"
+alias jf="jj git fetch"
+alias jl="jj log"
+alias jr="jj rebase"
+alias jrm="jj rebase -r main@origin"
