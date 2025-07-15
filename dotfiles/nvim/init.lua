@@ -17,13 +17,6 @@ vim.g.mapleader = " "
 require("lazy").setup({
   { "actionshrimp/direnv.nvim", opts = {} },
   {
-    "liangxianzhe/nap.nvim",
-    opts = {
-      next_prefix = "]",
-      prev_prefix = "[",
-    },
-  },
-  {
     "rhysd/committia.vim", -- Nice UI for git commit
     config = function()
       vim.g.committia_hooks = {
@@ -68,8 +61,12 @@ require("lazy").setup({
     version = "*",
     config = function()
       require("mini.ai").setup()
+      require("mini.bracketed").setup()
       require("mini.diff").setup()
       require("mini.comment").setup()
+      require("mini.jump2d").setup({
+                labels = "asdfjkl;gh",
+            })
     end,
   },
   -- Operators
@@ -263,11 +260,9 @@ require("lazy").setup({
     "lewis6991/gitsigns.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "liangxianzhe/nap.nvim",
     },
     config = function()
       require("gitsigns").setup()
-      require("nap").operator("h", require("nap").gitsigns())
     end,
   },
   'rhysd/conflict-marker.vim',
@@ -330,12 +325,30 @@ require("lazy").setup({
     end,
   },
   {
+      "rachartier/tiny-code-action.nvim",
+      dependencies = {
+          {"nvim-lua/plenary.nvim"},
+          {
+            "folke/snacks.nvim",
+            opts = {
+              terminal = {},
+            }
+          }
+      },
+      event = "LspAttach",
+      opts = {
+        backend = "difftastic",
+        picker = "snacks",
+      },
+      keys = {
+        { "<leader>ca", function() require("tiny-code-action").code_action() end, desc = "Run code actions" },
+      }
+  },
+  {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {},
   },
-  -- Additional textobjects for treesitter
-  "nvim-treesitter/nvim-treesitter-textobjects",
   {
     "L3MON4D3/LuaSnip", -- Snippets plugin
     version = "v2.*",
@@ -389,19 +402,13 @@ require("lazy").setup({
   {
     "stevearc/aerial.nvim",
     dependencies = {
-      "liangxianzhe/nap.nvim",
     },
     config = function()
       require("aerial").setup()
-      require("nap").operator("o", require("nap").aerial())
     end,
     keys = { -- Example mapping to toggle outline
       { "<leader>oo", "<cmd>AerialToggle<CR>", desc = "Toggle outline" },
     },
-  },
-  {
-    "stevearc/dressing.nvim",
-    config = true,
   },
   "Einenlum/yaml-revealer",
   {
@@ -515,10 +522,6 @@ require("lazy").setup({
         desc = "Quickfix List (Trouble)",
       },
     },
-  },
-  {
-    "chrisgrieser/nvim-various-textobjs",
-    opts = { keymaps = { useDefaults = true } },
   },
   {
     "akinsho/toggleterm.nvim",
