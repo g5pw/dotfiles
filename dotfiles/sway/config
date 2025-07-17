@@ -15,7 +15,7 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 # Recommends: foot
-set $term ghostty
+set $term foot
 # Your preferred application launcher
 set $menu anyrun
 
