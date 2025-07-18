@@ -61,6 +61,7 @@ require("lazy").setup({
     version = "*",
     config = function()
       require("mini.ai").setup()
+      require("mini.align").setup()
       require("mini.bracketed").setup()
       require("mini.diff").setup()
       require("mini.comment").setup()
