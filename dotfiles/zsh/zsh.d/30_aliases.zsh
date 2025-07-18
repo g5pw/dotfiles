@@ -1,7 +1,4 @@
 ## aliases ####
-if whence scmpuff &> /dev/null; then
-    GIT_EXPAND='scmpuff exec -- '
-fi
 
 for cmd in find fd usql; do
     alias $cmd="noglob ${cmd}"
@@ -23,7 +20,7 @@ alias j='jobs'
 alias l='ls'
 alias n='numbat'
 alias o='${GIT_EXPAND}open'
-alias s="git status"
+alias s=jj_or_git_status
 
 alias cat="${GIT_EXPAND}bat"
 alias cf="${GIT_EXPAND}clang-format -i"

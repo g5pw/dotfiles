@@ -146,8 +146,17 @@ function ga() {
         forgit::add
     fi
 }
-
 alias lg=lazygit
+
+function jj_or_git_status() {
+    if jj root &> /dev/null; then
+        jj status
+    elif git rev-parse --is-inside-work-tree &> /dev/null; then
+        gs
+    else
+        ls -alh
+    fi
+}
 
 zinit ice as"program" pick"bin/git-fuzzy"
 zinit light bigH/git-fuzzy
