@@ -138,6 +138,7 @@
     dfu-programmer
     espup
     glasgow
+    poke
     pulseview
     #platformio
     # stlink
@@ -213,10 +214,12 @@
     gitu
     gitui
     hexyl
+    jira-cli-go
     jujutsu
     koji
     lazygit
     lazyjj
+    mergiraf
     clang-analyzer
     clang-tools
     cmake
