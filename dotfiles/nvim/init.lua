@@ -64,7 +64,6 @@ require("lazy").setup({
       require("mini.align").setup()
       require("mini.bracketed").setup()
       require("mini.diff").setup()
-      require("mini.comment").setup()
       require("mini.jump2d").setup({
                 labels = "asdfjkl;gh",
             })
