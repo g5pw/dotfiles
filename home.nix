@@ -354,8 +354,7 @@
       home-manager switch
     '')
     (writeShellScriptBin "zeal_toggle" ''
-      focused_window=$(swaymsg -t get_tree | jq '.. | select(.type?) | select(.focused==true).app_id')
-      if [ "$focused_window" = '"org.zealdocs.zeal"' ]; then
+      if swaymsg -t get_tree | jq -e '.. | select(.app_id?) | select(.app_id=="org.zealdocs.zeal")'; then
         swaymsg \[app_id="org.zealdocs.zeal"\] kill
       else
         zeal
