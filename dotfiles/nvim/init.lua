@@ -270,9 +270,7 @@ require("lazy").setup({
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
-    config = function()
-      require("gitsigns").setup()
-    end,
+    config = true,
   },
   'rhysd/conflict-marker.vim',
   -- Highlight, edit, and navigate code using a fast incremental parsing library
