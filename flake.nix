@@ -80,7 +80,7 @@
 
         # Spelling {{{
         enchant
-        (hunspellWithDicts (with pkgs.hunspellDicts; [it_IT en_US]))
+        (hunspell.withDicts (d: [d.it_IT d.en_US]))
         (aspellWithDicts (d: [d.it d.en d.en-computers d.en-science]))
         # }}}
 
