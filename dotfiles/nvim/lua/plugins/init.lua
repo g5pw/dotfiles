@@ -217,7 +217,7 @@ return {
   {
     "stevearc/overseer.nvim",
     opts = {
-      strategy = "toggleterm",
+        strategy = "jobstart",
     },
     keys = {
       {
@@ -234,18 +234,8 @@ return {
         mode = "n",
         desc = "Run current/last overseer task",
       },
-      {
-        "<leader>rr",
-        "<cmd>OverseerRun<cr>",
-        mode = "n",
-        desc = "Run overseer task",
-      },
-      {
-        "<leader>rt",
-        "<cmd>OverseerToggle<cr>",
-        mode = "n",
-        desc = "Show all overseer tasks",
-      },
+      { "<leader>rr", "<cmd>OverseerRun<cr>", mode = "n", desc = "Run overseer task", },
+      { "<leader>rt", "<cmd>OverseerToggle<cr>", mode = "n", desc = "Show all overseer tasks", },
     },
   },
   {
@@ -288,11 +278,11 @@ return {
     keys = {
       { "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)", },
       { "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer Diagnostics (Trouble)", },
-      { "<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>", desc = "Symbols (Trouble)", },
-      { "<leader>cl", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>", desc = "LSP Definitions / references / ... (Trouble)", },
       { "<leader>xL", "<cmd>Trouble loclist toggle<cr>", desc = "Location List (Trouble)", },
       { "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix List (Trouble)", },
       { "<leader>xt", "<cmd>Trouble todo toggle<cr>", desc = "TODO List (Trouble)", },
+      { "<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>", desc = "Symbols (Trouble)", },
+      { "<leader>cl", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>", desc = "LSP Definitions / references / ... (Trouble)", },
     },
   },
   "RaafatTurki/hex.nvim",
