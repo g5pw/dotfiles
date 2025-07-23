@@ -34,6 +34,7 @@
 [advice]
     statusHints = false
     detachedHead = false
+    mergeConflict = false
 [rerere]
     enabled = true
     autoupdate = true
