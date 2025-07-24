@@ -16,7 +16,6 @@ alias rm="nocorrect ${GIT_EXPAND} rm -i"
 # One letter aliases
 alias e="${GIT_EXPAND}emacsclient -t -a ''"
 alias h='history'
-alias j='jobs'
 alias l='ls'
 alias n='numbat'
 alias o='${GIT_EXPAND}open'
