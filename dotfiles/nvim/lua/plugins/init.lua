@@ -52,15 +52,14 @@ return {
   },
   {
     "echasnovski/mini.nvim",
-    version = "*",
+    version = false,
     config = function()
       require("mini.ai").setup()
       require("mini.align").setup()
       require("mini.bracketed").setup()
       require("mini.diff").setup()
-      require("mini.jump2d").setup({
-                labels = "asdfjkl;gh",
-            })
+      require("mini.jump2d").setup({ labels = "asdfjkl;gh", })
+      require("mini.sessions").setup()
     end,
   },
   -- Operators
