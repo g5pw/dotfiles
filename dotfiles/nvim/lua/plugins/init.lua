@@ -346,12 +346,14 @@ return {
   {
     "stevearc/conform.nvim",
     opts = {
-      nix = { "nixfmt" },
-      c = { "clang_format" },
-      cpp = { "clang_format" },
-      lua = { "stylua" },
-      -- Conform will run multiple formatters sequentially
-      python = { "ruff", "black" },
+      formatters_by_ft = {
+        nix = { "nixfmt" },
+        c = { "clang-format" },
+        cpp = { "clang-format" },
+        lua = { "stylua" },
+        python = { "ruff", "black" },
+        rust = { "rustfmt", lsp_format = "fallback" },
+      }
     },
   },
   {
