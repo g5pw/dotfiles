@@ -305,13 +305,7 @@ return {
       },
     },
     keys = {
-      {
-        "-",
-        function()
-          require("oil").open_float()
-        end,
-        desc = "Open parent directory",
-      },
+      { "-", function() require("oil").open_float() end, desc = "Open parent directory", },
     },
     dependencies = { { "echasnovski/mini.icons", opts = {} } },
   },
