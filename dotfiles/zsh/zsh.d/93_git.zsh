@@ -161,9 +161,10 @@ function jj_or_git_status() {
 zinit ice as"program" pick"bin/git-fuzzy"
 zinit light bigH/git-fuzzy
 
-
+alias j="jj"
 alias jd="jj diff"
 alias jf="jj git fetch"
 alias jl="jj log"
 alias jr="jj rebase"
 alias jrm="jj rebase -d main@origin"
+alias js="jj status"
