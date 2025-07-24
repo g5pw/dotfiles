@@ -297,6 +297,8 @@ return {
         "size",
       },
       keymaps = {
+        ["<C-s>"] = { "actions.select", opts = { vertical = false } },
+        ["<C-v>"] = { "actions.select", opts = { vertical = true } },
         ["h"] = "actions.parent",
         ["l"] = "actions.select",
         ["q"] = "actions.close",
