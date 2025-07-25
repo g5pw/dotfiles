@@ -140,12 +140,11 @@ return {
   },
   {
     "folke/todo-comments.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    opts = {},
-  },
-  {
-    "L3MON4D3/LuaSnip", -- Snippets plugin
-    version = "v2.*",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "folke/trouble.nvim",
+    },
+    config = true,
   },
   {
     "saghen/blink.cmp",
