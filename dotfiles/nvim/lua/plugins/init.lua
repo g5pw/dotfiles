@@ -269,9 +269,7 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     cmd = "Trouble",
     opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
+        focus = true,
     },
     keys = {
       { "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)", },
