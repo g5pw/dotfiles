@@ -4,7 +4,40 @@ return {
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
-    ---@type snacks.Config
+    dependencies = {
+      {"folke/todo-comments.nvim",
+        optional = true,
+        keys = {
+          { "<leader>st", function() Snacks.picker.todo_comments() end, desc = "Todo" },
+          { "<leader>sT", function () Snacks.picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME" } }) end, desc = "Todo/Fix/Fixme" },
+        }
+      },
+      {
+        "folke/trouble.nvim",
+        optional = true,
+        specs = {
+          "folke/snacks.nvim",
+          opts = function(_, opts)
+            return vim.tbl_deep_extend("force", opts or {}, {
+              picker = {
+                actions = require("trouble.sources.snacks").actions,
+                win = {
+                  input = {
+                    keys = {
+                      ["<c-t>"] = {
+                        "trouble_open",
+                        mode = { "n", "i" },
+                      },
+                    },
+                  },
+                },
+              },
+            })
+          end,
+        },
+      },
+    },
+        ---@type snacks.Config
     opts = {
       bigfile = { enabled = true },
       dashboard = {
