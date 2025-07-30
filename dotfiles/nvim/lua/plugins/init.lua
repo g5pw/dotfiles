@@ -169,8 +169,8 @@ return {
       -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
       -- See the full "keymap" documentation for information on defining your own keymap.
       keymap = {
-        preset = "super-tab",
-        ["<CR>"] = { "accept", "fallback" },
+        preset = "enter",
+        ['<C-l>'] = { 'show', 'show_documentation', 'hide_documentation' },
       },
 
       appearance = {
@@ -179,6 +179,11 @@ return {
         nerd_font_variant = "mono",
       },
 
+      completion = { list = {  selection = {
+        preselect = function(ctx)
+          return not require('blink.cmp').snippet_active({ direction = 1 })
+        end,
+      }}},
       -- Default list of enabled providers defined so that you can extend it
       -- elsewhere in your config, without redefining it, due to `opts_extend`
       sources = {
