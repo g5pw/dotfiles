@@ -162,9 +162,17 @@ zinit ice as"program" pick"bin/git-fuzzy"
 zinit light bigH/git-fuzzy
 
 alias j="jj"
+alias ja="jj absorb"
 alias jd="jj diff"
-alias jf="jj git fetch"
+alias jdr="jj diff -r"
+alias jg="jj give"
+alias jgf="jj git fetch"
+alias jgi="jj give-interactive"
+alias jgp="jj git push"
 alias jl="jj log"
 alias jr="jj rebase"
 alias jrm="jj rebase -d main@origin"
 alias js="jj status"
+alias jsp="jj split"
+
+alias lj="lazyjj"
