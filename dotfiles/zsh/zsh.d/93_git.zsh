@@ -121,7 +121,7 @@ export forgit_cherry_pick=gcpi
 export forgit_rebase=gri
 export forgit_fixup=gfi
 
-export FORGIT_COPY_CMD="xclip -i -selection clipboard"
+export FORGIT_COPY_CMD="wl-copy"
 zinit light wfxr/forgit
 
 export FORGIT_STASH_FZF_OPTS='
