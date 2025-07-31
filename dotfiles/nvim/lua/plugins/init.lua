@@ -239,6 +239,7 @@ return {
       },
       { "<leader>rr", "<cmd>OverseerRun<cr>", mode = "n", desc = "Run overseer task", },
       { "<leader>rt", "<cmd>OverseerToggle<cr>", mode = "n", desc = "Show all overseer tasks", },
+      { "<leader>ro", "<cmd>OverseerOpen<cr>", mode = "n", desc = "Open overseer task output", },
     },
   },
   {
