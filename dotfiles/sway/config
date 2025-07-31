@@ -25,17 +25,6 @@ set $menu anyrun
 # Requires: desktop-backgrounds-compat, swaybg, jxl-pixbuf-loader
 output * bg /usr/share/backgrounds/default.jxl fill
 
-output 'BNQ BenQ EW3270U F8P01172019' {
-    mode 3840x2160@60Hz
-    position 0 0
-    scale 1.5
-}
-
-output 'Lenovo Group Limited T27hv-20 V306PLP7' {
-  mode 2560x1440
-  position 2560 0
-}
-
 #
 # Example configuration:
 #
