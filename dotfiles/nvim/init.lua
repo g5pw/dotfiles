@@ -1,4 +1,6 @@
 -- Options {{{
+vim.o.tildeop = true
+
 --Set highlight on search
 vim.o.hlsearch = true
 
