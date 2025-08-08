@@ -52,8 +52,7 @@
     xplr
     nix_shell
     dir                       # current directory
-    jj_at
-    jj_conflicts
+    vcs_full
     prompt_char               # prompt symbol
   )
 
