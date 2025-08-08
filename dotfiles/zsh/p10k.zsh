@@ -52,7 +52,8 @@
     xplr
     nix_shell
     dir                       # current directory
-    vcs                       # git status
+    jj_at
+    jj_conflicts
     prompt_char               # prompt symbol
   )
 
