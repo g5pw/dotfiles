@@ -23,6 +23,7 @@ alias s=jj_or_git_status
 
 alias cat="${GIT_EXPAND}bat"
 alias cf="${GIT_EXPAND}clang-format -i"
+alias cg="cargo"
 alias ds='dirs'
 alias dsv='dirs -v'
 alias dsc='dirs -c'
