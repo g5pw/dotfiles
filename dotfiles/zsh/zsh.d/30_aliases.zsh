@@ -63,21 +63,6 @@ alias ww="wormhole-william"
 alias wwpaste="ww receive"
 alias wwcopy="ww send --text -"
 
-# TimeWarrior aliases
-if type timew &> /dev/null; then
-    alias t="timew"
-    alias tws='timew summary :week :ids'
-fi
-
-# TaskWarrior aliases
-if type task &> /dev/null; then
-    alias tw='nocorrect noglob task'
-    alias task='nocorrect noglob task'
-    alias tl="nocorrect noglob task list"
-    alias ta="nocorrect noglob task add"
-    alias td="nocorrect noglob task done"
-fi
-
 # The many forms of zmv.
 alias mmv='noglob zmv -W'
 alias zmv="zmv -wM"
