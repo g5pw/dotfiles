@@ -39,7 +39,7 @@ vim.g.maplocalleader = ","
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = "menuone,popup,noinsert"
-vim.o.wildmode = "list:longest"
+vim.o.wildmode = "longest,list"
 
 vim.o.foldmethod = "expr"
 vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
@@ -130,7 +130,6 @@ end
 vim.opt.runtimepath:prepend(lazypath)
 
 require("lazy").setup("plugins")
-
 
 vim.on_key(function(char)
     if vim.fn.mode() == "n" then

@@ -201,9 +201,7 @@ return {
     "stevearc/aerial.nvim",
     dependencies = {
     },
-    config = function()
-      require("aerial").setup()
-    end,
+    opts = {},
     keys = { -- Example mapping to toggle outline
       { "<leader>oo", "<cmd>AerialToggle<CR>", desc = "Toggle outline" },
     },
