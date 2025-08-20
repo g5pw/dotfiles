@@ -75,7 +75,12 @@ GRTAGS
 
 # Build files
 *.egg-info/
+# }}}
 
 # Emacs aucTeX
 .auctex-auto/
-# }}}
+
+# Vim sessions
+/Session.vim
+
+/.cache/
