@@ -80,6 +80,8 @@ vim.keymap.set("n", "<leader>w-", vim.cmd.split)
 vim.keymap.set("n", "<leader>bd", vim.cmd.bdelete, { desc = "Delete current buffer" })
 
 vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, {desc = 'LSP Rename'})
+vim.keymap.set("n", "<leader>ch", vim.lsp.buf.hover, {desc = 'LSP Hover'})
+vim.keymap.set("n", "<C-[>", "<C-T>", {desc = 'Go back from tag'})
 -- }}}
 
 ---@type rustaceanvim.Opts
