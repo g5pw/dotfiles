@@ -14,7 +14,7 @@ alias mv="nocorrect ${GIT_EXPAND} mv -i"
 alias rm="nocorrect ${GIT_EXPAND} rm -i"
 
 # One letter aliases
-alias e="${GIT_EXPAND}emacsclient -t -a ''"
+alias e="${GIT_EXPAND}emacsclient -t"
 alias h='history'
 alias l='ls'
 alias n='numbat'
@@ -31,8 +31,8 @@ alias du1='du -hs *(/)' ## du with depth 1
 alias ea='$EDITOR $ZDOTDIR/zsh.d/30_aliases.zsh && source $ZDOTDIR/zsh.d/30_aliases.zsh'
 alias ef='edit_function'
 alias ez='$EDITOR $ZDOTDIR/.zshrc;src'
-alias en="${GIT_EXPAND}emacsclient -c -n -a ''"
-alias ec="${GIT_EXPAND}emacsclient -n -a ''"
+alias en="${GIT_EXPAND}emacsclient -c -n"
+alias ec="${GIT_EXPAND}emacsclient -n"
 alias JUSTFUCKINGDOIT='sudo -p "Oh, come on... alright, gimme your password:" $(fc -ln -1)'
 alias mtr='trip -u'
 alias grep='rg -uuu'
@@ -51,7 +51,7 @@ fi
 alias lstty='tio --list'
 alias less=$PAGER
 alias zless=$PAGER
-alias mg='emacsclient -nw -c --eval '"'"'(progn (let ((display-buffer-alist `(("^\\*magit: " display-buffer-same-window) ,display-buffer-alist))) (magit-status)) (delete-other-windows))'"' "
+alias mg='emacsclient -t -c --eval '"'"'(progn (let ((display-buffer-alist `(("^\\*magit: " display-buffer-same-window) ,display-buffer-alist))) (magit-status)) (delete-other-windows))'"' "
 alias myip='curl ifconfig.me/ip'
 alias rgrep='grep -r'
 alias servethis='python -m http.server'
