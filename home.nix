@@ -117,7 +117,6 @@
     # gnupg {{{
     ".gnupg/dirmngr.conf".source = dotfiles/gnupg/dirmngr.conf;
     ".gnupg/scdaemon.conf".source = dotfiles/gnupg/scdaemon.conf;
-    ".gnupg/gpg-agent.conf".source = dotfiles/gnupg/gpg-agent.conf;
     ".gnupg/gpg.conf".source = dotfiles/gnupg/gpg.conf;
     # }}}
 
@@ -157,4 +156,14 @@
 
 
   services.emacs.enable = true;
+
+  services = {
+    emacs.enable = true;
+    gpg-agent = {
+      enable = true;
+      enableSshSupport = true;
+      defaultCacheTtl = 300;
+      maxCacheTtl = 1800;
+    };
+  };
 }
