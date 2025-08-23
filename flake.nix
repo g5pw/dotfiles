@@ -321,8 +321,8 @@
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
 
-      nix.settings.trusted-substituters = ["https://devenv.cachix.org"];
-      nix.settings.trusted-public-keys = [
+      nix.settings.extra-substituters = ["https://devenv.cachix.org"];
+      nix.settings.extra-trusted-public-keys = [ 
         "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
       ];
 
@@ -365,6 +365,7 @@
 
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
+      system.primaryUser = "g5pw";
 
       # Configure Dock
       system.defaults.dock.autohide = true;
