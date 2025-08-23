@@ -33,8 +33,8 @@
 
         # Shell utils {{{
         coreutils
-        diffutils
-        findutils
+        uutils-diffutils
+        uutils-findutils
         cyme
         moreutils
         patchutils
@@ -50,7 +50,6 @@
         bottom
         d2
         dust
-        dysk
         fzf
         gawk
         gnused
@@ -109,6 +108,7 @@
         _1password-cli
         age
         diceware
+        fido2-manage
         docker-credential-helpers
         gopass
         gnupg
@@ -130,13 +130,10 @@
         binwalk
         dfu-util
         dfu-programmer
-        #esptool
         espup
         glasgow
-        #openocd
-        #pulseview
-        #platformio
-        # stlink
+        pulseview
+        platformio
         tio
         # }}}
 
@@ -145,6 +142,7 @@
         dive
         lazydocker
         k0sctl
+        kdash
         kubectl
         kubectl-explore
         kubernetes-helm
@@ -169,6 +167,7 @@
         podman
         pwgen
         sipcalc
+        sig
         shelldap
         speedtest-rs
         socat
@@ -194,8 +193,9 @@
         #gdb
         gh
         gfold
+        direnv
         glab
-        gitFull
+        git
         git-interactive-rebase-tool
         git-brunch
         git-extras
@@ -207,6 +207,8 @@
         hexyl
         jujutsu
         lazygit
+        lazyjj
+        mergiraf
         clang-analyzer
         clang-tools
         cmake
@@ -221,6 +223,7 @@
 
         # HAM tools {{{
         hackrf
+        nanovna-saver
         # }}}
 
         # Languages {{{
@@ -325,17 +328,17 @@
 
       time.timeZone = "Europe/Rome";
 
+      fonts.packages = with pkgs; [
+        nerd-fonts.fira-code
+        nerd-fonts.monaspace
+      ];
+
       # Create /etc/zshrc that loads the nix-darwin environment.
 
       programs.gnupg.agent = {
         enable = true;
         enableSSHSupport = true;
       };
-
-      fonts.packages = with pkgs; [
-        nerd-fonts.fira-code
-        nerd-fonts.monaspace
-      ];
 
       programs.zsh.enable = true;
 
