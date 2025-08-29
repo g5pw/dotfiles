@@ -114,9 +114,5 @@ zstyle ':completion:*:matches' group 'yes'
 
 zinit wait lucid light-mode for \
 	zsh-users/zsh-completions \
-	OMZP::composer/composer.plugin.zsh \
-	as"completion" \
-		nnao45/zsh-kubectl-completion \
-		OMZP::docker-compose
-
-zstyle ':completion:*:*:kubectl:*' list-grouped false
+	OMZP::docker-compose \
+	OMZP::docker

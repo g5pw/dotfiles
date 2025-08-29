@@ -140,6 +140,7 @@
         # DevOps {{{
         ctop
         dive
+        dry
         lazydocker
         k0sctl
         kdash
@@ -305,9 +306,10 @@
 
         cliflux
         nchat
+        neonmodem
+        iamb
 
         neovide
-        iamb
         imhex
 
         nix-zsh-completions
